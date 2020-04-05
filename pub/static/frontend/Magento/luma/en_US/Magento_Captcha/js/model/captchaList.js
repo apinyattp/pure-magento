@@ -1,1 +1,0 @@
-/home/thenext/domains/thenext.bearrunrun.com/public_html/vendor/magento/module-captcha/view/frontend/web/js/model/captchaList.js

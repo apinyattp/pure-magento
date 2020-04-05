@@ -1,1 +1,0 @@
-/home/thenext/domains/thenext.bearrunrun.com/public_html/vendor/magento/theme-frontend-blank/Magento_Theme/web/js/theme.js
