@@ -1,0 +1,1 @@
+/home/thenext/domains/thenext.bearrunrun.com/public_html/vendor/msp/recaptcha/view/frontend/web/js/registry.js
