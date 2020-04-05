@@ -41,7 +41,7 @@ AddType application/json json
 AddType text/html html
 
 # CSS
-AddType text/css .css
+AddType text/css css
 
 # Images and icons
 AddType image/x-icon ico
