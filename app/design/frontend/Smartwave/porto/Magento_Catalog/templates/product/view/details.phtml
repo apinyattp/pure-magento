@@ -1,14 +1,15 @@
 <?php
 /**
- * Copyright Â© 2016 Magento. All rights reserved.
+ * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 // @codingStandardsIgnoreFile
-
+/** @var \Magento\Catalog\Block\Product\View\Details $block */
 ?>
 <?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
 <?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
     $porto_helper = $this->helper('Smartwave\Porto\Helper\Data');
     $_helper = $this->helper('Smartwave\Porto\Helper\Customtabs');
     $product_config = $porto_helper->getConfig('porto_settings/product');

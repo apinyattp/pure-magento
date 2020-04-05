@@ -49,7 +49,8 @@ class FeaturedList extends \Magento\Catalog\Block\Product\AbstractProduct {
                 ->addAttributeToSelect('small_image')
                 ->addAttributeToSelect('thumbnail')
                 ->addAttributeToSelect($this->_catalogConfig->getProductAttributes())
-                ->addUrlRewrite() 
+                ->addUrlRewrite()
+                ->addAttributeToFilter('is_saleable', 1, 'left')
                 ->addAttributeToFilter('sw_featured', 1, 'left')
                 ->addCategoryFilter($category);
         } else {
@@ -61,7 +62,8 @@ class FeaturedList extends \Magento\Catalog\Block\Product\AbstractProduct {
                 ->addAttributeToSelect('small_image')
                 ->addAttributeToSelect('thumbnail')
                 ->addAttributeToSelect($this->_catalogConfig->getProductAttributes())
-                ->addUrlRewrite() 
+                ->addUrlRewrite()
+                ->addAttributeToFilter('is_saleable', 1, 'left')
                 ->addAttributeToFilter('sw_featured', 1, 'left');
         }
 

@@ -20,11 +20,11 @@ $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
 $_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
 
-// Daily deal Helper
+// Daily deal Helper 
 $_dailydealhelper =$this->helper('Smartwave\Dailydeals\Helper\Data');
 
 $_portohelper = $this->helper('Smartwave\Porto\Helper\Data');
-
+ 
 $_category_config = $_portohelper->getConfig('porto_settings/category');
 $_category_grid_config = $_portohelper->getConfig('porto_settings/category_grid');
 $_product_label_config = $_portohelper->getConfig('porto_settings/product_label');
@@ -119,7 +119,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                 $now = date("Y-m-d");
                                 $newsFrom= substr($_product->getData('news_from_date'),0,10);
                                 $newsTo=  substr($_product->getData('news_to_date'),0,10);
-
+                                
                                 if ($newsTo != '' || $newsFrom != ''){
                                     if (($newsTo != '' && $newsFrom != '' && $now>=$newsFrom && $now<=$newsTo) || ($newsTo == '' && $now >=$newsFrom) || ($newsFrom == '' && $now<=$newsTo)) {
                                         $product_label .= '<div class="product-label new-label">'.$_product_label_config['new_label_text'].'</div>';
@@ -196,7 +196,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <input type="hidden" id="fromdate_<?php echo $unique_id; ?>" value="<?php echo $_dailydealhelper->getDailydealFromDate($_product->getSku()); ?>">
                         <div class="sw-dailydeal-wrapper" style="display:none;" data-unique-id="<?php echo $unique_id; ?>">
                             <div class="sw-dailydeal">
-                                <p id="expired_<?php echo $unique_id; ?>"></p>
+                                <p id="expired_<?php echo $unique_id; ?>"></p> 
                                 <div class="countdowncontainer countdowncontainer_<?php echo $unique_id; ?>" style="display:none;">
                                     <span class="dailydeal-label">
                                         <?php echo __('Ends In:'); ?>
@@ -227,7 +227,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                 </div>
                             </div>
                         </div>
-                        <?php endif; ?>
+                        <?php endif; ?> 
                         <!-- Dailydeal Product End -->
                     </div>
                     <div class="product details product-item-details">
@@ -241,7 +241,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                             </a>
                         </strong>
                         <?php if($_category_config['rating_star']): ?>
-                        <?php
+                        <?php 
                             $review_html = $block->getReviewsSummaryHtml($_product, $templateType);
                         ?>
                         <?php if($review_html): ?>
@@ -257,7 +257,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         </div>
                         <?php endif; ?>
                         <?php endif; ?>
-
+                        
                         <?php if ($showDescription):?>
                             <div class="product description product-item-description">
                                 <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
@@ -269,7 +269,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <?php echo $block->getProductPrice($_product) ?>
                         <?php endif; ?>
                         <?php echo $block->getProductDetailsHtml($_product); ?>
-
+                        
                         <?php if($product_type != 3 && $product_type != 5 && $product_type != 6 && $product_type != 7 && $product_type != 8 && $product_type != 9): ?>
                         <div class="product-item-inner">
                             <div class="product actions product-item-actions">
@@ -384,7 +384,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
     <?php if ($block->getMode() == 'grid'): ?>
         <script type="text/javascript">
             require([
-                'jquery'
+                'jquery'        
             ], function ($) {
                 $('.main .products.grid .product-items li.product-item:nth-child(2n)').addClass('nth-child-2n');
                 $('.main .products.grid .product-items li.product-item:nth-child(2n+1)').addClass('nth-child-2np1');
