@@ -1,0 +1,1 @@
+/home/thenext/domains/thenext.bearrunrun.com/public_html/app/design/frontend/Smartwave/porto/web/fancybox/js/jquery.fancybox.js

@@ -1,0 +1,1 @@
+/home/thenext/domains/thenext.bearrunrun.com/public_html/vendor/magento/module-ui/view/frontend/web/js/view/messages.js
