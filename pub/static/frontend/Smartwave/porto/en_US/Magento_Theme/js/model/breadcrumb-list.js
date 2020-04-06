@@ -1,1 +1,0 @@
-/home/thenext/domains/thenext.bearrunrun.com/public_html/vendor/magento/module-theme/view/frontend/web/js/model/breadcrumb-list.js

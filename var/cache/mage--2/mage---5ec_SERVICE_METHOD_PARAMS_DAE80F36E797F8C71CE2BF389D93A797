@@ -1,2 +1,2 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1586103855;s:6:"expire";i:9999999999;s:4:"tags";s:38:"5ec_REFLECTION,5ec_REFLECTION,5ec_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1586159468;s:6:"expire";i:9999999999;s:4:"tags";s:38:"5ec_REFLECTION,5ec_REFLECTION,5ec_MAGE";}
 [{"name":"sku","type":"string","isDefaultValueAvailable":false,"defaultValue":null},{"name":"option","type":"Magento\\ConfigurableProduct\\Api\\Data\\OptionInterface","isDefaultValueAvailable":false,"defaultValue":null}]

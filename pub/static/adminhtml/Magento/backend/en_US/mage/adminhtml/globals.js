@@ -1,1 +1,0 @@
-/home/thenext/domains/thenext.bearrunrun.com/public_html/lib/web/mage/adminhtml/globals.js

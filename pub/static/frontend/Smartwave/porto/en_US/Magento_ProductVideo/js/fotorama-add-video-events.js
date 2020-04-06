@@ -1,1 +1,0 @@
-/home/thenext/domains/thenext.bearrunrun.com/public_html/vendor/magento/module-product-video/view/frontend/web/js/fotorama-add-video-events.js
