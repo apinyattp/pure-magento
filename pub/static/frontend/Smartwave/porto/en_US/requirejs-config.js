@@ -175,19 +175,11 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            compareList:            'Magento_Catalog/js/list',
-            relatedProducts:        'Magento_Catalog/js/related-products',
-            upsellProducts:         'Magento_Catalog/js/upsell-products',
-            productListToolbarForm: 'Magento_Catalog/js/product/list/toolbar',
-            catalogGallery:         'Magento_Catalog/js/gallery',
-            catalogAddToCart:       'Magento_Catalog/js/catalog-add-to-cart'
-        }
-    },
-    config: {
-        mixins: {
-            'Magento_Theme/js/view/breadcrumbs': {
-                'Magento_Catalog/js/product/breadcrumbs': true
-            }
+            priceBox:             'Magento_Catalog/js/price-box',
+            priceOptionDate:      'Magento_Catalog/js/price-option-date',
+            priceOptionFile:      'Magento_Catalog/js/price-option-file',
+            priceOptions:         'Magento_Catalog/js/price-options',
+            priceUtils:           'Magento_Catalog/js/price-utils'
         }
     }
 };
@@ -203,11 +195,19 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            priceBox:             'Magento_Catalog/js/price-box',
-            priceOptionDate:      'Magento_Catalog/js/price-option-date',
-            priceOptionFile:      'Magento_Catalog/js/price-option-file',
-            priceOptions:         'Magento_Catalog/js/price-options',
-            priceUtils:           'Magento_Catalog/js/price-utils'
+            compareList:            'Magento_Catalog/js/list',
+            relatedProducts:        'Magento_Catalog/js/related-products',
+            upsellProducts:         'Magento_Catalog/js/upsell-products',
+            productListToolbarForm: 'Magento_Catalog/js/product/list/toolbar',
+            catalogGallery:         'Magento_Catalog/js/gallery',
+            catalogAddToCart:       'Magento_Catalog/js/catalog-add-to-cart'
+        }
+    },
+    config: {
+        mixins: {
+            'Magento_Theme/js/view/breadcrumbs': {
+                'Magento_Catalog/js/product/breadcrumbs': true
+            }
         }
     }
 };
@@ -327,8 +327,11 @@ require.config(config);
  */
 
 var config = {
-    paths: {
-        'jquery/jquery-storageapi': 'Magento_Cookie/js/jquery.storageapi.extended'
+    map: {
+        '*': {
+            requireCookie: 'Magento_Cookie/js/require-cookie',
+            cookieNotices: 'Magento_Cookie/js/notices'
+        }
     }
 };
 
@@ -341,11 +344,8 @@ require.config(config);
  */
 
 var config = {
-    map: {
-        '*': {
-            requireCookie: 'Magento_Cookie/js/require-cookie',
-            cookieNotices: 'Magento_Cookie/js/notices'
-        }
+    paths: {
+        'jquery/jquery-storageapi': 'Magento_Cookie/js/jquery.storageapi.extended'
     }
 };
 
@@ -979,7 +979,7 @@ require.config(config);
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
@@ -987,12 +987,18 @@ var config = {
     paths: {
         'mageplaza/core/jquery/popup': 'Mageplaza_Core/js/jquery.magnific-popup.min',
         'mageplaza/core/owl.carousel': 'Mageplaza_Core/js/owl.carousel.min',
-        'mageplaza/core/bootstrap': 'Mageplaza_Core/js/bootstrap.min'
+        'mageplaza/core/bootstrap': 'Mageplaza_Core/js/bootstrap.min',
+        mpIonRangeSlider: 'Mageplaza_Core/js/ion.rangeSlider.min',
+        touchPunch: 'Mageplaza_Core/js/jquery.ui.touch-punch.min',
+        mpDevbridgeAutocomplete: 'Mageplaza_Core/js/jquery.autocomplete.min'
     },
     shim: {
         "mageplaza/core/jquery/popup": ["jquery"],
         "mageplaza/core/owl.carousel": ["jquery"],
-        "mageplaza/core/bootstrap": ["jquery"]
+        "mageplaza/core/bootstrap": ["jquery"],
+        mpIonRangeSlider: ["jquery"],
+        mpDevbridgeAutocomplete: ["jquery"],
+        touchPunch: ['jquery', 'jquery/ui']
     }
 };
 
@@ -1015,7 +1021,7 @@ require.config(config);
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) 2016 Mageplaza (http://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
@@ -1023,18 +1029,12 @@ var config = {
     paths: {
         'mageplaza/core/jquery/popup': 'Mageplaza_Core/js/jquery.magnific-popup.min',
         'mageplaza/core/owl.carousel': 'Mageplaza_Core/js/owl.carousel.min',
-        'mageplaza/core/bootstrap': 'Mageplaza_Core/js/bootstrap.min',
-        mpIonRangeSlider: 'Mageplaza_Core/js/ion.rangeSlider.min',
-        touchPunch: 'Mageplaza_Core/js/jquery.ui.touch-punch.min',
-        mpDevbridgeAutocomplete: 'Mageplaza_Core/js/jquery.autocomplete.min'
+        'mageplaza/core/bootstrap': 'Mageplaza_Core/js/bootstrap.min'
     },
     shim: {
         "mageplaza/core/jquery/popup": ["jquery"],
         "mageplaza/core/owl.carousel": ["jquery"],
-        "mageplaza/core/bootstrap": ["jquery"],
-        mpIonRangeSlider: ["jquery"],
-        mpDevbridgeAutocomplete: ["jquery"],
-        touchPunch: ['jquery', 'jquery/ui']
+        "mageplaza/core/bootstrap": ["jquery"]
     }
 };
 

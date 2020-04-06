@@ -1,10 +1,1 @@
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-define([], function () {
-    'use strict';
-
-    return [];
-});
+/home/thenext/domains/thenext.bearrunrun.com/public_html/vendor/magento/module-theme/view/frontend/web/js/model/breadcrumb-list.js

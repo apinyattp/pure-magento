@@ -1,5 +1,5 @@
 // /**
-//  * Copyright © Magento, Inc. All rights reserved.
+//  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
 
@@ -21,6 +21,38 @@
                     &:extend(.abs-checkout-tooltip-content-position-top all);
                 }
             }
+            .fieldset {
+                .field {
+                    .label {
+                        font-weight: @font-weight__regular;
+                    }
+                }
+            }
+            .modal-footer {
+                .action-hide-popup {
+                    &:extend(.abs-action-button-as-link all);
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .checkout-index-index {
+        .modal-popup {
+            .modal-footer {
+                .action-save-address {
+                    width: 100%;
+                }
+                .action-hide-popup {
+                    margin-top: @indent__base;
+                }
+            }
         }
     }
 }
@@ -35,15 +67,10 @@
             .form-shipping-address {
                 .lib-css(max-width, @checkout-shipping-address__max-width);
             }
-
             .modal-footer {
                 .action-save-address {
                     float: right;
-                    margin: 0 0 0 @indent__s;
-                }
-
-                .action-hide-popup {
-                    &:extend(.abs-action-button-as-link all);
+                    margin: 0 0 0 @indent__base;
                 }
             }
         }

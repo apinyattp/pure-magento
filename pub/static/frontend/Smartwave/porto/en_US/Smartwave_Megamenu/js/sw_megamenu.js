@@ -1,1 +1,0 @@
-/home/thenext/domains/thenext.bearrunrun.com/public_html/app/code/Smartwave/Megamenu/view/frontend/web/js/sw_megamenu.js

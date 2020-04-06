@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1586100884;s:6:"expire";i:9999999999;s:4:"tags";s:37:"5ec_LAYOUT_GENERAL_CACHE_TAG,5ec_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1586103923;s:6:"expire";i:9999999999;s:4:"tags";s:37:"5ec_LAYOUT_GENERAL_CACHE_TAG,5ec_MAGE";}
 <?xml version="1.0"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><handle id="catalog_category_view"><body/>
 </handle><handle id="catalogsearch_advanced_index"><body/>
@@ -7452,6 +7452,17 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1586100884;s:6:"expire";i:9999999999;s:4:"t
          </arguments>
       </block>
    </referenceContainer>
+</body>
+</handle><handle id="checkout_cart_index" layout="1column"><body>
+   <referenceContainer name="checkout.cart.container">
+      <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-"/>
+   </referenceContainer>
+   <move element="checkout.cart.crosssell" destination="checkout.cart.container" after="-"/>
+   <move element="checkout.cart.coupon" destination="cart.discount"/>
+   <move element="checkout.cart.shortcut.buttons" destination="checkout.cart.methods" after="checkout.cart.methods.onepage.bottom"/>
+</body>
+</handle><handle id="checkout_index_index" layout="1column"><body>
+   <move element="logo" destination="porto_header"/>
 </body>
 </handle><handle id="contact_index_index" layout="1column"><head>
    <title>Contact Us</title>

@@ -1,5 +1,5 @@
 // /**
-//  * Copyright © Magento, Inc. All rights reserved.
+//  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
 
@@ -14,8 +14,8 @@
 @checkout-sidebar-shipping-information-edit-icon__content: @icon-settings;
 @checkout-sidebar-shipping-information-edit-icon__font-size: 28px;
 @checkout-sidebar-shipping-information-edit-icon__line-height: 28px;
-@checkout-sidebar-shipping-information-edit-icon__top: 2px;
-@checkout-sidebar-shipping-information-edit-icon__hover__color: @primary__color;
+@checkout-sidebar-shipping-information-edit-icon__top: 0;
+@checkout-sidebar-shipping-information-edit-icon__hover__color: @minicart-icons-color;
 
 //
 //  Common
@@ -28,7 +28,6 @@
     //  ---------------------------------------------
 
     .opc-block-shipping-information {
-        .lib-css(padding, 0 @checkout-sidebar-shipping-information__padding);
 
         .shipping-information-title {
             &:extend(.abs-checkout-title all);
@@ -51,6 +50,10 @@
                 margin: 0;
                 position: absolute;
                 right: 0;
+                
+                &:before {
+                    display: block;
+                }
             }
         }
 
@@ -64,14 +67,6 @@
         .ship-to,
         .ship-via {
             margin: 0 0 @indent__base;
-        }
-    }
-}
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .opc-block-shipping-information {
-        .shipping-information-title {
-            font-size: 2.3rem;
         }
     }
 }
