@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-04-05 14:21:14 */
+ * 2020-04-11 08:50:50 */
 body.boxed {
 }
 @media (min-width: 768px) {
@@ -958,4 +958,11 @@ body.layout-fullwidth .page-wrapper > .breadcrumbs .items {
 }
 .product-social-links .action.towishlist:before, .product-addto-links .action.towishlist:before, .block-bundle-summary .action.towishlist:before, .product-item .action.towishlist:before, .table-comparison .action.towishlist:before {
     content: '\e889';
+}
+.onepage-category>.category-details {
+    float: right;
+    width: calc(100% - 20px);
+    padding: 0 140px;
+    padding-bottom: 146px;
+    min-height: 80vh;
 }
