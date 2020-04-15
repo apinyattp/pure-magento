@@ -1,0 +1,510 @@
+<div class="full-screen-slider">
+  <div id="banner-slider-demo-4" class="owl-carousel owl-bottom-narrow owl-banner-carousel">
+    <div class="item" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/19/slider/ali-pazani-pTKWWQbow44-unsplash.jpg"}}) 80% top no-repeat; background-size:cover;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/19/slider/ali-pazani-pTKWWQbow44-unsplash.jpg"}}" alt=""/>
+      <div class="slide1-content content" style="width:100%;height:100%;position:absolute;left:0;top:0; display:none;">
+        <div class="container" style="height:100%;position:relative;">
+          <div class="content-area">
+            <div class="text1" style="">up to<br><b class="inner1">50</b><span class="inner2">%<br><b class="inner3">Off</b></span></div>
+            <h2 class="text2">summer sale</h2>
+            <p class="text3" style="">Now starting at <b style="font-weight:700;">$99.00</b></p>
+            <a href="#" class="btn btn-default">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/19/slider/ali-pazani-pTKWWQbow44-unsplash.jpg"}}) 80% top no-repeat; background-size:cover;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/19/slider/ali-pazani-pTKWWQbow44-unsplash.jpg"}}" alt=""/>
+      <div class="slide1-content content" style="width:100%;height:100%;position:absolute;left:0;top:0;display:none" >
+        <div class="container" style="height:100%;position:relative;">
+          <div class="content-area">
+            <div class="text1" style="">up to<br><b class="inner1">50</b><span class="inner2">%<br><b class="inner3">Off</b></span></div>
+            <h2 class="text2">summer sale</h2>
+            <p class="text3" style="">Now starting at <b style="font-weight:700;">$99.00</b></p>
+            <a href="#" class="btn btn-default">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    require([
+      'jquery',
+      'owl.carousel/owl.carousel.min'
+    ], function ($) {
+      $("#banner-slider-demo-4").owlCarousel({
+        items: 1,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        navRewind: true,
+        dots: false,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        loop: true,
+        nav: false,
+        dots:true,
+        responsiveClass: true,
+       singleItem:true,
+        navText: ["<em class='porto-icon-chevron-left'></em>","<em class='porto-icon-chevron-right'></em>"]
+      });
+      $(".main-container").remove();
+    });
+  </script>
+</div>
+<div class="row" style="margin:0;">
+  <div class="col-md-3 col-6" style="padding:0;">
+    <a class="image-link" href="#">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/04/slider/image01n.jpg"}}" alt="" />
+    </a>
+  </div>
+  <div class="col-md-3 col-6" style="padding:0;">
+    <a class="image-link" href="#">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/04/slider/image02n.jpg"}}" alt="" />
+    </a>
+  </div>
+  <div class="col-md-3 col-6" style="padding:0;">
+    <a class="image-link" href="#">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/04/slider/image03n.jpg"}}" alt="" />
+    </a>
+  </div>
+  <div class="col-md-3 col-6" style="padding:0;">
+    <a class="image-link" href="#">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/04/slider/image04n.jpg"}}" alt="" />
+    </a>
+  </div>
+</div>
+<div class="row" style="margin:0;">
+  <div class="col-md-6 md-order-12" style="padding:0;">
+    <div id="half-image-1" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/04/slider/men_new.jpg"}}) center center no-repeat;background-size:cover;width:100%;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/04/slider/men_new.jpg"}}" style="width:100%;visibility:hidden;" alt="" />
+      <div class="content" style="position:absolute;top:41%;left:15%;line-height:1;font-size:60px;font-family:'Oswald';letter-spacing:0.05em;text-transform:uppercase;text-align:left;color:#fff;">Men’s<br>Collection</div>
+    </div>
+  </div>
+  <div id="half-content-1" class="col-md-6" style="padding:4% 6% 1.5%;position:relative;text-align:left;">
+    <h3 class="fullwidth-filter-title">New Mens Collection</h3>
+    <p class="fullwidth-filter-description">Yes, this is our new collection, check it out our new arrivals.</p>
+    <div id="men_product" class="product-padding product-banner owl-top-narrow no-border" style="margin-top: 25px;">
+      {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="men_product" product_count="4" aspect_ratio="0" image_width="400" image_height="400" product_type="3" template="owl_list.phtml"}}
+    </div>
+    <script type="text/javascript">
+      require([
+        'jquery',
+        'owl.carousel/owl.carousel.min'
+      ], function ($) {
+        $("#men_product .owl-carousel").owlCarousel({
+          loop: true,
+          margin: 0,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          navRewind: true,
+          nav: true,
+          dots: false,
+          navText: ["<em class='porto-icon-angle-left'></em>","<em class='porto-icon-angle-right'></em>"],
+          responsive: {
+            0: {
+              items:2
+            },
+            640: {
+              items:2
+            }
+          }
+        });
+      });
+    </script>
+  </div>
+</div>
+<div class="row" style="margin:0;">
+  <div class="col-md-6" style="padding:0;">
+    <div id="half-image-2" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/04/slider/women_new.jpg"}}) center center no-repeat;background-size:cover;width:100%;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/04/slider/women_new.jpg"}}" style="width:100%;visibility:hidden;" alt="" />
+      <div class="content" style="position:absolute;top:41%;left:15%;line-height:1;font-size:60px;font-family:'Oswald';letter-spacing:0.05em;text-transform:uppercase;text-align:left;color:#fff;">Woman’s<br>Collection</div>
+    </div>
+  </div>
+  <div id="half-content-2" class="col-md-6" style="padding:4% 6% 1.5%;position:relative;text-align:left;">
+    <h3 class="fullwidth-filter-title">New ladies Collection</h3>
+    <p class="fullwidth-filter-description">Yes, this is our new collection, check it out our new arrivals.</p>
+    <div id="women_product" class="product-padding product-banner owl-top-narrow no-border" style="margin-top: 25px;">
+      {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="women_product" product_count="4" aspect_ratio="0" image_width="400" image_height="400" product_type="3" template="owl_list.phtml"}}
+    </div>
+    <script type="text/javascript">
+      require([
+        'jquery',
+        'owl.carousel/owl.carousel.min'
+      ], function ($) {
+        $("#women_product .owl-carousel").owlCarousel({
+          loop: true,
+          margin: 0,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          navRewind: true,
+          nav: true,
+          dots: false,
+          navText: ["<em class='porto-icon-angle-left'></em>","<em class='porto-icon-angle-right'></em>"],
+          responsive: {
+            0: {
+              items:2
+            },
+            640: {
+              items:2
+            }
+          }
+        });
+      });
+    </script>
+  </div>
+</div>
+<div style="text-align:left; padding:95px 15px;background-color:#e0e2e3;">
+  <h3 class="fullwidth-filter-title" style="text-align:center;margin-bottom:10px;">Featured Products</h3>
+  <span style="text-align:center;display:block;font-size:15px;color:#646a70;letter-spacing:0.025em;margin-bottom:10px;">Check it out our new arrivals.</span>
+  <div id="fashion_product" class="product-padding no-border" style="margin-top: 25px;">
+    {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_product" product_count="8" aspect_ratio="1" image_width="400" image_height="400"  product_type="3" template="owl_list.phtml"}}
+  </div>
+  <script type="text/javascript">
+    require([
+      'jquery',
+      'owl.carousel/owl.carousel.min'
+    ], function ($) {
+      $("#fashion_product .owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        navRewind: true,
+        nav: false,
+        dots: true,
+        responsive: {
+          0: {
+            items:2
+          },
+          768: {
+            items:3
+          },
+          992: {
+            items:4
+          },
+          1200: {
+            items:5
+          }
+        }
+      });
+    });
+  </script>
+</div>
+<script type="text/javascript">
+  require([
+    'jquery'
+  ], function ($) {
+    $("#half-image-1").css("min-height",$("#half-content-1").outerHeight()+"px");
+    $("#half-image-2").css("min-height",$("#half-content-2").outerHeight()+"px");
+    setTimeout(function(){
+      $("#half-image-1").css("min-height",$("#half-content-1").outerHeight()+"px");
+      $("#half-image-2").css("min-height",$("#half-content-2").outerHeight()+"px");
+    }, 5000);
+    $(window).resize(function(){
+      setTimeout(function(){
+        $("#half-image-1").css("min-height",$("#half-content-1").outerHeight()+"px");
+        $("#half-image-2").css("min-height",$("#half-content-2").outerHeight()+"px");
+      }, 500);
+    });
+  });
+</script>
+<style type="text/css">
+.item img{
+  display: block;
+  min-width: 100%;
+  width: auto;
+  height: auto;
+  /*max-height: 680px !important;*/
+}
+.active .item {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transform: scale(1);
+}
+  .product-item-photo {
+    border-radius: 0;
+    border: 0;
+  } 
+ .content-area{
+   position:absolute;
+   top:37%;
+   left:20px;
+   text-align:left;
+}
+.owl-carousel .owl-item img{
+   display:none;
+ }
+  #banner-slider-demo-4 .slide1-content .content-area .text1 {
+    position: relative;
+    font-family:'Oswald';
+    font-size:18px;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#fff;
+    line-height:1;
+    font-weight:400;
+  }
+  #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1{
+    font-size:64px;color:#fff;letter-spacing:-0.01em;display:inline-block;display:inline-block;text-shadow: 5px 3px #92a9b3;font-weight:600;margin-top:5px;font-family:'Poppins';margin-left:-4px;margin-right: 5px;
+  }
+  #banner-slider-demo-4 .slide1-content .content-area .text1 .inner2{
+    position:absolute;top:23px;font-size:33px;font-weight: 400;font-family: 'Open Sans';
+  }
+  #banner-slider-demo-4 .slide1-content .content-area .text1 .inner3{
+    font-family:'Oswald';font-size:18px;letter-spacing:0.075em;color:#fff;font-weight:400;display:block;
+  }
+  #banner-slider-demo-4 .slide1-content .content-area .text2 {
+    font-family:'Oswald';font-size:80px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1;margin-top:30px;
+  }
+  #banner-slider-demo-4 .slide1-content .content-area .text3 {
+    font-weight:400;color:#fff;line-height:1;text-transform: uppercase;font-size: 20px;letter-spacing: 0.075em;margin-bottom:35px;
+  }
+  #banner-slider-demo-4 .slide1-content .content-area .btn-default {
+    text-transform:uppercase;padding:14px 20px;border-radius:2px;font-family:'Oswald';letter-spacing:0.05em;font-size:14px;line-height:1;color:#fff;
+  }
+  #banner-slider-demo-4 .slide2-content .content-area .text1 {
+    font-family:'Oswald';font-size:80px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:25px;
+  }
+  #banner-slider-demo-4 .slide2-content .content-area .text2 {
+    font-family:'Poppins';font-weight:600;color:#fff;line-height:1;text-transform: uppercase;font-size: 64px;letter-spacing: -0.01em;text-shadow: 5px 3px #92a9b3;margin: 0 0 25px;
+  }
+  #banner-slider-demo-4 .slide2-content .content-area .text3 {
+    font-family:'Oswald';font-size:18px;font-weight:400;letter-spacing:-0.01em;color:#fff;margin:0;text-transform:uppercase;margin: 0 0 35px;
+  }
+  #banner-slider-demo-4 .slide2-content .content-area .btn-default {
+    text-transform:uppercase;padding:14px 20px;border-radius:2px;font-family:'Oswald';letter-spacing:0.05em;font-size:14px;width:auto;height:auto;line-height:1;color:#fff;
+  }
+
+.full-screen-slider {
+     height: auto;
+}
+
+/*ipad pro */
+@media only screen and (min-width: 834px) and (orientation: portrait)
+ {
+    #banner-slider-demo-4 .slide1-content .content-area{
+      top: 9%;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area{
+      top: 12%;
+    }
+    #banner-slider-demo-4 .owl-controls {
+      display:none!important;
+    }
+   .item {
+     background:none !important ;
+    }
+    .owl-carousel .owl-item img{
+      display:block
+    }
+
+    .full-screen-slider {
+       width: 100%;
+       height: 555px;
+   }
+}
+
+/*ipad mini */
+@media only screen and (device-width: 768px) and (orientation : portrait)  {
+    #banner-slider-demo-4 .slide1-content .content-area{
+      top: 9%;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area{
+      top: 12%;
+    }
+    #banner-slider-demo-4 .owl-controls {
+      display:none!important;
+    }
+   .item {
+     background:none !important ;
+    }
+    .owl-carousel .owl-item img{
+      display:block
+    }
+    .full-screen-slider {
+       height: 512px;
+   }
+}
+
+  @media (min-width: 481px) and (max-width: 767px) and (orientation : portrait) {
+    #banner-slider-demo-4 .slide1-content .content-area{
+      top: 9%;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area{
+      top: 12%;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 {
+      font-size:10px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1 {
+      font-size: 35px; 
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner2 { 
+      top: 18px;
+      font-size: 13px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner3 { 
+      font-size: 10px; 
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text2 { 
+      font-size: 40px; 
+      margin-top: 10px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text3 { 
+      font-size: 10px; 
+      margin-bottom: 15px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .btn-default { 
+      padding: 8px 10px; 
+      font-size: 12px; 
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text1 { 
+      font-size: 40px; 
+      margin-bottom: 10px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text2 { 
+      font-size: 33px; 
+      margin: 0 0 7px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text3 { 
+      font-size: 10px; 
+      margin: 0 0 13px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .btn-default { 
+      padding: 8px 10px; 
+      font-size: 11px; 
+    }
+    #banner-slider-demo-4 .owl-controls {
+      display:none!important;
+    }
+   .item {
+     background:none !important ;
+    }
+    .owl-carousel .owl-item img{
+      display:block
+    }
+}
+
+@media only screen and (max-device-width: 425px) and (orientation : portrait)  {
+    #banner-slider-demo-4 .slide1-content .content-area{
+      top: 9%;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area{
+      top: 10%;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1 {
+      font-size: 33px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text2 {
+      font-size: 34px;
+      margin-top: 7px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text3 {
+      font-size: 9px;
+      margin-bottom: 12px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .btn-default {
+      padding: 7px 9px;
+      font-size: 10px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text1 {
+      font-size: 33px;
+      margin-bottom: 10px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text2 {
+      font-size: 30px;
+      margin: 0 0 7px;
+      text-shadow: 3px 2px #92a9b3;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .btn-default {
+      padding: 7px 9px;
+      font-size: 10px;
+    }
+    #banner-slider-demo-4 .owl-controls {
+      display:none!important;
+    }
+   .item {
+     background:none !important ;
+    }
+    .owl-carousel .owl-item img{
+      display:block
+    }
+    .full-screen-slider {
+       width: 100%;
+      height: 275px;
+   }
+}
+
+
+@media only screen and (max-device-width: 375px)  and (orientation : portrait) {
+    .full-screen-slider {
+       width: 100%;
+      height: 250px;
+   }
+}
+
+@media only screen and (max-device-width: 360px) and (orientation : portrait)  {
+    .full-screen-slider {
+       width: 100%;
+      height: 240px;
+   }
+}
+
+  @media (max-width: 320px)  and (orientation : portrait)  {
+    #banner-slider-demo-4 .slide1-content .content-area{
+      top: 6%;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area{
+      top: 6%;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1 {
+      font-size: 23px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text2 {
+      font-size: 24px;
+      margin-top: 7px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text3 {
+      font-size: 9px;
+      margin-bottom: 12px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .btn-default {
+      padding: 7px 9px;
+      font-size: 10px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text1 {
+      font-size: 33px;
+      margin-bottom: 10px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text2 {
+      font-size: 30px;
+      margin: 0 0 7px;
+      text-shadow: 3px 2px #92a9b3;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .btn-default {
+      padding: 7px 9px;
+      font-size: 10px;
+    }
+    #banner-slider-demo-4 .owl-controls {
+      display:none!important;
+    }
+   .item {
+     background:none !important ;
+    }
+    .owl-carousel .owl-item img{
+      display:block
+    }
+    .full-screen-slider {
+       width: 100%;
+       height: 213px;
+   }
+  }
+
+
+</style>
