@@ -68,7 +68,7 @@ if($product_type == null) {
                 <?php echo($iterator++ == 1) ? '<div class="item product product-item">' : '</div><div class="item product product-item">' ?>
                 <div class="product-item-info type<?php echo $product_type; ?>" data-container="product-grid">
                     <?php // Product Image ?>
-                    <div class="product photo product-item-photo">
+                    <div class="product photo product-item-photo" onclick="window.location='<?php echo $_product->getProductUrl() ?>'">
                         <a href="<?php echo $_product->getProductUrl() ?>" tabindex="-1">
                         <?php
                             if($aspect_ratio)
