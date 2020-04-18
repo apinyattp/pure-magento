@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <emertx_banktransfer>
+            <general>
+                <sender_email></sender_email>
+                <admin_email></admin_email>
+                <order_status>processing</order_status>
+                <slip_required>0</slip_required>
+                <slip_max_size>2097152</slip_max_size>
+            </general>
+        </emertx_banktransfer>
+    </default>
+</config>

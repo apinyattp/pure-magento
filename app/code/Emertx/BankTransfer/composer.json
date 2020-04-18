@@ -1,0 +1,21 @@
+{
+    "name": "emertx/module-bank-transfer",
+    "description": "Emertx Bank Transfer",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/framework": "100.0.*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.5",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Emertx\\BankTransfer\\": ""
+        }
+    }
+}

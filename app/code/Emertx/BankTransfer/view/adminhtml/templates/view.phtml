@@ -1,0 +1,169 @@
+<?php
+/* @var $block \Emertx\BankTransfer\Block\Adminhtml\Manage\View */
+$bankTransfer = $block->getBankTransfer();
+?>
+<style type="text/css">
+    .tbl-bank-transfer th {
+        width: 30%;
+    }
+</style>
+<section class="admin__page-section order-view-account-information">
+    <div class="admin__page-section-title">
+        <span class="title"><?php /* @escapeNotVerified */ echo __('Bank Payment Information') ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-information">
+            <div class="admin__page-section-item-title">
+                <span class="title">
+                    <?php /* @escapeNotVerified */ echo __('Bank Details') ?>
+                </span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <?php
+                /* @var $bankAccount \Emertx\BankTransfer\Model\BankAccount */
+                $bankAccount = $block->getBankAccount();
+                ?>
+                <table class="admin__table-secondary tbl-bank-transfer" style="margin-bottom: 30px;">
+                    <tbody>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Bank') ?></th>
+                            <td><?php echo $bankAccount ? $block->escapeHtml(\Emertx\BankTransfer\Model\BankAccount::getBankName($bankAccount->getBank())) : __('N/A'); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Account name') ?></th>
+                            <td><?php echo $bankAccount ? $block->escapeHtml($bankAccount->getAccountName()) : __('N/A'); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Account number') ?></th>
+                            <td><?php echo $bankAccount ? $block->escapeHtml($bankAccount->getAccountNumber()) : __('N/A'); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="admin__page-section-item-title">
+                <span class="title">
+                    <?php /* @escapeNotVerified */ echo __('Contact Details') ?>
+                </span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary tbl-bank-transfer" style="margin-bottom: 30px;">
+                    <tbody>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Name') ?></th>
+                            <td><?php echo $block->escapeHtml($bankTransfer->getCustomerName()); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Phone') ?></th>
+                            <td><?php echo $block->escapeHtml($bankTransfer->getCustomerPhone()); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Customer:') ?></th>
+                            <td>
+                                <?php if ($bankTransfer->getCustomerId()): ?>
+                                <?php $customer = $block->getCustomer(); ?>
+                                <?php echo $block->escapeHtml(sprintf(__('%s [ID: %s]'), $customer->getName(), $customer->getId())); ?><br>
+                                <?php echo $block->escapeHtml($customer->getEmail()); ?>
+                                <?php else: ?>
+                                <?php echo __('Guest'); ?>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Comment') ?></th>
+                            <td><?php echo $block->escapeHtml($bankTransfer->getComment()); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="admin__page-section-item-title">
+                <span class="title">
+                    <?php /* @escapeNotVerified */ echo __('Order Details') ?>
+                </span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary tbl-bank-transfer">
+                    <tbody>
+                        <?php $order = $block->getRelatedOrder(); ?>
+                        <?php if ($order): ?>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Order number') ?></th>
+                            <td><?php echo $block->escapeHtml($order->getIncrementId()); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                            <td><?php echo $block->escapeHtml($order->getConfig()->getStatusLabel($order->getStatus())); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Payment method') ?></th>
+                            <td><?php echo $block->escapeHtml($block->getPaymentMethodName($order->getPayment()->getMethod())); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Order total') ?></th>
+                            <td><?php echo $block->escapeHtml(number_format($order->getGrandTotal(), 2) . ' ' . $order->getStoreCurrencyCode()); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Customer:') ?></th>
+                            <td>
+                                <?php if ($order->getCustomerIsGuest()): ?>
+                                <?php echo $block->escapeHtml($order->getCustomerName()); ?><br>
+                                <?php echo $block->escapeHtml($order->getBillingAddress()->getFirstname() . ' ' . $order->getBillingAddress()->getLastname()); ?><br>
+                                <?php echo $block->escapeHtml($order->getCustomerEmail()); ?>
+                                <?php else: ?>
+                                <?php echo $block->escapeHtml(sprintf(__('%s [ID: %s]'), $order->getCustomerName(), $order->getCustomerId())); ?><br>
+                                <?php echo $block->escapeHtml($order->getCustomerEmail()); ?>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php else: ?>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Order number') ?></th>
+                            <td><?php echo $block->escapeHtml($bankTransfer->getOrderNumber()); ?><br>
+                                <strong style="color:red;"><?php echo __('This order number is not found'); ?></strong></td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <div class="admin__page-section-item order-account-information">
+            <div class="admin__page-section-item-title">
+                <span class="title">
+                    <?php /* @escapeNotVerified */ echo __('Transaction Details') ?>
+                </span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary tbl-bank-transfer">
+                    <tbody>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Transfer date/time') ?></th>
+                            <td>
+                                <?php
+                                $transferDate = $block->getTransferDate();
+                                echo $transferDate->format('l j F Y H:i');
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Amount') ?></th>
+                            <td><?php echo $block->escapeHtml(number_format($bankTransfer->getAmount(), 2)); ?></td>
+                        </tr>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Transfer slip') ?></th>
+                            <td>
+                                <?php if ($bankTransfer->getSlip()): ?>
+                                <img src="<?php echo $block->getSlipUrl(); ?>" style="max-width: 100%; max-height: 500px; display: block; width: auto; height: auto;"><br>
+                                <a href="<?php echo $block->getSlipUrl(); ?>" target="_blank"><?php echo __('View full size'); ?></a>
+                                <?php else: ?>
+                                <?php echo __('N/A'); ?>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

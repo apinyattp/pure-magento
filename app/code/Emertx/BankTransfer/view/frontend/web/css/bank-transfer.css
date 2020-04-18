@@ -1,0 +1,41 @@
+.tbl-pending-order,
+.tbl-bank-accounts {
+  border-collapse: collapse;
+  border: 1px solid #000;
+  margin-bottom: 30px; }
+  .tbl-pending-order td, .tbl-pending-order th,
+  .tbl-bank-accounts td,
+  .tbl-bank-accounts th {
+    text-align: center;
+    border: 1px solid #000;
+    vertical-align: middle; }
+  .tbl-pending-order th,
+  .tbl-bank-accounts th {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold; }
+    .tbl-pending-order th.bank,
+    .tbl-bank-accounts th.bank {
+      text-align: left; }
+  .tbl-pending-order td.bank-name,
+  .tbl-bank-accounts td.bank-name {
+    text-align: left;
+    line-height: 40px; }
+  .tbl-pending-order .bank-logo,
+  .tbl-bank-accounts .bank-logo {
+    width: 36px;
+    height: auto;
+    margin-right: 10px; }
+  .tbl-pending-order label,
+  .tbl-bank-accounts label {
+    margin-bottom: 0; }
+
+.frm-inform-payment select {
+  width: auto;
+  display: inline-block; }
+.frm-inform-payment #ebt_date {
+  background-color: #fff; }
+.frm-inform-payment .tbl-bank-accounts {
+  margin-bottom: 0; }
+
+/*# sourceMappingURL=bank-transfer.css.map */

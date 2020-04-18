@@ -17,5 +17,10 @@
         <referenceBlock name="report.bugs" remove="true"/>
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="reviews.tab" remove="true" />
+       <referenceBlock name="product.review.form" remove="true" />
+       <referenceBlock name="product.info.review" remove="true" />
+    <referenceBlock name="customer-account-navigation-product-reviews-link" remove="true" />
+    <referenceBlock name="review_view" remove="true" />
     </body>
 </page>

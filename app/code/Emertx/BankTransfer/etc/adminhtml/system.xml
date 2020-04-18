@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="emertx_banktransfer" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Bank Transfer</label>
+            <tab>sales</tab>
+            <resource>Emertx_BankTransfer::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="sender_email" translate="label comment" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender email</label>
+                    <comment><![CDATA[- Sender email of the payment notification<br>- Leave blank to disable]]></comment>
+                </field>
+                <field id="admin_email" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Recipient emails</label>
+                    <comment><![CDATA[- Email for receiving inform payment notification<br>Comma (,) for multiple recipients<br>- Leave blank to disable]]></comment>
+                </field>
+                <field id="order_status" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+                    <comment>New order status after the payment is approved</comment>
+                </field>
+                <field id="slip_required" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is slip required?</label>
+                    <comment>Choose whether the transfer slip is required</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="slip_max_size" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Max size for slip</label>
+                    <validate>validate-digits</validate>
+                    <comment><![CDATA[File size in bytes (default 2097152 or 2MB)]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

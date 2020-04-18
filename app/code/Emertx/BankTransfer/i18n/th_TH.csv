@@ -1,0 +1,148 @@
+Save,Save
+"Save and Continue Edit","Save and Continue Edit"
+Delete,Delete
+"Edit Bank Account '%1'","Edit Bank Account '%1'"
+"New Bank Account","New Bank Account"
+"Bank Account Information","Bank Account Information"
+"General Information","General Information"
+Status,Status
+Bank,ธนาคาร
+"Account Number","Account Number"
+"Account Name","Account Name"
+Sort,Sort
+"Items are sorted in ascending order","Items are sorted in ascending order"
+Approve,Approve
+"Approve Bank Transfer Payment","Approve Bank Transfer Payment"
+"Bank Transfer Approval Form","Bank Transfer Approval Form"
+"Order Information","Order Information"
+"Order Number","Order Number"
+Note,Note
+"The item has been deleted.","The item has been deleted."
+"We can't find a item to delete.","We can't find a item to delete."
+"Bank Account","Bank Account"
+"Manage Bank Account","Manage Bank Account"
+"This item no longer exists.","This item no longer exists."
+"Edit Bank Account","Edit Bank Account"
+"You saved this item.","You saved this item."
+"Something went wrong while saving the item.","Something went wrong while saving the item."
+"Bank Transfer","Bank Transfer"
+"Approve Bank Transfer","Approve Bank Transfer"
+"This item had been canceled.","This item had been canceled."
+"This item had been approved.","This item had been approved."
+"The item has been canceled.","The item has been canceled."
+"We can't find a item to canceled.","We can't find a item to canceled."
+"Manage Bank Transfer","Manage Bank Transfer"
+"The payment is not found.","The payment is not found."
+"The payment had already been processed.","The payment had already been processed."
+"The order is not found.","The order is not found."
+"The order had already been processed.","The order had already been processed."
+"Bank payment ID: %s is approved","Bank payment ID: %s is approved"
+"Bank payment ID: %s has been approved.","Bank payment ID: %s has been approved."
+"Method is now allowed","Method is now allowed"
+"Please correct the transfer amount","Please correct the transfer amount"
+"Please choose the bank account","กรุณาเลือกบัญชีที่โอน"
+"Please enter transfer date","Please enter transfer date"
+"Please enter transfer time","Please enter transfer time"
+"Please enter the amount of transfer","Please enter the amount of transfer"
+"Please correct the bank account","Please correct the bank account"
+"Please correct the transfer date","Please correct the transfer date"
+"Please choose an order you want to pay","Please choose an order you want to pay"
+"Please correct the order you want to pay","Please correct the order you want to pay"
+"Please choose only your own orders to confirm the payment","Please choose only your own orders to confirm the payment"
+"Please enter the order number","Please enter the order number"
+"Transfer slip is too large (limit up to %sMB)","Transfer slip is too large (limit up to %sMB)"
+"Please attach the transfer slip","Please attach the transfer slip"
+"Bank name: %s","Bank name: %s"
+"Account number: %s","Account number: %s"
+"Account name: %s","Account name: %s"
+"Order number: %s","Order number: %s"
+"Transfer date/time: %s","Transfer date/time: %s"
+"Amount: %s","Amount: %s"
+"Slip: <a href=""%s"" target=""_blank"">Download</a>","Slip: <a href=""%s"" target=""_blank"">Download</a>"
+"Customer name: %s","Customer name: %s"
+"Phone: %s","Phone: %s"
+"Comment: %s","Comment: %s"
+"We have received your payment details. Thank you.","We have received your payment details. Thank you."
+Enabled,Enabled
+Disabled,Disabled
+"Bangkok Bank","ธนาคารกรุงเทพ"
+"Government Housing Bank","ธนาคารอาคารสงเคราะห์"
+"Government Savings Bank","ธนาคารออมสิน"
+"Islamic Bank of Thailand","ธนาคารอิสลาม"
+Kasikornbank,ธนาคารกสิกรไทย
+"Bank of Ayudhya","ธนาคารกรุงศรีอยุธยา"
+"Krung Thai Bank","ธนาคารกรุงไทย"
+"Siam Commercial Bank","ธนาคารไทยพาณิชย์"
+"Thanachart Bank","ธนาคารธนชาต"
+"TMB Bank","ธนาคารทหารไทย"
+"UOB Bank","ธนาคารยูโอบี"
+Pending,Pending
+Completed,Completed
+Canceled,Canceled
+Edit,Edit
+"Delete record","Delete record"
+"Are you sure you wan't to delete this record?","Are you sure you wan't to delete this record?"
+Cancel,Cancel
+"Are you sure you wan't to cancel this record?","Are you sure you wan't to cancel this record?"
+"Bank Payment Information","Bank Payment Information"
+"Bank Details","Bank Details"
+N/A,N/A
+"Account name","ชื่อบัญชี"
+"Account number","Account number"
+"Contact Details","Contact Details"
+Name,Name
+Phone,โทรศัพท์
+Customer:,Customer:
+"%s [ID: %s]","%s [ID: %s]"
+Guest,Guest
+Comment,รายละเอียดเพิ่มเติม
+"Order Details","Order Details"
+"Order number","หมายเลขคำสั่งซื้อ"
+"Payment method","วิธีการชำระเงิน"
+"Order total","จำนวนเงิน"
+"This order number is not found","ไม่พบรายการสั่งซื้อที่รอการชำระเงิน"
+"Transaction Details","Transaction Details"
+"Transfer date/time","Transfer date/time"
+Amount(Baht),จำนวนเงิน (บาท)
+"Transfer slip","หลักฐานการโอน"
+"View full size","View full size"
+"* Required Fields","* ข้อมูลจำเป็น"
+"Transfer Details","รายละเอียดการโอนเงิน"
+"Bank account","บัญชีที่โอน"
+"Account No.","เลขที่บัญชี"
+"Transfer date","วันที่โอน"
+"Transfer time","เวลาที่โอน"
+Baht,บาท
+"Allowed file types: PDF, JPG, GIF, PNG","รองรับไฟล์ PDF และรูปภาพประเภท JPG, GIF, PNG เท่านั้น"
+"Maximum file size: %sMB","ขนาดไฟล์สูงสุด %sMB"
+Orders,รายการสั่งซื้อ
+"Pending orders","รายการสั่งซื้อที่รอการชำระเงิน"
+"Order date","วันที่สั่งซื้อ"
+"Contact Information","ข้อมูลติดต่อ"
+Submit,แจ้งโอนเงิน
+"Place Order","Place Order"
+"Please choose the order to be paid","กรุณาเลือกระบุรายการสั่งซื้อที่ต้องการแจ้งโอนเงิน"
+"The payment details could not be saved.","The payment details could not be saved."
+General,General
+"Admin email","Admin email"
+"- Email for receiving inform payment notification<br>- Leave blank to disable","- Email for receiving inform payment notification<br>- Leave blank to disable"
+"New Order Status","New Order Status"
+"New order status after the payment is approved","New order status after the payment is approved"
+"Is slip required?","Is slip required?"
+"Choose whether the transfer slip is required","Choose whether the transfer slip is required"
+"Max size for slip","Max size for slip"
+"File size in bytes (default 2097152 or 2MB)","File size in bytes (default 2097152 or 2MB)"
+"Add New","Add New"
+Select...,Select...
+Published,Published
+20,20
+30,30
+50,50
+100,100
+200,200
+ID,ID
+Created,Created
+Modified,Modified
+"Customer name","Customer name"
+"Customer phone","Customer phone"
+"Transfer Date/Time","Transfer Date/Time"

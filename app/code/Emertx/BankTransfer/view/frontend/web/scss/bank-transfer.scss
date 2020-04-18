@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.tbl-pending-order,
+.tbl-bank-accounts {
+    border-collapse: collapse;
+    border: 1px solid #000;
+    margin-bottom: 30px;
+    
+    td, th {
+        text-align: center;
+        border: 1px solid #000;
+        vertical-align: middle;
+    }
+    
+    th {
+        background-color: #000;
+        color: #fff;
+        font-weight: bold;
+        
+        &.bank {
+            text-align: left;
+        }
+    }
+    
+    td {
+        &.bank-name {
+            text-align: left;
+            line-height: 40px;
+        }
+    }
+    
+    .bank-logo {
+        width: 36px; height: auto;
+        margin-right: 10px;
+    }
+    
+    label {
+        margin-bottom: 0;
+    }
+    
+}
+
+.frm-inform-payment {
+    
+    select {
+        width: auto;
+        display: inline-block;
+    }
+    
+    .fs-transfer {
+        .form-control {
+            
+        }
+    }
+    
+    #ebt_date {
+        background-color: #fff;
+    }
+    
+    .tbl-bank-accounts {
+        margin-bottom: 0;
+    }
+}

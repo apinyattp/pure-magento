@@ -1,0 +1,16 @@
+<!--@subject {{trans "Bank Transfer Payment Notification"}} @-->
+
+{{trans 'Bank name: %bankName' bankName=$bankName}}<br>
+{{trans 'Account number: %accountNo' accountNo=$accountNo}}<br>
+{{trans 'Account name: %accountName' accountName=$accountName}}<br>
+<br>
+{{trans 'Order number: %orderNumber' orderNumber=$orderNumber}}<br>
+{{trans 'Transfer date/time: %transferDateTime' transferDateTime=$transferDateTime}}<br>
+{{trans 'Amount: %amount' amount=$amount}}<br>
+{{if hasSlip}}
+{{trans 'Slip: %slipUrl' slipUrl=$slipUrl}}<br>
+{{/if}}
+<br>
+{{trans 'Customer name: %customerName' customerName=$customerName}}<br>
+{{trans 'Phone: %phone' phone=$phone}}<br>
+{{trans 'Comment: %comment' comment=$comment}}

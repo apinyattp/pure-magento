@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-04-17 05:08:15 */
+ * 2020-04-17 10:14:48 */
 body.boxed {
 }
 @media (min-width: 768px) {
@@ -894,6 +894,27 @@ body.boxed {
     .footer-middle .block-bottom .custom-block {
         float: left !important;
     }
+    .catalog-product-view.page-layout-2columns-right:not(.weltpixel-quickview-catalog-product-view):not(.weltpixel_quickview-catalog_product-view) .sidebar.sidebar-additional {
+        display: block;
+        position: fixed;
+        background: #fff;
+        z-index: 999;
+        padding: 20px 5px;
+        top: 0!important;
+        height: auto;
+        overflow-y: auto;
+        right: 0;
+        max-width: 100%;
+        width: 280px;
+        box-shadow: none;
+        border: 0;
+        opacity: 100;
+        visibility: visible;
+        transition: opacity .3s;
+    }
+    .owl-carousel .owl-item .owl-lazy {
+        width: 100%;
+    }
 }
 body.layout-fullwidth .page-wrapper > .breadcrumbs {
     max-width: none;
@@ -993,29 +1014,22 @@ body.layout-fullwidth .page-wrapper > .breadcrumbs .items {
   padding: 0 2%;
 }
 
-/*
-.catalog-product-view.page-layout-2columns-right:not(.weltpixel-quickview-catalog-product-view):not(.weltpixel_quickview-catalog_product-view) .sidebar.sidebar-additional {
-    display: block;
-    position: fixed;
-    background: #fff;
-    z-index: 999;
-    padding: 20px 5px;
-    top: 0!important;
-    height: auto;
-    overflow-y: auto;
-    right: 0;
-    max-width: 100%;
-    width: 280px;
-    box-shadow: none;
-    border: 0;
-    opacity: 100;
-    visibility: visible;
-    transition: opacity .3s;
-}
-.owl-carousel .owl-item .owl-lazy {
-  width: 100%;
-} */
-
 .fotorama__arr--next{
     right:0px !important;
+}
+
+
+@media (min-width: 2560px){
+    .fotorama__stage {
+        height:958px !important;
+        width:958px !important;
+    }
+}
+
+.swatch-option.selected {
+    outline: none;
+}
+
+.swatch-option:focus {
+ box-shadow: none;
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Emertx_BankTransfer::manage" title="Bank Transfer" module="Emertx_BankTransfer" sortOrder="100" parent="Magento_Sales::sales_operation" action="emertx_bank_transfer/manage" resource="Emertx_BankTransfer::manage"/>
+        <add id="Emertx_BankTransfer::bank_account" title="Bank Accounts" module="Emertx_BankTransfer" sortOrder="101" parent="Magento_Sales::sales_operation" action="emertx_bank_transfer/account" resource="Emertx_BankTransfer::manage"/>
+    </menu>
+</config>

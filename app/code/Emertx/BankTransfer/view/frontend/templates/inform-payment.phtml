@@ -1,0 +1,179 @@
+<?php
+/* @var $block \Emertx\BankTransfer\Block\InformPayment */
+?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form frm-inform-payment"
+                action="<?php echo $block->getUrl('bank-transfer/pay'); ?>"
+                id="frmInformPayment"
+                method="post"
+                enctype="multipart/form-data"
+                data-hasrequired="<?php echo __('* Required Fields') ?>"
+                data-mage-init='{"validation":{}}'>
+
+                <fieldset class="fieldset fs-transfer">
+                    
+                    <legend><?php echo $block->escapeHtml(__('Transfer Details')); ?></legend>
+                    
+                    <div class="field form-group bank-account required">
+                        <label class="label"><span><?php echo $block->escapeHtml(__('Bank account')); ?></span></label>
+                        <div class="control">
+                            <?php $bankAccounts = $block->getBankAccounts(); ?>
+                            <?php if ($bankAccounts): ?>
+                            <table class="tbl-bank-accounts">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="bank"><?php echo $block->escapeHtml(__('Bank')); ?></th>
+                                        <th class="bank-accno"><?php echo $block->escapeHtml(__('Account No.')); ?></th>
+                                        <th class="bank-accname"><?php echo $block->escapeHtml(__('Account Name')); ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($bankAccounts as $bankAccount): ?>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" value="<?php echo $bankAccount->getId(); ?>" name="bank_account_id" id="bank_account_id_<?php echo $bankAccount->getId(); ?>">
+                                        </td>
+                                        <td class="bank-name">
+                                            <label for="bank_account_id_<?php echo $bankAccount->getId(); ?>">
+                                                <img src="<?php echo $block->getBankLogoUrl($bankAccount->getBank()); ?>" class="bank-logo">
+                                                <span><?php echo $block->escapeHtml($block->getBankName($bankAccount->getBank())); ?></span>
+                                            </label>
+                                        </td>
+                                        <td class="bank-accno"><?php echo $block->escapeHtml($bankAccount->getAccountNumber()); ?></td>
+                                        <td class="bank-accname"><?php echo $block->escapeHtml($block->getTranslatedAccountName($bankAccount)); ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="field form-group transfer-date required">
+                        <label class="label" for="ebt_date"><span><?php echo $block->escapeHtml(__('Transfer date')); ?></span></label>
+                        <div class="control">
+                            <input name="date" id="ebt_date" title="<?php echo $block->escapeHtml(__('Transfer date')); ?>" value="<?php echo $block->escapeHtml($block->timezone->date()->format('Y-m-d')); ?>" class="input-text form-control" readonly="readonly" type="text" data-validate="{required:true}"/>
+                        </div>
+                    </div>
+                    <div class="field form-group transfer-time required">
+                        <label class="label" for="ebt_hour"><span><?php echo $block->escapeHtml(__('Transfer time')); ?></span></label>
+                        <div class="control">
+                            <select class="input-text form-control" name="hour" id="ebt_hour">
+                                <?php for($i=0; $i<24; $i++): ?>
+                                <option value="<?php echo $i; ?>" <?php echo $block->timezone->date()->format('H') == $i ? 'selected' : ''; ?>><?php printf('%02d', $i); ?></option>
+                                <?php endfor; ?>
+                            </select> : 
+                            <select class="input-text form-control" name="minute" id="ebt_minute">
+                                <?php for($i=0; $i<60; $i++): ?>
+                                <option value="<?php echo $i; ?>" <?php echo $block->timezone->date()->format('i') == $i ? 'selected' : ''; ?>><?php printf('%02d', $i); ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field form-group amount required">
+                        <label class="label" for="ebt_amount"><span><?php echo $block->escapeHtml(__('Amount')); ?></span></label>
+                        <div class="control">
+                            <div class="input-group">
+                                <input name="amount" id="ebt_amount" title="<?php echo $block->escapeHtml(__('Amount')); ?>" value="" class="input-text form-control" type="number"  data-validate="{required:true,'validate-number':true}" />
+                                <div class="input-group-addon"><?php echo $block->escapeHtml(__('Baht')); ?></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field form-group slip <?php echo $block->isSlipRequired() ? 'required': ''; ?>">
+                        <label class="label" for="ebt_slip"><span><?php echo $block->escapeHtml(__('Transfer slip')); ?></span></label>
+                        <div class="control">
+                            <input name="slip" id="ebt_slip" title="<?php echo $block->escapeHtml(__('Transfer slip')); ?>" class="input-text form-control" type="file" />
+                            <p class="help-block">
+                                <?php echo $block->escapeHtml(__('Allowed file types: PDF, JPG, GIF, PNG')); ?><br>
+                                <?php echo $block->escapeHtml(sprintf(__('Maximum file size: %sMB'), $block->getMaximumFileSize())); ?>
+                            </p>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="fieldset">
+                    
+                    <legend><?php echo $block->escapeHtml(__('Orders')); ?></legend>
+
+                    <div class="field form-group paid-order required">
+                        <?php $saleOrders = $block->getUnpaidBankTransferOrders(); ?>
+                        <?php if ($saleOrders): ?>
+                        <label class="label"><span><?php echo $block->escapeHtml(__('Pending orders')); ?></span></label>
+                        <div class="control">
+                            <table class="tbl-pending-order">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="ordno"><?php echo $block->escapeHtml(__('Order number')); ?></th>
+                                        <th class="orddate"><?php echo $block->escapeHtml(__('Order date')); ?></th>
+                                        <th class="ordtotal"><?php echo $block->escapeHtml(__('Order total')); ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php /* @var $saleOrder Magento\Sales\Model\Order */ ?>
+                                    <?php foreach($saleOrders as $saleOrder): ?>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" value="<?php echo $saleOrder->getId(); ?>" name="order_id" id="order_id_<?php echo $saleOrder->getId(); ?>">
+                                        </td>
+                                        <td class="ordno">
+                                            <label for="order_id_<?php echo $saleOrder->getId(); ?>">
+                                                <?php echo $block->escapeHtml($saleOrder->getRealOrderId()); ?>
+                                            </label>
+                                        </td>
+                                        <td class="orddate"><?php /* @escapeNotVerified */ echo $block->formatDate($saleOrder->getCreatedAt(), \IntlDateFormatter::LONG) ?></td>
+                                        <td class="ordtotal"><?php /* @escapeNotVerified */ echo $saleOrder->formatPrice($saleOrder->getGrandTotal()) ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <?php else: ?>
+                        <label class="label" for="ebt_orderno"><span><?php echo $block->escapeHtml(__('Order number')); ?></span></label>
+                        <div class="control">
+                            <input name="order_number" id="ebt_orderno" title="<?php echo $block->escapeHtml(__('Order number')); ?>" value="" class="input-text form-control" type="text" data-validate="{required:true}"/>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    
+                </fieldset>
+                <fieldset class="fieldset">
+                    <legend><?php echo $block->escapeHtml(__('Contact Information')); ?></legend>
+                    <div class="field form-group name">
+                        <label class="label" for="ebt_name"><span><?php echo $block->escapeHtml(__('Name')); ?></span></label>
+                        <div class="control">
+                            <input name="name" id="ebt_name" title="<?php echo $block->escapeHtml(__('Name')); ?>" value="<?php echo $block->escapeHtml($block->getCustomerName()); ?>" class="input-text form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="field form-group phone">
+                        <label class="label" for="ebt_phone"><span><?php echo $block->escapeHtml(__('Phone')); ?></span></label>
+                        <div class="control">
+                            <input name="phone" id="ebt_phone" title="<?php echo $block->escapeHtml(__('Phone')); ?>" value="<?php echo $block->escapeHtml($block->getCustomerPhone()); ?>" class="input-text form-control" type="tel" />
+                        </div>
+                    </div>
+                    <div class="field form-group comment">
+                        <label class="label" for="ebt_comment"><span><?php echo $block->escapeHtml(__('Comment')); ?></span></label>
+                        <div class="control">
+                            <textarea name="comment" id="ebt_comment" title="<?php echo $block->escapeHtml(__('Comment')); ?>" class="input-text form-control" cols="5" rows="3"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="button" title="<?php echo $block->escapeHtml(__('Submit')); ?>" class="action submit btn btn-primary btn-lg">
+                            <span><?php echo $block->escapeHtml(__('Submit')); ?></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <script type="text/x-magento-init">
+            {
+                "*": {
+                    "Emertx_BankTransfer/js/inform": {}
+                }
+            }
+            </script>
+        </div>
+    </div>
+</div>
