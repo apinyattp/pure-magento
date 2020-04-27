@@ -20,7 +20,8 @@
         <referenceBlock name="reviews.tab" remove="true" />
        <referenceBlock name="product.review.form" remove="true" />
        <referenceBlock name="product.info.review" remove="true" />
-    <referenceBlock name="customer-account-navigation-product-reviews-link" remove="true" />
-    <referenceBlock name="review_view" remove="true" />
+       <referenceBlock name="customer-account-navigation-product-reviews-link" remove="true" />
+       <referenceBlock name="review_view" remove="true" />
+       <referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
     </body>
 </page>

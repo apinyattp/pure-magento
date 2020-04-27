@@ -156,6 +156,9 @@ class Topmenu extends \Magento\Framework\View\Element\Template
                     if(count($sub_children) > 0) {
                         $html .= '<div class="open-children-toggle"></div>';
                     }
+                    if($level == 1) {
+                        $html .= '<div class="hidden-sm hidden-xs img-header-underline" id="img-header-'.$child->getName().'"><div class="title">'.$child->getName().'</div></div>';
+                    }
                     if($level == 1 && $sw_menu_icon_img) {
                         $html .= '<div class="menu-thumb-img"><a class="menu-thumb-link" href="'.$this->_categoryHelper->getCategoryUrl($child).'"><img src="' . $this->_helper->getBaseUrl().'catalog/category/' . $sw_menu_icon_img . '" alt="'.$child->getName().'"/></a></div>';
                     }
@@ -164,7 +167,11 @@ class Topmenu extends \Magento\Framework\View\Element\Template
                         $html .= '<img class="menu-thumb-icon" src="' . $this->_helper->getBaseUrl().'catalog/category/' . $sw_menu_icon_img . '" alt="'.$child->getName().'"/>';
                     elseif($sw_menu_font_icon)
                         $html .= '<em class="menu-thumb-icon '.$sw_menu_font_icon.'"></em>';
-                    $html .= '<span>'.$child->getName();
+                    if($level == 1) {
+                        $html .= '<span>View all';
+                    }else{
+                        $html .= '<span>'.$child->getName();
+                    }
                     if($sw_menu_cat_label)
                         $html .= '<span class="cat-label cat-label-'.$sw_menu_cat_label.'">'.$this->_megamenuConfig['cat_labels'][$sw_menu_cat_label].'</span>';
                     $html .= '</span></a>';
