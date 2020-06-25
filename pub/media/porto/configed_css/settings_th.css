@@ -1,7 +1,11 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-04-24 10:42:13 */
-body.boxed {
+ * 2020-06-25 01:47:25 */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap")body.boxed {
 }
 @media (min-width: 768px) {
     .page-layout-1column .product-info-main, .page-layout-2columns-left .product-info-main, .page-layout-2columns-right .product-info-main, .page-layout-3columns .product-info-main {
@@ -54,9 +58,23 @@ body.boxed {
     color: #fff;
     z-index: 6;
 }
+.logo { max-width:100%;}
+.page-header.type17 .top-links-icon a {
+     font-family: 'Libre Baskerville';
+     font-size: 11px;
+}
+.page-header.type17 .header.panel .switcher strong {
+      font-family: 'Libre Baskerville';
+      font-size: 11px;
+      color:#fff;
+}
+.page-header .switcher .options .action.toggle:after, .page-header.type17 .minicart-wrapper .action.showcart, .page-header.type17 .header.panel .minicart-wrapper .action.showcart:before, .page-header.header-newskin .minicart-wrapper .action.showcart:before { color: #fff;}
+body.layout-fullwidth .page-header .header.panel {
+  text-align:right;
+}
 .page-header.type17 .logo {z-index: 6;}
 .page-header.type17.sticky-header .nav-toggle + .logo {display: none;}
-.page-header.type17.sticky-header .logo img{height: auto;max-height: 50px;}
+.page-header.type17.sticky-header .logo img{height: auto;}
 .page-header.type17.sticky-header .custom-block span,
 .page-header.type17.sticky-header .top-links-icon,
 .page-header.type17.sticky-header .top-links-icon a {
@@ -98,13 +116,13 @@ body.boxed {
     width: 100%;
 }
 .onepage-category .category-detail .title-menu > a {
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     text-transform: uppercase;
     letter-spacing: 0.025em;
     font-weight: 400;
 }
 .onepage-category .category-detail .products-area .category-link {
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     font-size: 13px;
     font-weight: 400 !important;
     letter-spacing: 0.1em;
@@ -286,7 +304,7 @@ body.boxed {
     padding: 10px 20px;
     background-color: #010204;
     color: #fff;
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     text-transform: uppercase;
     border-radius: 2px;
     margin-top: 31px;
@@ -429,7 +447,7 @@ body.boxed {
     border-color: #dae2e6;
 }
 .product-options-bottom .price-box .price-container .price, .product-info-price .price-box .price-container .price {
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     font-size: 21px;
     font-weight: 700;
     letter-spacing: 0.005em;
@@ -462,7 +480,7 @@ body.boxed {
     right: 4px;
 }
 .product-info-main .box-tocart .input-text.qty {
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     display: inline-block;
     vertical-align: middle;
     height: 43px;
@@ -493,7 +511,7 @@ body.boxed {
     font-size: 16px;
 }
 .action.primary,.action.primary:active {
-    font-family: "Oswald";
+    font-family: "Libre Baskerville";
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -620,7 +638,7 @@ body.boxed {
     line-height: 1;
 }
 .footer-top .subcribe .block-title strong {
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 0.075em;
@@ -639,7 +657,7 @@ body.boxed {
     padding-bottom: 12px;
 }
 .footer-top .subcribe .block-title strong {
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 0.075em;
@@ -665,7 +683,7 @@ body.boxed {
     margin-bottom: 15px;
 }
 .footer-middle .block .block-title strong,.footer-top .block .block-title strong {
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 0.075em;
@@ -755,10 +773,17 @@ body.boxed {
         float: right;
     }
 @media (min-width: 768px){
+  header.page-header.sticky-header .minicart-wrapper { top: 42%; }
+   .page-header.type17 .top-links-icon:before {
+      top: 44%;
+   }
+.page-header.type17.sticky-header .navigation > ul { padding: 10px 0 ; }
+   .page-header.type17 .nav-sections { top: -10%;}
     .page-header.type17.sticky-header .sticky-logo {margin-left: -15px;z-index: 6;pointer-events: all;}
     .page-header.type17 .navigation > ul {
-        padding-right: 0;
-        margin-left: -20px;
+        padding: 0% 0;
+       border-top: 1px solid #fff;
+       text-align: left;
     }
     .page-header.type17.sticky-header .header.panel {padding-right: 90px;}
     .page-header.type17 .header.panel {margin-left: 0 !important;}
@@ -891,11 +916,13 @@ body.boxed {
     }
 
     .page-header.type17 .navigation li.level0 > .level-top {
+        font-family: 'Libre Baskerville';
         letter-spacing: 0.07em;
+        font-size: 11px;
     }
 
     header.page-header.sticky-header .navigation li.level0>.level-top {
-        padding: 0 10px;
+        padding: 0 6px;
     }
 
     .page-header.header-newskin .navigation li.level0>.level-top {
@@ -908,15 +935,15 @@ body.boxed {
 }
 @media (min-width: 1200px){
     .cms-index-index .page-header.type17 .header.content {
-        padding-left: 9.3%;
-        padding-right: 5%;
+        /*padding-left: 9.3%;
+        padding-right: 5%;*/
     }
     .page-header.type17 .header.content {
-        padding-left: 10.3%;
-        padding-right: 3%;
+        /* padding-left: 10.3%;
+        padding-right: 3%; */
         max-width: 100%;
-        padding-top: 22px;
-        padding-bottom: 22px;
+        /* padding-top: 22px;
+        padding-bottom: 22px; */
     }
     .fotorama__stage {
         height:430px !important;
@@ -1061,7 +1088,7 @@ body.layout-fullwidth .page-wrapper > .breadcrumbs .items {
 .products-grid .product-item-details .product-item-actions .tocart {
     text-transform: uppercase;
     font-size: 12.53px;
-    font-family: 'Oswald';
+    font-family: 'Libre Baskerville';
     font-weight: 400;
     letter-spacing: 0.025em;
     color: #6f6e6c;
@@ -1121,4 +1148,20 @@ body.layout-fullwidth .page-wrapper > .breadcrumbs .items {
 
 .block-category-list .block-content .item a {
    text-transform: capitalize;
+}
+
+.product-item-info .product.name a {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.price-box .price {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    float: right;
+}
+
+.product-item-info.type3 .product-item-details {
+    font-family: 'Open Sans', sans-serif;
 }

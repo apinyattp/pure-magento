@@ -358,29 +358,32 @@
         </div>
     </div>
 <?php elseif($header_type == 17 ): ?>
-    <div class="header content">
-        <?php echo $this->getChildHtml("logo"); ?>
-        <div class="panel header">
-            <div class="top-panel">
-                <?php echo $this->getChildHtml("skip_to_content"); ?>
-                <?php echo $this->getChildHtml("custom_block"); ?>
-                <div class="top-links-area">
-                    <div class="top-links-icon"><a href="javascript:void(0)"><?php echo __('links');?></a></div>
-                    <?php echo $this->getChildHtml("header.links"); ?>
+    <div class="row header content">
+        <div class="col-3"><?php echo $this->getChildHtml("logo"); ?></div>
+        <div class="col-9 row">
+            <div class="panel header col-12">
+                <div class="top-panel">
+                    <?php echo $this->getChildHtml("skip_to_content"); ?>
+                    <?php echo $this->getChildHtml("custom_block"); ?>
+                    <div class="top-links-area">
+                        <div class="top-links-icon"><a href="javascript:void(0)"><?php echo __('links');?></a></div>
+                        <?php echo $this->getChildHtml("header.links"); ?>
+                    </div>
+                    <span data-action="toggle-nav" class="action nav-toggle"><span><?php echo __('Toggle Nav') ?></span></span>
+                    <div class="search-area">
+                        <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
+                        <?php echo $this->getChildHtml("top.search"); ?>
+                    </div>
                 </div>
-                <span data-action="toggle-nav" class="action nav-toggle"><span><?php echo __('Toggle Nav') ?></span></span>
-                <div class="search-area">
-                    <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
-                    <?php echo $this->getChildHtml("top.search"); ?>
+                <div class="bottom-panel">
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <?php echo $this->getChildHtml("minicart"); ?>
                 </div>
             </div>
-            <div class="bottom-panel">
-                <?php echo $this->getChildHtml("currency"); ?>
-                <?php echo $this->getChildHtml("store_language"); ?>
-                <?php echo $this->getChildHtml("minicart"); ?>
-            </div>
+            <?php echo $this->getChildHtml("navigation.sections"); ?>
         </div>
-        <?php echo $this->getChildHtml("navigation.sections"); ?>
+       
     </div>
 <?php elseif($header_type == 19 ): ?>
     <div class="header content">

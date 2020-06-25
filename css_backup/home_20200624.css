@@ -1,0 +1,892 @@
+<div class="full-screen-slider">
+  <div id="banner-slider-demo-4" class="owl-carousel owl-bottom-narrow owl-banner-carousel">
+    <div class="item" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/19/slider/THE-NEXT-6.jpg"}}) 80% no-repeat; background-size:cover">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/19/slider/THE-NEXT-6.jpg"}}" alt=""/>
+      <div class="slide1-content content" style="width:100%;height:100%;position:absolute;left:0;top:0; display:none;">
+        <div class="container" style="height:100%;position:relative;">
+          <div class="content-area">
+            <div class="text1" style="">up to<br><b class="inner1">50</b><span class="inner2">%<br><b class="inner3">Off</b></span></div>
+            <h2 class="text2">summer sale</h2>
+            <p class="text3" style="">Now starting at <b style="font-weight:700;">$99.00</b></p>
+            <a href="#" class="btn btn-default">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/19/slider/THE-NEXT-6.jpg"}}) 80% no-repeat; background-size:cover;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/19/slider/THE-NEXT-6.jpg"}}" alt=""/>
+      <div class="slide1-content content" style="width:100%;height:100%;position:absolute;left:0;top:0;display:none" >
+        <div class="container" style="height:100%;position:relative;">
+          <div class="content-area">
+            <div class="text1" style="">up to<br><b class="inner1">50</b><span class="inner2">%<br><b class="inner3">Off</b></span></div>
+            <h2 class="text2">summer sale</h2>
+            <p class="text3" style="">Now starting at <b style="font-weight:700;">$99.00</b></p>
+            <a href="#" class="btn btn-default">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    require([
+      'jquery',
+      'owl.carousel/owl.carousel.min'
+    ], function ($) {
+      $("#banner-slider-demo-4").owlCarousel({
+        items: 1,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        navRewind: true,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        loop: true,
+        nav: false,
+        dots:true,
+        responsiveClass: true,
+       singleItem:true,
+        navText: ["<em class='porto-icon-chevron-left'></em>","<em class='porto-icon-chevron-right'></em>"]
+      });
+      $(".main-container").remove();
+    });
+  </script>
+</div>
+
+<div class="row" style="margin:0;">
+  <div class="col-md-7 col-sm-12" style="padding:0;">
+    <div id="half-image-2" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/13/home/THE-NEXT-2.jpg"}}) center center no-repeat;background-size:cover;width:100%;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/THE-NEXT-2.jpg"}}" style="width:100%;visibility:hidden;" alt="" />
+    </div>
+  </div>
+  <div id="half-content-2" class="col-md-5 col-sm-12" style="padding:4% 6% 1.5%;position:relative;text-align:left;background-color:#fff">
+      <h3 class="fullwidth-filter-title text-about-title">why the next</h3>
+    <p class="text-about-desc">Yes, this is our new collection check it out our new arrivals.Yes, this is our new collection.check it out our new arrivals.Yes, this is our new collection. check it out our new arrivals.</p>
+  </div>
+</div>
+
+<div class="row hilightData">
+   <div class="col-lg-3 col-md-4 col-sm-12">
+    <h3 class="col-12 font-eng hilight-box">HILIGHT PRODUCTS</h3>
+     <span class="font-eng see_all">SEE ALL ></span>
+   </div>
+  <div class="col-lg-9 col-md-8 col-sm-12">
+    <div id="hilight_product" class="product-padding no-border" style="margin-top: 25px;">
+        {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="hilight_product" product_count="8" aspect_ratio="1" image_width="400" image_height="400"  product_type="3" template="owl_list.phtml"}}
+    </div>
+    <script type="text/javascript">
+        require([
+        'jquery',
+        'owl.carousel/owl.carousel.min'
+        ], function ($) {
+        $("#hilight_product .owl-carousel").owlCarousel({
+            loop: true,
+            margin: 30,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            navRewind: true,
+            nav: false,
+            dots: true,
+            responsive: {
+            0: {
+                items:2
+            },
+            768: {
+                items:3
+            },
+            992: {
+                items:4
+            },
+            1200: {
+                items:4
+            }
+            }
+        });
+        });
+    </script>
+  </div>
+</div>
+
+
+<div class="row" style="margin:0;">
+  <div class="col-lg-4 col-md-5 col-sm-12" style="padding:0;">
+    <div id="half-image-2" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/13/slider/THE-NEXT-3.jpg"}}) center center no-repeat;background-size:cover;width:100%;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/13/slider/THE-NEXT-3.jpg"}}" style="width:100%;visibility:hidden;" alt="" />
+      <div class="content men-collection">mens<br>Collection</div>
+    </div>
+  </div>
+  <div id="half-content-2" class="col-lg-8 col-md-7 col-sm-12" style="padding:4% 6% 1.5%;position:relative;text-align:left;background-color:black">
+    <h3 class="fullwidth-filter-title"></h3>
+    <p class="fullwidth-filter-description" style="color:#fff">Yes, this is our new collection.<br>check it out our new arrivals.</p>
+    <p class="see_all_men" style="color:#fff">SEE ALL ></p>
+    <div id="men_product" class="product-padding product-banner owl-top-narrow no-border" style="margin: 25px 0;">
+      {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="men_product" category_id="5" product_count="4" aspect_ratio="0" image_width="400" image_height="300" product_type="3" template="owl_list.phtml"}}
+    </div>
+    <script type="text/javascript">
+      require([
+        'jquery',
+        'owl.carousel/owl.carousel.min'
+      ], function ($) {
+        $("#men_product .owl-carousel").owlCarousel({
+          loop: true,
+          margin: 0,
+          stagePadding: 0,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          navRewind: true,
+          nav: true,
+          dots: false,
+          navText: ["<em class='porto-icon-angle-left'></em>","<em class='porto-icon-angle-right'></em>"],
+          responsive: {
+            0: {
+              items:2
+            },
+            640: {
+              items:2
+            }
+          }
+        });
+      });
+    </script>
+  </div>
+</div>
+
+<div class="row" style="margin:0;">
+  <div class="col-md-5 col-sm-12 md-order-12" style="padding:0;">
+    <div id="half-image-1" style="background:url({{media url="wysiwyg/smartwave/porto/homepage/13/slider/THE-NEXT-4.jpg"}}) center center no-repeat;background-size:cover;width:100%;">
+      <img src="{{media url="wysiwyg/smartwave/porto/homepage/13/slider/THE-NEXT-4.jpg"}}" style="width:100%;visibility:hidden;" alt="" />
+      <div class="content women-collection">Womens<br>Collection</div>
+    </div>
+  </div>
+  <div id="half-content-1" class="col-md-7 col-sm-12" style="padding:4% 6% 1.5%;position:relative;text-align:left;background-color:#e8e9ed">
+    <h3 class="fullwidth-filter-title"></h3>
+    <p class="fullwidth-filter-description">Yes, this is our new collection. <br> check it out our new arrivals.</p>
+     <p class="see_all_men" style="color:#000">SEE ALL ></p>
+    <div id="women_product" class="product-padding product-banner owl-top-narrow no-border" style="margin: 25px 0;">
+      {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="women_product" category_id="3" product_count="4" aspect_ratio="0" image_width="400" image_height="400" product_type="3" template="owl_list.phtml"}}
+    </div>
+    <script type="text/javascript">
+      require([
+        'jquery',
+        'owl.carousel/owl.carousel.min'
+      ], function ($) {
+        $("#women_product .owl-carousel").owlCarousel({
+          loop: true,
+          margin: 0,
+          stagePadding: 0,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          navRewind: true,
+          nav: true,
+          dots: false,
+          navText: ["<em class='porto-icon-angle-left'></em>","<em class='porto-icon-angle-right'></em>"],
+          responsive: {
+            0: {
+              items:2
+            },
+            640: {
+              items:2
+            }
+          }
+        });
+      });
+    </script>
+  </div>
+</div>
+
+<div style="text-align:left; padding:95px 15px;background-color:#fff;">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+          <h3 class="feature-title">Featured Products</h3>
+          <p class="feature-desc">Yes, this is our new collection check it out our new arrivals.Yes, this is our new collection.check it out our new arrivals.Yes, this is our new collection. check it out our new arrivals.</p>
+    </div>
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <p class="feature-seeall ">See all > </p>
+    </div>
+  </div>
+  <div class="row">
+       <div id="fashion_product" class="product-padding no-border col-md-12" style="margin-top: 25px;">
+    {{block class="Smartwave\Filterproducts\Block\Home\LatestList" name="latest_product" product_count="8" aspect_ratio="1" image_width="400" image_height="400"  product_type="3" template="owl_list.phtml"}}
+  </div>
+  <script type="text/javascript">
+    require([
+      'jquery',
+      'owl.carousel/owl.carousel.min'
+    ], function ($) {
+      $("#fashion_product .owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        navRewind: true,
+        nav: false,
+        dots: true,
+        responsive: {
+          0: {
+            items:2
+          },
+          768: {
+            items:3
+          },
+          992: {
+            items:4
+          },
+          1200: {
+            items:5
+          }
+        }
+      });
+    });
+  </script>
+   </div>
+</div>
+
+<div class="row">
+   <div class="col-12">
+    <h3 class="col-12 font-eng" style="text-align: center;font-size: 24px;padding: 2% 0 1%;">SHOP BY BRAND</h3>
+     <p class="seeall_brand">SEE ALL ></p>
+   </div>
+
+  <div class="row col-12 brand">
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO1.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO2.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO3.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO4.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO5.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO6.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO7.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO8.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO9.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO10.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO11.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO12.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO13.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO14.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO15.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO16.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO17.png"}}" alt=""/></div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 item-brand"><img class="img-responsive" src="{{media url="wysiwyg/smartwave/porto/homepage/13/home/brands/THE-NEXT-LOGO18.png"}}" alt=""/></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  require([
+    'jquery'
+  ], function ($) {
+    $("#half-image-1").css("min-height",$("#half-content-1").outerHeight()+"px");
+    $("#half-image-2").css("min-height",$("#half-content-2").outerHeight()+"px");
+    setTimeout(function(){
+      $("#half-image-1").css("min-height",$("#half-content-1").outerHeight()+"px");
+      $("#half-image-2").css("min-height",$("#half-content-2").outerHeight()+"px");
+    }, 5000);
+    $(window).resize(function(){
+      setTimeout(function(){
+        $("#half-image-1").css("min-height",$("#half-content-1").outerHeight()+"px");
+        $("#half-image-2").css("min-height",$("#half-content-2").outerHeight()+"px");
+      }, 500);
+    });
+  });
+</script>
+<style type="text/css">
+.owl-theme .owl-dots .owl-dot span {
+  display:none;
+}
+.owl-theme .owl-dots .owl-dot {
+    content: '';
+    display: table;
+    margin: 0 auto;
+    width: 1px;
+    height: 30px;
+    background-color: #2f2f2f;
+    margin-top: 5px;
+}
+.owl-theme .owl-dots .owl-dot.active {
+    content: '';
+    display: table;
+    margin: 0 auto;
+    width: 1px;
+    height: 30px;
+    background-color: #fff;
+    margin-top: 5px;
+}
+.img-responsive {
+    width: 100%;
+}
+.seeall_brand {
+    text-align:center;
+    font-size:14px;
+}
+.brand {
+  padding: 3% 13%;
+  text-align: center;
+  margin:0;
+}
+  .item-brand {
+      padding: 10px;
+  }
+ .see_all_men {
+        color: #fff;
+        text-align: right;
+        top: 30px;
+        margin-top: -59px;
+        margin-bottom: 73px;
+     font-size:14px;
+    }
+   .feature-seeall {
+    font-size: 14px;
+    margin-top: 16%;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .feature-desc {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    margin-left:5%;
+  }
+    .feature-title {
+          text-align: left;
+        margin: 5%;
+       font-size: 24px;
+       font-weight: 600;
+       font-family: 'Libre Baskerville';
+       text-transform: uppercase;
+       letter-spacing: 0.2em;
+       line-height: 1.2;
+    }
+    .text-about-title {
+        font-size: 24px;
+        font-weight: 600;
+        font-family: 'Libre Baskerville';
+        text-transform: uppercase;
+    }
+    .text-about-desc {
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+        color: #000;
+        line-height: 1.6;
+        margin: 20% 0;
+        letter-spacing: 0.1em;
+    }
+    p.fullwidth-filter-description {
+        font-size: 16px;
+        color: #000;
+        line-height: 1.6;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+    .women-collection {
+        position: absolute;
+        bottom: 4%;
+        left: 15%;
+        line-height: 1.2;
+        font-size: 40px;
+        font-weight: 600;
+        font-family: 'Libre Baskerville';
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-align: left;
+        color: black;
+    }
+    .men-collection {
+        position: absolute;
+        bottom: 4%;
+        left: 15%;
+        line-height: 1.2;
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-align: left;
+        color: black;
+        font-family: Libre Baskerville;
+    }
+   .page-wrapper {
+    background-color: #e8e9ed;
+   }
+    .hilightData {
+    background-color: #e8e9ed;
+    margin-bottom:10px;
+    }
+
+    .font-eng {
+    font-family: Libre Baskerville;
+    color: #000;
+    }
+
+    .hilight-box {
+        padding-top: 10%;
+        font-size: 26px;
+        line-height: 1.5em;
+        letter-spacing: 4.7px;
+        width: 62%;
+        text-align: left;
+        margin: 0 auto;
+    }
+    .see_all {
+    display:block;
+        font-size: 14px;
+        letter-spacing: 0.025em;
+        margin-bottom: 10px;
+        width: 54%;
+        text-align: left;
+        margin: 0 auto;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 5%;
+    }
+
+    .item img{
+    display: block;
+    min-width: 100%;
+    /*max-height: 680px !important;*/
+    }
+    .active .item {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transform: scale(1);
+    }
+    .product-item-photo {
+        border-radius: 0;
+        border: 0;
+    } 
+    .content-area{
+    position:absolute;
+    top:37%;
+    left:20px;
+    text-align:left;
+    }
+    .owl-carousel .owl-item img{
+    display:none;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 {
+        position: relative;
+        font-family:'Oswald';
+        font-size:18px;
+        letter-spacing:-0.01em;
+        text-transform:uppercase;
+        color:#fff;
+        line-height:1;
+        font-weight:400;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1{
+        font-size:64px;color:#fff;letter-spacing:-0.01em;display:inline-block;display:inline-block;text-shadow: 5px 3px #92a9b3;font-weight:600;margin-top:5px;font-family:'Poppins';margin-left:-4px;margin-right: 5px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner2{
+        position:absolute;top:23px;font-size:33px;font-weight: 400;font-family: 'Open Sans';
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text1 .inner3{
+        font-family:'Oswald';font-size:18px;letter-spacing:0.075em;color:#fff;font-weight:400;display:block;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text2 {
+        font-family:'Oswald';font-size:80px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1;margin-top:30px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .text3 {
+        font-weight:400;color:#fff;line-height:1;text-transform: uppercase;font-size: 20px;letter-spacing: 0.075em;margin-bottom:35px;
+    }
+    #banner-slider-demo-4 .slide1-content .content-area .btn-default {
+        text-transform:uppercase;padding:14px 20px;border-radius:2px;font-family:'Oswald';letter-spacing:0.05em;font-size:14px;line-height:1;color:#fff;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text1 {
+        font-family:'Oswald';font-size:80px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:25px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text2 {
+        font-family:'Poppins';font-weight:600;color:#fff;line-height:1;text-transform: uppercase;font-size: 64px;letter-spacing: -0.01em;text-shadow: 5px 3px #92a9b3;margin: 0 0 25px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .text3 {
+        font-family:'Oswald';font-size:18px;font-weight:400;letter-spacing:-0.01em;color:#fff;margin:0;text-transform:uppercase;margin: 0 0 35px;
+    }
+    #banner-slider-demo-4 .slide2-content .content-area .btn-default {
+        text-transform:uppercase;padding:14px 20px;border-radius:2px;font-family:'Oswald';letter-spacing:0.05em;font-size:14px;width:auto;height:auto;line-height:1;color:#fff;
+    }
+
+    .full-screen-slider {
+        height: auto;
+        background-color: #e8e9ed
+    }
+
+    /*ipad pro */
+    @media only screen and (min-width: 834px) and (orientation: portrait)
+    {
+        #banner-slider-demo-4 .slide1-content .content-area{
+        top: 9%;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area{
+        top: 12%;
+        }
+        #banner-slider-demo-4 .owl-controls {
+        display:none!important;
+        }
+    .item {
+        background:none !important ;
+        }
+        .owl-carousel .owl-item img{
+        display:block
+        }
+
+        .full-screen-slider {
+        width: 100%;
+        height: 555px;
+    }
+    }
+
+    /*ipad mini */
+    @media only screen and (device-width: 768px) and (orientation : portrait)  {
+        #banner-slider-demo-4 .slide1-content .content-area{
+        top: 9%;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area{
+        top: 12%;
+        }
+        #banner-slider-demo-4 .owl-controls {
+        display:none!important;
+        }
+    .item {
+        background:none !important ;
+        }
+        .owl-carousel .owl-item img{
+        display:block
+        }
+        .full-screen-slider {
+        height: 512px;
+    }
+    .see_all_men {
+       margin-top: -30%;
+       margin-bottom: 35%;
+    }
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) and (orientation : portrait) {
+        #banner-slider-demo-4 .slide1-content .content-area{
+        top: 9%;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area{
+        top: 12%;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text1 {
+        font-size:10px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1 {
+        font-size: 35px; 
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text1 .inner2 { 
+        top: 18px;
+        font-size: 13px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text1 .inner3 { 
+        font-size: 10px; 
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text2 { 
+        font-size: 40px; 
+        margin-top: 10px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text3 { 
+        font-size: 10px; 
+        margin-bottom: 15px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .btn-default { 
+        padding: 8px 10px; 
+        font-size: 12px; 
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .text1 { 
+        font-size: 40px; 
+        margin-bottom: 10px;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .text2 { 
+        font-size: 33px; 
+        margin: 0 0 7px;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .text3 { 
+        font-size: 10px; 
+        margin: 0 0 13px;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .btn-default { 
+        padding: 8px 10px; 
+        font-size: 11px; 
+        }
+        #banner-slider-demo-4 .owl-controls {
+        display:none!important;
+        }
+    .item {
+        background:none !important ;
+        }
+        .owl-carousel .owl-item img{
+        display:block
+        }
+    }
+
+    @media only screen and (max-device-width: 425px) and (orientation : portrait)  {
+        #banner-slider-demo-4 .slide1-content .content-area{
+        top: 9%;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area{
+        top: 10%;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1 {
+        font-size: 33px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text2 {
+        font-size: 34px;
+        margin-top: 7px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text3 {
+        font-size: 9px;
+        margin-bottom: 12px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .btn-default {
+        padding: 7px 9px;
+        font-size: 10px;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .text1 {
+        font-size: 33px;
+        margin-bottom: 10px;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .text2 {
+        font-size: 30px;
+        margin: 0 0 7px;
+        text-shadow: 3px 2px #92a9b3;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .btn-default {
+        padding: 7px 9px;
+        font-size: 10px;
+        }
+        #banner-slider-demo-4 .owl-controls {
+        display:none!important;
+        }
+    .item {
+        background:none !important ;
+        }
+        .owl-carousel .owl-item img{
+        display:block
+        }
+        .full-screen-slider {
+        width: 100%;
+        height: 275px;
+    }
+      .see_all_men {
+        margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+      } 
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-width: 767px)   and (orientation: portrait) {
+    .women-collection {
+        font-size: 23px;
+    }
+    .men-collection {
+        font-size: 23px;
+    }
+
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-width: 767px)   and (orientation: portrait) {
+    .women-collection {
+        font-size: 28px;
+        left: 13%
+    }
+    .men-collection {
+        font-size: 28px;
+        left: 12%
+    }
+
+    }
+
+    @media only screen and (min-device-width: 425px) and (max-width: 767px)   and (orientation: portrait) {
+    .women-collection {
+        font-size: 32px;
+    }
+    .men-collection {
+        font-size: 32px;
+    }
+
+    }
+
+    @media only screen and (max-device-width: 375px)  and (orientation : portrait) {
+        .full-screen-slider {
+        width: 100%;
+        height: 250px;
+    }
+    }
+
+    @media only screen and (max-device-width: 360px) and (orientation : portrait)  {
+        .full-screen-slider {
+        width: 100%;
+        height: 240px;
+    }
+    }
+
+    @media (max-width: 320px)  and (orientation : portrait)  {
+        #banner-slider-demo-4 .slide1-content .content-area{
+        top: 6%;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area{
+        top: 6%;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text1 .inner1 {
+        font-size: 23px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text2 {
+        font-size: 24px;
+        margin-top: 7px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .text3 {
+        font-size: 9px;
+        margin-bottom: 12px;
+        }
+        #banner-slider-demo-4 .slide1-content .content-area .btn-default {
+        padding: 7px 9px;
+        font-size: 10px;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .text1 {
+        font-size: 33px;
+        margin-bottom: 10px;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .text2 {
+        font-size: 30px;
+        margin: 0 0 7px;
+        text-shadow: 3px 2px #92a9b3;
+        }
+        #banner-slider-demo-4 .slide2-content .content-area .btn-default {
+        padding: 7px 9px;
+        font-size: 10px;
+        }
+        #banner-slider-demo-4 .owl-controls {
+        display:none!important;
+        }
+    .item {
+        background:none !important ;
+        }
+        .owl-carousel .owl-item img{
+        display:block
+        }
+        .full-screen-slider {
+        width: 100%;
+        height: 213px;
+        }
+        .hilight-box {
+            width: 72%;
+        }
+        .see_all {
+        width: 62%;
+        }
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px)  and (orientation: portrait)  {
+
+    .hilight-box {
+        font-size: 24px;
+        padding-top: 30%;
+        width: 84%;
+        }
+        .see_all {
+            width: 70%;
+        }
+    .women-collection {
+        font-size: 20px;
+    }
+    .men-collection {
+        font-size: 20px;
+    }
+        .see_all_men {
+       margin-top: -30%;
+       margin-bottom: 35%;
+    }
+    }
+
+
+    @media only screen and (min-width: 1024px) {
+        .hilight-box {
+        padding-top: 37%;
+        width: 84%;
+        }
+        .see_all {
+            width: 70%;
+        }
+    #women_product {
+        margin-top: 14% !important;
+    }
+    }
+
+    @media only screen and (min-width: 768px) and (orientation: landscape) {
+    .women-collection {
+        font-size: 23px;
+    }
+    .men-collection {
+        font-size: 20px;
+    }
+    }
+
+    @media only screen and (min-width: 1024px) and (orientation: landscape) {
+    .women-collection {
+        font-size: 36px;
+    left: 20%;
+    }
+    .men-collection {
+        font-size: 36px;
+        left: 14%;
+    }
+    }
+
+    @media (min-width: 1440px) {
+    .hilight-box {
+        padding-top: 46%;
+        width:58%;
+    }
+    .see_all {
+        width: 49%;
+    }
+    }
+
+    .owl-theme .owl-dots .owl-dot {
+    display: block;
+    }
+    .owl-bottom-narrow .owl-controls {
+        top: 50%;
+    padding-right: 3%;
+    }
+    .owl-dots {
+    float: right
+    }
+    .fa-vertical-line:after       { content: "\007C" };
+    #women_product .owl-top-narrow .owl-carousel .owl-item > .item {
+        padding-top: 0 !important;
+    }
+    #women_product .products-grid .product-item .product-item-info {
+    background-color: #fff
+    }
+    #women_product .product-item-info.type3 .product-item-details {
+        font-family: 'Open Sans', sans-serif;
+        padding: 3% 10% 10% 10%;
+    }
+    .owl-top-narrow .owl-carousel .owl-item > .item {
+        padding-top: 0;
+        padding: 0;
+        padding-right: 1px;
+    }
+    #men_product .products-grid .product-item .product-item-info {
+    background-color: #fff
+    }
+    #men_product .product-item-info.type3 .product-item-details {
+        font-family: 'Open Sans', sans-serif;
+        padding: 3% 10% 10% 10%;
+    }
+    .product-item-info.type3 .product-item-photo .product-item-inner .product-item-actions>.action.towishlist {
+    display:none;
+    }
+    .product-item-info .product.name a {
+        font-size:14px;
+        color:black;
+    }
+  
+</style>

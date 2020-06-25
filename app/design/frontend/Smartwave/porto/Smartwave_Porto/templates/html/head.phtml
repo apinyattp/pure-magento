@@ -92,7 +92,7 @@ require([
                     $('.page-header:not(.sticky-header)').css("height",$('.page-header:not(.sticky-header)').height()+'px');
                     $('.page-header').addClass("sticky-header");
                     scrolled = true;
-                    if((!$(".page-header").hasClass("type12")) && (!$(".page-header").hasClass("type23")) && (!$(".page-header").hasClass("type25")) && (!$(".page-header").hasClass("type26"))) {
+                    if((!$(".page-header").hasClass("type17")) && (!$(".page-header").hasClass("type12")) && (!$(".page-header").hasClass("type23")) && (!$(".page-header").hasClass("type25")) && (!$(".page-header").hasClass("type26"))) {
                         $('.page-header .minicart-wrapper').after('<div class="minicart-place hide"></div>');
 
                         if($(".page-header").hasClass("type2"))
@@ -114,10 +114,22 @@ require([
                             $('.page-header .navigation').prepend('<div class="sticky-logo">'+logo_image+'</div>');
                         <?php endif; ?>
                     } else {
-                        <?php if ($this->getConfig('porto_settings/header/sticky_header_logo')): ?>
-                        $('.page-header.type12 .logo').append('<span class="sticky-logo"><img src="" alt=""/></span>');
-                        $('.page-header .logo > img').addClass("hide");
-                        <?php endif; ?>
+                        if($(".page-header").hasClass("type17")) { 
+                            <?php if ($this->getConfig('porto_settings/header/sticky_header_logo')): ?>
+                            var logo_image = $('<div>').append($('.page-header .header > .logo').clone()).html();
+                            if($(".page-header").hasClass("type27"))
+                                logo_image = $('<div>').append($('.page-header .header .header-main-left > .logo').clone()).html();
+                            if($(".page-header").hasClass("type8"))
+                                $('.page-header .menu-wrapper').prepend('<div class="sticky-logo">'+logo_image+'</div>');
+                            else
+                                $('.page-header .navigation').prepend('<div class="sticky-logo">'+logo_image+'</div>');
+                            <?php endif; ?>
+                        }else{
+                            <?php if ($this->getConfig('porto_settings/header/sticky_header_logo')): ?>
+                            $('.page-header.type12 .logo').append('<span class="sticky-logo"><img src="" alt=""/></span>');
+                            $('.page-header .logo > img').addClass("hide");
+                            <?php endif; ?>
+                        }
                     }
                     <?php if ($this->getConfig('porto_settings/header/sticky_header_logo')): ?>
                     <?php
