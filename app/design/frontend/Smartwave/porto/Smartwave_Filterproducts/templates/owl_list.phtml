@@ -237,6 +237,14 @@ if($product_type == null) {
                                 <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
                             </a>
                         </strong>
+                        <p class="product-brand">
+                            <?php echo $_product->getAttributeText('brand_name');?>
+                        </p>
+                       
+                        <p class="product-new">
+                            <?php echo $_product->getAttributeText('is_new');?>
+                        </p>
+                
                         <?php //$_category_config['rating_star'] = "";  //disabled at the moment ?>
                         <?php if($_category_config['rating_star']): ?>
                         <?php
