@@ -49,14 +49,14 @@
         </referenceContainer>
 
         <referenceBlock name="header.links">
-            <block class="Smartwave\Porto\Block\Template" name="custom_link" before="-" template="html/custom_link.phtml" />
-
-            <block class="Magento\Framework\View\Element\Html\Link" name="header-menu">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Header Menu</argument>
-                    <argument name="path" xsi:type="string">*/*/*</argument>
-                </arguments>
-            </block>
+            <!-- <block class="Smartwave\Porto\Block\Template" name="custom_link" before="-" template="html/custom_link.phtml" /> -->
         </referenceBlock>
+
+        <move element="customer-welcome" destination="header.links" />
+
+        <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+        <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link  -->
+        <referenceBlock name="wish-list-link" remove="true" />  
+        <referenceBlock name="customer-menu-toggle" remove="true" />          <!--for WishList Link-->  
     </body>
 </page>

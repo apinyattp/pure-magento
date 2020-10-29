@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-10-22 05:22:21 */
+ * 2020-10-28 14:55:16 */
 
 .theme-color{color:#000000 !important;}
 .theme-hover-color:hover{color:#000000 !important;}
@@ -60,6 +60,10 @@ button.action.primary:hover{
 .product-item-actions .action.towishlist:hover,.product-addto-links .action.towishlist:hover,.action.towishlist:hover{color:#302E2A;border-color:#302E2A}
 .product-addto-links .action.tocompare,.product-item-actions .action.tocompare,.action.tocompare,.product-addto-links .action.mailto.friend, .moved-add-to-links .action.mailto.friend, .product-social-links .action.mailto.friend{color:#302E2A;border-color:#302E2A}
 .product-addto-links .action.tocompare:hover,.product-item-actions .action.tocompare:hover,.action.tocompare:hover,.product-addto-links .action.mailto.friend:hover, .moved-add-to-links .action.mailto.friend:hover, .product-social-links .action.mailto.friend:hover{color:#302E2A;border-color:#302E2A}
+.page-wrapper > .breadcrumbs{background-color:#FEC840}
+.page-wrapper > .breadcrumbs{color:#141515}
+.page-wrapper > .breadcrumbs a, .page-wrapper > .breadcrumbs a:focus{color:#000}
+.page-wrapper > .breadcrumbs a:hover{color:#e8e9ed}
 #ln_slider_price.ui-slider-horizontal{background-color:#000000}
 #ln_slider_price .ui-slider-handle{background-color:#000000}
 @media (min-width: 768px){

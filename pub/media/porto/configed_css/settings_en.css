@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-10-22 06:31:35 */
+ * 2020-10-28 16:29:36 */
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
@@ -51,6 +51,16 @@
     border-radius: 0;
 }
 
+.swatch-option.color {
+   min-width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 30px;
+    box-shadow: none;
+}
+.sidebar.sidebar-main:before, .active > .filter-options-title:after, .filter-options-title:after  {
+  background-color: #f2f2f2;
+}
 .cms-index-index .page-header.type17 {
     position: absolute;
     left: 0;
@@ -59,6 +69,18 @@
     z-index: 9;
     border: 0;
     background: url(//thenext.bearrunrun.com/media/porto/header_bg/default/HOME-BG-MENU.png) repeat-x;
+   background-size: auto 100%;
+   padding: 10px 0;
+}
+.logo img {
+    width:100%;
+    height: auto%;
+}
+.page-header.type17.sticky-header .col-9.row{
+    padding-top: 8px;
+}
+.header.page-header.type17.sticky-header .nav-sections {
+    padding-top: 0;
 }
 
 .page-header.type17.sticky-header {
@@ -68,6 +90,7 @@
     background-color: #000;
     color: #fff;
     z-index: 6;
+    height: 114px !important;
 }
 .logo { max-width:100%;}
 .page-header.type17 .top-links-icon a {
@@ -85,7 +108,10 @@ body.layout-fullwidth .page-header .header.panel {
 }
 .page-header.type17 .logo {z-index: 6;}
 .page-header.type17.sticky-header .nav-toggle + .logo {display: none;}
-.page-header.type17.sticky-header .logo img{height: auto;}
+.page-header.type17.sticky-header .logo img{
+    max-height: 114px;
+    height: auto;
+}
 .page-header.type17.sticky-header .custom-block span,
 .page-header.type17.sticky-header .top-links-icon,
 .page-header.type17.sticky-header .top-links-icon a {
@@ -789,14 +815,14 @@ body.layout-fullwidth .page-header .header.panel {
       top: 44%;
    }
 .page-header.type17.sticky-header .navigation > ul { padding: 10px 0 ; }
-   .page-header.type17 .nav-sections { top: -10%;}
+   .page-header.type17 .nav-sections { top: 0;}
     .page-header.type17.sticky-header .sticky-logo {margin-left: -15px;z-index: 6;pointer-events: all;}
     .page-header.type17 .navigation > ul {
         padding: 0% 0;
        border-top: 1px solid #fff;
        text-align: left;
     }
-    .page-header.type17.sticky-header .header.panel {padding-right: 90px;}
+    .page-header.type17.sticky-header .header.panel {padding-right: 90px; height: 13px;}
     .page-header.type17 .header.panel {margin-left: 0 !important;}
     header.page-header.sticky-header.type21 .nav-sections {
         position: relative !important;
@@ -804,7 +830,7 @@ body.layout-fullwidth .page-header .header.panel {
         z-index: 5 !important;
         pointer-events: none;
     }
-    header.page-header.type17.sticky-header .minicart-wrapper {pointer-events: all;}
+    header.page-header.type17.sticky-header .minicart-wrapper {pointer-events: all; padding-top:5px;}
     header.header-newskin.type21.sticky-header .navigation .level0 > .level-top,
     header.header-newskin.type21.sticky-header .navigation .level0 > .level-top:hover,
     .page-header.type17.sticky-header .navigation li.level0{
@@ -943,6 +969,15 @@ body.layout-fullwidth .page-header .header.panel {
     #maincontent.onepage-category {
         max-width: 1140px;
     }
+    .page-header.type17 .header.content {
+        padding: 0;
+    }
+    .page-header.type17 .header.panel {
+        padding: none;
+    }
+    header.page-header.sticky-header .nav-sections {
+        padding: 0;
+    }
 }
 @media (min-width: 1200px){
     .cms-index-index .page-header.type17 .header.content {
@@ -950,11 +985,9 @@ body.layout-fullwidth .page-header .header.panel {
         padding-right: 5%;*/
     }
     .page-header.type17 .header.content {
-        /* padding-left: 10.3%;
-        padding-right: 3%; */
         max-width: 100%;
-        /* padding-top: 22px;
-        padding-bottom: 22px; */
+        padding:0;
+        max-height: 88px;
     }
     .fotorama__stage {
         height:430px !important;
@@ -962,6 +995,9 @@ body.layout-fullwidth .page-header .header.panel {
     }
     body.layout-fullwidth .page-header .header.panel {
         letter-spacing: 0.07em;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 0;
     }
 }
 @media (max-width:1199px){
