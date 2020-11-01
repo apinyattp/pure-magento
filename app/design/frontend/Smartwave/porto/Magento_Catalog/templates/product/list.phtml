@@ -232,7 +232,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <?php
                             $_productNameStripped = $block->stripTags($_product->getName(), null, true);
                         ?>
-                        <strong class="product name product-item-name">
+                        <strong class="product name product-item-name  col-md-9">
                             <a class="product-item-link"
                                href="<?php echo $_product->getProductUrl() ?>">
                                 <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
@@ -240,7 +240,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         </strong>
                         <?php
                             if($product_label)
-                                echo '<div class="product-labels">'.$product_label.'</div>';
+                                echo '<div class="product-labels col-md-3">'.$product_label.'</div>';
                         ?>
                         <?php if($_category_config['rating_star']): ?>
                         <?php 
