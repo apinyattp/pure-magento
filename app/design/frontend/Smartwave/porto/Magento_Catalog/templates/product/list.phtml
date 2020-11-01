@@ -126,8 +126,6 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                     }
                                 }
                             }
-                            if($product_label)
-                                echo '<div class="product-labels">'.$product_label.'</div>';
                         ?>
                         <?php if($product_type == 3 || $product_type == 5 || $product_type == 6 || $product_type == 7 || $product_type == 8 || $product_type == 9): ?>
                         <div class="product-item-inner">
@@ -240,6 +238,10 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                 <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
                             </a>
                         </strong>
+                        <?php
+                            if($product_label)
+                                echo '<div class="product-labels">'.$product_label.'</div>';
+                        ?>
                         <?php if($_category_config['rating_star']): ?>
                         <?php 
                             $review_html = $block->getReviewsSummaryHtml($_product, $templateType);
