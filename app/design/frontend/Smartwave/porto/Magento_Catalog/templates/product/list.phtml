@@ -265,10 +265,10 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                    class="action more"><?php echo __('Learn More') ?></a>
                             </div>
                         <?php endif; ?>
+                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         <?php if($_category_config['product_price']): ?>
                         <?php echo $block->getProductPrice($_product) ?>
                         <?php endif; ?>
-                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         
                         <?php if($product_type != 3 && $product_type != 5 && $product_type != 6 && $product_type != 7 && $product_type != 8 && $product_type != 9): ?>
                         <div class="product-item-inner">
