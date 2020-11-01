@@ -231,6 +231,7 @@ if($product_type == null) {
                         <?php
                             $_productNameStripped = $block->stripTags($_product->getName(), null, true);
                         ?>
+                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         <strong class="product name product-item-name">
                             <a class="product-item-link"
                                href="<?php echo $_product->getProductUrl() ?>">
@@ -270,7 +271,6 @@ if($product_type == null) {
                         <?php if($_category_config['product_price']): ?>
                         <?php echo $block->getProductPrice($_product) ?>
                         <?php endif; ?>
-                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         
                         <?php if($product_type != 3 && $product_type != 5 && $product_type != 6 && $product_type != 7 && $product_type != 8 && $product_type != 9 && $product_type != 10 && $product_type != 11): ?>
                         <div class="product-item-inner">
