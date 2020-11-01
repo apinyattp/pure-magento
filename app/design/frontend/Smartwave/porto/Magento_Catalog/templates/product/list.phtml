@@ -269,7 +269,9 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                    class="action more"><?php echo __('Learn More') ?></a>
                             </div>
                         <?php endif; ?>
-                        <?php if($_category_config['product_price']): ?>
+                        <div class="priceCatalog">
+                            <?php if($_category_config['product_price']): ?>
+                        </div>
                         <?php echo $block->getProductPrice($_product) ?>
                         <?php endif; ?>
                         
