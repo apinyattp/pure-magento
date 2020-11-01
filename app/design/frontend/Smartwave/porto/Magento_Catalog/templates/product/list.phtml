@@ -234,6 +234,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <?php
                             $_productNameStripped = $block->stripTags($_product->getName(), null, true);
                         ?>
+                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         <strong class="product name product-item-name">
                             <a class="product-item-link"
                                href="<?php echo $_product->getProductUrl() ?>">
@@ -265,7 +266,6 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                    class="action more"><?php echo __('Learn More') ?></a>
                             </div>
                         <?php endif; ?>
-                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         <?php if($_category_config['product_price']): ?>
                         <?php echo $block->getProductPrice($_product) ?>
                         <?php endif; ?>
