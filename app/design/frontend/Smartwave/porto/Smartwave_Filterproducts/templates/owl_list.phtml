@@ -240,10 +240,6 @@ if($product_type == null) {
                         <p class="product-brand">
                             <?php echo $_product->getAttributeText('brand_name');?>
                         </p>
-                            
-                        <?php if($_product->getAttributeText('new') == 'Yes'): ?>
-                            <div class="product-new hidden-xs hidden-sm"></div>
-                        <?php endif; ?>
                         <?php //$_category_config['rating_star'] = "";  //disabled at the moment ?>
                         <?php if($_category_config['rating_star']): ?>
                         <?php
