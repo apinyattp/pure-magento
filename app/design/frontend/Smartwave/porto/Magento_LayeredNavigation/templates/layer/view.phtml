@@ -20,10 +20,6 @@
         <div class="block-title filter-title" data-count="<?php /* @escapeNotVerified */ echo $filtered; ?>">
             <strong data-role="title"><?php /* @escapeNotVerified */ echo __('Shop By') ?></strong>
         </div>
-        <div class="search-area">
-            <a href="javascript:void(0)" class="search-toggle-icon"><i class="porto-icon-search"></i></a>
-            <?php echo $this->getChildHtml("top.search"); ?>
-        </div>
         <div class="block-content filter-content">
             <?php echo $block->getChildHtml('state') ?>
 
