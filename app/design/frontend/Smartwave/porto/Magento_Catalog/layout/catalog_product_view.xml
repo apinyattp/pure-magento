@@ -38,6 +38,5 @@
         <referenceContainer name="columns">
             <block class="Smartwave\Porto\Block\Template" name="side_popup" after="-" template="Magento_Catalog::product/view/side_popup.phtml"/>
         </referenceContainer>
-        <move element="product.info.price" destination="product.info.addtocart.additional" />
     </body>
 </page>
