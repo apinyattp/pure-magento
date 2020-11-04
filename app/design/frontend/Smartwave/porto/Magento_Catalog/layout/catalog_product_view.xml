@@ -38,5 +38,6 @@
         <referenceContainer name="columns">
             <block class="Smartwave\Porto\Block\Template" name="side_popup" after="-" template="Magento_Catalog::product/view/side_popup.phtml"/>
         </referenceContainer>
+         <move element="custom.block.1" destination="column" after="detailed"/>
     </body>
 </page>
