@@ -17,13 +17,17 @@
 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 $acceptLang = ['th', 'en'];
 $lang = in_array($lang, $acceptLang) ? $lang : 'en';
+if($lang == 'en') {
+    $title = 'Appointment';
+}else{
+    $title = 'นัดหมายพบแพทย์';
+}
 ?>
-<?php echo $lang;?>
 <div class="row">
     <div class="col-md-5"><?php echo $this->getChildHtml('contactForm')?></div>
     <div class="col-md-2"></div>
     <div class="col-md-5 contact-info">
-        <div class="contacts-title"><?php echo __('Contact') ?> <b><?php echo __('Details') ?></b></div>
+        <div class="contacts-title"><?php echo $title;?></b></div>
         <?php echo $_infoblock; ?>
     </div>
 </div>
