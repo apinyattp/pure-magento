@@ -18,10 +18,8 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 $acceptLang = ['th', 'en'];
 $lang = in_array($lang, $acceptLang) ? $lang : 'en';
 if($lang == 'en') {
-    $title = 'Appointment';
     $branches = 'Branches';
 }else{
-    $title = 'นัดหมายพบแพทย์';
     $branches = 'สาขา';
 }
 ?>

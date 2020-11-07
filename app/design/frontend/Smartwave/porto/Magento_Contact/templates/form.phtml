@@ -7,6 +7,16 @@
 // @codingStandardsIgnoreFile
 
 ?>
+<?php
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+$acceptLang = ['th', 'en'];
+$lang = in_array($lang, $acceptLang) ? $lang : 'en';
+if($lang == 'en') {
+    $title = 'Appointment';
+}else{
+    $title = 'นัดหมายพบแพทย์';
+}
+?>
 <form class="form contact"
       action="<?php echo $block->getFormAction(); ?>"
       id="contact-form"
