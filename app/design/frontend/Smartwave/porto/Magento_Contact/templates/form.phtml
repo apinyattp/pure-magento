@@ -9,8 +9,10 @@
 ?>
 <?php
 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+echo $lang;
 $acceptLang = ['th', 'en'];
 $lang = in_array($lang, $acceptLang) ? $lang : 'en';
+echo $lang;
 if($lang == 'en') {
     $title = 'Appointment';
 }else{
@@ -24,7 +26,7 @@ if($lang == 'en') {
       data-hasrequired="<?php echo __('* Required Fields') ?>"
       data-mage-init='{"validation":{}}'>
     <fieldset class="fieldset">
-        <legend class="legend"><span><?php echo $title;?></b></span></legend><br />
+        <legend class="legend"><span class="title-contact-header-<?php echo $lang?>"><?php echo $title;?></b></span></legend><br />
         <fieldset class="fieldset row">
             <div class="fields col-md-12">
         <div class="field name required">
