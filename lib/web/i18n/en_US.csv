@@ -20,6 +20,7 @@ more,more
 Save,Save
 Translate,Translate
 Submit,Submit
+"phone number","Phone"
 "Please enter {0} words or less.","Please enter {0} words or less."
 "Please enter at least {0} words.","Please enter at least {0} words."
 "Please enter between {0} and {1} words.","Please enter between {0} and {1} words."
