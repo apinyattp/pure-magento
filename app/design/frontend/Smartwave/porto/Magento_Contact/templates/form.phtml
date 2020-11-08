@@ -34,19 +34,19 @@ if($lang == 'en') {
         <fieldset class="fieldset row">
             <div class="fields col-md-12">
         <div class="field name required">
-            <label class="label" for="name"><span><?php echo __('Name') ?></span></label>
+            <label class="label col-md-3" for="name"><span><?php echo __('Name') ?></span></label>
             <div class="control col-md-9">
                 <input name="name" id="name" title="<?php echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
             </div>
         </div>
         <div class="field email required">
-            <label class="label" for="email"><span><?php echo __('Email') ?></span></label>
+            <label class="label col-md-3" for="email"><span><?php echo __('Email') ?></span></label>
             <div class="control col-md-9">
                 <input name="email" id="email" title="<?php echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
             </div>
         </div>
         <div class="field telephone">
-            <label class="label" for="telephone"><span><?php echo __('Phone Number') ?></span></label>
+            <label class="label col-md-3" for="telephone"><span><?php echo __('Phone Number') ?></span></label>
             <div class="control col-md-9">
                 <input name="telephone" id="telephone" title="<?php echo __('Phone Number') ?>" value="" class="input-text" type="text" />
             </div>
@@ -54,7 +54,7 @@ if($lang == 'en') {
             </div>
             <div class="fields col-md-6">
         <div class="field comment required">
-            <label class="label" for="comment"><span><?php echo __('What’s on your mind?') ?></span></label>
+            <label class="label col-md-3" for="comment"><span><?php echo __('What’s on your mind?') ?></span></label>
             <div class="control col-md-9">
                 <textarea name="comment" id="comment" title="<?php echo __('What’s on your mind?') ?>" class="input-text" cols="5" rows="8" data-validate="{required:true}"></textarea>
             </div>
