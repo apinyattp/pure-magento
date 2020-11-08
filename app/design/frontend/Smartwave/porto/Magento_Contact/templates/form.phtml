@@ -10,16 +10,17 @@
 <?php
 $path = $_SERVER['REQUEST_URI'];
 $explode = explode($_SERVER['REQUEST_URI'], '/');
-$lang = $explode[1];
-echo $lang;
-$acceptLang = ['th', 'en'];
-$lang = in_array($lang, $acceptLang) ? $lang : 'en';
-echo $lang;
-if($lang == 'en') {
-    $title = 'Appointment';
-}else{
-    $title = 'นัดหมายพบแพทย์';
-}
+print_r($explode);
+// $lang = $explode[1];
+// echo $lang;
+// $acceptLang = ['th', 'en'];
+// $lang = in_array($lang, $acceptLang) ? $lang : 'en';
+// echo $lang;
+// if($lang == 'en') {
+//     $title = 'Appointment';
+// }else{
+//     $title = 'นัดหมายพบแพทย์';
+// }
 ?>
 <form class="form contact"
       action="<?php echo $block->getFormAction(); ?>"
