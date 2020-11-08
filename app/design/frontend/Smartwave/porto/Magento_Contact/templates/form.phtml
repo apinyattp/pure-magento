@@ -26,7 +26,11 @@ if($lang == 'en') {
       data-hasrequired="<?php echo __('* Required Fields') ?>"
       data-mage-init='{"validation":{}}'>
     <fieldset class="fieldset">
-        <legend class="legend"><span class="title-contact-header-<?php echo $lang?>"><?php echo $title;?></b></span></legend><br />
+        <legend class="legend">
+            <span class="title-contact-header-<?php echo $lang?>"><?php echo $title;?></b></span>
+            <div class="border-title"> </div>
+        </legend>
+        <br />
         <fieldset class="fieldset row">
             <div class="fields col-md-12">
         <div class="field name required">
