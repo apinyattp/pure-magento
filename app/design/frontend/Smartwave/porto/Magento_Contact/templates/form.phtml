@@ -112,7 +112,13 @@ if($lang == 'en') {
                         <!-- <input name="branch" id="branch" title="<?php echo __('branch') ?>" value="" class="input-text" type="text" data-validate="{required:true}" /> -->
                     </div>
                 </div>
-                <div class="field comment required">
+                <div class="field problem">
+                    <label class="label col-md-3" for="problem"><span><?php echo __('Problem') ?></span></label>
+                    <div class="control col-md-9">
+                        <input name="problem" id="problem" title="<?php echo __('Problem') ?>" value="" class="input-text" type="text"/>
+                    </div>
+                </div>
+                <div class="field comment">
                     <label class="label col-md-3" for="note"><span><?php echo __('Note') ?></span></label>
                     <div class="control col-md-9">
                         <input name="note" id="note" title="<?php echo __('Note') ?>" value="" class="input-text" type="text"/>
