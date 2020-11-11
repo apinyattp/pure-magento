@@ -26,6 +26,9 @@
 <!-- <a onclick="window.open('<//?php echo $share_url?>', 'sharer','<//?php echo $options?>')">123</a> -->
 <li class="post-holder post-holder-<?php echo $_post->getId() ?> col-md-3 col-sm-12">
     <div class="post-banner no-banner"></div>
+    <div class="thumb-img">
+        <img src="<?php echo $_post->getFeaturedImage();?>">
+    </div>
     <div class="post-date">
         <span class="day"><?php echo date("j", strtotime($_postDate)); ?></span>
         <span class="month"><?php echo date("M", strtotime($_postDate)); ?></span>
