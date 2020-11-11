@@ -18,6 +18,8 @@
     $_postUrl = $_post->getPostUrl();
     $_postName = $block->escapeHtml($_post->getTitle(), null, true);
     $_postDate = $_post->getData("publish_time");
+    $image = $_post->getFeaturedImage();
+    echo $image;
 ?>
 <li class="post-holder post-holder-<?php echo $_post->getId() ?>">
     <div class="post-banner no-banner"></div>
