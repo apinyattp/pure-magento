@@ -179,30 +179,40 @@ class Comment extends AbstractModel implements \Magento\Framework\DataObject\Ide
                 $this->getAuthorType()
             );
 
+            $guestData = [
+                'nickname' => $this->getAuthorNickname(),
+                'email' => $this->getAuthorEmail(),
+            ];
+
             switch ($this->getAuthorType()) {
                 case \Magefan\Blog\Model\Config\Source\AuthorType::GUEST:
-                    $this->author->setData([
-                        'nickname' => $this->getAuthorNickname(),
-                        'email' => $this->getAuthorEmail(),
-                    ]);
+                    $this->author->setData($guestData);
                     break;
                 case \Magefan\Blog\Model\Config\Source\AuthorType::CUSTOMER:
                     $customer = $this->customerFactory->create();
                     $customer->load($this->getCustomerId());
-                    $this->author->setData([
-                        'nickname' => $customer->getName(),
-                        'email' => $this->getEmail(),
-                        'customer' => $customer,
-                    ]);
+                    if ($customer->getId()) {
+                        $this->author->setData([
+                            'nickname' => $customer->getName(),
+                            'email' => $this->getEmail(),
+                            'customer' => $customer,
+                        ]);
+                    } else {
+                        $this->author->setData($guestData);
+                    }
                     break;
                 case \Magefan\Blog\Model\Config\Source\AuthorType::ADMIN:
                     $admin = $this->userFactory->create();
                     $admin->load($this->getAdminId());
-                    $this->author->setData([
-                        'nickname' => $admin->getName(),
-                        'email' => $this->getEmail(),
-                        'admin' => $admin,
-                    ]);
+                    if ($admin->getId()) {
+                        $this->author->setData([
+                            'nickname' => $admin->getName(),
+                            'email' => $this->getEmail(),
+                            'admin' => $admin,
+                        ]);
+                    } else {
+                        $this->author->setData($guestData);
+                    }
                     break;
             }
         }
@@ -276,5 +286,49 @@ class Comment extends AbstractModel implements \Magento\Framework\DataObject\Ide
             $format,
             $this->getData('creation_time')
         );
+    }
+
+    /**
+     * @return array|ResourceModel\Comment\Collection
+     */
+    public function getRepliesCollection()
+    {
+        $repliesCollection = [];
+        if (!$this->isReply()) {
+            $cId = $this->getId();
+            if (!isset($repliesCollection[$cId])) {
+                $repliesCollection[$cId] = $this->getChildComments()
+                    ->addActiveFilter()
+                    /*->setPageSize($this->getNumberOfReplies())*/
+                    //->setOrder('creation_time', 'DESC'); old sorting
+                    ->setOrder('creation_time', 'ASC');
+            }
+
+            return $repliesCollection[$cId];
+        } else {
+            return [];
+        }
+    }
+
+    /**
+     * @deprecated use getDynamicData method in graphQL data provider
+     * @param null $fields
+     * @return array
+     */
+    public function getDynamicData($fields = null)
+    {
+        $data = $this->getData();
+
+        if (is_array($fields) && array_key_exists('replies', $fields)) {
+            $replies = [];
+            foreach ($this->getRepliesCollection() as $reply) {
+                $replies[] = $reply->getDynamicData(
+                    isset($fields['replies']) ? $fields['replies'] : null
+                );
+            }
+            $data['replies'] = $replies;
+        }
+
+        return $data;
     }
 }

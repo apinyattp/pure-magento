@@ -15,8 +15,22 @@ $acceptLang = ['th', 'en'];
 $lang = in_array($lang, $acceptLang) ? $lang : 'en';
 if($lang == 'en') {
     $title = 'Appointment';
+    $name = 'Name';
+    $phone = 'Phone';
+    $email = 'Email';
+    $datetime = 'Book Date';
+    $branch = 'Branch';
+    $problem = 'Problem';
+    $note = 'Note';
 }else{
     $title = 'นัดหมายพบแพทย์';
+    $name = 'ชื่อ - สกุล';
+    $phone = 'เบอร์โทร';
+    $email = 'อีเมล์';
+    $datetime = 'วันที่เข้ารับการตรวจ';
+    $branch = 'สาขา';
+    $problem = 'ปัญหาเบื้องต้น';
+    $note = 'หมายเหตุ';
 }
 ?>
 <form class="form contact"
@@ -34,21 +48,21 @@ if($lang == 'en') {
         <fieldset class="fieldset row">
             <div class="fields col-md-12">
                 <div class="field name required">
-                    <label class="label col-md-3" for="name"><span><?php echo __('Name') ?></span></label>
+                    <label class="label col-md-3" for="name"><span><?php echo $name ?></span></label>
                     <div class="control col-md-9">
-                        <input name="name" id="name" title="<?php echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                        <input name="name" id="name" title="<?php echo $name ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
                     </div>
                 </div>
                 <div class="field telephone required">
-                    <label class="label col-md-3" for="telephone"><span><?php echo __('Phone') ?></span></label>
+                    <label class="label col-md-3" for="telephone"><span><?php echo $phone ?></span></label>
                     <div class="control col-md-9">
-                        <input name="telephone" id="telephone" title="<?php echo __('Phone') ?>" value="" class="input-text" type="text" data-validate="{required:true}" />
+                        <input name="telephone" id="telephone" title="<?php echo $phone ?>" value="" class="input-text" type="text" data-validate="{required:true}" />
                     </div>
                 </div>
                 <div class="field email required">
-                    <label class="label col-md-3" for="email"><span><?php echo __('Email') ?></span></label>
+                    <label class="label col-md-3" for="email"><span><?php echo $email ?></span></label>
                     <div class="control col-md-9">
-                        <input name="email" id="email" title="<?php echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+                        <input name="email" id="email" title="<?php echo $email ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
                     </div>
                 </div>
                 <div class="field datebook required">

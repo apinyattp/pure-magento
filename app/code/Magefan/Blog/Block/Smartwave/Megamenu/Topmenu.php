@@ -124,7 +124,7 @@ class Topmenu extends \Magento\Framework\View\Element\Text
                 if ($hasSubChildren) {
                     $item_class .= 'parent ';
                 }
-                $html .= '<li class="ui-menu-item '.$item_class.'" style="border:none;">';
+                $html .= '<li class="ui-menu-item '.$item_class.'">';
                 if ($hasSubChildren) {
                     $html .= '<div class="open-children-toggle"></div>';
                 }
