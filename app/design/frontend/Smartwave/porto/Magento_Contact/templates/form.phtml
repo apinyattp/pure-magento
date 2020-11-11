@@ -51,10 +51,26 @@ if($lang == 'en') {
                         <input name="email" id="email" title="<?php echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
                     </div>
                 </div>
-                <div class="field datebook required">
-                    <label class="label col-md-3" for="datebook"><span><?php echo __('Date') ?></span></label>
-                    <div class="control col-md-9">
-                        <input name="datebook" id="datebook" title="<?php echo __('Date') ?>" value="" class="input-text" type="text" data-validate="{required:true, 'validate-date':true}" />
+                <div class="field date required">
+                    <label for="date" class="label col-md-3"><span><?= $block->escapeHtml(__('Date')) ?></span></label>
+                        <div class="control col-md-9">
+                            <?php echo
+                                $block->getLayout()->createBlock('Magento\Framework\View\Element\Html\Date')
+                                    ->setData([
+                                        'name' => 'date',
+                                        'id' => 'date',
+                                        'value' => $block->escapeHtmlAttr($block->getFormData()->getDate()),
+                                        'date_format' => 'dd-MM-y',
+                                        'image' => $this->getViewFileUrl('Magento_Theme::calendar.png'),
+                                        'years_range' => '-120y:c+nn',
+                                        'max_date' => '-1d',
+                                        'change_month' => 'true',
+                                        'change_year' => 'true',
+                                        'show_on' => 'both',
+                                        'first_day' => 1
+                                    ])
+                                    ->toHtml()
+                            ?>
                     </div>
                 </div>
                 <div class="field timebook required">
@@ -84,27 +100,3 @@ if($lang == 'en') {
         </div>
     </div>
 </form>
-
-<script type="text/javascript">
-require([
-    "jquery",
-    "mage/calendar"
-    ], function($){
-        $('#datebook').datepicker({
-            prevText: '&#x3c;zurück', prevStatus: '',
-                prevJumpText: '&#x3c;&#x3c;', prevJumpStatus: '',
-                nextText: 'Vor&#x3e;', nextStatus: '',
-                nextJumpText: '&#x3e;&#x3e;', nextJumpStatus: '',
-                monthNames: ['Januar','Februar','März','April','Mai','Juni',
-                'Juli','August','September','Oktober','November','Dezember'],
-                monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun',
-                'Jul','Aug','Sep','Okt','Nov','Dez'],
-                dayNames: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
-                dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
-                dayNamesMin: ['So','Mo','Di','Mi','Do','Fr','Sa'],
-            showMonthAfterYear: false,
-            dateFormat:'d.m.yy'
-            } 
-        );
-    });
-</script>
