@@ -54,7 +54,7 @@ if($lang == 'en') {
                 <div class="field date required">
                     <label for="date" class="label col-md-3"><span><?= $block->escapeHtml(__('Date')) ?></span></label>
                         <div class="control col-md-9">
-                            <?php echo
+                            <?=
                                 $block->getLayout()->createBlock('Magento\Framework\View\Element\Html\Date')
                                     ->setData([
                                         'name' => 'date',
