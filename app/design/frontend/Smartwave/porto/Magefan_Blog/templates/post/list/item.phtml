@@ -24,7 +24,7 @@
     // $options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
 ?>
 <!-- <a onclick="window.open('<//?php echo $share_url?>', 'sharer','<//?php echo $options?>')">123</a> -->
-<li class="post-holder post-holder-<?php echo $_post->getId() ?> col-md-4 col-sm-12">
+<li class="post-holder post-holder-<?php echo $_post->getId() ?> col-md-4 col-sm-12" onclick="window.location='<?php echo $_postUrl ?>'">
     <div class="post-banner no-banner"></div>
     <div class="thumb-img">
         <img src="<?php echo $_post->getFeaturedImage();?>">
@@ -51,10 +51,6 @@
                 <div class="post-text-hld clearfix">
                     <?php echo $block->getShorContent() ?>
                 </div>
-                <a class="post-read-more" href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>"
-                >
-                <?php echo __('Read more &#187;') ?>
-                </a>
             </div>
         </div>
         <div class="post-footer">
