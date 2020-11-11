@@ -26,35 +26,37 @@
 <!-- <a onclick="window.open('<//?php echo $share_url?>', 'sharer','<//?php echo $options?>')">123</a> -->
 <li class="post-holder post-holder-<?php echo $_post->getId() ?> col-md-4 col-sm-12" onclick="window.location='<?php echo $_postUrl ?>'">
     <div class="post-banner no-banner"></div>
-    <div class="thumb-img">
-        <img src="<?php echo $_post->getFeaturedImage();?>">
-    </div>
-    <div class="content">
-        <div class="post-date">
-            <span class="day"><?php echo date("j", strtotime($_postDate)); ?></span>
-            <span class="month"><?php echo date("M", strtotime($_postDate)); ?></span>
+    <div class="items-box">
+        <div class="thumb-img">
+            <img src="<?php echo $_post->getFeaturedImage();?>">
         </div>
-        <div class="post-header">
-
-            <div class="post-title-holder">
-                <h2 class="post-title">
-                    <a class="post-item-link"
-                    href="<?php echo $_postUrl ?>">
-                        <?php echo $_postName; ?>
-                    </a>
-                </h2>
+        <div class="content">
+            <div class="post-date">
+                <span class="day"><?php echo date("j", strtotime($_postDate)); ?></span>
+                <span class="month"><?php echo date("M", strtotime($_postDate)); ?></span>
             </div>
-        </div>
+            <div class="post-header">
 
-        <div class="post-content">
-            <div class="post-description clearfix">
-                <div class="post-text-hld clearfix">
-                    <?php echo $block->getShorContent() ?>
+                <div class="post-title-holder">
+                    <h2 class="post-title">
+                        <a class="post-item-link"
+                        href="<?php echo $_postUrl ?>">
+                            <?php echo $_postName; ?>
+                        </a>
+                    </h2>
                 </div>
             </div>
-        </div>
-        <div class="post-footer">
-            <?php echo $this->getInfoHtml() ?>
+
+            <div class="post-content">
+                <div class="post-description clearfix">
+                    <div class="post-text-hld clearfix">
+                        <?php echo $block->getShorContent() ?>
+                    </div>
+                </div>
+            </div>
+            <div class="post-footer">
+                <?php echo $this->getInfoHtml() ?>
+            </div>
         </div>
     </div>
 </li>
