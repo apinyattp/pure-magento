@@ -20,11 +20,11 @@
     $_postDate = $_post->getData("publish_time");
     $image = $_post->getFeaturedImage();
 
-    $share_url = "https://www.facebook.com/sharer/sharer.php?display=popup&u=" . $_post->getPostUrl();
-    $options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
+    // $share_url = "https://www.facebook.com/sharer/sharer.php?display=popup&u=" . $_post->getPostUrl();
+    // $options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
 ?>
-<a onclick="window.open('<?php echo $share_url?>', 'sharer','<?php echo $options?>')">123</a>
-<li class="post-holder post-holder-<?php echo $_post->getId() ?>">
+<!-- <a onclick="window.open('<//?php echo $share_url?>', 'sharer','<//?php echo $options?>')">123</a> -->
+<li class="post-holder post-holder-<?php echo $_post->getId() ?> col-md-3 col-sm-12">
     <div class="post-banner no-banner"></div>
     <div class="post-date">
         <span class="day"><?php echo date("j", strtotime($_postDate)); ?></span>
