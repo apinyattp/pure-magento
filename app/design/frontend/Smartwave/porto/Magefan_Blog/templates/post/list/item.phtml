@@ -20,9 +20,9 @@
     $_postDate = $_post->getData("publish_time");
     $image = $_post->getFeaturedImage();
     echo $image;
-    
+    $share_url = 'https://www.facebook.com/sharer/sharer.php?display=popup&u=' + $_postUrl;
 ?>
-<a data-original-title="" href="javascript:void(0);" onclick="share_fb('<?php echo $_postUrl ?>');"><img src="<?php echo $block->getViewFileUrl('images/facebook_counter.png');?>" title="Facebook"></a>
+<a data-original-title="" href="javascript:void(0);" onclick="window.open('<?php echo $share_url?>')"><img src="<?php echo $block->getViewFileUrl('images/facebook_counter.png');?>" title="Facebook"></a>
 <li class="post-holder post-holder-<?php echo $_post->getId() ?>">
     <div class="post-banner no-banner"></div>
     <div class="post-date">
