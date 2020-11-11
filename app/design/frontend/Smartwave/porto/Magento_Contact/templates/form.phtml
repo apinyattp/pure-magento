@@ -51,30 +51,25 @@ if($lang == 'en') {
                         <input name="email" id="email" title="<?php echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
                     </div>
                 </div>
-                <div class="field date required">
-                    <label for="date" class="label col-md-3"><span><?= $block->escapeHtml(__('Date')) ?></span></label>
-                        <div class="control col-md-9">
-                            <?=
-                                $block->getLayout()->createBlock('Magento\Framework\View\Element\Html\Date')
-                                    ->setData([
-                                        'name' => 'date',
-                                        'id' => 'date',
-                                        'value' => $block->escapeHtmlAttr($block->getFormData()->getDate()),
-                                        'date_format' => 'dd-MM-y',
-                                        'image' => $this->getViewFileUrl('Magento_Theme::calendar.png'),
-                                        'years_range' => '-120y:c+nn',
-                                        'max_date' => '-1d',
-                                        'change_month' => 'true',
-                                        'change_year' => 'true',
-                                        'show_on' => 'both',
-                                        'first_day' => 1
-                                    ])
-                                    ->toHtml()
-                            ?>
+                <div class="field datebook required">
+                    <label class="label col-md-3" for="datebook"><span><?php echo __('Date') ?></span></label>
+                    <div class="control col-md-9">
+                        <input name="datebook" id="datebook" title="<?php echo __('Date') ?>" value="" class="input-text" type="text" data-validate="{required:true, 'validate-date':true}" />
+                        <script> require(["jquery", "mage/calendar"], 
+                            function($){ 
+                                $("#datebook").datepicker({           
+                                    dateFormat:'mm/dd/yy',           
+                                    changeMonth: true,          
+                                    changeYear: true,          
+                                    yearRange: '2010:2025',          
+                                    showMonthAfterYear: false,        
+                                }) 
+                            }); 
+                        </script>
                     </div>
                 </div>
                 <div class="field timebook required">
-                    <label class="label col-md-3" for="timebook"><span><?php echo __('Time') ?></span></label>
+                    <label class="label col-md-3" for="timebook"><span><?php echo __('time') ?></span></label>
                     <div class="control col-md-9">
                         <input name="timebook" id="timebook" title="<?php echo __('Time') ?>" value="" class="input-text" type="text" data-validate="{required:true, 'validate-date':true}" />
                     </div>
