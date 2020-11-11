@@ -59,7 +59,7 @@ if($lang == 'en') {
                             function($){ 
                                 $('#datebook').datetimepicker({
                                         stepMinute: 15,
-                                        minDate: '-1d',
+                                        minDate: new Date(),
                                         dateFormat:'yy-mm-dd',
                                         beforeShowDay: $.datepicker.noWeekends,
                                         hourMin: 6,
