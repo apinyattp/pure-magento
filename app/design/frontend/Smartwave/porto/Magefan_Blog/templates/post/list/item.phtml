@@ -29,40 +29,42 @@
     <div class="thumb-img">
         <img src="<?php echo $_post->getFeaturedImage();?>">
     </div>
-    <div class="post-date">
-        <span class="day"><?php echo date("j", strtotime($_postDate)); ?></span>
-        <span class="month"><?php echo date("M", strtotime($_postDate)); ?></span>
-    </div>
-    <div class="post-header">
+    <div class="content">
+        <div class="post-date">
+            <span class="day"><?php echo date("j", strtotime($_postDate)); ?></span>
+            <span class="month"><?php echo date("M", strtotime($_postDate)); ?></span>
+        </div>
+        <div class="post-header">
 
-        <div class="post-title-holder">
-            <div class="addthis_toolbox addthis_default_style" addthis:url="<?php echo $_postUrl ?>">
-                <a class="addthis_button_facebook"></a>
-                <a class="addthis_button_twitter"></a>
-                <a class="addthis_button_email"></a>
-                <a class="addthis_button_compact"></a>
+            <div class="post-title-holder">
+                <div class="addthis_toolbox addthis_default_style" addthis:url="<?php echo $_postUrl ?>">
+                    <a class="addthis_button_facebook"></a>
+                    <a class="addthis_button_twitter"></a>
+                    <a class="addthis_button_email"></a>
+                    <a class="addthis_button_compact"></a>
+                </div>
+                <h2 class="post-title">
+                    <a class="post-item-link"
+                    href="<?php echo $_postUrl ?>">
+                        <?php echo $_postName; ?>
+                    </a>
+                </h2>
             </div>
-            <h2 class="post-title">
-                <a class="post-item-link"
-                   href="<?php echo $_postUrl ?>">
-                    <?php echo $_postName; ?>
+        </div>
+
+        <div class="post-content">
+            <div class="post-description clearfix">
+                <div class="post-text-hld clearfix">
+                    <?php echo $block->getShorContent() ?>
+                </div>
+                <a class="post-read-more" href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>"
+                >
+                <?php echo __('Read more &#187;') ?>
                 </a>
-            </h2>
-        </div>
-    </div>
-
-    <div class="post-content">
-        <div class="post-description clearfix">
-            <div class="post-text-hld clearfix">
-                <?php echo $block->getShorContent() ?>
             </div>
-            <a class="post-read-more" href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>"
-               >
-               <?php echo __('Read more &#187;') ?>
-            </a>
         </div>
-    </div>
-    <div class="post-footer">
-        <?php echo $this->getInfoHtml() ?>
+        <div class="post-footer">
+            <?php echo $this->getInfoHtml() ?>
+        </div>
     </div>
 </li>
