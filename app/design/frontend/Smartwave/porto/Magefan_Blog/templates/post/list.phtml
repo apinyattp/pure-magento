@@ -28,6 +28,7 @@ $_postCollection = $block->getPostCollection();
         <ol class="post-list row">
             <?php foreach ($_postCollection as $_post): ?>
                 <?php echo $block->getPostHtml($_post) ?>
+                <?php $iterator++;?>
             <?php endforeach; ?>
         </ol>
     </div>
