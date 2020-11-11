@@ -20,7 +20,11 @@
     $_postDate = $_post->getData("publish_time");
     $image = $_post->getFeaturedImage();
     echo $image;
+    
 ?>
+<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($_postUrl);?>&t=<?php echo urlencode($_postName)?>" onclick='javascript:window.open(this.href,"","width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes");return false' title="Share on facebook">
+        <img src="<?php echo $this->getViewFileUrl('Magento_Catalog::images/facebook-share.jpg'); ?>" alt="Facebook" width="12%">
+    </a>
 <li class="post-holder post-holder-<?php echo $_post->getId() ?>">
     <div class="post-banner no-banner"></div>
     <div class="post-date">
