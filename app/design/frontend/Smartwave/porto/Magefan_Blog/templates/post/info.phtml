@@ -16,11 +16,11 @@
 
 <?php $_post = $block->getPost() ?>
 
-<div class="post-info clear">
-    <div class="item post-posed-date">
+<span class="post-info clear">
+    <span class="item post-posed-date">
         <span class="label"><i class="far fa-clock"></i></span>
         <span class="value"><?php echo $block->getPostedOn('F d, Y') ?></span>
-    </div>
+    </span>
     <?php if ($_categoriesCount = $_post->getCategoriesCount()) { ?>
     <div class="item post-categories">
         <span class="label"><em class="porto-icon-folder-open"></em></span>
@@ -30,4 +30,4 @@
         <?php } ?>
     </div>
     <?php } ?>
-</div>
+</span>
