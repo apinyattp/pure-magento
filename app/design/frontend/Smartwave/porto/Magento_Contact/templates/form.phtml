@@ -58,10 +58,11 @@ if($lang == 'en') {
                         <script> require(["jquery", "mage/calendar"], 
                             function($){ 
                                 $("#datebook").datepicker({           
-                                    dateFormat:'mm/dd/yy',           
+                                    dateFormat:'yyyy-mm-dd',           
                                     changeMonth: true,          
-                                    changeYear: true,          
-                                    yearRange: '2010:2025',          
+                                    changeYear: true,   
+                                    setDate: new Date(),       
+                                    minDate:'-1d'          
                                     showMonthAfterYear: false,        
                                 }) 
                             }); 
