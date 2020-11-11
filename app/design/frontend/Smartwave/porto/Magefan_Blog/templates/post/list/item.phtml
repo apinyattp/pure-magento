@@ -21,7 +21,8 @@
     $image = $_post->getFeaturedImage();
     echo $image;
 
-    $share_url = "https://www.facebook.com/sharer/sharer.php?display=popup&u=" + (String)$_postUrl;
+    var_dump($_post->getPostUrl());
+    $share_url = "https://www.facebook.com/sharer/sharer.php?display=popup&u=" + $_post->getPostUrl();
     echo $share_url;
 ?>
 <a onclick="window.open('<?php echo $share_url?>')">123</a>
