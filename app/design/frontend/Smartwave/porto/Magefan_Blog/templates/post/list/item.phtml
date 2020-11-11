@@ -21,10 +21,8 @@
     $image = $_post->getFeaturedImage();
     echo $image;
 
-    var_dump($_post->getPostUrl());
-    $share_url = '';
-    $share_url = "https://www.facebook.com/sharer/sharer.php?display=popup&u=" + $_post->getPostUrl();
-    echo $share_url;
+    $share_url = "https://www.facebook.com/sharer/sharer.php?display=popup&u=" . $_post->getPostUrl();
+
 ?>
 <a onclick="window.open('<?php echo $share_url?>')">123</a>
 <li class="post-holder post-holder-<?php echo $_post->getId() ?>">
