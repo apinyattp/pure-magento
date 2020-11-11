@@ -136,8 +136,11 @@ if($lang == 'en') {
             </div>
         </fieldset>
     </fieldset>
-    <div class="actions-toolbar">
-        <div class="primary">
+    <div class="actions-toolbar row">
+        <div class="col-md-5 notice">
+            <span class="error-notice">*</span> Required
+        </div>
+        <div class="primary col-md-7 button-contact">
             <input type="hidden" name="hideit" id="hideit" value="" />
             <button type="submit" title="<?php echo __('Submit') ?>" class="action submit primary submit-contact">
                 <span><?php echo __('Submit') ?></span>
