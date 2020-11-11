@@ -52,9 +52,9 @@ if($lang == 'en') {
                     </div>
                 </div>
                 <div class="field datebook required">
-                    <label class="label col-md-3" for="datebook"><span><?php echo __('Date') ?></span></label>
+                    <label class="label col-md-3" for="datebook"><span><?php echo __('Date Time') ?></span></label>
                     <div class="control col-md-9">
-                        <input name="datebook" id="datebook" title="<?php echo __('Date') ?>" value="" class="input-text" type="text" data-validate="{required:true, 'validate-date':true}" />
+                        <input name="datebook" id="datebook" title="<?php echo __('Date Time') ?>" value="" class="input-text" type="text" data-validate="{required:true, 'validate-date':true}" />
                         <script> require(["jquery", "mage/calendar"], 
                             function($){ 
                                 $('#datebook').datetimepicker({
@@ -70,10 +70,46 @@ if($lang == 'en') {
                         </script>
                     </div>
                 </div>
-                <div class="field timebook required">
-                    <label class="label col-md-3" for="timebook"><span><?php echo __('time') ?></span></label>
+                <div class="field branch">
+                    <label class="label col-md-3" for="branch"><span><?php echo __('branch') ?></span></label>
                     <div class="control col-md-9">
-                        <input name="timebook" id="timebook" title="<?php echo __('Time') ?>" value="" class="input-text" type="text" data-validate="{required:true, 'validate-date':true}" />
+                       <select name='branch' class="form-control">
+                            <option value="">Please select Branch</option>
+                            <option value="AYUTTHAYA CITY PARK">AYUTTHAYA CITY PARK</option>
+                            <option value="BLUE PORT HUA HIN">BLUE PORT HUA HIN</option>
+                            <option value="CENTRAL CHAENGWATTANA">CENTRAL CHAENGWATTANA</option>
+                            <option value="CENTRAL EASTVILLE">CENTRAL EASTVILLE</option>
+                            <option value="CENTRAL FESTIVAL PATTAYA BEACH">CENTRAL FESTIVAL PATTAYA BEACH</option>
+                            <option value="CENTRAL FESTIVAL PHUKET">CENTRAL FESTIVAL PHUKET</option>
+                            <option value="CENTRAL FESTIVAL SAMUI">CENTRAL FESTIVAL SAMUI</option>
+                            <option value="CENTRAL KHONKAEN">CENTRAL KHONKAEN</option>
+                            <option value="CENTRAL LADPRAO">CENTRAL LADPRAO</option>
+                            <option value="CENTRAL MAHACHAI">CENTRAL MAHACHAI</option>
+                            <option value="CENTRAL NAKHON RATCHASIMA">CENTRAL NAKHON RATCHASIMA</option>
+                            <option value="CENTRAL PINKLAO">CENTRAL PINKLAO</option>
+                            <option value="CENTRAL RAYONG">CENTRAL RAYONG</option>
+                            <option value="CENTRAL SALAYA">CENTRAL SALAYA</option>
+                            <option value="CENTRAL UDONTHANI">CENTRAL UDONTHANI</option>
+                            <option value="CENTRAL WORLD">CENTRAL WORLD</option>
+                            <option value="CENTRAL WESTGATE">CENTRAL WESTGATE</option>
+                            
+                            <option value="EMQUARTIER">EMQUARTIER</option>
+                            <option value="FASHION ISLAND">FASHION ISLAND</option>
+                            <option value="PARADISE PARK">PARADISE PARK</option>
+                            <option value="ROBINSON CHACHOENGSAO">ROBINSON CHACHOENGSAO</option>
+                            <option value="SEACON SQUARE">SEACON SQUARE</option>
+                            <option value="THE MALL BANGKAPI">THE MALL BANGKAPI</option>
+                            <option value="THE MALL BANGKAE">THE MALL BANGKAE</option>
+                            <option value="THE MALL NGAMWINGWAN">THE MALL NGAMWINGWAN</option>
+                            <option value="THE MALL THA PHRA">THE MALL THA PHRA</option>
+                            <option value="THE MALL KORAT">THE MALL KORAT</option>
+                            <option value="TERMINAL21 KORAT">TERMINAL21 KORAT</option>
+                            <option value="TERMINAL21 PATTAYA">TERMINAL21 PATTAYA</option>
+                            <option value="ZPELL">ZPELL</option>
+                           
+                           
+                       </select>
+                        <!-- <input name="branch" id="branch" title="<?php echo __('branch') ?>" value="" class="input-text" type="text" data-validate="{required:true}" /> -->
                     </div>
                 </div>
             </div>
