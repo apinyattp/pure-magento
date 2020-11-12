@@ -56,6 +56,12 @@
                 </div>
             </div>
         </div>
+        <?php
+        echo $this->getLayout()
+                ->createBlock('Magefan\Blog\Block\Post\View\RelatedPosts')
+                ->setTemplate('Magefan_Blog::post/view/relatedposts.phtml')
+                ->toHtml();
+        ?>
     </div>
 </div>
 
