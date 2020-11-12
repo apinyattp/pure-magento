@@ -4,3 +4,12 @@
  *
  * Glory to Ukraine! Glory to the heroes!
  */
+ .post-view {
+    text-align: center;
+ }
+ .post-view .detail{
+ font-family: 'Karla';
+     font-weight: 700;
+     font-size: 40px;
+     text-transform: uppercase;
+ }
