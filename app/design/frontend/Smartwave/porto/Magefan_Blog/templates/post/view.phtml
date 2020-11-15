@@ -37,16 +37,13 @@
                 <?php echo $_postName; ?>
             </h2>
         </div>
-        <div class="post-contentq">
+        <div class="post-content">
             <div class="post-description clearfix">
                 <div class="post-text-hld">
-                <?php echo $block->getShorContent() ?>
+                    <?php echo $block->getShorContent() ?>
                     <div class="clear"></div>
                 </div>
             </div>
-        </div>
-        <div class="post-bottom">
-            <?php echo $this->getChildHtml('blog.post.bottom') ?>
         </div>
         <div class="post-content">
             <div class="post-description clearfix">
@@ -56,12 +53,9 @@
                 </div>
             </div>
         </div>
-        <?php
-        echo $this->getLayout()
-                ->createBlock('Magefan\Blog\Block\Post\View\RelatedPosts')
-                ->setTemplate('Magefan_Blog::post/view/relatedposts.phtml')
-                ->toHtml();
-        ?>
+        <div class="post-bottom">
+            <?php echo $this->getChildHtml('blog.post.bottom') ?>
+        </div>
     </div>
 </div>
 
