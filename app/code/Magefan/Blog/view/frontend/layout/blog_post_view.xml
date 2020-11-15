@@ -18,7 +18,7 @@
         <referenceContainer name="content">
             <block class="Magefan\Blog\Block\Post\View\ViewsCount" name="blog.posts.views.count" template="post/view/views_count.phtml"></block>
             <block class="Magefan\Blog\Block\Post\View" name="blog.post" template="post/view.phtml">
-                <container name="blog.post.gallerys" label="Gallery Container" htmlTag="div" htmlClass="block gallerty" >
+                <container name="blog.post.gallerys_hero" label="Gallery Container hero" htmlTag="div" htmlClass="block gallery" >
                     <block class="Magefan\Blog\Block\Post\View\Gallery" name="blog.post.gallery" as="gallery"  template="Magefan_Blog::post/view/gallery.phtml" />
                 </container>
                 <block class="Magefan\Blog\Block\Post\Info" name="blog.post.info" template="post/info.phtml" />
