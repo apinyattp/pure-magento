@@ -22,7 +22,7 @@
                 <action method="setPostInfoBlockName">
                     <argument name="name" xsi:type="string">blog.post.info</argument>
                 </action>
-                <container name="blog.post.view" label="Blog Post Bottom Container" >
+                <container name="blog.post.views" label="Blog Post Bottom Container" >
                     <block class="Magefan\Blog\Block\Post\View\Gallery" name="blog.post.gallery" as="gallery"  template="Magefan_Blog::post/view/gallery.phtml" />
                 </container>
                 <container name="blog.post.bottom" label="Blog Post Bottom Container" >
