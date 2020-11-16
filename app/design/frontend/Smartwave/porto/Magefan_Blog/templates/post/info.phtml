@@ -22,7 +22,7 @@
         <span class="value"><?php echo $block->getPostedOn('F d, Y') ?></span>
     </span>
     <?php if ($_categoriesCount = $_post->getCategoriesCount()) { ?>
-    <div class="item post-categories">
+    <div class="item post-categories" style="display:none;">
         <span class="label"><em class="porto-icon-folder-open"></em></span>
         <?php $n = 0; foreach($_post->getParentCategories() as $ct) { $n++; ?>
             <a title="<?php echo $block->escapeHtml($ct->getTitle()) ?>" href="<?php echo $ct->getCategoryUrl() ?>"><?php echo $block->escapeHtml($ct->getTitle()) ?></a>
