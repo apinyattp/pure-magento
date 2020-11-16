@@ -33,7 +33,7 @@
         <div class="row">
             <div class="<?php if(!$page_type && $custom_block && $static_block_tab):?>col-md-9<?php else:?>col-md-12<?php endif;?>">
     <?php endif;?>
-                <div class="product info detailed <?php echo $tab_style; ?> <?php if($page_type == 'sticky_right'): ?>fullwidth-row<?php endif; ?>">
+                <div class="col-md-8 product info detailed <?php echo $tab_style; ?> <?php if($page_type == 'sticky_right'): ?>fullwidth-row<?php endif; ?>">
                 <?php $layout = $block->getLayout(); ?>
                 <?php if(!$tab_style || $tab_style != "sticky"): ?>
                     <div class="product data items <?php if($page_type == 'sticky_right'): ?>container<?php endif; ?>" data-mage-init='{"tabs":{"openedState":"active"}}'>
