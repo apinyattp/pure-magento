@@ -11,6 +11,7 @@ class LatestList extends \Magento\Catalog\Block\Product\ListProduct {
     protected $categoryRepository;
     
     protected $_resource;
+    protected $_listConfigurable;
     
     public function __construct(
     \Magento\Catalog\Block\Product\Context $context, 
@@ -20,17 +21,29 @@ class LatestList extends \Magento\Catalog\Block\Product\ListProduct {
             \Magento\Framework\Url\Helper\Data $urlHelper, 
             \Magento\Catalog\Model\ResourceModel\Product\Collection $collection, 
             \Magento\Framework\App\ResourceConnection $resource,
-            array $data = []
+            array $data = [],
+            \Magento\Swatches\Block\Product\Renderer\Listing\Configurable $listConfigurable
     ) {
         $this->categoryRepository = $categoryRepository;
         $this->_collection = $collection;
         $this->_resource = $resource;
+        $this->_listConfigurable = $listConfigurable;
 
         parent::__construct($context, $postDataHelper, $layerResolver, $categoryRepository, $urlHelper, $data);
     }
 
     protected function _getProductCollection() {
         return $this->getProducts();
+    }
+
+    public function getProductDetailsHtml(\Magento\Catalog\Model\Product $product){
+        $renderer = $this->_listConfigurable;
+
+        if ($renderer) {
+            $renderer->setProduct($product);
+            return $renderer->setTemplate('Smartwave_Filterproducts::swatch_renderer.phtml')->toHtml();
+        }
+        return "";
     }
     
     public function getProducts() {
