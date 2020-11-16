@@ -7,9 +7,6 @@
 -->
 <page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="sidebar.additional">
-            <block class="Smartwave\Porto\Block\Template" name="product_view_custom_block" before="product.info.main"  template="Magento_Catalog::product/view/custom_block.phtml"/>
-        </referenceContainer>
         
         <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
         <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
@@ -27,6 +24,9 @@
         <move element="page.main.title" destination="product.info.main" before="-"/>
         <referenceContainer name="product.info.social">
             <block class="Smartwave\Porto\Block\Template" name="product_view_addthis_links" after="-" template="Magento_Catalog::product/view/addthis.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Smartwave\Porto\Block\Template" name="product_view_custom_block"  template="Magento_Catalog::product/view/custom_block.phtml"/>
         </referenceContainer>
         <referenceContainer name="content">
             <block class="Smartwave\Porto\Block\RickSnippet" name="rich_snippet" template="Magento_Catalog::product/view/rich_snippet.phtml" before="-"/>
