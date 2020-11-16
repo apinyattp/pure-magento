@@ -95,7 +95,7 @@
      width: 100%;
  }
  .post-holder {
-    margin-left: 60px;
+    margin-left: 0;
     margin-top: 0;
     margin-bottom: 30px;
     border: none;
@@ -105,4 +105,40 @@
 .post-categories{
     display: none;
 }
+#relate_product {
+    margin-top: 25px; 
+    padding-right: 6%; 
+    padding-left: 6%; 
+}
 </style>
+<script type="text/javascript">
+    require([
+      'jquery',
+      'owl.carousel/owl.carousel.min'
+    ], function ($) {
+      $("#relate_product .owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        navRewind: true,
+        nav: false,
+        dots: true,
+        responsive: {
+          0: {
+            items:2
+          },
+          768: {
+            items:3
+          },
+          992: {
+            items:4
+          },
+          1200: {
+            items:5
+          }
+        }
+      });
+    });
+  </script>
