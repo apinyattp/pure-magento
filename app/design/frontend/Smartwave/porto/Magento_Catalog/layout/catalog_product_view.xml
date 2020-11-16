@@ -14,7 +14,7 @@
         <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
         <move element="catalog.product.related" destination="sidebar.additional" after="product_view_custom_block"/>
         <!--<referenceBlock name="catalog.product.related" remove="true"/>-->
-        <move element="product.info.overview" destination="product.info.main" after="product.info.review"/>
+        <move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
         <referenceContainer name="after.body.start">
             <block class="Magento\Catalog\Block\Product\View" name="product_custom" template="Magento_Catalog::product/view/product_custom.phtml" before="-"/>
             <block class="Smartwave\Porto\Block\Template" name="product_view_config" after="-" template="Magento_Catalog::product/view/config.phtml"/>
