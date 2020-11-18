@@ -28,10 +28,10 @@
             <img src="<?php echo $_post->getFeaturedImage();?>">
         </div>
         <div class="content">
-            <!-- <div class="post-date">
+            <div class="post-date">
                 <span class="day"><?php echo date("j", strtotime($_postDate)); ?></span>
                 <span class="month"><?php echo date("M", strtotime($_postDate)); ?></span>
-            </div> -->
+            </div>
             <div class="post-header">
 
                 <div class="post-title-holder">
@@ -57,3 +57,152 @@
         </div>
     </div>
 </li>
+<style>
+.layout-fullwidth.page-layout-2columns-left .column.mainด, .layout-fullwidth.page-layout-2columns-right .column.main { 
+  width: 100%;
+}
+.page-title span{
+   font-family: 'Karla';
+    font-weight: 700;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.page-title-wrapper{
+  text-align:center;
+}
+.post-holder {
+ padding: 17px;
+    margin: 0;
+  border: none;
+  cursor: pointer;
+}
+.post-title{
+   color: #141515;
+      padding: 10px 20px 0;
+}
+.post-title:hover{
+   color: #fff;
+}
+.post-text-hld{
+  color:#141515
+}
+.post-text-hld:hover{
+  color:#fff
+}
+.post-date{
+  display:none;
+}
+.post-holder .post-header{
+  margin-bottom:0;
+}
+.post-holder .content{
+     padding: 36px;
+   background-color: #e8e9ed;
+  max-height: 309px;
+}
+.post-holder .post-info .item:hover {
+   color:#8b8b8b
+}
+.items-box:hover div {
+  color: #fff;
+  background-color: #141515;
+}
+
+.items-box:hover a {
+  color: #fff
+}
+.post-holder .content:hover a {
+  color: #fff
+}
+.post-holder .content:hover div {
+  color: #fff
+}
+.
+.post-item-link {
+  font-family: 'Open Sans';
+    font-size: 22px;
+}
+a:hover {
+  color: #fff
+}
+.post-categories{
+  display:none !important;
+}
+.post-info {
+    color: #8b8b8b;
+}
+.item post-posed-date:hover {
+    color: #8b8b8b !important;
+}
+.post-list-wrapper{
+ padding-top: 3%;
+}
+.thumb-img{
+  background-color: #e8e9ed;
+    max-height: 300px;
+    overflow: hidden;
+align-items: center;
+    justify-content: center;
+}
+.thumb-img:hover{
+  background-color: #141515;
+}
+.post-list .post-content{
+  padding-bottom:35px;
+ padding-left:0;
+    width: 100%;
+    padding-right: 0%;
+}
+.post-description{
+    height: 82px;
+    overflow: hidden;
+}
+.post-header .post-title a {
+   font-weight: 500;
+}
+.post-list li:nth-child(8){
+flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+}
+.post-list li:nth-child(8) .items-box .content div:hover{
+   color: #fff;
+}
+.post-list li:nth-child(8) .items-box .content a{
+   color: #141515;
+}
+.post-list li:nth-child(8) .items-box .content:hover a{
+   color: #fff;
+}
+.post-list li:nth-child(8) .post-title:hover{
+   color: #fff;
+}
+.post-list li:nth-child(8)  .post-holder .content:hover a {
+  color: #fff;
+}
+.post-list li:nth-child(7) .content{
+background: url(https://thenext.bearrunrun.com/media/wysiwyg/smartwave/porto/blog/NEWS-BG.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.post-list li:nth-child(7) .items-box{
+  background-color: #FDC742;
+}
+.post-list li:nth-child(7) .items-box:hover div {
+  color: #141515;
+  background-color: transparent;
+}
+.post-list li:nth-child(7) .items-box .content a{
+   color: #fff;
+}
+.post-list li:nth-child(7) .items-box .content div{
+   color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+.post-list li:last-child{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+}
+}
+</style>
