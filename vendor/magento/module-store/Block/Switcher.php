@@ -258,7 +258,7 @@ class Switcher extends \Magento\Framework\View\Element\Template
         $urlOnTargetStore = $store->getCurrentUrl(false);
         $data[ActionInterface::PARAM_NAME_URL_ENCODED] = $this->urlHelper->getEncodedUrl($urlOnTargetStore);
 
-        $url = $this->getUrl('stores/store/switch');
+        $url = $this->getUrl('stores/store/redirect');
 
         return $this->_postDataHelper->getPostData(
             $url,
