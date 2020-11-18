@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-11-16 16:53:30 */
+ * 2020-11-18 13:44:45 */
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
@@ -51,6 +51,10 @@
     border-radius: 0;
 }
 
+.branch-detail{
+max-height: 450px;
+    overflow: scroll;
+}
 .type1 .tocart{
    float:left;
 }
@@ -216,7 +220,7 @@ border-bottom-right-radius: 25px;
     width: 100%;
     z-index: 9;
     border: 0;
-    background: url(//thenext.bearrunrun.com/media/porto/header_bg/default/HOME-BG-MENU.png) repeat-x;
+    background: url(//thenextoptical.com/media/porto/header_bg/default/HOME-BG-MENU.png) repeat-x;
    background-size: auto 100%;
    padding: 10px 0;
 }
@@ -1394,7 +1398,8 @@ body.layout-fullwidth .page-wrapper > .breadcrumbs .items {
   .fotorama{
     magin-left:0;
 }
-}.description{
+}
+.description{
 text-align: center;
 } 
 .post-view {
