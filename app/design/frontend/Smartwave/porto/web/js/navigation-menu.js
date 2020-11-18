@@ -327,7 +327,7 @@ define([
 
             if (this.options.responsive) {
                 mediaCheck({
-                    media: '(min-width: 1300px)',
+                    media: '(min-width: 768px)',
                     entry: $.proxy(function() {
                         this._toggleDesktopMode();
                     }, this),
