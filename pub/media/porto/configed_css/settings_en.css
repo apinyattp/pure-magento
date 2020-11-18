@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-11-18 13:44:45 */
+ * 2020-11-18 14:46:39 */
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
@@ -51,6 +51,9 @@
     border-radius: 0;
 }
 
+.fotorama__nav--dots{
+   margin-left: -26px;
+}
 .branch-detail{
 max-height: 450px;
     overflow: scroll;
