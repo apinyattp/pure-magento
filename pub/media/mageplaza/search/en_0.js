@@ -1,1 +1,1 @@
-var mageplazaSearchProducts = '';
+var mageplazaSearchProducts = 
