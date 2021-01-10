@@ -57,9 +57,9 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
         $columns = '';
         $product_type = 0;
     }
-    $image_width =400;
-    $image_height = 400;
-    $aspect_ratio = 1;
+    $image_width = ($_category_config['ratio_width'])?$_category_config['ratio_width']:300;
+    $image_height = ($_category_config['ratio_height'])?$_category_config['ratio_height']:300;
+    $aspect_ratio = $_category_config['aspect_ratio'];
     if($aspect_ratio)
         $image_height = $image_width;
     ?>
@@ -79,6 +79,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                             else
                                 $productImage = $_imagehelper->init($_product, $image)->resize($image_width, $image_height);
                             $productImageUrl = $productImage->getUrl();
+                            echo $productImageUrl;
                         ?>
                             <img class="product-image-photo default_image <?php if(!$_lazyload): ?>porto-lazyload<?php endif;?>" <?php if(!$_lazyload): ?>data-<?php endif; ?>src="<?php echo $productImageUrl; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>" alt=""/>
                         <?php if($_category_config['alternative_image']): ?>
