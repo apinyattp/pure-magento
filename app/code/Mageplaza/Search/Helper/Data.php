@@ -236,7 +236,7 @@ class Data extends AbstractData
 
         $this->getMediaHelper()->createJsFile(
             $this->getJsFilePath($group, $store),
-            'var mageplazaSearchProducts = ' . self::jsonEncode($productList)
+            'var mageplazaSearchProducts = ' . (empty(self::jsonEncode($productList)) ?  "'';" : self::jsonEncode($productList))
         );
 
         return $this;
