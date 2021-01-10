@@ -80,7 +80,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                 $productImage = $_imagehelper->init($_product, $image)->resize($image_width, $image_height);
                             $productImageUrl = $productImage->getUrl();
                         ?>
-                            <img class="product-image-photo 55555 default_image <?php if(!$_lazyload): ?>porto-lazyload<?php endif;?>" <?php if(!$_lazyload): ?>data-<?php endif; ?>src="<?php echo $productImageUrl; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>" alt=""/>
+                            <img class="product-image-photo 55555 default_image <?php if(!$_lazyload): ?>porto-lazyload<?php endif;?>" <?php if(!$_lazyload): ?>data-<?php endif; ?>src="<?php echo $productImageUrl; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>" src="<?php echo $productImageUrl; ?>" alt=""/>
                         <?php if($_category_config['alternative_image']): ?>
                         <?php
                             if($aspect_ratio)
