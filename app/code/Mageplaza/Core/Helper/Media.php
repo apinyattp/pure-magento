@@ -179,8 +179,9 @@ class Media extends AbstractData
         if (!($imageSize = $this->correctImageSize($size))) {
             return $this->getMediaUrl($image);
         }
-        list($width, $height) = $imageSize;
-
+        // list($width, $height) = $imageSize;
+        $width = 400;
+        $height = 400;
         $resizeImage = $this->getMediaPath($file, ($type ? $type . '/' : '') . 'resize/' . $width . 'x' . $height);
 
         /** @var \Magento\Framework\Filesystem\Directory\WriteInterface $mediaDirectory */
