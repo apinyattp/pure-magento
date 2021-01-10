@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-11-20 09:46:46 */
+ * 2021-01-10 04:36:58 */
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
@@ -205,6 +205,10 @@ border-bottom-right-radius: 25px;
 }
 .block-category-list{
    display:none;
+}
+.swatch-option {
+  border: none;
+min-width: 20px;
 }
 .swatch-option.color {
    min-width: 20px;
@@ -1407,6 +1411,7 @@ body.layout-fullwidth .page-wrapper > .breadcrumbs .items {
     margin-top: -14px;
 }
 }
+
 .description{
 text-align: center;
 } 
