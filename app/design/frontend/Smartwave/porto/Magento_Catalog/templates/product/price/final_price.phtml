@@ -50,7 +50,6 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
             </span>
         </span>
     </span>
-    <?php echo '1111'. $block->hasSpecialPrice();?>
 <?php elseif ($block->hasSpecialPrice()): ?>
     <span class="old-price">
         <?php /* @escapeNotVerified */ echo $block->renderAmount($priceModel->getAmount(), [
