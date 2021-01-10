@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="kbankpayment" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>KBank Payment Gateway</label>
+                <field id="basic_settings" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Basic Setting</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="sandbox_status" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sandbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enabling sandbox means that all your transactions will be in TEST mode.</comment>
+                </field>
+                <field id="live_mid" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID Live</label>
+                </field>
+                <field id="live_tid" translate="label" type="text" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Terminal ID Live</label>
+                </field>
+                <field id="test_mid" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID Test</label>
+                </field>
+                <field id="test_tid" translate="label" type="text" sortOrder="41" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Terminal ID Test</label>
+                </field>
+
+                <group id="kbankpayment_redirect" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Redirect Solution</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable/Disable</label>
+                        <comment>Enable KBank Redirect Solution.</comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/kbankpayment_redirect/active</config_path>
+                    </field>
+                    <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Title</label>
+                        <comment>This controls the title which the user sees during checkout.</comment>
+                        <config_path>payment/kbankpayment_redirect/title</config_path>
+                    </field>
+                    <field id="live_secret" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>MD5 Secret Live</label>
+                        <config_path>payment/kbankpayment_redirect/live_secret</config_path>
+                    </field>
+                    <field id="test_secret" translate="label" type="text" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>MD5 Secret Test</label>
+                        <config_path>payment/kbankpayment_redirect/test_secret</config_path>
+                    </field>
+                    <field id="min_order_total" translate="label" type="text" sortOrder="98" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Minimum Order Total</label>
+                        <config_path>payment/kbankpayment_redirect/min_order_total</config_path>
+                    </field>
+                    <field id="max_order_total" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Maximum Order Total</label>
+                        <config_path>payment/kbankpayment_redirect/max_order_total</config_path>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                        <config_path>payment/kbankpayment_redirect/sort_order</config_path>
+                    </field>
+                </group>
+
+                <group id="kbankpayment_direct18" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Direct API 2018 Solution</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable/Disable</label>
+                        <comment>Enable KBank Direct API 2018 Solution.</comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/kbankpayment_direct18/active</config_path>
+                    </field>
+                    <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Title</label>
+                        <comment>This controls the title which the user sees during checkout.</comment>
+                        <config_path>payment/kbankpayment_direct18/title</config_path>
+                    </field>
+                    <field id="live_public" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Public Key Live</label>
+                        <config_path>payment/kbankpayment_direct18/live_public</config_path>
+                    </field>
+                    <field id="test_public" translate="label" type="text" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Public Key Test</label>
+                        <config_path>payment/kbankpayment_direct18/test_public</config_path>
+                    </field>
+                    <field id="live_secret" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Secret Key Live</label>
+                        <config_path>payment/kbankpayment_direct18/live_secret</config_path>
+                    </field>
+                    <field id="test_secret" translate="label" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Secret Key Test</label>
+                        <config_path>payment/kbankpayment_direct18/test_secret</config_path>
+                    </field>
+                    <field id="min_order_total" translate="label" type="text" sortOrder="98" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Minimum Order Total</label>
+                        <config_path>payment/kbankpayment_direct18/min_order_total</config_path>
+                    </field>
+                    <field id="max_order_total" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Maximum Order Total</label>
+                        <config_path>payment/kbankpayment_direct18/max_order_total</config_path>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                        <config_path>payment/kbankpayment_direct18/sort_order</config_path>
+                    </field>
+                </group>
+
+                <group id="kbankpayment_uibutton" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable KBank UI Button</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable/Disable</label>
+                        <comment>Enable KBank UI Button</comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/kbankpayment_uibutton/active</config_path>
+                    </field>
+                    <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Title</label>
+                        <comment>This controls the title which the user sees during checkout.</comment>
+                        <config_path>payment/kbankpayment_uibutton/title</config_path>
+                    </field>
+                    <field id="test_public" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Test : Public Key</label>
+                        <config_path>payment/kbankpayment_uibutton/test_public</config_path>
+                    </field>
+                    <field id="test_secret" translate="label" type="text" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Test : Secret Key</label>
+                        <config_path>payment/kbankpayment_uibutton/test_secret</config_path>
+                    </field>
+                    <field id="live_public" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Live : Public Key</label>
+                        <config_path>payment/kbankpayment_uibutton/live_public</config_path>
+                    </field>
+                    <field id="live_secret" translate="label" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Live : Secret Key</label>
+                        <config_path>payment/kbankpayment_uibutton/live_secret</config_path>
+                    </field>
+                    <field id="min_order_total" translate="label" type="text" sortOrder="98" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Minimum Order Total</label>
+                        <config_path>payment/kbankpayment_uibutton/min_order_total</config_path>
+                    </field>
+                    <field id="max_order_total" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Maximum Order Total</label>
+                        <config_path>payment/kbankpayment_uibutton/max_order_total</config_path>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                        <config_path>payment/kbankpayment_uibutton/sort_order</config_path>
+                    </field>
+                </group>
+
+                <group id="kbankpayment_uiqr" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable KBank UI QR</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable/Disable</label>
+                        <comment>Enable KBank UI QR</comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/kbankpayment_uiqr/active</config_path>
+                    </field>
+                    <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Title</label>
+                        <comment>This controls the title which the user sees during checkout.</comment>
+                        <config_path>payment/kbankpayment_uiqr/title</config_path>
+                    </field>
+                    <field id="test_public" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Test : Public Key</label>
+                        <config_path>payment/kbankpayment_uiqr/test_public</config_path>
+                    </field>
+                    <field id="test_secret" translate="label" type="text" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Test : Secret Key</label>
+                        <config_path>payment/kbankpayment_uiqr/test_secret</config_path>
+                    </field>
+                    <field id="live_public" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Live : Public Key</label>
+                        <config_path>payment/kbankpayment_uiqr/live_public</config_path>
+                    </field>
+                    <field id="live_secret" translate="label" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Live : Secret Key</label>
+                        <config_path>payment/kbankpayment_uiqr/live_secret</config_path>
+                    </field>
+                    <field id="min_order_total" translate="label" type="text" sortOrder="98" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Minimum Order Total</label>
+                        <config_path>payment/kbankpayment_uiqr/min_order_total</config_path>
+                    </field>
+                    <field id="max_order_total" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Maximum Order Total</label>
+                        <config_path>payment/kbankpayment_uiqr/max_order_total</config_path>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                        <config_path>payment/kbankpayment_uiqr/sort_order</config_path>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

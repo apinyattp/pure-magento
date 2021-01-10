@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Perspective\Kbankpayment\Api\Data\CardInterface" type="Perspective\Kbankpayment\Model\Data\Card" />
+    <preference for="Perspective\Kbankpayment\Api\CardInformationInterface" type="Perspective\Kbankpayment\Model\CardInformation" />
+    <preference for="Perspective\Kbankpayment\Api\UrlInformationInterface" type="Perspective\Kbankpayment\Model\UrlInformation" />
+
+    <virtualType name="KbankpaymentAdapter" type="KbankpaymentRedirectAdapter">
+        <arguments>
+            <argument name="code" xsi:type="const">Perspective\Kbankpayment\Model\Config\Config::CODE</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Redirect payment solution -->
+    <virtualType name="KbankpaymentRedirectAdapter" type="Magento\Payment\Model\Method\Adapter">
+        <arguments>
+            <argument name="code" xsi:type="const">Perspective\Kbankpayment\Model\Config\Redirect::CODE</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form\Cc</argument>
+            <argument name="infoBlockType" xsi:type="string">Magento\Payment\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">KbankpaymentRedirectValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">KbankpaymentValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">KbankpaymentRedirectCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Redirect :: Command Pool -->
+    <virtualType name="KbankpaymentRedirectCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array"></argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="KbankpaymentRedirectValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">KbankpaymentRedirectConfigValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="KbankpaymentRedirectConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">KbankpaymentRedirectConfig</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="KbankpaymentRedirectConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Perspective\Kbankpayment\Model\Config\Redirect::CODE</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="KbankpaymentValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Direct API 2018 payment solution -->
+    <virtualType name="KbankpaymentDirect18Adapter" type="Magento\Payment\Model\Method\Adapter">
+        <arguments>
+            <argument name="code" xsi:type="const">Perspective\Kbankpayment\Model\Config\Direct18::CODE</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form\Cc</argument>
+            <argument name="infoBlockType" xsi:type="string">Magento\Payment\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">KbankpaymentDirect18ValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">KbankpaymentValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">KbankpaymentDirect18CommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Direct API 2018 :: Command Pool -->
+    <virtualType name="KbankpaymentDirect18CommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="initialize" xsi:type="string">Direct18InitializeCommand</item>
+                <item name="authorize" xsi:type="string">Direct18AuthorizeCommand</item>
+                <!-- <item name="capture" xsi:type="string">Direct18CaptureCommand</item> -->
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Direct18InitializeCommand" type="Perspective\Kbankpayment\Gateway\Command\Direct18StrategyCommand">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">KbankpaymentDirect18CommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="KbankpaymentDirect18ValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">KbankpaymentDirect18ConfigValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="KbankpaymentDirect18ConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">KbankpaymentDirect18Config</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="KbankpaymentDirect18Config" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Perspective\Kbankpayment\Model\Config\Direct18::CODE</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Direct API 2018 :: Authorize payment -->
+    <virtualType name="Direct18AuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">Direct18AuthorizeRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Perspective\Kbankpayment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Direct18Charge</argument>
+            <argument name="handler" xsi:type="object">Direct18AuthorizeResponseHandler</argument>
+            <argument name="validator" xsi:type="object">Perspective\Kbankpayment\Gateway\Validator\AuthorizeCommandResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Direct18AuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="payment" xsi:type="string">Perspective\Kbankpayment\Gateway\Request\PaymentDataBuilder</item>
+                <item name="cccard" xsi:type="string">Perspective\Kbankpayment\Gateway\Request\PaymentCcTokenBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Direct API 2018 :: Capture Command -->
+    <virtualType name="Direct18CaptureCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">Direct18CaptureRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Perspective\Kbankpayment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Direct18Charge</argument>
+            <argument name="handler" xsi:type="object">Direct18ResponseHandler</argument>
+            <argument name="validator" xsi:type="object">Perspective\Kbankpayment\Gateway\Validator\Direct18CaptureCommandResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Direct API 2018 Command: Request -->
+    <virtualType name="Direct18CaptureRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="payment" xsi:type="string">Perspective\Kbankpayment\Gateway\Request\PaymentDataBuilder</item>
+                <item name="cccard" xsi:type="string">Perspective\Kbankpayment\Gateway\Request\PaymentCcTokenBuilder</item>
+                <item name="capture" xsi:type="string">Perspective\Kbankpayment\Gateway\Request\PaymentAuthorizeCaptureBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Direct18Charge" type="Perspective\Kbankpayment\Gateway\Http\Client\Payment"></virtualType>
+
+    <virtualType name="Direct18AuthorizeResponseHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="paymentDetails" xsi:type="string">Perspective\Kbankpayment\Gateway\Response\PaymentDetailsHandler</item>
+                <item name="pendingPayment" xsi:type="string">Perspective\Kbankpayment\Gateway\Response\PendingPaymentHandler</item>
+                <!-- <item name="pendingInvoice" xsi:type="string">Perspective\Kbankpayment\Gateway\Response\PendingInvoiceHandler</item> -->
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Direct18ResponseHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="paymentDetails" xsi:type="string">Perspective\Kbankpayment\Gateway\Response\PaymentDetailsHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+</config>

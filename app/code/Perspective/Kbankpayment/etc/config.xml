@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <kbankpayment>
+                <sandbox_status>0</sandbox_status>
+                <model>KbankpaymentAdapter</model>
+            </kbankpayment>
+
+            <kbankpayment_redirect>
+                <active>0</active>
+                <title>Credit Card</title>
+                <model>KbankpaymentRedirectAdapter</model>
+                <can_use_checkout>1</can_use_checkout>
+                <allowspecific>0</allowspecific>
+            </kbankpayment_redirect>
+
+            <kbankpayment_direct18>
+                <active>0</active>
+                <title>Direct API 2018</title>
+                <model>KbankpaymentDirect18Adapter</model>
+                <can_use_checkout>1</can_use_checkout>
+                <can_authorize>1</can_authorize>
+                <allowspecific>0</allowspecific>
+                <payment_action>authorize</payment_action>
+            </kbankpayment_direct18>
+
+            <kbankpayment_uibutton>
+                <active>0</active>
+                <title>K-Payment Button</title>
+                <model>Perspective\Kbankpayment\Model\UiButton</model>
+                <can_use_checkout>1</can_use_checkout>
+                <allowspecific>0</allowspecific>
+            </kbankpayment_uibutton>
+
+            <kbankpayment_uiqr>
+                <active>0</active>
+                <title>K-Payment QR</title>
+                <model>Perspective\Kbankpayment\Model\UiQr</model>
+                <can_use_checkout>1</can_use_checkout>
+                <allowspecific>0</allowspecific>
+            </kbankpayment_uiqr>
+        </payment>
+    </default>
+</config>

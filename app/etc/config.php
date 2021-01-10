@@ -249,6 +249,7 @@ return [
         'Mageplaza_AjaxLayer' => 1,
         'Mageplaza_LayeredNavigation' => 1,
         'Mageplaza_Search' => 1,
+        'Perspective_Kbankpayment' => 1,
         'Smartwave_Core' => 1,
         'Smartwave_Dailydeals' => 1,
         'Smartwave_Filterproducts' => 1,

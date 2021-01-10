@@ -1,0 +1,9 @@
+<form id="redirect-form" class="form" method="post" action="<?php echo htmlspecialchars($url) ?>">
+<?php foreach ($params as $key => $value) { ?>
+    <input type="hidden" name="<?php echo htmlspecialchars($key) ?>" value="<?php echo htmlspecialchars($value) ?>">
+<?php } ?>
+</form>
+<?php echo _('Redirecting... Please do not close browser.') ?><br>
+<script type="text/javascript">
+    jQuery('#redirect-form').submit();
+</script>

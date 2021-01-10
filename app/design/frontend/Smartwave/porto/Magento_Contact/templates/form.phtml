@@ -22,6 +22,7 @@ if($lang == 'en') {
     $branch = 'Branch';
     $problem = 'Problem';
     $note = 'Note';
+    $submit = 'Submit';
 }else{
     $title = 'นัดหมายพบแพทย์';
     $name = 'ชื่อ - สกุล';
@@ -31,6 +32,7 @@ if($lang == 'en') {
     $branch = 'สาขา';
     $problem = 'ปัญหาเบื้องต้น';
     $note = 'หมายเหตุ';
+    $submit = 'ยืนยัน';
 }
 ?>
 <form class="form contact"
@@ -156,8 +158,8 @@ if($lang == 'en') {
         </div>
         <div class="primary col-md-7 button-contact">
             <input type="hidden" name="hideit" id="hideit" value="" />
-            <button type="submit" title="<?php echo __('Submit') ?>" class="action submit primary submit-contact">
-                <span><?php echo __('Submit') ?></span>
+            <button type="submit" title="<?php echo $submit?>" class="action submit primary submit-contact submit_<?php echo $lang;?>">
+                <span><?php echo $submit ?></span>
             </button>
         </div>
     </div>
