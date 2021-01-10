@@ -32,7 +32,7 @@ return [
             'connection' => 'default'
         ]
     ],
-    'x-frame-options' => 'SAMEORIGIN',
+    'x-frame-options' => 'CROSS-ORIGIN',
     'MAGE_MODE' => 'developer',
     'session' => [
         'save' => 'redis',
