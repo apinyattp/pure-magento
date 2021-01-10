@@ -16,7 +16,6 @@ use Magento\Framework\App\Action\Action;
  */
 ?>
 <?php
-echo 22;
 $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
 $_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
@@ -58,9 +57,9 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
         $columns = '';
         $product_type = 0;
     }
-    $image_width = ($_category_config['ratio_width'])?$_category_config['ratio_width']:300;
-    $image_height = ($_category_config['ratio_height'])?$_category_config['ratio_height']:300;
-    $aspect_ratio = $_category_config['aspect_ratio'];
+    $image_width =400;
+    $image_height = 400;
+    $aspect_ratio = 1;
     if($aspect_ratio)
         $image_height = $image_width;
     ?>
