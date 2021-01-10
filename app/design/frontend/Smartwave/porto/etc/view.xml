@@ -30,6 +30,9 @@
             <image id="category_page_list" type="small_image">
                 <width>400</width>
                 <height>400</height>
+                      <transparency>false</transparency>
+                <aspect_ratio>false</aspect_ratio>
+                <frame>false</frame>
             </image>
             <image id="category_page_list-hover" type="thumbnail">
                 <width>400</width>
