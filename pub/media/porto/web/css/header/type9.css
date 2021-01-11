@@ -1,7 +1,7 @@
 .page-header.type9{border:0;background-color:#5c616e}
 .page-header.type9 .logo{display:block;margin:28px 25px 28px 0;float:left}
 
-@media only screen and (max-width:767px){
+@media only screen and (max-width:1023px){
     .page-header.type9 .header.panel{max-width:none}
     .page-header.type9 .nav-toggle{margin-right:40px;float:right}
     .page-header.type9 .minicart-wrapper .action.showcart:before,.page-header.type9 .nav-toggle:before,.page-header.type9 .nav-toggle:hover:before,.page-header.type9 .block-search .label:before{color:#fff}
