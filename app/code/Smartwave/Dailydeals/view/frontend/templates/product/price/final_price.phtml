@@ -1,5 +1,4 @@
 <?php
-echo 55555;
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -33,7 +32,7 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
     <?php
         $deal_final_price_amount = number_format($helper->getDealproductbyId($productId),2);
     ?>
-    <span class="old-price1">
+    <span class="old-price">
         <?php /* @escapeNotVerified */ echo $block->renderAmount($finalPriceModel->getAmount(), [
             'display_label'     => __('Regular Price'),
             'price_id'          => $block->getPriceId('old-price-' . $idSuffix),
@@ -51,7 +50,7 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
         </span>
     </span>
 <?php elseif ($block->hasSpecialPrice()): ?>
-    <span class="old-price2">
+    <span class="old-price">
         <?php /* @escapeNotVerified */ echo $block->renderAmount($priceModel->getAmount(), [
             'display_label'     => __('Regular Price'),
             'price_id'          => $block->getPriceId('old-price-' . $idSuffix),
