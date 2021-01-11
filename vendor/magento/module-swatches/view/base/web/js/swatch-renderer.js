@@ -1280,6 +1280,7 @@ define([
                 }
             } else if (justAnImage && justAnImage.img) {
                 context.find('.product-image-photo').attr('src', justAnImage.img);
+                context.find('.product-image-photo').css('src', {"-moz-transform": "scale(1.2)", "-webkit-transform": "scale(1.2)", "transform": "scale(1.2)"});
             }
         },
 
