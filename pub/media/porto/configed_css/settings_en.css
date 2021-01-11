@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2021-01-10 05:54:57 */
+ * 2021-01-11 13:13:04 */
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
@@ -1426,6 +1426,12 @@ body.layout-fullwidth .page-wrapper > .breadcrumbs .items {
 }
 .page-header.type17 .top-links-icon {
   color: #fff !important;
+}
+
+.product-image-photo.default_image {
+    max-height: 258px;
+    width: auto;
+
 }.description{
 text-align: center;
 } 
