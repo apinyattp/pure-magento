@@ -197,7 +197,7 @@
         margin-left: 10px;
     }
 }
-@media (max-width: 767px) {
+@media (max-width:1023px) {
     .page-header.type17 .logo {
         height: 40px;
         float: left;
