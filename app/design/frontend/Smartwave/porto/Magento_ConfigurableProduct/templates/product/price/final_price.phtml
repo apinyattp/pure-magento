@@ -24,7 +24,7 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
         ]); ?>
     </span>
 <?php endif; ?>
-<span class="normal-price">
+<span class="normal-price <?php ($block->hasSpecialPrice()) ? 'old-normal-price' : '' ?>">
     <?= /* @noEscape */ $block->renderAmount($finalPriceModel->getAmount(), [
         'display_label' => __('As low as'),
         'price_id' => $block->getPriceId('product-price-' . $idSuffix),
@@ -55,7 +55,7 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
     .sly-old-price .price {
         color: #8b8b8b;
     }
-    .normal-price .price {
+    .old-normal-price .price {
         color: #f0573d;
     }
 </style>
