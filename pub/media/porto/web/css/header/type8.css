@@ -3,7 +3,7 @@
 .page-header.type8:not(.header-newskin) .minicart-wrapper .action.showcart:before,.page-header.type8:not(.header-newskin) .minicart-wrapper .action.showcart.active:before{color:#fff}
 .page-header.type8:not(.header-newskin) .minicart-wrapper .action.showcart .counter.qty{color:#000}
 
-@media only screen and (max-width:1023px){
+@media only screen and (max-width:767px){
     .page-header.type8:not(.header-newskin) .nav-toggle{float:right}
     .page-header.type8:not(.header-newskin) .logo{height:40px;float:left;margin:10px 0}
     .page-header.type8:not(.header-newskin) .logo img{max-width:100%;max-height:100%;width:auto}

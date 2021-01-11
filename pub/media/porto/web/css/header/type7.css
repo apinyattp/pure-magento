@@ -4,7 +4,7 @@
 .page-header.type7:not(.header-newskin) .minicart-wrapper .action.showcart:before,.page-header.type7 .minicart-wrapper .action.showcart.active:before{line-height:15px;font-size:14px;overflow:visible;vertical-align:middle}
 .page-header.type7:not(.header-newskin) .minicart-wrapper .action.showcart .counter.qty{position:static;vertical-align:middle;margin:0;padding:0;font-size:11px;font-weight:400;height:auto;line-height:15px;text-transform:uppercase;width:auto;min-width:0}
 .page-header.type7:not(.header-newskin) .minicart-wrapper .action.showcart .counter-label{display:inline-block;position:static;overflow:visible;width:auto;margin:0}
-@media only screen and (max-width:1023px){
+@media only screen and (max-width:767px){
     .page-header.type7 .nav-toggle{float:right;margin-right:0}
     .page-header.type7 .logo{height:40px;float:left;margin:10px 0}
     .page-header.type7 .logo img{max-width:100%;max-height:100%;width:auto}

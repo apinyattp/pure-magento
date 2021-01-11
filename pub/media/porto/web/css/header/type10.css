@@ -1,4 +1,4 @@
-@media only screen and (max-width:1023px){
+@media only screen and (max-width:767px){
     .page-header.type10{border:0}
     .page-header.type10:not(.header-new-skin) .custom-block-area{display:none}
     .page-header.type10:not(.header-new-skin) .switcher-area{position:relative;z-index:1}
