@@ -24,7 +24,6 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
         ]); ?>
     </span>
 <?php endif; ?>
-
 <span class="normal-price">
     <?= /* @noEscape */ $block->renderAmount($finalPriceModel->getAmount(), [
         'display_label' => __('As low as'),
