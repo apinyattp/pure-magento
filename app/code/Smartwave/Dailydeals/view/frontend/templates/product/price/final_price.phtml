@@ -51,7 +51,7 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
         </span>
     </span>
 <?php elseif ($block->hasSpecialPrice()): ?>
-    <span class="old-price">
+    <span class="old-price2">
         <?php /* @escapeNotVerified */ echo $block->renderAmount($priceModel->getAmount(), [
             'display_label'     => __('Regular Price'),
             'price_id'          => $block->getPriceId('old-price-' . $idSuffix),
