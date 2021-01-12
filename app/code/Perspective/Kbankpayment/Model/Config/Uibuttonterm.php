@@ -115,4 +115,67 @@ class Uibuttonterm extends Config
     public function getChargeApiUrl() {
         return $this->getApiBaseUrl() . $this->CHARGE_API_URI;
     }
+
+     /**
+     * Retrieve KBank merchant ID whether live or test key
+     *
+     * @return string
+     */
+    public function getMIDTerm() {
+
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestMIDTerm();
+        }
+        return $this->getLiveMIDTerm();
+    }
+
+    /**
+     * Retrieve KBank live merchant ID
+     *
+     * @return string
+     */
+    protected function getLiveMIDTerm() {
+        return $this->getValue('live_mid_term');
+    }
+
+    /**
+     * Retrieve KBank test merchant ID
+     *
+     * @return string
+     */
+    protected function getTestMIDTerm() {
+        return $this->getValue('test_mid_term');
+    }
+
+    /**
+     * Retrieve KBank terminal id whether live or test key
+     *
+     * @return string
+     */
+    public function getTIDTerm() {
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestTIDTerm();
+        }
+
+        return $this->getLiveTIDTerm();
+    }
+
+    /**
+     * Retrieve KBank live terminal id
+     *
+     * @return string
+     */
+    protected function getLiveTIDTerm() {
+        return $this->getValue('live_tid_term');
+    }
+
+    /**
+     * Retrieve KBank test terminal id
+     *
+     * @return string
+     */
+    protected function getTestTIDTerm() {
+        return $this->getValue('test_tid_term');
+    }
+
 }

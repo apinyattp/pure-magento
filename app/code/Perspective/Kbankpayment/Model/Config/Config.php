@@ -114,68 +114,6 @@ class Config
         return $this->getValue('test_tid', self::CODE);
     }
 
-    /**
-     * Retrieve KBank merchant ID whether live or test key
-     *
-     * @return string
-     */
-    public function getMIDTerm() {
-
-        if ($this->isSandboxEnabled()) {
-            return $this->getTestMIDTerm();
-        }
-        return $this->getLiveMIDTerm();
-    }
-
-    /**
-     * Retrieve KBank live merchant ID
-     *
-     * @return string
-     */
-    protected function getLiveMIDTerm() {
-        return $this->getValue('live_mid_term', self::CODE);
-    }
-
-    /**
-     * Retrieve KBank test merchant ID
-     *
-     * @return string
-     */
-    protected function getTestMIDTerm() {
-        return $this->getValue('test_mid_term', self::CODE);
-    }
-
-    /**
-     * Retrieve KBank terminal id whether live or test key
-     *
-     * @return string
-     */
-    public function getTIDTerm() {
-        if ($this->isSandboxEnabled()) {
-            return $this->getTestTIDTerm();
-        }
-
-        return $this->getLiveTIDTerm();
-    }
-
-    /**
-     * Retrieve KBank live terminal id
-     *
-     * @return string
-     */
-    protected function getLiveTIDTerm() {
-        return $this->getValue('live_tid_term', self::CODE);
-    }
-
-    /**
-     * Retrieve KBank test terminal id
-     *
-     * @return string
-     */
-    protected function getTestTIDTerm() {
-        return $this->getValue('test_tid_term', self::CODE);
-    }
-
     public function getBackURI() {
         return $this->BACK_URI;
     }

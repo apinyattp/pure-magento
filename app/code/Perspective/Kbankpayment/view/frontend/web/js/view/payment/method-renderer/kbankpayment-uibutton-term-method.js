@@ -62,6 +62,10 @@ define(
                 return window.checkoutConfig.payment.kbankpayment_uibuttonterm.public;
             },
 
+            getMidKey: function() {
+                return window.checkoutConfig.payment.kbankpayment_uibuttonterm.mid;
+            },
+
             /**
              * Is method available to display
              *
@@ -82,13 +86,14 @@ define(
                 document.getElementById('Kbank_button').appendChild(s);
                 KPayment.create();
 console.log(KPayment)
-console.log(orderData.mid)
+console.log(this.getMidKey())
                 KPayment.setPublickey(this.getPublicKey());
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
                 KPayment.setOrderId(orderData.order_increment_id);
-                KPayment.setMid(orderData.mid);
-                // KPayment.setSmartId("0002");
+                KPayment.setMid(this.getMidKey());
+                KPayment.setSmartpayId("0002");
+                KPayment.setTerm(10);
                 
                 KPayment.setCurrency("THB");
                 KPayment.setName("The Next Optical");

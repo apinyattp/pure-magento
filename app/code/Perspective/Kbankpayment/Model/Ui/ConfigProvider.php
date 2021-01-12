@@ -69,6 +69,8 @@ class ConfigProvider implements ConfigProviderInterface
                 Uibuttonterm::CODE => [
                     'public' => $this->KbankpaymentUibuttonConfig->getPublic(),
                     'secret' => $this->KbankpaymentUibuttonConfig->getSecret(),
+                    'mid' => $this->KbankpaymentUibuttonConfig->getMIDTerm(),
+                    'tid' => $this->KbankpaymentUibuttonConfig->getMIDTerm(),
                 ],
                 Uiqr::CODE => [
                     'public' => $this->KbankpaymentUiqrConfig->getPublic(),
