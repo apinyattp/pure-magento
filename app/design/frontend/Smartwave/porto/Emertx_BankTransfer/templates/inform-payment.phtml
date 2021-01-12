@@ -213,7 +213,7 @@
                                    type="file"
                                    onchange="renderUploadFileName()";
                             />
-                            <p>
+                            <p style="font-family: 'Prompt'">
                                 <?php echo $block->escapeHtml(__('Allowed file types: PDF, JPG, GIF, PNG')); ?><br>
                                 <?php echo $block->escapeHtml(sprintf(__('Maximum file size: %sMB'), $block->getMaximumFileSize())); ?>
                             </p>
@@ -481,6 +481,23 @@
     }
     .label-payment {
         font-size: 20px;
-    font-family: 'Prompt';
+        font-family: 'Prompt';
+    }
+    .text-size-18 {
+        font-size: 16px;
+        font-family: 'Prompt';
+    }
+    #ebt_slip {
+        margin-bottom: 2%;
+        font-family: 'KARLA';
+    }
+    .hidden {
+        visibility: hidden;
+    }
+    .btn-dgm-submit-payment span {
+        font-family: 'Prompt';
+    }
+    input {
+        font-family: 'Prompt';
     }
 </style>
