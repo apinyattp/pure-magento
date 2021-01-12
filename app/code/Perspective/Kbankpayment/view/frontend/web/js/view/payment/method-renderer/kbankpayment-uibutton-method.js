@@ -90,7 +90,7 @@ define(
                 KPayment.setCurrency("THB");
                 KPayment.setName("carelicious store");
                 KPayment.setPaymentMethods("card");
-
+                console.log(KPayment)
                 KPayment.onClose(this.kpaymentClose);
                 KPayment.show();
 
