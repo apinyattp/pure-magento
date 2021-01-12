@@ -69,7 +69,7 @@ class Charge extends Action
     public function execute() {
         $content = $this->getRequest()->getContent();
         $data = json_decode($content,TRUE);
-        print_r($data);
+
         $token = $data['token'];
         $order_id = $data['order_id'];
 
@@ -111,7 +111,7 @@ class Charge extends Action
         $payload['token'] = $token;
         
         $response = $this->_makeRequest($payload);
-
+        var_dump($response);
         $payment->setAdditionalInformation('charge_id', $response['id']);
         $payment->setAdditionalInformation('charge_authen_url', $response['redirect_url']);
         
@@ -184,6 +184,8 @@ class Charge extends Action
     }
 
     private function _makeRequest($payload) {
+        echo $this->config->getSecret();
+        echo $this->config->getChargeApiUrl();
         $a_header = [
             "x-api-key:".$this->config->getSecret(),
             "Content-Type:application/json"
