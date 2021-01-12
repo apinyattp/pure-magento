@@ -59,6 +59,7 @@ define(
 
 
             getPublicKey: function() {
+                console.log( window.checkoutConfig.payment)
                 return window.checkoutConfig.payment.kbankpayment_uibutton.public;
             },
 
