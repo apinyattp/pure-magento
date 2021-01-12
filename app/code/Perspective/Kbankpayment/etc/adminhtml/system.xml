@@ -151,15 +151,19 @@
                     <label>Enable KBank UI Button Term</label>
                     <field id="test_mid_term" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Merchant ID Test</label>
+                         <config_path>payment/kbankpayment_uibuttonterm/test_mid_term</config_path>
                     </field>
                     <field id="test_tid_term" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Terminal ID Test</label>
+                        <config_path>payment/kbankpayment_uibuttonterm/test_tid_term</config_path>
                     </field>
                     <field id="live_mid_term" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Merchant ID Live</label>
+                         <config_path>payment/kbankpayment_uibuttonterm/live_mid_term</config_path>
                     </field>
                     <field id="live_tid_term" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Terminal ID Live</label>
+                         <config_path>payment/kbankpayment_uibuttonterm/live_tid_term</config_path>
                     </field>
                     <field id="active" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Enable/Disable</label>
