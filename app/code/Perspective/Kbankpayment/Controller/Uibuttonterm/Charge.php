@@ -111,8 +111,8 @@ class Charge extends Action
         $payload['reference_order'] = $order->getIncrementId();
         $payload['token'] = $token;
         $payload['additional_data'] = [
-            'mid' =>  $this->config->getMIDTerm(),
-            'tid' =>  $this->config->getTIDTerm(),
+            'mid' =>  $this->config->getMID(),
+            'tid' =>  $this->config->getTID(),
             'smatpay_id' => "0002",
             'term' => 10
         ];
