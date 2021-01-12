@@ -235,7 +235,7 @@ define(
                 if (event) {
                     event.preventDefault();
                 }
-alert(11)
+
                 this.placeOrderAndRedirect(data);
 
                 return true;
