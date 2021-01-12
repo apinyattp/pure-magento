@@ -115,7 +115,6 @@ class Charge extends Action
             'tid' =>  $redirect_config->getTID()
         ];
         
-        print_r($payload);
         $response = $this->_makeRequest($payload);
 
         $payment->setAdditionalInformation('charge_id', $response['id']);
