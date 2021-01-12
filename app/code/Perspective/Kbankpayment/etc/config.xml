@@ -36,7 +36,7 @@
             <kbankpayment_uibuttonterm>
                 <active>0</active>
                 <title>K-Payment Button Term</title>
-                <model>Perspective\Kbankpayment\Model\Uibuttonterm</model>
+                <model>Perspective\Kbankpayment\Model\UiButtonTerm</model>
                 <can_use_checkout>1</can_use_checkout>
                 <allowspecific>0</allowspecific>
             </kbankpayment_uibuttonterm>
