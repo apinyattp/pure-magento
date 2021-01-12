@@ -32,7 +32,7 @@ class Form extends \Magento\Framework\App\Action\Action
         }
 
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $redirect_config = $this->objectManager->create('Perspective\Kbankpayment\Model\Config\Uibutton');
+        $redirect_config = $objectManager->create('Perspective\Kbankpayment\Model\Config\Uibutton');
         $order = $objectManager->create('\Magento\Sales\Model\Order')
                                    ->load($order_id);
         if (! $order) {
