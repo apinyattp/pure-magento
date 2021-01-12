@@ -103,14 +103,14 @@ class Charge extends Action
         // $payload['amount'] = number_format($order->getGrandTotal(),2);
         $payload['amount'] = number_format($order->getGrandTotal(),2, '.', '');
         $payload['currency'] = "THB";
-        $payload['description'] = "Carelicious Store";
+        $payload['description'] = "The Next Optical";
         $payload['source_type'] = "card";
         $payload['mode'] = "token";
         $payload['reference_order'] = $order->getIncrementId();
         $payload['token'] = $token;
         
         $response = $this->_makeRequest($payload);
-        print_r($response);
+
         $payment->setAdditionalInformation('charge_id', $response['id']);
         $payment->setAdditionalInformation('charge_authen_url', $response['redirect_url']);
         

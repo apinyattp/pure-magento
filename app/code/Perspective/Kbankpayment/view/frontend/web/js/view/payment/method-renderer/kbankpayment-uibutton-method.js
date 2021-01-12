@@ -88,7 +88,7 @@ define(
                 KPayment.setOrderId(orderData.order_increment_id);
                 KPayment.setMid(orderData.mid);
 
-                KPayment.setCurrency("THB");
+                KPayment.setCurrency("USD");
                 KPayment.setName("The Next Optical");
                 KPayment.setPaymentMethods("card");
                 KPayment.onClose(this.kpaymentClose);
