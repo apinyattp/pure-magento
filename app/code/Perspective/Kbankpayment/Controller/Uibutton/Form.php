@@ -44,7 +44,6 @@ class Form extends \Magento\Framework\App\Action\Action
         // }
         
         $data['order_id'] = $order_id;
-        $data['cusId'] =  $order->getCustomerId();
         $data['order_increment_id'] = $order->getIncrementId();
         $data['amount'] = number_format($order->getGrandTotal(),2, '.', '');
         $data['mid'] = $redirect_config->getMID();

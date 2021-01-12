@@ -114,7 +114,6 @@ class Charge extends Action
             'mid' =>  $redirect_config->getMID(),
             'tid' =>  $redirect_config->getTID()
         ];
-        $payload['savecard'] = true;
         
         $response = $this->_makeRequest($payload);
 
