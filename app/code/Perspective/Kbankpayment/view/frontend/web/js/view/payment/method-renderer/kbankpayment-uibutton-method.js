@@ -76,6 +76,8 @@ define(
             },
 
             buttonInitial: function (orderData) {
+                alert(11)
+                console.log(orderData)
                 var self = this;
                 var d = kbankURL,
                     s = document.querySelector('script[src^="' + d + '"]');
