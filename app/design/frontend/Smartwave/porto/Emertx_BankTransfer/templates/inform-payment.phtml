@@ -192,7 +192,7 @@
                         </div>
                     </div>
                     <div class="field form-group slip <?php echo $block->isSlipRequired() ? 'required' : ''; ?>">
-                        <label class="label label-payment font-secondary col-xs-12 col-md-4 col-lg-3" for="ebt_slip">
+                        <label class="label label-payment font-secondary col-xs-12 col-md-4 col-lg-3" style="margin-top: 3%;" for="ebt_slip">
                             <span>
                                 <?php echo $block->escapeHtml(__('Transfer slip')); ?>
                             </span>
@@ -479,7 +479,7 @@
         font-size: 30px;
         margin-bottom: 5%;
     }
-    .label-payment {
+    .label-payment, .baht {
         font-size: 20px;
         font-family: 'Prompt';
     }
@@ -499,5 +499,8 @@
     }
     input {
         font-family: 'Prompt';
+    }
+    .slip {
+        display: table;
     }
 </style>
