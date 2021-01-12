@@ -108,7 +108,7 @@ define(
                 var tokenData = document.getElementsByName("token")[0].value;
                 this.token = tokenData;
 
-                var chargeUrl = urlBuilder.build("kbankpayment/uibutton/charge");
+                var chargeUrl = urlBuilder.build("kbankpayment/uibuttonterm/charge");
                 var chargeData = {token:this.token, order_id:this.order_id};
 
                 storage.post(chargeUrl, JSON.stringify(chargeData))
@@ -174,7 +174,7 @@ define(
                         }
                     ).done(
                         function(response) {
-                            var serviceUrl = urlBuilder.build("kbankpayment/uibutton/form?order_id="+response);
+                            var serviceUrl = urlBuilder.build("kbankpayment/uibuttonterm/form?order_id="+response);
                             self.order_id = response;
 
                             storage.get(serviceUrl, false)
