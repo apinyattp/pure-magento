@@ -85,6 +85,7 @@ class Charge extends Action
         }
 
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $redirect_config = $objectManager->create('Perspective\Kbankpayment\Model\Config\Config');
         $order = $objectManager->create('\Magento\Sales\Model\Order')
                                    ->load($order_id);
         if (! $order) {
@@ -109,9 +110,14 @@ class Charge extends Action
         $payload['mode'] = "token";
         $payload['reference_order'] = $order->getIncrementId();
         $payload['token'] = $token;
+        $payload['additional_data'] = [
+            'mid' =>  $redirect_config->getMID(),
+            'tid' =>  $redirect_config->getTID()
+        ];
         
+        print_r($payload);
         $response = $this->_makeRequest($payload);
-        var_dump($response);
+
         $payment->setAdditionalInformation('charge_id', $response['id']);
         $payment->setAdditionalInformation('charge_authen_url', $response['redirect_url']);
         
@@ -184,8 +190,6 @@ class Charge extends Action
     }
 
     private function _makeRequest($payload) {
-        echo $this->config->getSecret();
-        echo $this->config->getChargeApiUrl();
         $a_header = [
             "x-api-key:".$this->config->getSecret(),
             "Content-Type:application/json"
