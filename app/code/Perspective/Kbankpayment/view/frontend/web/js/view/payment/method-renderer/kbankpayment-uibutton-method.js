@@ -59,8 +59,7 @@ define(
 
 
             getPublicKey: function() {
-                console.log( window.checkoutConfig.payment)
-                return 'pkey_test_207729gT6rv3iFqp6M8xfzSUUxj007Gt2Kmcb';
+                return window.checkoutConfig.payment.kbankpayment_uibutton.public;
             },
 
             /**
@@ -82,7 +81,7 @@ define(
                     s = document.querySelector('script[src^="' + d + '"]');
                 document.getElementById('Kbank_button').appendChild(s);
                 KPayment.create();
-                console.log('public key',this.getPublicKey())
+
                 KPayment.setPublickey(this.getPublicKey());
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
