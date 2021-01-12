@@ -60,7 +60,7 @@ define(
 
             getPublicKey: function() {
                 console.log( window.checkoutConfig.payment)
-                return window.checkoutConfig.payment.kbankpayment_uibutton.public;
+                return 'pkey_test_207729gT6rv3iFqp6M8xfzSUUxj007Gt2Kmcb';
             },
 
             /**
