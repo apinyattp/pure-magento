@@ -88,7 +88,7 @@ define(
                 KPayment.setOrderId(orderData.k_order_id);
 
                 KPayment.setCurrency("THB");
-                KPayment.setName("carelicious store");
+                KPayment.setName("The Next Optical");
                 KPayment.setPaymentMethods("qr");
 
                 KPayment.onClose(this.kpaymentClose);
