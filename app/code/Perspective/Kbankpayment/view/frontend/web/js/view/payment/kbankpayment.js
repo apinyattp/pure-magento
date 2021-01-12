@@ -32,6 +32,13 @@ define(
 
         rendererList.push(
             {
+                type: 'kbankpayment_uibuttonterm',
+                component: 'Perspective_Kbankpayment/js/view/payment/method-renderer/kbankpayment-uibutton-term-method'
+            }
+        );
+
+        rendererList.push(
+            {
                 type: 'kbankpayment_uiqr',
                 component: 'Perspective_Kbankpayment/js/view/payment/method-renderer/kbankpayment-uiqr-method'
             }

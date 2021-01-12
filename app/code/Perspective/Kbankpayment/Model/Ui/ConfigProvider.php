@@ -5,6 +5,7 @@ use Magento\Checkout\Model\ConfigProviderInterface;
 use Perspective\Kbankpayment\Model\Config\Redirect;
 use Perspective\Kbankpayment\Model\Config\Direct18;
 use Perspective\Kbankpayment\Model\Config\Uibutton;
+use Perspective\Kbankpayment\Model\Config\Uibuttonterm;
 use Perspective\Kbankpayment\Model\Config\Uiqr;
 
 class ConfigProvider implements ConfigProviderInterface
@@ -26,14 +27,20 @@ class ConfigProvider implements ConfigProviderInterface
     protected $KbankpaymentUibuttonConfig;
 
     /**
+     * @var \Perspective\Kbankpayment\Model\Config\Uibuttonterm
+     */
+    protected $KbankpaymentUibuttontermConfig;
+
+    /**
      * @var \Perspective\Kbankpayment\Model\Config\Uiqr
      */
     protected $KbankpaymentUiqrConfig;
 
-    public function __construct(Redirect $kbankpaymentRedirectConfig, Direct18 $kbankpaymentDirect18Config, Uibutton $KbankpaymentUibuttonConfig, Uiqr $KbankpaymentUiqrConfig) {
+    public function __construct(Redirect $kbankpaymentRedirectConfig, Direct18 $kbankpaymentDirect18Config, Uibutton $KbankpaymentUibuttonConfig, Uibuttonterm $KbankpaymentUibuttontermConfig, Uiqr $KbankpaymentUiqrConfig) {
         $this->kbankpaymentRedirectConfig   = $kbankpaymentRedirectConfig;
         $this->kbankpaymentDirect18Config   = $kbankpaymentDirect18Config;
         $this->KbankpaymentUibuttonConfig   = $KbankpaymentUibuttonConfig;
+        $this->KbankpaymentUibuttontermConfig = $KbankpaymentUibuttontermConfig;
         $this->KbankpaymentUiqrConfig   = $KbankpaymentUiqrConfig;
     }
 
@@ -56,6 +63,10 @@ class ConfigProvider implements ConfigProviderInterface
                     'public' => $this->kbankpaymentDirect18Config->getPublic(),
                 ],
                 Uibutton::CODE => [
+                    'public' => $this->KbankpaymentUibuttonConfig->getPublic(),
+                    'secret' => $this->KbankpaymentUibuttonConfig->getSecret(),
+                ],
+                Uibuttonterm::CODE => [
                     'public' => $this->KbankpaymentUibuttonConfig->getPublic(),
                     'secret' => $this->KbankpaymentUibuttonConfig->getSecret(),
                 ],
