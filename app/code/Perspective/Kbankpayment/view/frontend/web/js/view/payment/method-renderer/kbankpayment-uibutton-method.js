@@ -81,7 +81,7 @@ define(
                     s = document.querySelector('script[src^="' + d + '"]');
                 document.getElementById('Kbank_button').appendChild(s);
                 KPayment.create();
-
+                console.log(KPayment)
                 KPayment.setPublickey(this.getPublicKey());
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
