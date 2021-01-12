@@ -113,13 +113,12 @@ class Charge extends Action
         $payload['additional_data'] = [
             'mid' =>  $this->config->getMID(),
             'tid' =>  $this->config->getTID(),
-            'smatpay_id' => "0002",
+            'smartpay_id' => "0002",
             'term' => 10
         ];
         
-        print_r($payload);
         $response = $this->_makeRequest($payload);
-print_r($response);
+
         $payment->setAdditionalInformation('charge_id', $response['id']);
         $payment->setAdditionalInformation('charge_authen_url', $response['redirect_url']);
         
