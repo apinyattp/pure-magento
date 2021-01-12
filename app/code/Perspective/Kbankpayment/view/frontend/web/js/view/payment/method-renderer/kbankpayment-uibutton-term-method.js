@@ -54,7 +54,7 @@ define(
              * @return {string}
              */
             getCode: function() {
-                return 'kbankpayment_uibutton';
+                return 'kbankpayment_uibuttonterm';
             },
 
 
