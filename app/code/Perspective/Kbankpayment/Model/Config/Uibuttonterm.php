@@ -116,17 +116,18 @@ class Uibuttonterm extends Config
         return $this->getApiBaseUrl() . $this->CHARGE_API_URI;
     }
 
-     /**
+    
+    /**
      * Retrieve KBank merchant ID whether live or test key
      *
      * @return string
      */
-    public function getMIDTerm() {
+    public function getMID() {
 
         if ($this->isSandboxEnabled()) {
-            return $this->getTestMIDTerm();
+            return $this->getTestMID();
         }
-        return $this->getLiveMIDTerm();
+        return $this->getLiveMID();
     }
 
     /**
@@ -134,8 +135,8 @@ class Uibuttonterm extends Config
      *
      * @return string
      */
-    protected function getLiveMIDTerm() {
-        return $this->getValue('live_mid_term');
+    protected function getLiveMID() {
+        return $this->getValue('live_mid', self::CODE);
     }
 
     /**
@@ -143,8 +144,8 @@ class Uibuttonterm extends Config
      *
      * @return string
      */
-    protected function getTestMIDTerm() {
-        return $this->getValue('test_mid_term');
+    protected function getTestMID() {
+        return $this->getValue('test_mid', self::CODE);
     }
 
     /**
@@ -152,12 +153,12 @@ class Uibuttonterm extends Config
      *
      * @return string
      */
-    public function getTIDTerm() {
+    public function getTID() {
         if ($this->isSandboxEnabled()) {
-            return $this->getTestTIDTerm();
+            return $this->getTestTID();
         }
 
-        return $this->getLiveTIDTerm();
+        return $this->getLiveTID();
     }
 
     /**
@@ -165,8 +166,8 @@ class Uibuttonterm extends Config
      *
      * @return string
      */
-    protected function getLiveTIDTerm() {
-        return $this->getValue('live_tid_term');
+    protected function getLiveTID() {
+        return $this->getValue('live_tid', self::CODE);
     }
 
     /**
@@ -174,8 +175,7 @@ class Uibuttonterm extends Config
      *
      * @return string
      */
-    protected function getTestTIDTerm() {
-        return $this->getValue('test_tid_term');
+    protected function getTestTID() {
+        return $this->getValue('test_tid', self::CODE);
     }
-
 }
