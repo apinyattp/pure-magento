@@ -32,6 +32,7 @@ class Form extends \Magento\Framework\App\Action\Action
         }
 
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $redirect_config = $this->objectManager->create('Perspective\Kbankpayment\Model\Config\Uibutton');
         $order = $objectManager->create('\Magento\Sales\Model\Order')
                                    ->load($order_id);
         if (! $order) {
@@ -45,7 +46,7 @@ class Form extends \Magento\Framework\App\Action\Action
         $data['order_id'] = $order_id;
         $data['order_increment_id'] = $order->getIncrementId();
         $data['amount'] = number_format($order->getGrandTotal(),2, '.', '');
-
+        $data['mid'] = $redirect_config->getMID();
         // if ($order->getState() === Order::STATE_NEW) {
         //     $order->setState(Order::STATE_PENDING_PAYMENT);
         //     $order->setStatus($order->getConfig()->getStateDefaultStatus(Order::STATE_PENDING_PAYMENT));

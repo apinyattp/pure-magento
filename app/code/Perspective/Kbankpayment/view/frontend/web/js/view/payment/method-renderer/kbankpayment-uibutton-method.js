@@ -59,7 +59,6 @@ define(
 
 
             getPublicKey: function() {
-                console.log(window.checkoutConfig)
                 return window.checkoutConfig.payment.kbankpayment_uibutton.public;
             },
 
@@ -77,16 +76,18 @@ define(
             },
 
             buttonInitial: function (orderData) {
+                console.log(orderData)
                 var self = this;
                 var d = kbankURL,
                     s = document.querySelector('script[src^="' + d + '"]');
                 document.getElementById('Kbank_button').appendChild(s);
                 KPayment.create();
-console.log(KPayment)
+
                 KPayment.setPublickey(this.getPublicKey());
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
                 KPayment.setOrderId(orderData.order_increment_id);
+                KPayment.setMid();
 
                 KPayment.setCurrency("THB");
                 KPayment.setName("The Next Optical");
