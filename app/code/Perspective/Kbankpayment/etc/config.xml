@@ -39,7 +39,7 @@
                 <model>Perspective\Kbankpayment\Model\UiButtonTerm</model>
                 <can_use_checkout>1</can_use_checkout>
                 <allowspecific>0</allowspecific>
-            </kbankpayment_uibutton>
+            </kbankpayment_uibuttonterm>
 
             <kbankpayment_uiqr>
                 <active>0</active>
