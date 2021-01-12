@@ -39,7 +39,7 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'Perspective_Kbankpayment/payment/kbankpayment-uibutton-form'
+                template: 'Perspective_Kbankpayment/payment/kbankpayment-uibuttonterm-form'
             },
 
             redirectAfterPlaceOrder: true,
