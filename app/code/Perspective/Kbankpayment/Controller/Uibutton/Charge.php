@@ -109,7 +109,6 @@ class Charge extends Action
         $payload['reference_order'] = $order->getIncrementId();
         $payload['token'] = $token;
         
-        print_r($payload);
         $response = $this->_makeRequest($payload);
 
         $payment->setAdditionalInformation('charge_id', $response['id']);

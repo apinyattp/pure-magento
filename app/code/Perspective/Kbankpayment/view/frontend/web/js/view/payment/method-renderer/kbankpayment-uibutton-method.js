@@ -76,14 +76,12 @@ define(
             },
 
             buttonInitial: function (orderData) {
-                alert(11)
-                console.log(orderData)
                 var self = this;
                 var d = kbankURL,
                     s = document.querySelector('script[src^="' + d + '"]');
                 document.getElementById('Kbank_button').appendChild(s);
                 KPayment.create();
-
+                console.log('public key',this.getPublicKey())
                 KPayment.setPublickey(this.getPublicKey());
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
