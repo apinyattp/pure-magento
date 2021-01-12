@@ -69,6 +69,7 @@ class Charge extends Action
     public function execute() {
         $content = $this->getRequest()->getContent();
         $data = json_decode($content,TRUE);
+        print_r($data);
         $token = $data['token'];
         $order_id = $data['order_id'];
 
