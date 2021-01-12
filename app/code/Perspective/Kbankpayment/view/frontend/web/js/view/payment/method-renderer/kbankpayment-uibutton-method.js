@@ -76,7 +76,6 @@ define(
             },
 
             buttonInitial: function (orderData) {
-                console.log(orderData)
                 var self = this;
                 var d = kbankURL,
                     s = document.querySelector('script[src^="' + d + '"]');
@@ -87,7 +86,7 @@ define(
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
                 KPayment.setOrderId(orderData.order_increment_id);
-                KPayment.setMid();
+                KPayment.setMid(orderData.mid);
 
                 KPayment.setCurrency("THB");
                 KPayment.setName("The Next Optical");
