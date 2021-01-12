@@ -112,7 +112,9 @@ class Charge extends Action
         $payload['token'] = $token;
         $payload['additional_data'] = [
             'mid' =>  $redirect_config->getMID(),
-            'tid' =>  $redirect_config->getTID()
+            'tid' =>  $redirect_config->getTID(),
+            'smatpay_id' => "0002",
+            'term' => 10
         ];
         
         $response = $this->_makeRequest($payload);
