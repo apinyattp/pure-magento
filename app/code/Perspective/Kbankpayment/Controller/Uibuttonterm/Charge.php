@@ -117,6 +117,7 @@ class Charge extends Action
             'term' => 10
         ];
         
+        print_r($payload);
         $response = $this->_makeRequest($payload);
 
         $payment->setAdditionalInformation('charge_id', $response['id']);
