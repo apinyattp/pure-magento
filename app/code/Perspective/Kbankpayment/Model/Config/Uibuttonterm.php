@@ -124,11 +124,11 @@ class Uibuttonterm extends Config
      */
     public function getMID() {
 
-        // if ($this->isSandboxEnabled()) {
-        //     return $this->getTestMID();
-        // }
-        // return $this->getLiveMID();
-        return '401834895283001';
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestMID();
+        }
+        return $this->getLiveMID();
+        // return '401834895283001';
     }
 
     /**
@@ -155,12 +155,12 @@ class Uibuttonterm extends Config
      * @return string
      */
     public function getTID() {
-        // if ($this->isSandboxEnabled()) {
-        //     return $this->getTestTID();
-        // }
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestTID();
+        }
 
-        // return $this->getLiveTID();
-        return '77728413';
+        return $this->getLiveTID();
+        // return '77728413';
     }
 
     /**

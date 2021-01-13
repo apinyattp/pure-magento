@@ -52,68 +52,6 @@ class Config
         return FALSE;
     }
 
-    /**
-     * Retrieve KBank merchant ID whether live or test key
-     *
-     * @return string
-     */
-    public function getMID() {
-
-        if ($this->isSandboxEnabled()) {
-            return $this->getTestMID();
-        }
-        return $this->getLiveMID();
-    }
-
-    /**
-     * Retrieve KBank live merchant ID
-     *
-     * @return string
-     */
-    protected function getLiveMID() {
-        return $this->getValue('live_mid', self::CODE);
-    }
-
-    /**
-     * Retrieve KBank test merchant ID
-     *
-     * @return string
-     */
-    protected function getTestMID() {
-        return $this->getValue('test_mid', self::CODE);
-    }
-
-    /**
-     * Retrieve KBank terminal id whether live or test key
-     *
-     * @return string
-     */
-    public function getTID() {
-        if ($this->isSandboxEnabled()) {
-            return $this->getTestTID();
-        }
-
-        return $this->getLiveTID();
-    }
-
-    /**
-     * Retrieve KBank live terminal id
-     *
-     * @return string
-     */
-    protected function getLiveTID() {
-        return $this->getValue('live_tid', self::CODE);
-    }
-
-    /**
-     * Retrieve KBank test terminal id
-     *
-     * @return string
-     */
-    protected function getTestTID() {
-        return $this->getValue('test_tid', self::CODE);
-    }
-
     public function getBackURI() {
         return $this->BACK_URI;
     }

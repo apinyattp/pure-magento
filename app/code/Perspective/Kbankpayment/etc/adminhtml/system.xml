@@ -13,18 +13,6 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>Enabling sandbox means that all your transactions will be in TEST mode.</comment>
                 </field>
-                <field id="live_mid" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Merchant ID Live</label>
-                </field>
-                <field id="live_tid" translate="label" type="text" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Terminal ID Live</label>
-                </field>
-                <field id="test_mid" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Merchant ID Test</label>
-                </field>
-                <field id="test_tid" translate="label" type="text" sortOrder="41" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Terminal ID Test</label>
-                </field>
 
                 <group id="kbankpayment_redirect" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable Redirect Solution</label>
@@ -117,6 +105,18 @@
                         <comment>This controls the title which the user sees during checkout.</comment>
                         <config_path>payment/kbankpayment_uibutton/title</config_path>
                     </field>
+                    <field id="live_mid" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Merchant ID Live</label>
+                    </field>
+                    <field id="live_tid" translate="label" type="text" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Terminal ID Live</label>
+                    </field>
+                    <field id="test_mid" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Merchant ID Test</label>
+                    </field>
+                    <field id="test_tid" translate="label" type="text" sortOrder="41" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Terminal ID Test</label>
+                    </field>
                     <field id="test_public" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Test : Public Key</label>
                         <config_path>payment/kbankpayment_uibutton/test_public</config_path>
@@ -149,6 +149,17 @@
 
                 <group id="kbankpayment_uibuttonterm" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable KBank UI Button Term</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable/Disable</label>
+                        <comment>Enable KBank UI Button</comment>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/kbankpayment_uibuttonterm/active</config_path>
+                    </field>
+                    <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Title</label>
+                        <comment>This controls the title which the user sees during checkout.</comment>
+                        <config_path>payment/kbankpayment_uibuttonterm/title</config_path>
+                    </field>
                     <field id="test_mid" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Merchant ID Term Test</label>
                          <config_path>payment/kbankpayment_uibuttonterm/test_mid</config_path>
@@ -164,17 +175,6 @@
                     <field id="live_tid" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Terminal ID Term Live</label>
                          <config_path>payment/kbankpayment_uibuttonterm/live_tid</config_path>
-                    </field>
-                    <field id="active" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
-                        <label>Enable/Disable</label>
-                        <comment>Enable KBank UI Button</comment>
-                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                        <config_path>payment/kbankpayment_uibuttonterm/active</config_path>
-                    </field>
-                    <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
-                        <label>Title</label>
-                        <comment>This controls the title which the user sees during checkout.</comment>
-                        <config_path>payment/kbankpayment_uibuttonterm/title</config_path>
                     </field>
                     <field id="test_public" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Test : Public Key</label>
