@@ -95,7 +95,7 @@ class Createorder extends Action
         // $payload['amount'] = number_format($order->getGrandTotal(),2);
         $payload['amount'] = number_format($order->getGrandTotal(),2, '.', '');
         $payload['currency'] = "THB";
-        $payload['description'] = "Carelicious Store";
+        $payload['description'] = "The Next Optical";
         $payload['source_type'] = "qr";
         $payload['reference_order'] = $order->getIncrementId();
         
