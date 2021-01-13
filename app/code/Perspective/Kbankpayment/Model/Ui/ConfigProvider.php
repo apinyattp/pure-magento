@@ -54,8 +54,8 @@ class ConfigProvider implements ConfigProviderInterface
             'payment' => [
                 Redirect::CODE => [
                     'url' => $this->kbankpaymentRedirectConfig->getURL(),
-                    'mid' => $this->kbankpaymentRedirectConfig->getMID(),
-                    'tid' => $this->kbankpaymentRedirectConfig->getTID(),
+                    // 'mid' => $this->kbankpaymentRedirectConfig->getMID(),
+                    // 'tid' => $this->kbankpaymentRedirectConfig->getTID(),
                     'back_uri' => $this->kbankpaymentRedirectConfig->getBackURI()
                 ],
                 Direct18::CODE => [
