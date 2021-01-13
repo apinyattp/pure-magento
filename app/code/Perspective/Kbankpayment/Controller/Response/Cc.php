@@ -85,8 +85,8 @@ class Cc extends Action implements CsrfAwareActionInterface
         $order = $this->session->getLastRealOrder();
         echo '1=======>';
         print_r($inquiry);
-        echo '2=======>';
-        print_r($order);
+        // echo '2=======>';
+        // print_r($order);
         echo '3=======>';
 print_r( $order->getPayment());
         if (! $payment = $order->getPayment()) {
