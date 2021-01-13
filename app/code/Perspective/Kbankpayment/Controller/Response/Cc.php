@@ -80,7 +80,8 @@ class Cc extends Action implements CsrfAwareActionInterface
     public function execute() {
         $response = $this->_decode_response();
         $charge_id = $response['objectId'];
-
+print_r($response);
+echo $charge_id;die();
         $inquiry = $this->_makeRequest($charge_id);
         $order = $this->session->getLastRealOrder();
 
