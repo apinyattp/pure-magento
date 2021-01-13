@@ -90,18 +90,19 @@ class Cc extends Action implements CsrfAwareActionInterface
         }
 
         $payment->setAdditionalInformation('cc_charge', $inquiry);
+echo $inquiry['transaction_state'] ;
 
         if($inquiry['transaction_state'] !== 'Authorized'){
             $this->messageManager->addErrorMessage(__('The transaction state is not authorized, please make an order again or contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
         $payment->setAdditionalInformation('transaction_state', $inquiry['transaction_state']);
-
+echo $order->getId();
         if (! $order->getId()) {
             $this->messageManager->addErrorMessage(__('The order session no longer exists, please make an order again or contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
+print_r($payment->getMethod());
         if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton','kbankpayment_uibuttonterm'))) {
             $this->invalid($order, __('Invalid payment method. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
