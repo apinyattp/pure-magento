@@ -145,7 +145,7 @@ class Callback extends Action implements CsrfAwareActionInterface
 
         $order->save();
 
-        $resultJson = $this->resultRedirectFactory->create();
+        $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('checkout/onepage/success');
         return $resultRedirect;
     }

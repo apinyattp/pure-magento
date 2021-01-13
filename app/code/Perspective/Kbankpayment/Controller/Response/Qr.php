@@ -72,7 +72,7 @@ class Qr extends Action
         $data = json_decode($content,TRUE);
         
         $order_id = $data['order_id'];
-        $charge_id = $data['charge_id'];
+        $charge_id = $data['id'];
 
         if (! $order_id) {
             return $this->redirect(self::PATH_CART);

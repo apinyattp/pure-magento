@@ -45,7 +45,7 @@ class Cc extends Action implements CsrfAwareActionInterface
      */
     protected $session;
     protected $_logger;
-    protected $resultRedirectFactory;
+    protected $resultJsonFactory;
 
     public function __construct(
         Context $context,
@@ -55,7 +55,7 @@ class Cc extends Action implements CsrfAwareActionInterface
         \Psr\Log\LoggerInterface $logger,
         Direct18 $config,
         Session $session,
-        \Magento\Backend\Model\View\Result\Redirect $resultRedirectFactory
+        \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
     ) {
         $this->_invoiceService = $invoiceService;
         $this->_invoiceSender = $invoiceSender;
@@ -63,7 +63,7 @@ class Cc extends Action implements CsrfAwareActionInterface
         $this->config = $config;
         $this->session = $session;
         $this->_logger = $logger;
-        $this->resultRedirectFactory = $resultRedirectFactory;
+        $this->resultJsonFactory = $resultJsonFactory;
         parent::__construct($context);
     }
 
@@ -82,7 +82,7 @@ class Cc extends Action implements CsrfAwareActionInterface
      */
     public function execute() {
         $response = $this->_decode_response();
-        $charge_id = $response['objectId'];
+        $charge_id = $response['id'];
 
         $inquiry = $this->_makeRequest($charge_id);
 
@@ -145,9 +145,10 @@ class Cc extends Action implements CsrfAwareActionInterface
 
         $order->save();
 
-        $resultJson = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('checkout/onepage/success');
-        return $resultRedirect;
+        $response['sucess_url'] = self::PATH_SUCCESS;
+
+        $resultJson = $this->resultJsonFactory->create();
+        return $resultJson->setData($response);
     }
     public function execute22222() {
 
