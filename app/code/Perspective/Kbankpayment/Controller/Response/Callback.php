@@ -89,7 +89,7 @@ class Callback extends Action implements CsrfAwareActionInterface
         echo '1=======>';
         print_r($inquiry);
         echo '2=======>';
-        print_r($order);
+        var_dump($order);
         echo '3=======>';
 print_r( $order->getPayment());
         if (! $payment = $order->getPayment()) {
