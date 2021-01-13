@@ -1,5 +1,5 @@
 <?php
-namespace Perspective\payment\Controller\Index;
+namespace Perspective\payment\Controller\Callback;
 
 use Exception;
 use Magento\Checkout\Model\Session;
