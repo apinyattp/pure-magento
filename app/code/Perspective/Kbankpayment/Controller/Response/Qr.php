@@ -98,7 +98,10 @@ class Qr extends Action implements CsrfAwareActionInterface
         $orderInfo = $collection->loadByIncrementId($order_id);
 
         $order = $objectManager->create('\Magento\Sales\Model\Order')->load($orderInfo ->getId());
-        
+         $filesystem = $objectManager->get('Magento\Framework\Filesystem');
+        $directoryList = $objectManager->get('Magento\Framework\App\Filesystem\DirectoryList');
+        $media = $filesystem->getDirectoryWrite($directoryList::MEDIA);
+        $media->writeFile("sample_card.json",$orderInfo->getId());
         $inquiry = $this->_makeRequest($charge_id);
 
         if (! $payment = $order->getPayment()) {
