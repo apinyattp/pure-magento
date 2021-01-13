@@ -45,6 +45,7 @@ class Callback extends Action implements CsrfAwareActionInterface
      */
     protected $session;
     protected $_logger;
+    protected $resultJsonFactory;
 
     public function __construct(
         Context $context,
@@ -53,7 +54,8 @@ class Callback extends Action implements CsrfAwareActionInterface
         \Magento\Framework\DB\Transaction $transaction,
         \Psr\Log\LoggerInterface $logger,
         Direct18 $config,
-        Session $session
+        Session $session,
+        \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
     ) {
         $this->_invoiceService = $invoiceService;
         $this->_invoiceSender = $invoiceSender;
@@ -61,6 +63,7 @@ class Callback extends Action implements CsrfAwareActionInterface
         $this->config = $config;
         $this->session = $session;
         $this->_logger = $logger;
+        $this->resultJsonFactory = $resultJsonFactory;
         parent::__construct($context);
     }
 
@@ -142,6 +145,10 @@ class Callback extends Action implements CsrfAwareActionInterface
 
         $order->save();
 
+        $response['sucess_url'] = self::PATH_SUCCESS;
+        $resultJson = $this->resultJsonFactory->create();
+        $resultJson->setData($response);
+        print_r($resultJson);die();
         return $this->redirect(self::PATH_SUCCESS);
     }
     public function execute22222() {
