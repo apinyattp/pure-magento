@@ -84,7 +84,12 @@ class Callback extends Action implements CsrfAwareActionInterface
         $inquiry = $this->_makeRequest($charge_id);
 
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $order = $objectManager->create('\Magento\Sales\Model\Order')->load($inquiry['reference_order']);
+        $collection = $objectManager->create('Magento\Sales\Model\Order'); 
+        $orderInfo = $collection->loadByIncrementId($inquiry['reference_order']);
+        $orderId = $orderInfo ->getId();
+        echo $orderId;  
+
+        $order = $objectManager->create('\Magento\Sales\Model\Order')->load($orderId);
         echo $inquiry['reference_order']. '---';
 var_dump($order->getCustomerLastname());die();
         if (! $payment = $order->getPayment()) {
