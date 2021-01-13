@@ -80,11 +80,13 @@ class Cc extends Action implements CsrfAwareActionInterface
     public function execute() {
         $response = $this->_decode_response();
         $charge_id = $response['objectId'];
-print_r($response);
-echo $charge_id;die();
+
         $inquiry = $this->_makeRequest($charge_id);
         $order = $this->session->getLastRealOrder();
 
+        print_r($inquiry);
+        print_r($order);
+        print_r($order->getPayment());die();
         if (! $payment = $order->getPayment()) {
             $this->invalid($order, __('Cannot retrieve a payment detail from the request. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
