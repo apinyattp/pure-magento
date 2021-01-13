@@ -83,7 +83,7 @@ class Callback extends Action implements CsrfAwareActionInterface
 
         $inquiry = $this->_makeRequest($charge_id);
         $orderIncrementId = $this->session->getLastRealOrderId();
-        echo $orderIncrementId;
+        var_dump($orderIncrementId);
         echo $inquiry['reference_order'];
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $order = $objectManager->create('\Magento\Sales\Model\Order')->load($inquiry['reference_order']);
