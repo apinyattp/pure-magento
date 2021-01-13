@@ -76,6 +76,7 @@ class ConfigProvider implements ConfigProviderInterface
                     'public' => $this->KbankpaymentUiqrConfig->getPublic(),
                     'secret' => $this->KbankpaymentUiqrConfig->getSecret(),
                 ],
+                
             ]
         ];
     }
