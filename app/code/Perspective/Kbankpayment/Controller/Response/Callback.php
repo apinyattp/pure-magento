@@ -52,7 +52,6 @@ class Callback extends Action implements CsrfAwareActionInterface
         \Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoiceSender,
         \Magento\Framework\DB\Transaction $transaction,
         \Psr\Log\LoggerInterface $logger,
-        Order $order,
         Direct18 $config,
         Session $session
     ) {
@@ -60,7 +59,6 @@ class Callback extends Action implements CsrfAwareActionInterface
         $this->_invoiceSender = $invoiceSender;
         $this->_transaction = $transaction;
         $this->config = $config;
-        $this->order = $order;
         $this->session = $session;
         $this->_logger = $logger;
         parent::__construct($context);
@@ -80,7 +78,9 @@ class Callback extends Action implements CsrfAwareActionInterface
      * @return void
      */
     public function execute() {
+        echo 11;
         $response = $this->_decode_response();
+        print_r($response);die();
         $charge_id = $response['objectId'];
 
         $inquiry = $this->_makeRequest($charge_id);
