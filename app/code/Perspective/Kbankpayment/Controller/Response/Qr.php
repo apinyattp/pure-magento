@@ -81,6 +81,7 @@ class Qr extends Action implements CsrfAwareActionInterface
      * @return void
      */
     public function execute() {
+        ini_set('display_errors', 1);
         $response = file_get_contents('php://input');
 
         $data = json_decode($response,TRUE);
