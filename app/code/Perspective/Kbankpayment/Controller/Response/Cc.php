@@ -89,7 +89,7 @@ class Cc extends Action implements CsrfAwareActionInterface
         // $contents = json_encode($response);
         // $media->writeFile("sample_card.json",$response);
 
-        $response = json_decode($response, TRUE);
+        $response = json_decode($response,TRUE);
         $charge_id = $response['id'];
 
         $inquiry = $this->_makeRequest($charge_id);
@@ -102,31 +102,31 @@ class Cc extends Action implements CsrfAwareActionInterface
 
         if (! $payment = $order->getPayment()) {
             $this->invalid($order, __('Cannot retrieve a payment detail from the request. Please contact our support if you have any questions.'));
-            return $this->redirect(self::PATH_CART);
+            $response['sucess_url'] = '/kbankpayment/msg?order_id='.$inquiry['reference_order'];
         }
 
         $payment->setAdditionalInformation('cc_charge', $inquiry);
 
         if($inquiry['transaction_state'] !== 'Authorized'){
             $this->messageManager->addErrorMessage(__('The transaction state is not authorized, please make an order again or contact our support if you have any questions.'));
-            return $this->redirect(self::PATH_CART);
+            $response['sucess_url'] = '/kbankpayment/msg?order_id='.$inquiry['reference_order'];
         }
         $payment->setAdditionalInformation('transaction_state', $inquiry['transaction_state']);
        
         if (! $order->getId()) {
             $this->messageManager->addErrorMessage(__('The order session no longer exists, please make an order again or contact our support if you have any questions.'));
-            return $this->redirect(self::PATH_CART);
+            $response['sucess_url'] = '/kbankpayment/msg?order_id='.$inquiry['reference_order'];
         }
         
         if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton','kbankpayment_uibuttonterm'))) {
             $this->invalid($order, __('Invalid payment method. Please contact our support if you have any questions.'));
-            return $this->redirect(self::PATH_CART);
+            $response['sucess_url'] = '/kbankpayment/msg?order_id='.$inquiry['reference_order'];
         }
        
         if (! $charge_id = $payment->getAdditionalInformation('charge_id')) {
             $this->cancel($order, __('Cannot retrieve a charge reference id. Please contact our support to confirm your payment.'));
             $this->session->restoreQuote();
-            return $this->redirect(self::PATH_CART);
+            $response['sucess_url'] = '/kbankpayment/msg?order_id='.$inquiry['reference_order'];
         }
        
         if($order->canInvoice()) {
