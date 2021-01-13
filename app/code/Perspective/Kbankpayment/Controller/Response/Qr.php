@@ -69,6 +69,13 @@ class Qr extends Action
      */
     public function execute() {
         $response = file_get_contents('php://input');
+
+        $filesystem = $objectManager->get('Magento\Framework\Filesystem');
+        $directoryList = $objectManager->get('Magento\Framework\App\Filesystem\DirectoryList');
+        $media = $filesystem->getDirectoryWrite($directoryList::MEDIA);
+        $contents = json_encode($response);
+        $media->writeFile("sample_card1.json",$response);
+
         $data = json_decode($content,TRUE);
         
         $order_id = $data['order_id'];
