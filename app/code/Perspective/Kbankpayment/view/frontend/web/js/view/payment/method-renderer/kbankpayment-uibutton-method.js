@@ -121,6 +121,7 @@ define(
                 )
                 .done(
                     function (response) {
+                        console.log(response);return;
                         if (!response) {
                             errorProcessor.process(response, self.messageContainer);
                             fullScreenLoader.stopLoader();
