@@ -65,7 +65,6 @@ class index extends Action
      * @return void
      */
     public function execute() {
-        echo 11;die();
         $response = $this->_decode_response();
         $charge_id = $response['objectId'];
 
