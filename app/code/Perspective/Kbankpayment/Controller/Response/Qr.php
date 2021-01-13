@@ -82,9 +82,9 @@ class Qr extends Action implements CsrfAwareActionInterface
      */
     public function execute() {
         ini_set('display_errors', 1);
-        $response = file_get_contents('php://input');
+        $response_c = file_get_contents('php://input');
 
-        $data = json_decode($response,TRUE);
+        $data = json_decode($response_c,TRUE);
         
         $order_id = $data['reference_order'];
         $charge_id = $data['id'];
