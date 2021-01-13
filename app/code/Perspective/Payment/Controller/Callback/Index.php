@@ -66,6 +66,7 @@ class index extends Action
      */
     public function execute() {
         $response = $this->_decode_response();
+        print_r($response);die();
         $charge_id = $response['objectId'];
 
         $inquiry = $this->_makeRequest($charge_id);
