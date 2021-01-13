@@ -12,4 +12,10 @@
             <resource ref="anonymous" />
         </resources>
     </route>
+     <route method="POST" url="/V1/payment/callback">
+        <service class="Perspective\Kbankpayment\Response\cc" method="execute"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
 </routes>
