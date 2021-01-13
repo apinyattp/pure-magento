@@ -84,9 +84,6 @@ class Cc extends Action implements CsrfAwareActionInterface
         $inquiry = $this->_makeRequest($charge_id);
         $order = $this->session->getLastRealOrder();
 
-        print_r($inquiry);
-        print_r($order);
-        print_r($order->getPayment());die();
         if (! $payment = $order->getPayment()) {
             $this->invalid($order, __('Cannot retrieve a payment detail from the request. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
@@ -105,11 +102,11 @@ class Cc extends Action implements CsrfAwareActionInterface
             return $this->redirect(self::PATH_CART);
         }
 
-        if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton'))) {
+        if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton','kbankpayment_uibuttonterm'))) {
             $this->invalid($order, __('Invalid payment method. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
+echo  $payment->getAdditionalInformation('charge_id');die();
         if (! $charge_id = $payment->getAdditionalInformation('charge_id')) {
             $this->cancel($order, __('Cannot retrieve a charge reference id. Please contact our support to confirm your payment.'));
             $this->session->restoreQuote();
