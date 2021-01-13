@@ -85,11 +85,11 @@ class Cc extends Action implements CsrfAwareActionInterface
         $charge_id = $response['id'];
 
         $inquiry = $this->_makeRequest($charge_id);
-
+print_r($inquiry);
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $collection = $objectManager->create('Magento\Sales\Model\Order'); 
         $orderInfo = $collection->loadByIncrementId($inquiry['reference_order']);
-
+var_dump($orderInfo ->getId());
         $order = $objectManager->create('\Magento\Sales\Model\Order')->load($orderInfo ->getId());
 
         if (! $payment = $order->getPayment()) {
