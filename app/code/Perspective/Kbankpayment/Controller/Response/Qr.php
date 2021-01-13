@@ -76,13 +76,13 @@ class Qr extends Action implements CsrfAwareActionInterface
     {
         return true;
     }
-    
+
     /**
      * @return void
      */
     public function execute() {
         $response = file_get_contents('php://input');
-
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $filesystem = $objectManager->get('Magento\Framework\Filesystem');
         $directoryList = $objectManager->get('Magento\Framework\App\Filesystem\DirectoryList');
         $media = $filesystem->getDirectoryWrite($directoryList::MEDIA);
@@ -98,7 +98,7 @@ class Qr extends Action implements CsrfAwareActionInterface
             return $this->redirect(self::PATH_CART);
         }
         
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+       
         $order = $objectManager->create('\Magento\Sales\Model\Order')->load($order_id);
         
         $inquiry = $this->_makeRequest($charge_id);
