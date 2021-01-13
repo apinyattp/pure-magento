@@ -9,8 +9,11 @@ use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Payment\Transaction;
 use Perspective\Kbankpayment\Model\Config\Direct18;
+use Magento\Framework\App\CsrfAwareActionInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\Request\InvalidRequestException;
 
-class Cc extends Action
+class Callback extends Action implements CsrfAwareActionInterface
 {
     /**
      * @var string
@@ -61,6 +64,16 @@ class Cc extends Action
         parent::__construct($context);
     }
 
+    public function createCsrfValidationException(RequestInterface $request): ? InvalidRequestException
+    {
+        return null;
+    }
+        
+    public function validateForCsrf(RequestInterface $request): ?bool
+    {
+        return true;
+    }
+
     /**
      * @return void
      */
@@ -69,37 +82,49 @@ class Cc extends Action
         $charge_id = $response['objectId'];
 
         $inquiry = $this->_makeRequest($charge_id);
-        $order = $this->session->getLastRealOrder();
-
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $order = $objectManager->create('\Magento\Sales\Model\Order')->load($inquiry['reference_order']);
+        // $order = $this->session->getLastRealOrder();
+        echo '1=======>';
+        print_r($inquiry);
+        echo '2=======>';
+        print_r($order);
+        echo '3=======>';
+print_r( $order->getPayment());
         if (! $payment = $order->getPayment()) {
             $this->invalid($order, __('Cannot retrieve a payment detail from the request. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
+echo '4=======>';
         $payment->setAdditionalInformation('cc_charge', $inquiry);
+echo $inquiry['transaction_state'] ;
 
         if($inquiry['transaction_state'] !== 'Authorized'){
             $this->messageManager->addErrorMessage(__('The transaction state is not authorized, please make an order again or contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
         $payment->setAdditionalInformation('transaction_state', $inquiry['transaction_state']);
-
+        echo '5=======>';
+echo $order->getId();
         if (! $order->getId()) {
             $this->messageManager->addErrorMessage(__('The order session no longer exists, please make an order again or contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
-        if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton'))) {
+        echo '6=======>';
+print_r($payment->getMethod());
+        if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton','kbankpayment_uibuttonterm'))) {
             $this->invalid($order, __('Invalid payment method. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
+        echo '7=======>';
+echo  $payment->getAdditionalInformation('charge_id');
         if (! $charge_id = $payment->getAdditionalInformation('charge_id')) {
             $this->cancel($order, __('Cannot retrieve a charge reference id. Please contact our support to confirm your payment.'));
             $this->session->restoreQuote();
             return $this->redirect(self::PATH_CART);
         }
-
+        echo '8=======>';
+        print_r($order->canInvoice());
         if($order->canInvoice()) {
             $invoice = $this->_invoiceService->prepareInvoice($order);
             $invoice->register();
