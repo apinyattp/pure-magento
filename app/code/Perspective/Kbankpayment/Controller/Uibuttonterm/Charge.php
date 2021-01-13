@@ -111,8 +111,8 @@ class Charge extends Action
         $payload['reference_order'] = $order->getIncrementId();
         $payload['token'] = $token;
         $payload['additional_data'] = [
-            'mid' =>  $redirect_config->getMID(),
-            'tid' =>  $redirect_config->getTID(),
+            'mid' =>  $redirect_config->getMIDTerm(),
+            'tid' =>  $redirect_config->getTIDTerm(),
             'smartpay_id' => "0002",
             'term' => 10
         ];
