@@ -9,8 +9,11 @@ use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Payment\Transaction;
 use Perspective\Kbankpayment\Model\Config\Direct18;
+use Magento\Framework\App\CsrfAwareActionInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\Request\InvalidRequestException;
 
-class Cc extends Action
+class Cc extends Action implements CsrfAwareActionInterface
 {
     /**
      * @var string
@@ -59,6 +62,16 @@ class Cc extends Action
         $this->session = $session;
         $this->_logger = $logger;
         parent::__construct($context);
+    }
+
+    public function createCsrfValidationException(RequestInterface $request): ? InvalidRequestException
+    {
+        return null;
+    }
+        
+    public function validateForCsrf(RequestInterface $request): ?bool
+    {
+        return true;
     }
 
     /**
