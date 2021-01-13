@@ -9,8 +9,11 @@ use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Payment\Transaction;
 use Perspective\Kbankpayment\Model\Config\Direct18;
+use Magento\Framework\App\CsrfAwareActionInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\Request\InvalidRequestException;
 
-class Cc extends Action
+class Cc extends Action implements CsrfAwareActionInterface
 {
     /**
      * @var string
@@ -42,6 +45,7 @@ class Cc extends Action
      */
     protected $session;
     protected $_logger;
+    protected $resultRedirectFactory;
 
     public function __construct(
         Context $context,
@@ -50,7 +54,8 @@ class Cc extends Action
         \Magento\Framework\DB\Transaction $transaction,
         \Psr\Log\LoggerInterface $logger,
         Direct18 $config,
-        Session $session
+        Session $session,
+        \Magento\Backend\Model\View\Result\Redirect $resultRedirectFactory
     ) {
         $this->_invoiceService = $invoiceService;
         $this->_invoiceSender = $invoiceSender;
@@ -58,7 +63,18 @@ class Cc extends Action
         $this->config = $config;
         $this->session = $session;
         $this->_logger = $logger;
+        $this->resultRedirectFactory = $resultRedirectFactory;
         parent::__construct($context);
+    }
+
+    public function createCsrfValidationException(RequestInterface $request): ? InvalidRequestException
+    {
+        return null;
+    }
+        
+    public function validateForCsrf(RequestInterface $request): ?bool
+    {
+        return true;
     }
 
     /**
@@ -69,7 +85,12 @@ class Cc extends Action
         $charge_id = $response['objectId'];
 
         $inquiry = $this->_makeRequest($charge_id);
-        $order = $this->session->getLastRealOrder();
+
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $collection = $objectManager->create('Magento\Sales\Model\Order'); 
+        $orderInfo = $collection->loadByIncrementId($inquiry['reference_order']);
+
+        $order = $objectManager->create('\Magento\Sales\Model\Order')->load($orderInfo ->getId());
 
         if (! $payment = $order->getPayment()) {
             $this->invalid($order, __('Cannot retrieve a payment detail from the request. Please contact our support if you have any questions.'));
@@ -83,23 +104,23 @@ class Cc extends Action
             return $this->redirect(self::PATH_CART);
         }
         $payment->setAdditionalInformation('transaction_state', $inquiry['transaction_state']);
-
+       
         if (! $order->getId()) {
             $this->messageManager->addErrorMessage(__('The order session no longer exists, please make an order again or contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
-        if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton'))) {
+        
+        if (!in_array($payment->getMethod(), array('kbankpayment_direct18','kbankpayment_uibutton','kbankpayment_uibuttonterm'))) {
             $this->invalid($order, __('Invalid payment method. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
+       
         if (! $charge_id = $payment->getAdditionalInformation('charge_id')) {
             $this->cancel($order, __('Cannot retrieve a charge reference id. Please contact our support to confirm your payment.'));
             $this->session->restoreQuote();
             return $this->redirect(self::PATH_CART);
         }
-
+       
         if($order->canInvoice()) {
             $invoice = $this->_invoiceService->prepareInvoice($order);
             $invoice->register();
@@ -124,7 +145,9 @@ class Cc extends Action
 
         $order->save();
 
-        return $this->redirect(self::PATH_SUCCESS);
+        $resultJson = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('checkout/onepage/success');
+        return $resultRedirect;
     }
     public function execute22222() {
 
