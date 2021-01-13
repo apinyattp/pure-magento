@@ -132,7 +132,7 @@ define(
             },
             kpaymentInquiry: function (chargeID){
                 var self = this;
-                var chargeUrl = urlBuilder.build("kbankpayment/response/qr");
+                var chargeUrl = urlBuilder.build("kbankpayment/response/qrCallback");
                 var postData = {order_id:this.order_id,charge_id:chargeID};
 
                 storage.post(chargeUrl, JSON.stringify(postData))

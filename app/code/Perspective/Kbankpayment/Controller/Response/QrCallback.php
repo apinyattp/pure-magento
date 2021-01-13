@@ -10,7 +10,7 @@ use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Payment\Transaction;
 use Perspective\Kbankpayment\Model\Config\Uiqr;
 
-class Qr extends Action
+class QrCallback extends Action
 {
     /**
      * @var string
@@ -68,11 +68,11 @@ class Qr extends Action
      * @return void
      */
     public function execute() {
-        $response = file_get_contents('php://input');
+        $content = $this->getRequest()->getContent();
         $data = json_decode($content,TRUE);
         
         $order_id = $data['order_id'];
-        $charge_id = $data['id'];
+        $charge_id = $data['charge_id'];
 
         if (! $order_id) {
             return $this->redirect(self::PATH_CART);
