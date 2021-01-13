@@ -65,7 +65,6 @@ class Cc extends Action
      * @return void
      */
     public function execute() {
-        echo 11;die();
         $response = $this->_decode_response();
         print_r($response);die();
         $charge_id = $response['objectId'];
