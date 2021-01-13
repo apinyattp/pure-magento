@@ -62,10 +62,6 @@ define(
                 return window.checkoutConfig.payment.kbankpayment_uibuttonterm.public;
             },
 
-            getMidKey: function() {
-                return window.checkoutConfig.payment.kbankpayment_uibuttonterm.mid;
-            },
-
             /**
              * Is method available to display
              *
@@ -91,7 +87,7 @@ console.log(window.checkoutConfig.payment.kbankpayment_uibuttonterm)
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
                 KPayment.setOrderId(orderData.order_increment_id);
-                KPayment.setMid(this.getMidKey());
+                KPayment.setMid(orderData.mid);
                 KPayment.setSmartpayId("0002");
                 KPayment.setTerm(10);
                 

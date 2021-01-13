@@ -63,10 +63,6 @@ define(
                 return window.checkoutConfig.payment.kbankpayment_uibutton.public;
             },
 
-            getMidKey: function() {
-                return window.checkoutConfig.payment.kbankpayment_uibutton.mid;
-            },
-
             /**
              * Is method available to display
              *
@@ -91,7 +87,7 @@ define(
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
                 KPayment.setOrderId(orderData.order_increment_id);
-                KPayment.setMid(this.getMidKey());
+                KPayment.setMid(orderData.mid);
                 
                 KPayment.setCurrency("THB");
                 KPayment.setName("The Next Optical");

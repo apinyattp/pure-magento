@@ -85,7 +85,7 @@ class Charge extends Action
         }
 
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        // $redirect_config = $objectManager->create('Perspective\Kbankpayment\Model\Config\Config');
+        $redirect_config = $objectManager->create('Perspective\Kbankpayment\Model\Config\Config');
         $order = $objectManager->create('\Magento\Sales\Model\Order')
                                    ->load($order_id);
         if (! $order) {
@@ -111,8 +111,8 @@ class Charge extends Action
         $payload['reference_order'] = $order->getIncrementId();
         $payload['token'] = $token;
         $payload['additional_data'] = [
-            'mid' =>  $this->config->getMID(),
-            'tid' =>  $this->config->getTID(),
+            'mid' =>  $redirect_config->getMID(),
+            'tid' =>  $redirect_config->getTID(),
             'smartpay_id' => "0002",
             'term' => 10
         ];

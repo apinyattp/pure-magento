@@ -83,4 +83,131 @@ class Config
         return $this->BANK_IP;
     }
 
+        
+    /**
+     * Retrieve KBank merchant ID whether live or test key
+     *
+     * @return string
+     */
+    public function getMIDTerm() {
+
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestMIDTerm();
+        }
+        return $this->getLiveMIDTerm();
+        // return '401834895283001';
+    }
+
+    /**
+     * Retrieve KBank live merchant ID
+     *
+     * @return string
+     */
+    protected function getLiveMIDTerm() {
+        return $this->getValue('live_mid_mcc', self::CODE);
+    }
+
+    /**
+     * Retrieve KBank test merchant ID
+     *
+     * @return string
+     */
+    protected function getTestMIDTerm() {
+        return $this->getValue('test_mid_mcc', self::CODE);
+    }
+
+    /**
+     * Retrieve KBank terminal id whether live or test key
+     *
+     * @return string
+     */
+    public function getTIDTerm() {
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestTIDTerm();
+        }
+
+        return $this->getLiveTIDTerm();
+        // return '77728413';
+    }
+
+    /**
+     * Retrieve KBank live terminal id
+     *
+     * @return string
+     */
+    protected function getLiveTIDTerm() {
+        return $this->getValue('live_tid_mcc', self::CODE);
+    }
+
+    /**
+     * Retrieve KBank test terminal id
+     *
+     * @return string
+     */
+    protected function getTestTIDTerm() {
+        return $this->getValue('test_tid_mcc', self::CODE);
+    }
+
+        /**
+     * Retrieve KBank merchant ID whether live or test key
+     *
+     * @return string
+     */
+    public function getMID() {
+
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestMID();
+        }
+        return $this->getLiveMID();
+    }
+
+    /**
+     * Retrieve KBank live merchant ID
+     *
+     * @return string
+     */
+    protected function getLiveMID() {
+        return $this->getValue('live_mid', self::CODE);
+    }
+
+    /**
+     * Retrieve KBank test merchant ID
+     *
+     * @return string
+     */
+    protected function getTestMID() {
+        return $this->getValue('test_mid', self::CODE);
+    }
+
+    /**
+     * Retrieve KBank terminal id whether live or test key
+     *
+     * @return string
+     */
+    public function getTID() {
+        if ($this->isSandboxEnabled()) {
+            return $this->getTestTID();
+        }
+
+        return $this->getLiveTID();
+    }
+
+    /**
+     * Retrieve KBank live terminal id
+     *
+     * @return string
+     */
+    protected function getLiveTID() {
+        return $this->getValue('live_tid', self::CODE);
+    }
+
+    /**
+     * Retrieve KBank test terminal id
+     *
+     * @return string
+     */
+    protected function getTestTID() {
+        return $this->getValue('test_tid', self::CODE);
+    }
+
 }
