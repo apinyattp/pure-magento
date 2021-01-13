@@ -89,11 +89,14 @@ class Qr extends Action implements CsrfAwareActionInterface
         $charge_id = $data['id'];
 
         if (! $order_id) {
-            return $this->redirect(self::PATH_CART);
+            $response['sucess_url'] = '/kbankpayment/msg?order_id='.$order_id;
         }
         
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $order = $objectManager->create('\Magento\Sales\Model\Order')->load($order_id);
+        $collection = $objectManager->create('Magento\Sales\Model\Order'); 
+        $orderInfo = $collection->loadByIncrementId($order_id);
+
+        $order = $objectManager->create('\Magento\Sales\Model\Order')->load($orderInfo ->getId());
         
         $inquiry = $this->_makeRequest($charge_id);
 
