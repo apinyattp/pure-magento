@@ -85,7 +85,7 @@ class Callback extends Action implements CsrfAwareActionInterface
         echo $inquiry['reference_order'];
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $order = $objectManager->create('\Magento\Sales\Model\Order')->load($inquiry['reference_order']);
-var_dump($order);die();
+var_dump($order->getPayment());die();
         if (! $payment = $order->getPayment()) {
             $this->invalid($order, __('Cannot retrieve a payment detail from the request. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
