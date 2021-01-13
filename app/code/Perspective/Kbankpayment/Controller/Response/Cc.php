@@ -82,18 +82,19 @@ class Cc extends Action implements CsrfAwareActionInterface
      */
     public function execute() {
         $response = file_get_contents('php://input');
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $filesystem = $objectManager->get('Magento\Framework\Filesystem');
-        $directoryList = $objectManager->get('Magento\Framework\App\Filesystem\DirectoryList');
-        $media = $filesystem->getDirectoryWrite($directoryList::MEDIA);
-        $contents = json_encode($response);
-        $media->writeFile("sample_card.json",$response);
+       
+        // $filesystem = $objectManager->get('Magento\Framework\Filesystem');
+        // $directoryList = $objectManager->get('Magento\Framework\App\Filesystem\DirectoryList');
+        // $media = $filesystem->getDirectoryWrite($directoryList::MEDIA);
+        // $contents = json_encode($response);
+        // $media->writeFile("sample_card.json",$response);
 
+        $response = json_decode($response, TRUE);
         $charge_id = $response['id'];
 
         $inquiry = $this->_makeRequest($charge_id);
 
-        
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $collection = $objectManager->create('Magento\Sales\Model\Order'); 
         $orderInfo = $collection->loadByIncrementId($inquiry['reference_order']);
 
