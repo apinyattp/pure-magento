@@ -56,28 +56,27 @@ class ConfigProvider implements ConfigProviderInterface
                     'url' => $this->kbankpaymentRedirectConfig->getURL(),
                     'mid' => $this->kbankpaymentRedirectConfig->getMID(),
                     'tid' => $this->kbankpaymentRedirectConfig->getTID(),
-                    'back_uri' => $this->kbankpaymentRedirectConfig->getBackURI(),
+                    'back_uri' => $this->kbankpaymentRedirectConfig->getBackURI()
                 ],
                 Direct18::CODE => [
                     'url' => $this->kbankpaymentDirect18Config->getURL(),
-                    'public' => $this->kbankpaymentDirect18Config->getPublic(),
+                    'public' => $this->kbankpaymentDirect18Config->getPublic()
                 ],
                 Uibutton::CODE => [
                     'public' => $this->KbankpaymentUibuttonConfig->getPublic(),
-                    'secret' => $this->KbankpaymentUibuttonConfig->getSecret(),
-                    'mid' => $this->KbankpaymentUibuttonConfig->getMID(),
-                    'tid' => $this->KbankpaymentUibuttonConfig->getTid(),
+                    'secret' => $this->KbankpaymentUibuttonConfig->getSecret()
                 ],
                 Uibuttonterm::CODE => [
                     'public' => $this->KbankpaymentUibuttontermConfig->getPublic(),
                     'secret' => $this->KbankpaymentUibuttontermConfig->getSecret(),
                     'mid' => $this->KbankpaymentUibuttontermConfig->getMID(),
-                    'tid' => $this->KbankpaymentUibuttontermConfig->getTid(),
+                    'tid' => $this->KbankpaymentUibuttontermConfig->getTid()
                 ],
                 Uiqr::CODE => [
                     'public' => $this->KbankpaymentUiqrConfig->getPublic(),
-                    'secret' => $this->KbankpaymentUiqrConfig->getSecret(),
+                    'secret' => $this->KbankpaymentUiqrConfig->getSecret()
                 ],
+
             ]
         ];
     }
