@@ -88,7 +88,7 @@ class Cc extends Action implements CsrfAwareActionInterface
             $this->invalid($order, __('Cannot retrieve a payment detail from the request. Please contact our support if you have any questions.'));
             return $this->redirect(self::PATH_CART);
         }
-
+echo 1234;
         $payment->setAdditionalInformation('cc_charge', $inquiry);
 echo $inquiry['transaction_state'] ;
 
