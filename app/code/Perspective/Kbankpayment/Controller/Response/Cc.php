@@ -9,8 +9,9 @@ use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Payment\Transaction;
 use Perspective\Kbankpayment\Model\Config\Direct18;
+use Magento\Framework\App\Action\HttpPostActionInterface as HttpPostActionInterface;
 
-class Cc extends Action
+class Cc extends Action implements HttpPostActionInterface
 {
     /**
      * @var string
