@@ -175,6 +175,8 @@ class index extends Action
     }
 
     private function _decode_response() {
+
+        echo 11;
         $result = $this->getRequest()->getPost();
         return $result;
     }
