@@ -1,5 +1,5 @@
 <?php
-namespace Perspective\Kbankpayment\Controller\Backurl;
+namespace Perspective\Kbankpayment\Controller\Direct18;
 
 use Exception;
 use Magento\Checkout\Model\Session;
