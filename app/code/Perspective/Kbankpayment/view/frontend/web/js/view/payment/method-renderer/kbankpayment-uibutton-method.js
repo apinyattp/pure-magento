@@ -100,6 +100,7 @@ define(
                     }
                 });
             },
+            
             chargeKbank: function (event) {
                 if(this.token.length > 1){
                     return false;
