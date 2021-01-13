@@ -9,8 +9,11 @@ use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Payment\Transaction;
 use Perspective\Kbankpayment\Model\Config\Uiqr;
+use Magento\Framework\App\CsrfAwareActionInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\Request\InvalidRequestException;
 
-class Qr extends Action
+class Qr extends Action implements CsrfAwareActionInterface
 {
     /**
      * @var string
@@ -64,6 +67,16 @@ class Qr extends Action
         parent::__construct($context);
     }
 
+    public function createCsrfValidationException(RequestInterface $request): ? InvalidRequestException
+    {
+        return null;
+    }
+        
+    public function validateForCsrf(RequestInterface $request): ?bool
+    {
+        return true;
+    }
+    
     /**
      * @return void
      */
