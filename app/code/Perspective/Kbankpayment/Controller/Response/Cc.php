@@ -81,13 +81,13 @@ class Cc extends Action implements CsrfAwareActionInterface
      * @return void
      */
     public function execute() {
-        $response = $this->_decode_response();
+        $response = file_get_contents('php://input');
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $filesystem = $objectManager->get('Magento\Framework\Filesystem');
         $directoryList = $objectManager->get('Magento\Framework\App\Filesystem\DirectoryList');
         $media = $filesystem->getDirectoryWrite($directoryList::MEDIA);
         $contents = json_encode($response);
-        $media->writeFile("sample_card.json",$contents);
+        $media->writeFile("sample_card.json",$response);
 
         $charge_id = $response['id'];
 
