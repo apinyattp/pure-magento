@@ -148,7 +148,7 @@ class Callback extends Action implements CsrfAwareActionInterface
         $response['sucess_url'] = self::PATH_SUCCESS;
         $resultJson = $this->resultJsonFactory->create();
         $resultJson->setData($response);
-        print_r($resultJson);die();
+        print_r(json_decode($resultJson, true));die();
         return $this->redirect(self::PATH_SUCCESS);
     }
     public function execute22222() {
