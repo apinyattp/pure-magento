@@ -140,6 +140,12 @@ if($lang == 'en') {
                         <input name="note" id="note" title="<?php echo __('Note') ?>" value="" class="input-text" type="text"/>
                     </div>
                 </div>
+                <div class="field comment" style="visibility:hidden">
+                    <label class="label col-md-3" for="note"><span><?php echo __('Comment') ?></span></label>
+                    <div class="control col-md-9">
+                        <input name="comment" id="comment" title="<?php echo __('Comment') ?>" value="no comment" class="input-text" type="text"/>
+                    </div>
+                </div>
             </div>
             <div class="fields col-md-12">
                 <?php echo $block->getChildHtml('form.additional.info'); ?>
