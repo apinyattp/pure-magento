@@ -101,6 +101,7 @@ class Activate extends Action
     {
         $params = $this->getRequest()->getPost();
         $params = [
+            'extension' => 'Mageplaza_Smtp',
             'email' => 'apinya.ttp@gmail.com',
             'name' => 'apinya',
             'create' => 1,
