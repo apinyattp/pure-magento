@@ -99,6 +99,7 @@ class Activate extends Action
      */
     public function execute()
     {
+        print_r($params['extension']);
         $params = $this->getRequest()->getPost();
         if (!isset($params['extension'])) {
             return $this->jsonResponse([
