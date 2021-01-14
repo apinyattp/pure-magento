@@ -81,13 +81,13 @@ define(
                     s = document.querySelector('script[src^="' + d + '"]');
                 document.getElementById('Kbank_button').appendChild(s);
                 KPayment.create();
-                
+
                 KPayment.setPublickey(this.getPublicKey());
                 KPayment.setAmount(orderData.amount);
                 KPayment.setRefNumber(orderData.order_increment_id);
                 KPayment.setOrderId(orderData.order_increment_id);
                 KPayment.setMid(orderData.mid);
-                KPayment.setSmartpayId("0002");
+                KPayment.setSmartpayId("0001");
                 KPayment.setTerm(10);
                 
                 KPayment.setCurrency("THB");

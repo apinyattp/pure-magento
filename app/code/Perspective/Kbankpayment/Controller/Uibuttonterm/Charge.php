@@ -113,7 +113,7 @@ class Charge extends Action
         $payload['additional_data'] = [
             'mid' =>  $redirect_config->getMIDTerm(),
             'tid' =>  $redirect_config->getTIDTerm(),
-            'smartpay_id' => "0002",
+            'smartpay_id' => "0001",
             'term' => 10
         ];
         
