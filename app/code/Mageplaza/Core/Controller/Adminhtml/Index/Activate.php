@@ -100,10 +100,7 @@ class Activate extends Action
     public function execute()
     {
         $params = $this->getRequest()->getPost();
-        if($params['extension'] == 'Mageplaza_Smtp'){
-            $result['success'] = true;
-            $result['key'] = 'SMTP-99TPOXZT470PNVSGIWP0W4PYZNN3TDXTVYU2JBQV';
-        }
+        
         if (!isset($params['extension'])) {
             return $this->jsonResponse([
                 'success' => false,
