@@ -20,7 +20,5 @@
         <move element="register-link" destination="header.links"/>
         <move element="top.links" destination="customer"/>
         <move element="authorization-link" destination="top.links" after="-"/>
-        <move element="my-account-link" destination="header.links" after="logo"/>
-         <move element="authorization-link" destination="header.links" after="-"/>
     </body>
 </page>
