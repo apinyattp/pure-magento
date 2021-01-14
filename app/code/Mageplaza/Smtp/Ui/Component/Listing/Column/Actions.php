@@ -25,6 +25,7 @@ use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
+use Mageplaza\Smtp\Helper\Data;
 
 /**
  * Class Actions
@@ -38,10 +39,17 @@ class Actions extends Column
     private $urlBuilder;
 
     /**
+     * @var Data
+     */
+    protected $helperData;
+
+    /**
      * Actions constructor.
+     *
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
      * @param UrlInterface $urlBuilder
+     * @param Data $helperData
      * @param array $components
      * @param array $data
      */
@@ -49,11 +57,13 @@ class Actions extends Column
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
         UrlInterface $urlBuilder,
+        Data $helperData,
         array $components = [],
         array $data = []
     ) {
         parent::__construct($context, $uiComponentFactory, $components, $data);
 
+        $this->helperData = $helperData;
         $this->urlBuilder = $urlBuilder;
     }
 
@@ -61,33 +71,33 @@ class Actions extends Column
      * Prepare Data Source
      *
      * @param array $dataSource
+     *
      * @return array
      */
     public function prepareDataSource(array $dataSource)
     {
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as & $item) {
-                $item['subject'] = iconv_mime_decode($item['subject'], 2, 'UTF-8');
-                $item['sender'] = iconv_mime_decode($item['sender'], 2, 'UTF-8');
-                $item['recipient'] = iconv_mime_decode($item['recipient'], 2, 'UTF-8');
-
                 $item[$this->getData('name')] = [
-                    'view'   => [
+                    'view' => [
                         'label' => __('View')
                     ],
                     'resend' => [
-                        'href'    => $this->urlBuilder->getUrl('adminhtml/smtp/email', ['id' => $item['id']]),
-                        'label'   => __('Resend'),
+                        'href' => $this->urlBuilder->getUrl('adminhtml/smtp/email', ['id' => $item['id']]),
+                        'label' => __('Resend'),
                         'confirm' => [
-                            'title'   => __('Resend Email'),
-                            'message' => __('Are you sure you want to resend the email <strong>"%1"</strong>?', $item['subject'])
+                            'title' => __('Resend Email'),
+                            'message' => __(
+                                'Are you sure you want to resend the email <strong>"%1"</strong>?',
+                                $item['subject']
+                            )
                         ]
                     ],
                     'delete' => [
-                        'href'    => $this->urlBuilder->getUrl('adminhtml/smtp/delete', ['id' => $item['id']]),
-                        'label'   => __('Delete'),
+                        'href' => $this->urlBuilder->getUrl('adminhtml/smtp/delete', ['id' => $item['id']]),
+                        'label' => __('Delete'),
                         'confirm' => [
-                            'title'   => __('Delete Log'),
+                            'title' => __('Delete Log'),
                             'message' => __('Are you sure you want to delete this log?')
                         ]
                     ],

@@ -58,6 +58,7 @@ class Log extends AbstractModel
 
     /**
      * Log constructor.
+     *
      * @param Context $context
      * @param Registry $registry
      * @param TransportBuilder $transportBuilder
@@ -129,7 +130,12 @@ class Log extends AbstractModel
             }
             $this->setBcc(implode(',', $bccArr));
 
-            $content = htmlspecialchars($message->getBodyText());
+            if ($this->helper->versionCompare('2.3.3')) {
+                $messageBody = quoted_printable_decode($message->getBodyText());
+                $content = htmlspecialchars($messageBody);
+            } else {
+                $content = htmlspecialchars($message->getBodyText());
+            }
         } else {
             $headers = $message->getHeaders();
 
@@ -198,14 +204,18 @@ class Log extends AbstractModel
         /** Add receiver emails*/
         $recipient = $this->extractEmailInfo($data['recipient']);
         foreach ($recipient as $name => $email) {
-            $this->_transportBuilder->addTo($email, $name);
+            if ($this->helper->versionCompare('2.2.8')) {
+                $this->_transportBuilder->addTo($email);
+            } else {
+                $this->_transportBuilder->addTo($email, $name);
+            }
         }
 
         /** Add cc emails*/
         if (isset($data['cc'])) {
             $ccEmails = $this->extractEmailInfo($data['cc']);
-            foreach ($ccEmails as $name => $email) {
-                $this->_transportBuilder->addCc($email, $name);
+            foreach ($ccEmails as $email) {
+                $this->_transportBuilder->addCc($email);
             }
         }
 
@@ -242,6 +252,7 @@ class Log extends AbstractModel
 
     /**
      * @param $emailList
+     *
      * @return array
      */
     protected function extractEmailInfo($emailList)
@@ -249,8 +260,9 @@ class Log extends AbstractModel
         $data = [];
 
         if ($this->helper->versionCompare('2.2.8')) {
-            if (strpos($emailList, ' <') !== false) {
-                $emails = explode(' <', $emailList);
+            $emailList = preg_replace('/\s+/', '', $emailList);
+            if (strpos($emailList, '<') !== false) {
+                $emails = explode('<', $emailList);
                 $name = '';
                 if (count($emails) > 1) {
                     $name = $emails[0];

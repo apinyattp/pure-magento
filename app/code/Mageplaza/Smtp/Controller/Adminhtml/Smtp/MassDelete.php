@@ -48,6 +48,7 @@ class MassDelete extends Action
 
     /**
      * MassDelete constructor.
+     *
      * @param Filter $filter
      * @param Action\Context $context
      * @param CollectionFactory $emailLog

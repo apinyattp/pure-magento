@@ -44,6 +44,7 @@ class Message
 
     /**
      * Message constructor.
+     *
      * @param Mail $resourceMail
      * @param SenderResolverInterface $senderResolver
      */
@@ -59,6 +60,7 @@ class Message
      * @param TransportBuilderByStore $subject
      * @param $from
      * @param $store
+     *
      * @return array
      * @throws MailException
      */

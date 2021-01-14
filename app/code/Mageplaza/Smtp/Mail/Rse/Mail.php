@@ -83,7 +83,6 @@ class Mail
      * Mail constructor.
      *
      * @param Data $helper
-     * @param null $options
      */
     public function __construct(Data $helper)
     {
@@ -138,7 +137,7 @@ class Mail
 
                 if (isset($configData['authentication']) && $configData['authentication'] !== "") {
                     $options += [
-                        'auth'     => $configData['authentication'],
+                        'auth' => $configData['authentication'],
                         'username' => isset($configData['username']) ? $configData['username'] : '',
                         'password' => $this->smtpHelper->getPassword($storeId)
                     ];
@@ -225,7 +224,7 @@ class Mail
     {
         $this->_fromByStore = [
             'email' => $email,
-            'name'  => $name
+            'name' => $name
         ];
 
         return $this;

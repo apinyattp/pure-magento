@@ -53,6 +53,7 @@ class MassResend extends Action
 
     /**
      * MassResend constructor.
+     *
      * @param Filter $filter
      * @param Action\Context $context
      * @param CollectionFactory $emailLog

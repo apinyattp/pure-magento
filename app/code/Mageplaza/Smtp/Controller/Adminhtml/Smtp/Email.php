@@ -64,6 +64,7 @@ class Email extends Action
 
     /**
      * Email constructor.
+     *
      * @param Context $context
      * @param LogFactory $logFactory
      * @param StateInterface $inlineTranslation

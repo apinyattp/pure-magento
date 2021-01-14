@@ -56,6 +56,7 @@ class ClearLog
 
     /**
      * ClearLog constructor.
+     *
      * @param LoggerInterface $logger
      * @param DateTime $date
      * @param CollectionFactory $collectionLog

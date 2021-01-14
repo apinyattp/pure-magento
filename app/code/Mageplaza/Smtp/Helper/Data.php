@@ -33,12 +33,14 @@ use Mageplaza\Core\Helper\AbstractData;
 class Data extends AbstractData
 {
     const CONFIG_MODULE_PATH = 'smtp';
+    const EMAIL_MARKETING = 'email_marketing';
     const CONFIG_GROUP_SMTP = 'configuration_option';
     const DEVELOP_GROUP_SMTP = 'developer';
 
     /**
      * @param string $code
      * @param null $storeId
+     *
      * @return mixed
      */
     public function getSmtpConfig($code = '', $storeId = null)
@@ -51,6 +53,7 @@ class Data extends AbstractData
     /**
      * @param string $code
      * @param null $storeId
+     *
      * @return mixed
      */
     public function getDeveloperConfig($code = '', $storeId = null)
@@ -63,6 +66,7 @@ class Data extends AbstractData
     /**
      * @param null $storeId
      * @param bool $decrypt
+     *
      * @return array|mixed|string
      */
     public function getPassword($storeId = null, $decrypt = true)
@@ -99,5 +103,46 @@ class Data extends AbstractData
         }
 
         return $scope;
+    }
+
+    /**
+     * @param null $storeId
+     *
+     * @return mixed
+     */
+    public function getBlacklist($storeId = null)
+    {
+        return $this->getConfigGeneral('blacklist', $storeId);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isTestEmail()
+    {
+        return $this->_request->getFullActionName() === 'adminhtml_smtp_test';
+    }
+
+    /**
+     * @param string $code
+     * @param null $storeId
+     *
+     * @return mixed
+     */
+    public function getEmailMarketingConfig($code = '', $storeId = null)
+    {
+        $code = ($code !== '') ? '/' . $code : '';
+
+        return $this->getConfigValue(static::EMAIL_MARKETING . '/general' . $code, $storeId);
+    }
+
+    /**
+     * @param null $storeId
+     *
+     * @return bool
+     */
+    public function isEnableEmailMarketing($storeId = null)
+    {
+        return $this->getEmailMarketingConfig('enabled', $storeId);
     }
 }

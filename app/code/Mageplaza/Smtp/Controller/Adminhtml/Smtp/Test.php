@@ -75,6 +75,7 @@ class Test extends Action
 
     /**
      * Test constructor.
+     *
      * @param Context $context
      * @param LoggerInterface $logger
      * @param SmtpData $smtpDataHelper
@@ -110,10 +111,10 @@ class Test extends Action
         $params = $this->getRequest()->getParams();
         if ($params && $params['to']) {
             $config = [
-                'type'       => 'smtp',
-                'host'       => $params['host'],
-                'auth'       => $params['authentication'],
-                'username'   => $params['username'],
+                'type' => 'smtp',
+                'host' => $params['host'],
+                'auth' => $params['authentication'],
+                'username' => $params['username'],
                 'ignore_log' => true,
                 'force_sent' => true
             ];
@@ -151,7 +152,7 @@ class Test extends Action
                 $this->_transportBuilder->getTransport()->sendMessage();
 
                 $result = [
-                    'status'  => true,
+                    'status' => true,
                     'content' => __('Sent successfully! Please check your email box.')
                 ];
             } catch (Exception $e) {

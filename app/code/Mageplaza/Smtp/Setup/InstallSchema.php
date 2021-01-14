@@ -36,6 +36,7 @@ class InstallSchema implements InstallSchemaInterface
     /**
      * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
+     *
      * @throws Zend_Db_Exception
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
@@ -49,7 +50,7 @@ class InstallSchema implements InstallSchemaInterface
                 ->addColumn('id', Table::TYPE_INTEGER, null, [
                     'identity' => true,
                     'nullable' => false,
-                    'primary'  => true,
+                    'primary' => true,
                     'unsigned' => true,
                 ], 'Log ID')
                 ->addColumn('subject', Table::TYPE_TEXT, 255, ['nullable => false'], 'Email Subject')
