@@ -1,0 +1,15 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var Magento\Customer\Block\Account\Customer $block */
+?>
+<?php if ($block->customerLoggedIn()) : ?>
+    <?php if ($block->getChildHtml()) :?>
+            <div class="customer-menu" data-target="dropdown">
+                <?= $block->getChildHtml() ?>
+            </div>
+        <?php endif; ?>
+<?php endif; ?>
