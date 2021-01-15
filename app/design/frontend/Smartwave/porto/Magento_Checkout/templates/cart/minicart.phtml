@@ -10,7 +10,7 @@
 ?>
 
 <div data-block="minicart" class="minicart-wrapper">
-    <a class="action showcart" href="<?php echo $block->getShoppingCartUrl(); ?>"
+    <a class="action showcart" onclick="window.location='<?php echo $block->getShoppingCartUrl(); ?>'" href="<?php echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
         <span class="text"><?php echo __('Cart'); ?></span>
         <span class="counter qty empty"
