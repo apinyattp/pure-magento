@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -11,42 +11,47 @@
 /** @var $helper \Magento\Search\Helper\Data */
 $helper = $this->helper('Magento\Search\Helper\Data');
 ?>
-<div class="block block-search">
-    <div class="block block-title"><strong><?php /* @escapeNotVerified */ echo __('Search'); ?></strong></div>
-    <div class="block block-content">
-        <form class="form minisearch" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
-            <div class="field search">
-                <label class="label" for="search" data-role="minisearch-label">
-                    <span><?php /* @escapeNotVerified */ echo __('Search'); ?></span>
-                </label>
-                <div class="control">
-                    <input id="search"
-                           data-mage-init='{"quickSearch":{
+<form class="navbar-form navbar-right" role="search" id="search_mini_form"
+      action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
+    <div class="form-group has-feedback has-search">
+        <input data-mage-init='{"quickSearch":{
                                 "formSelector":"#search_mini_form",
                                 "url":"<?php /* @escapeNotVerified */ echo $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]); ?>",
-                                "destinationSelector":"#search_autocomplete"}
+                                "destinationSelector":"#search_autocomplete",
+                                "responseFieldElements":"ul li",
+                                "selectClass": "active",
+                                "template": "<li class=\"<%- data.row_class %>\" id=\"qs-option-<%- data.index %>\" role=\"option\"><a href=\"#\" onclick=\"return false;\"><span class=\"qs-option-name\"><%- data.title %></span><span aria-hidden=\"true\" class=\"amount\"><%- data.num_results %></span></a></li>"
+                                }
                            }'
-                           type="text"
-                           name="<?php /* @escapeNotVerified */ echo $helper->getQueryParamName() ?>"
-                           value="<?php /* @escapeNotVerified */ echo $helper->getEscapedQueryText() ?>"
-                           placeholder="<?php /* @escapeNotVerified */ echo __('Search...'); ?>"
-                           class="input-text"
-                           maxlength="<?php /* @escapeNotVerified */ echo $helper->getMaxQueryLength();?>"
-                           role="combobox"
-                           aria-haspopup="false"
-                           aria-autocomplete="both"
-                           autocomplete="off"/>
-                    <div id="search_autocomplete" class="search-autocomplete"></div>
-                    <?php echo $block->getChildHtml() ?>
-                </div>
-            </div>
-            <div class="actions">
-                <button type="submit"
-                        title="<?php echo $block->escapeHtml(__('Search')) ?>"
-                        class="action search">
-                    <span><?php /* @escapeNotVerified */ echo __('Search'); ?></span>
-                </button>
-            </div>
-        </form>
+               type="text"
+               name="<?php /* @escapeNotVerified */ echo $helper->getQueryParamName() ?>"
+               value="<?php /* @escapeNotVerified */ echo $helper->getEscapedQueryText() ?>"
+               placeholder="<?php /* @escapeNotVerified */ echo __('Search store...'); ?>"
+               class="form-control radius"
+               maxlength="<?php /* @escapeNotVerified */ echo $helper->getMaxQueryLength();?>"
+               role="combobox"
+               aria-haspopup="false"
+               aria-autocomplete="both"
+               autocomplete="off">
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
     </div>
-</div>
+<!--    <button type="submit" class="btn btn-default">--><?php //echo $block->escapeHtml(__('Search')) ?><!--</button>-->
+    <div id="search_autocomplete" class="search-autocomplete"></div>
+    <?php echo $block->getChildHtml() ?>
+</form>
+
+<style>
+    .radius{
+        border-radius: 2em;
+    }
+
+    .has-search .form-control-feedback {
+        color: rgba(0, 0, 0, 0.2);
+    }
+
+    .has-search .form-control {
+        padding-right: 12px;
+        padding-left: 34px;
+    }
+
+</style>
