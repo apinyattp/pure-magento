@@ -10,12 +10,12 @@
 ?>
 
 <div data-block="minicart" class="minicart-wrapper">
-    <a class="action showcart" onclick="window.location='<?php echo $block->getShoppingCartUrl(); ?>'" href="<?php echo $block->getShoppingCartUrl(); ?>"
+    <a class="action showcart" href="<?php echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
         <span class="text"><?php echo __('Cart'); ?></span>
         <span class="counter qty empty"
               data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
-            <span class="counter-number">
+            <span class="counter-number"  onclick="window.location='<?php echo $block->getShoppingCartUrl(); ?>'" >
             <!-- ko if: getCartParam('summary_count') --><!-- ko text: getCartParam('summary_count') --><!-- /ko --><!-- /ko -->
             <!-- ko ifnot: getCartParam('summary_count') -->0<!-- /ko -->
             </span>
