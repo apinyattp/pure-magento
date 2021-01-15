@@ -115,7 +115,7 @@ class Index extends Action
      */
     public function execute()
     {
-        echo 111;die();
+       
         $this->layerResolver->create(Resolver::CATALOG_LAYER_SEARCH);
         /* @var $query \Magento\Search\Model\Query */
         $query = $this->_queryFactory->get();
