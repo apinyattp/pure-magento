@@ -14,19 +14,17 @@ $helper = $this->helper('Magento\Search\Helper\Data');
 <div class="block block-search">
     <div class="block block-title"><strong><?php /* @escapeNotVerified */ echo __('Search'); ?></strong></div>
     <div class="block block-content">
-        <form class="form minisearch" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
+        <form class="form minisearch search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
             <div class="field search">
                 <label class="label" for="search" data-role="minisearch-label">
                     <span><?php /* @escapeNotVerified */ echo __('Search'); ?></span>
                 </label>
                 <div class="control">
-                    <input id="search"
-                           
-                           type="text"
+                    <input type="text"
                            name="<?php /* @escapeNotVerified */ echo $helper->getQueryParamName() ?>"
                            value="<?php /* @escapeNotVerified */ echo $helper->getEscapedQueryText() ?>"
                            placeholder="<?php /* @escapeNotVerified */ echo __('Search...'); ?>"
-                           class="input-text"
+                           class="input-text name_search_data"
                            maxlength="<?php /* @escapeNotVerified */ echo $helper->getMaxQueryLength();?>"
                            role="combobox"
                            aria-haspopup="false"
@@ -37,7 +35,7 @@ $helper = $this->helper('Magento\Search\Helper\Data');
                 </div>
             </div>
             <div class="actions">
-                <button type="submit"
+                <button onclick="submitData()" type="button"
                         title="<?php echo $block->escapeHtml(__('Search')) ?>"
                         class="action search">
                     <span><?php /* @escapeNotVerified */ echo __('Search'); ?></span>
@@ -46,3 +44,12 @@ $helper = $this->helper('Magento\Search\Helper\Data');
         </form>
     </div>
 </div>
+<script>
+    function submitData() {
+        if(jQuery('.name_search_data').val().length <=2) {
+            alert(11)
+        }else{
+            jQuery('form').submit();
+        }
+    }
+</script>
