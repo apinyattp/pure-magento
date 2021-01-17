@@ -253,7 +253,18 @@ foreach ($categoryProducts as $product)
 <div id="featured_product" class="owl-top-narrow">
 <?php 
 $data = array('category_id'=>'11');
-echo $this->getLayout()->createBlock("Smartwave\Filterproducts\Block\Home\FeaturedList")->setTemplate("Smartwave_Filterproducts::owl_list.phtml")->setData("data",$data)->toHtml();
+$block = $this->getLayout()
+->createBlock('Smartwave\Filterproducts\Block\Home\LatestList')
+->setTemplate('Smartwave_Filterproducts::owl_list.phtml')
+->setData('category_id',"11")
+->setData('product_count',"6")
+->setData('aspect_ratio',"0")
+->setData('image_width',"400")
+->setData('image_height',"400")
+->setData('column_count',"1")
+->toHtml();
+echo $block;
+// echo $this->getLayout()->createBlock("Smartwave\Filterproducts\Block\Home\FeaturedList")->setTemplate("Smartwave_Filterproducts::owl_list.phtml")->setData("data",$data)->toHtml();
 ?>
 </div>
 <style>
