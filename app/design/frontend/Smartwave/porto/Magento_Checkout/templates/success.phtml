@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-success">
+    <?php if ($block->getOrderId()) :?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= $block->escapeHtml(__('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeUrl($block->getViewOrderUrl()), $block->getOrderId())), ['a', 'strong']) ?></p>
+        <?php  else :?>
+            <p><?= $block->escapeHtml(__('Your order # is: <span>%1</span>.', $block->getOrderId()), ['span']) ?></p>
+        <?php endif;?>
+            <p><?= $block->escapeHtml(__('We\'ll email you an order confirmation with details and tracking info.')) ?></p>
+            <p>
+                <?= __('For bank transfer, please <a href="%1">click</a> to inform your payment.',
+                    $block->escapeUrl($block->getBaseUrl()."payment-form")) ?>
+            </p>
+    <?php endif;?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= $block->escapeUrl($block->getContinueUrl()) ?>"><span><?= $block->escapeHtml(__('Continue Shopping')) ?></span></a>
+        </div>
+    </div>
+    <div class="checkout-success-block hidden-xs">
+        <?php if ($block->getCanViewOrder() && $block->getCanPrintOrder()) :?>
+            <a href="<?= /* @escapeNotVerified */ $block->getPrintUrl() ?>"
+               target="_blank"
+               class="print btn btn-link btn-link-dgm text-underline">
+                <i class="fas fa-print"></i>
+                <?= /* @escapeNotVerified */ __('Print receipt') ?>
+            </a>
+            <?= $block->getChildHtml() ?>
+        <?php endif;?>
+    </div>
+
+</div>
