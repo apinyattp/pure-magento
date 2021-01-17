@@ -151,9 +151,20 @@ class Cc extends Action implements CsrfAwareActionInterface
         $order->setState(Order::STATE_PROCESSING);
         $order->setStatus($order->getConfig()->getStateDefaultStatus(Order::STATE_PROCESSING));
 
+        if(empty($response['sucess_url'])) {
+            $order->setCanSendNewEmailFlag(true);
+        }
+
         $order->save();
 
-        $response['sucess_url'] = self::PATH_SUCCESS;
+        if(empty($response['sucess_url'])) {
+            $session = $objectManager->create('\Magento\Checkout\Model\Session');
+            $session->setForceOrderMailSentOnSuccess(true);
+            $emailSender = $objectManager->create('\Magento\Sales\Model\Order\Email\Sender\OrderSender');
+            $emailSender->send($order);
+
+            $response['sucess_url'] = self::PATH_SUCCESS;
+        }
 
         $resultJson = $this->resultJsonFactory->create();
         return $resultJson->setData($response);
