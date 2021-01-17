@@ -215,19 +215,6 @@
     </div>
     <?php endif;?>
 <?php endif; ?>
-<?php 
-$resultPage = $this->getLayout()
-->createBlock('Smartwave\Filterproducts\Block\Home\LatestList')
-->setTemplate('Smartwave_Filterproducts::owl_list.phtml')
-->setData('category_id',"11")
-->setData('product_count',"6")
-->setData('aspect_ratio',"0")
-->setData('image_width',"400")
-->setData('image_height',"400")
-->setData('column_count',"1")
-->toHtml();
-echo $block;
-?>
 <style>
    .layout-fullwidth.page-layout-2columns-left .column.main, .layout-fullwidth.page-layout-2columns-right .column.main {
         width: 100% !important;
