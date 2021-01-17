@@ -211,6 +211,22 @@
                 </div>
             </div>
             <?php endif;?>
+            <div class="product-relate">
+                <?php
+                $relatedProducts = $_product->getRelatedProducts();
+
+                //var_dump($relatedProducts);
+                
+                if (!empty($relatedProducts)) {
+                    echo 'Related Products <br />';   
+                    foreach ($relatedProducts as $relatedProduct) {
+                        $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($relatedProduct->getId());
+                        echo $relatedProduct->getId().'-->'.$_product->getPrice().'-->'.$_product->getName().'-->'.$relatedProduct->getId(); //get name
+                        echo "<br>";
+                    }
+                }  
+                ?>
+            </div>
         </div>
     </div>
     <?php endif;?>
