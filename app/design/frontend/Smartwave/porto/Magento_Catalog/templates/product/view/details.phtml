@@ -215,45 +215,8 @@
     </div>
     <?php endif;?>
 <?php endif; ?>
-<?//php $categories = $_product->getCategoryIds(); var_dump($categories);?>
-<?php
-$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
-
-$categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
-$categoryHelper = $objectManager->get('\Magento\Catalog\Helper\Category');
-$categoryRepository = $objectManager->get('\Magento\Catalog\Model\CategoryRepository');
-$store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
-
-$categoryId = 11; // YOUR CATEGORY ID
-$category = $categoryFactory->create()->load($categoryId);
-
-$categoryProducts = $category->getProductCollection()
-                             ->addAttributeToSelect('*');
-
-foreach ($categoryProducts as $product) 
-{
-    $imageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $product->getImage();
-    ?>
-
-     <div class="product-container" style="display:none;">
-                  <a href="<?= $product->getProductUrl(); ?>">
-
-                     <div class="new-arrivals-image"><img src="<?= $imageUrl;?>"></div>
-                     <div class="product-name"><span class="name"><?= $product->getName(); ?></span></div>
-                  </a>
-                  <div class="price"><span class="pt"><?= $product->getPrice(); ?></span></div>
-               </div>
-
-<?php
-}
-?>
-
-
-
-<div id="featured_product" class="owl-top-narrow">
 <?php 
-$resultPageFactory = $this->objectManager->get(\Magento\Framework\View\Result\PageFactory::class);
-$resultPage = $this->resultPageFactory->create();
+$resultPage = $_helper->getResultPageFactory()->create();
 $block = $resultPage->getLayout()
 ->createBlock('Smartwave\Filterproducts\Block\Home\LatestList')
 ->setTemplate('Smartwave_Filterproducts::owl_list.phtml')
@@ -265,9 +228,7 @@ $block = $resultPage->getLayout()
 ->setData('column_count',"1")
 ->toHtml();
 echo $block;
-// echo $this->getLayout()->createBlock("Smartwave\Filterproducts\Block\Home\FeaturedList")->setTemplate("Smartwave_Filterproducts::owl_list.phtml")->setData("data",$data)->toHtml();
 ?>
-</div>
 <style>
    .layout-fullwidth.page-layout-2columns-left .column.main, .layout-fullwidth.page-layout-2columns-right .column.main {
         width: 100% !important;
