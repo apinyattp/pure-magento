@@ -217,6 +217,7 @@
 <?php endif; ?>
 1111111
 <?php $categories = $_product->getCategoryIds(); var_dump($categories);?>
+<?php echo $this->getLayout()->createBlock("Smartwave\Filterproducts\Block\Home\LatestList")->setTemplate("Smartwave_Filterproducts::templates/owl_list.phtml")->setData("category_id", "22")->toHtml(); ?> 
 <style>
    .layout-fullwidth.page-layout-2columns-left .column.main, .layout-fullwidth.page-layout-2columns-right .column.main {
         width: 100% !important;
