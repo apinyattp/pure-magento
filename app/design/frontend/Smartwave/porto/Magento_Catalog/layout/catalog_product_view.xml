@@ -13,6 +13,7 @@
         <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
         <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
         <move element="catalog.product.related" destination="sidebar.additional" after="product_view_custom_block" />
+        <!--<referenceBlock name="catalog.product.related" remove="true"/>-->
         <move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
         <referenceContainer name="after.body.start">
             <block class="Magento\Catalog\Block\Product\View" name="product_custom" template="Magento_Catalog::product/view/product_custom.phtml" before="-"/>
@@ -37,6 +38,5 @@
         <referenceContainer name="columns">
             <block class="Smartwave\Porto\Block\Template" name="side_popup" after="-" template="Magento_Catalog::product/view/side_popup.phtml"/>
         </referenceContainer>
-         <move element="catalog.product.related" destination="content" />
     </body>
 </page>
