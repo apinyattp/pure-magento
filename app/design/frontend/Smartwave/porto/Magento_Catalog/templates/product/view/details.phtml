@@ -252,8 +252,9 @@ foreach ($categoryProducts as $product)
 
 <div id="featured_product" class="owl-top-narrow">
 <?php 
-$data = array('category_id'=>'11');
-$block = $this->getLayout()
+$resultPageFactory = $this->objectManager->get(\Magento\Framework\View\Result\PageFactory::class);
+$resultPage = $this->resultPageFactory->create();
+$block = $resultPage->getLayout()
 ->createBlock('Smartwave\Filterproducts\Block\Home\LatestList')
 ->setTemplate('Smartwave_Filterproducts::owl_list.phtml')
 ->setData('category_id',"11")
