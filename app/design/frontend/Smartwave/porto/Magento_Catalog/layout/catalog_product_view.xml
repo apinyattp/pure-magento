@@ -38,7 +38,7 @@
         <referenceContainer name="columns">
             <block class="Smartwave\Porto\Block\Template" name="side_popup" after="-" template="Magento_Catalog::product/view/side_popup.phtml"/>
         </referenceContainer>
-        <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related.data" type="related" template="Magento_Catalog::product/list/items.phtml">
+        <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related.data" template="Magento_Catalog::product/list/items.phtml">
             <arguments>
                 <argument name="type" xsi:type="string">related</argument>
             </arguments>
