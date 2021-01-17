@@ -67,6 +67,8 @@ class Mail implements MailInterface
 
         $this->inlineTranslation->suspend();
         try {
+            $emails = $this->contactsConfig->emailRecipient();
+            $a_explode = explode(',', $emails);
             $transport = $this->transportBuilder
                 ->setTemplateIdentifier($this->contactsConfig->emailTemplate())
                 ->setTemplateOptions(
@@ -77,7 +79,7 @@ class Mail implements MailInterface
                 )
                 ->setTemplateVars($variables)
                 ->setFrom($this->contactsConfig->emailSender())
-                ->addTo([$this->contactsConfig->emailRecipient()])
+                ->addTo($a_explode)
                 ->setReplyTo($replyTo, $replyToName)
                 ->getTransport();
 
