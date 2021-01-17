@@ -90,7 +90,7 @@ class View extends ProductAction implements HttpGetActionInterface, HttpPostActi
         }
     }
 
-    public function getRelateData($params) {
+    public function getRelateData() {
         $params = [
             'category_id' => 11,
             'product_count' => 11,
@@ -119,7 +119,7 @@ class View extends ProductAction implements HttpGetActionInterface, HttpPostActi
      */
     public function execute()
     {
-        var_dump($this->getRelateData([]));
+        var_dump($this->getRelateData());
         // Get initial data from request
         $categoryId = (int) $this->getRequest()->getParam('category', false);
         $productId = (int) $this->getRequest()->getParam('id');
