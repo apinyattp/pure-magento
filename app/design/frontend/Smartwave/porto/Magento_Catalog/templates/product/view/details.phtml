@@ -252,7 +252,8 @@ foreach ($categoryProducts as $product)
 
 <div id="featured_product" class="owl-top-narrow">
 <?php 
-echo $this->getLayout()->createBlock("Smartwave\Filterproducts\Block\Home\FeaturedList")->setTemplate("Smartwave_Filterproducts::owl_list.phtml")->setData("data", ['category_id' => 11])->toHtml();
+$data = array('category_id'=>'11');
+echo $this->getLayout()->createBlock("Smartwave\Filterproducts\Block\Home\FeaturedList")->setTemplate("Smartwave_Filterproducts::owl_list.phtml")->setData("data",$data)->toHtml();
 ?>
 </div>
 <style>
