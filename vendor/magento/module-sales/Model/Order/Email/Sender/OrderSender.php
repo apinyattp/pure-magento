@@ -97,6 +97,12 @@ class OrderSender extends Sender
      */
     public function send(Order $order, $forceSyncMode = false)
     {
+        $payment = $order->getPayment();
+        
+        if(in_array($payment->getMethod(), array('kbankpayment_uiqr', 'kbankpayment_direct18','kbankpayment_uibutton','kbankpayment_uibuttonterm'))){
+            return false;
+        }
+
         $order->setSendEmail($this->identityContainer->isEnabled());
 
         if (!$this->globalConfig->getValue('sales_email/general/async_sending') || $forceSyncMode) {
