@@ -77,7 +77,7 @@ class Mail implements MailInterface
                 )
                 ->setTemplateVars($variables)
                 ->setFrom($this->contactsConfig->emailSender())
-                ->addTo($this->contactsConfig->emailRecipient())
+                ->addTo([$this->contactsConfig->emailRecipient()])
                 ->setReplyTo($replyTo, $replyToName)
                 ->getTransport();
 
