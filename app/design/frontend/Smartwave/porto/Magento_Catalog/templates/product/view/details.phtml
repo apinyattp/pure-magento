@@ -228,44 +228,37 @@
 // )->toHtml();
 // var_dump($content);
 ?>
-<?php $categories = $_product->getCategoryIds(); ?> 
-<?php $result = array(); 
-foreach($categories as $cat_id) { 
-$category = Mage::getModel('catalog/category'); 
-$category->load($cat_id); 
-$collection = $category->getProductCollection(); 
-foreach ($collection as $product) { 
-$result[] = $product->getId(); 
-} 
-} 
-?> 
-<div class="box-others-also-like" style=" margin:0 auto;"> 
-<ul> 
-<?php if(sizeof($result) >= 10) 
-{ 
-$ourneed = array_rand($result,10); 
-foreach($ourneed as $cc) 
-{ 
-$thisproduct= Mage::getModel('catalog/product')->load($result[$cc]); 
-?> 
-<li style=" border:1px solid #ccc; float:left; width:140px; margin:10px 5px 0 0; overflow:hidden;"> 
-<a href="<?php echo $thisproduct->getProductUrl(); ?>" title="<?php echo $thisproduct->getName(); ?>" ><img src="<?php echo $this->helper('catalog/image')->init($thisproduct,'small_image')->resize(140) ?>" width="140" height="140" alt="<?php echo $thisproduct->getName(); ?>" /></a> 
-<a href="<?php echo $thisproduct->getProductUrl(); ?>" title="<?php echo $thisproduct->getName(); ?>" title="<?php echo $thisproduct->getName(); ?>" >
-<h3 style=" font:12px/1.55 arial; width:140px; height:4.25em; overflow:hidden;"><?php echo $thisproduct->getName(); ?></h3></a> 
-</li> 
-<?php } ?> 
-<?php }else { 
-foreach($result as $cc) 
-{ 
-$thisproduct= Mage::getModel('catalog/product')->load($cc); 
-?> 
-<li> 
-<a href="<?php echo $thisproduct->getProductUrl(); ?>" title="<?php echo $thisproduct->getName(); ?>" ><img src="<?php echo $this->helper('catalog/image')->init($thisproduct, 'small_image')->resize(200) ?>" width="200" height="200" alt="<?php echo $thisproduct->getName(); ?>" /></a> </li> 
-<?php } 
-} 
-?> 
-</ul> 
-</div>
+<?php
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
+
+$categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
+$categoryHelper = $objectManager->get('\Magento\Catalog\Helper\Category');
+$categoryRepository = $objectManager->get('\Magento\Catalog\Model\CategoryRepository');
+$store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
+
+$categoryId = 47; // YOUR CATEGORY ID
+$category = $categoryFactory->create()->load($categoryId);
+
+$categoryProducts = $category->getProductCollection()
+                             ->addAttributeToSelect('*');
+
+foreach ($categoryProducts as $product) 
+{
+    $imageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $product->getImage();
+    ?>
+
+     <div class="product-container">
+                  <a href="<?= $product->getProductUrl(); ?>">
+
+                     <div class="new-arrivals-image"><img src="<?= $imageUrl;?>"></div>
+                     <div class="product-name"><span class="name"><?= $product->getName(); ?></span></div>
+                  </a>
+                  <div class="price"><span class="pt"><?= $product->getPrice(); ?></span></div>
+               </div>
+
+<?php
+}
+?>
 
 <style>
    .layout-fullwidth.page-layout-2columns-left .column.main, .layout-fullwidth.page-layout-2columns-right .column.main {
