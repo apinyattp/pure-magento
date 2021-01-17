@@ -216,8 +216,7 @@
     <?php endif;?>
 <?php endif; ?>
 <?php 
-$resultPage = $_helper->getResultPageFactory()->create();
-$block = $resultPage->getLayout()
+$resultPage = $this->getLayout()
 ->createBlock('Smartwave\Filterproducts\Block\Home\LatestList')
 ->setTemplate('Smartwave_Filterproducts::owl_list.phtml')
 ->setData('category_id',"11")
