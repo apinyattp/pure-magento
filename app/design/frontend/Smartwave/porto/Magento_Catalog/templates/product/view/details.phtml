@@ -248,6 +248,10 @@ foreach ($categoryProducts as $product)
 }
 ?>
 
+
+<div id="featured_product" class="owl-top-narrow">
+    {{block class="Smartwave\Filterproducts\Block\Home\FeaturedList" name="featured_product" product_count="10" product_type="1" aspect_ratio="0" image_width="212" image_height="263" category_id="21" template="owl_list.phtml"}}
+</div>
 <style>
    .layout-fullwidth.page-layout-2columns-left .column.main, .layout-fullwidth.page-layout-2columns-right .column.main {
         width: 100% !important;
