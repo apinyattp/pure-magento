@@ -215,19 +215,18 @@
     </div>
     <?php endif;?>
 <?php endif; ?>
-1111111
-<?php $categories = $_product->getCategoryIds(); var_dump($categories);?>
+<?//php $categories = $_product->getCategoryIds(); var_dump($categories);?>
 <?php
-$content = $this->getLayout()->createBlock(
-    \Smartwave\Filterproducts\Block\Home\LatestList::class,
-    '',
-    [
-        'data' => [
-            'category_id' => '11'
-        ]
-    ]
-)->toHtml();
-var_dump($content);
+// $content = $this->getLayout()->createBlock(
+//     \Smartwave\Filterproducts\Block\Home\LatestList::class,
+//     '',
+//     [
+//         'data' => [
+//             'category_id' => '11'
+//         ]
+//     ]
+// )->toHtml();
+// var_dump($content);
 ?>
 
 <style>
