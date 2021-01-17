@@ -217,18 +217,6 @@
 <?php endif; ?>
 <?//php $categories = $_product->getCategoryIds(); var_dump($categories);?>
 <?php
-// $content = $this->getLayout()->createBlock(
-//     \Smartwave\Filterproducts\Block\Home\LatestList::class,
-//     '',
-//     [
-//         'data' => [
-//             'category_id' => '11'
-//         ]
-//     ]
-// )->toHtml();
-// var_dump($content);
-?>
-<?php
 $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
 
 $categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
@@ -247,7 +235,7 @@ foreach ($categoryProducts as $product)
     $imageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $product->getImage();
     ?>
 
-     <div class="product-container">
+     <div class="product-container" style="display:none;">
                   <a href="<?= $product->getProductUrl(); ?>">
 
                      <div class="new-arrivals-image"><img src="<?= $imageUrl;?>"></div>
