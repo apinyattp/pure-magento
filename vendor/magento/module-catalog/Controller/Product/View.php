@@ -101,7 +101,7 @@ class View extends ProductAction implements HttpGetActionInterface, HttpPostActi
         ];
         $resultPage = $this->resultPageFactory->create();
         $block = $resultPage->getLayout()
-            ->createBlock('Smartwave\Filterproducts\Block\Home\LatestList')
+            ->getBlock('Smartwave\Filterproducts\Block\Home\LatestList')
             ->setTemplate('Smartwave_Porto::ajaxproducts/grid.phtml')
             ->setData('category_id',$params['category_id'])
             ->setData('product_count',$params['product_count'])
