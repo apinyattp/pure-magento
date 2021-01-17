@@ -218,18 +218,9 @@
 1111111
 <?php $categories = $_product->getCategoryIds(); var_dump($categories);?>
 <?php
-$block = $this->getLayout()
-->createBlock(
-    "Smartwave\Filterproducts\Block\Home\LatestList",
-    "Smartwave\Filterproducts\Block\Home\LatestList",
-    [
-        'data' => [
-            'category_id' => '22'
-        ]
-    ]
-)
-->setData("category_id", "22")
-->setTemplate("Smartwave_Filterproducts::templates/owl_list.phtml")
+$block = $this->getLayout()->createBlock('Smartwave\Filterproducts\Block\Home\LatestList')
+->setTemplate('Smartwave_Filterproducts::templates/owl_list.phtml')
+->setCategoryId("22")
 ->toHtml();
 
 ?>
