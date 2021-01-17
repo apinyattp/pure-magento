@@ -236,7 +236,7 @@ $categoryHelper = $objectManager->get('\Magento\Catalog\Helper\Category');
 $categoryRepository = $objectManager->get('\Magento\Catalog\Model\CategoryRepository');
 $store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
 
-$categoryId = 47; // YOUR CATEGORY ID
+$categoryId = 11; // YOUR CATEGORY ID
 $category = $categoryFactory->create()->load($categoryId);
 
 $categoryProducts = $category->getProductCollection()
