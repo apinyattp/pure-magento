@@ -38,9 +38,5 @@
         <referenceContainer name="columns">
             <block class="Smartwave\Porto\Block\Template" name="side_popup" after="-" template="Magento_Catalog::product/view/side_popup.phtml"/>
         </referenceContainer>
-
-    <referenceContainer name="product.info.mheaw">
-        <block type="catalog/product_list_related" name="catalog.product.related" as="related" template="catalog/product/list/related.phtml"/>
-    </referenceContainer>
     </body>
 </page>
