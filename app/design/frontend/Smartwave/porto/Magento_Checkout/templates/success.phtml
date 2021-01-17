@@ -15,7 +15,7 @@
         <?php endif;?>
             <p><?= $block->escapeHtml(__('We\'ll email you an order confirmation with details and tracking info.')) ?></p>
             <p>
-                <?= __('For bank transfer, please <a href="%1">click</a> to inform your payment.',
+                <?= __('For bank transfer, please <a href="%1" style="color: #fec840;">click</a> to inform your payment.',
                     $block->escapeUrl($block->getBaseUrl()."payment-form")) ?>
             </p>
     <?php endif;?>
