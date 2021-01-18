@@ -372,7 +372,7 @@ switch ($type = $block->getType()) {
             <?php endforeach ?>        
 
         </div>
-
+                                    
         <!--End related products  Code-->
     <?php } elseif ($type == 'upsell') { ?>    
         <!--Start upsell products  Code-->
@@ -547,6 +547,16 @@ switch ($type = $block->getType()) {
             </div>
         </div>
         <!--End crosssell products  Code-->    
+    <?php } ?>
+    <?php if($type == 'related') { ?>
+        <style>
+            .product-item-name {
+                text-align: left;
+            }
+            .price-label {
+                display:none;
+            }
+        </style>
     <?php } ?>
     <script type="text/javascript">
         requirejs(['jquery', 'owlcarousel'], function (jQuery, owlCarousel) {
