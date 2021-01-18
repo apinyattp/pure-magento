@@ -121,6 +121,7 @@ class View extends \Magento\Catalog\Controller\Category\View
      */
     public function execute()
     {
+        echo 11;
 		if ($this->_request->getParam(\Magento\Framework\App\ActionInterface::PARAM_NAME_URL_ENCODED)) {
 			return $this->resultRedirectFactory->create()->setUrl($this->_redirect->getRedirectUrl());
 		}
