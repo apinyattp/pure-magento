@@ -182,7 +182,7 @@ switch ($type = $block->getType()) {
                     <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
                         <?= $block->getImage($_item, $image)->toHtml() ?>
                     </a>
-                    <?php if ($type != 'related'): ?>
+                    <?php if ($type == 'related' || $type == 'upsell'): ?>
                     <div class="product details product-item-details">
                         <strong class="product name product-item-name"><a class="product-item-link" title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>">
                             <?= $block->escapeHtml($_item->getName()) ?></a>
@@ -259,8 +259,11 @@ switch ($type = $block->getType()) {
         (function($) {
             $(window).load(function () {
                 $('#owlcarousel_<?=$type?>').owlCarousel({
-                  autoPlay: 3000, //Set AutoPlay to 3 seconds
-                  items : 5,
+                  autoplay: true,
+                  autoPlaySpeed: 3000,
+                  autoPlayTimeout: 3000,
+                  autoplayHoverPause: true
+                  items : 1,
                   nav: true,
                   navText: ["<i class='fa fa-angle-left' aria-hidden='true'></i>", "<i class='fa fa-angle-right' aria-hidden='true'></i>"],
                   itemsDesktop : [1199,5],
