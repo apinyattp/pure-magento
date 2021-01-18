@@ -9,7 +9,7 @@
 ?>
 <?php
 //    $_helper = $this->helper('Magento\Catalog\Helper\Output');
-//    $_product = $block->getProduct();
+//    $_item = $block->getProduct();
 ?>
 <?php
 switch ($type = $block->getType()) {
@@ -233,24 +233,24 @@ switch ($type = $block->getType()) {
                     </div> -->
                     <div class="product details product-item-details">
                         <?php
-                            $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                            $_itemNameStripped = $block->stripTags($_item->getName(), null, true);
                         ?>
-                        <?php echo $block->getProductDetailsHtml($_product); ?>
+                        <?php echo $block->getProductDetailsHtml($_item); ?>
                         <strong class="product name product-item-name">
                             <a class="product-item-link"
-                               href="<?php echo $_product->getProductUrl() ?>">
-                                <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                               href="<?php echo $_item->getProductUrl() ?>">
+                                <?php echo $_helper->productAttribute($_item, $_item->getName(), 'name'); ?>
                             </a>
                         </strong>
                         <p class="product-brand product-catalog-brand">
-                            <?php echo $_product->getAttributeText('brand_name');?>
+                            <?php echo $_item->getAttributeText('brand_name');?>
                         </p>
                         <?php if($_category_config['rating_star']): ?>
                         <?php 
-                            $review_html = $block->getReviewsSummaryHtml($_product, $templateType);
+                            $review_html = $block->getReviewsSummaryHtml($_item, $templateType);
                         ?>
                         <?php if($review_html): ?>
-                            <?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
+                            <?php echo $block->getReviewsSummaryHtml($_item, $templateType); ?>
                         <?php else: ?>
                         <div class="product-reviews-summary short">
                             <div class="rating-summary">
@@ -265,14 +265,14 @@ switch ($type = $block->getType()) {
                         
                         <?php if ($showDescription):?>
                             <div class="product description product-item-description">
-                                <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>"
+                                <?php echo $_helper->productAttribute($_item, $_item->getShortDescription(), 'short_description') ?>
+                                <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $_itemNameStripped ?>"
                                    class="action more"><?php echo __('Learn More') ?></a>
                             </div>
                         <?php endif; ?>
                         <div class="priceCatalog">
                             <?php if($_category_config['product_price']): ?>
-                                <?php echo $block->getProductPrice($_product) ?>
+                                <?php echo $block->getProductPrice($_item) ?>
                             <?php endif; ?>
                         </div>
                         
@@ -286,7 +286,7 @@ switch ($type = $block->getType()) {
                                        class="action towishlist actions-secondary <?php if(isset($_category_config['qty_field']) && $_category_config['qty_field']):?>has-qty<?php endif;?>"
                                        title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
                                        aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-                                       data-post='<?php echo $block->getAddToWishlistParams($_product); ?>'
+                                       data-post='<?php echo $block->getAddToWishlistParams($_item); ?>'
                                        data-action="add-to-wishlist"
                                        role="button">
                                         <span><?php echo __('Add to Wish List') ?></span>
@@ -295,8 +295,8 @@ switch ($type = $block->getType()) {
                                 <?php endif; ?>
                                 <?php endif; ?>
                                 <div class="actions-primary">
-                                    <?php if ($_product->isSaleable()): ?>
-                                        <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                    <?php if ($_item->isSaleable()): ?>
+                                        <?php $postParams = $block->getAddToCartPostParams($_item); ?>
                                         <form data-role="tocart-form" action="<?php echo $postParams['action']; ?>" method="post">
                                             <input type="hidden" name="product" value="<?php echo $postParams['data']['product']; ?>">
                                             <input type="hidden" name="<?php echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
@@ -315,7 +315,7 @@ switch ($type = $block->getType()) {
                                             </button>
                                         </form>
                                     <?php else: ?>
-                                        <?php if ($_product->getIsSalable()): ?>
+                                        <?php if ($_item->getIsSalable()): ?>
                                             <div class="stock available"><span><?php echo __('In stock') ?></span></div>
                                         <?php else: ?>
                                             <div class="stock unavailable"><span><?php echo __('Out of stock') ?></span></div>
@@ -329,7 +329,7 @@ switch ($type = $block->getType()) {
                                        class="action towishlist actions-secondary <?php if(isset($_category_config['qty_field']) && $_category_config['qty_field']):?>has-qty<?php endif;?>"
                                        title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
                                        aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-                                       data-post='<?php echo $block->getAddToWishlistParams($_product); ?>'
+                                       data-post='<?php echo $block->getAddToWishlistParams($_item); ?>'
                                        data-action="add-to-wishlist"
                                        role="button">
                                         <span><?php echo __('Add to Wish List') ?></span>
@@ -344,7 +344,7 @@ switch ($type = $block->getType()) {
                                        class="action towishlist actions-secondary <?php if(isset($_category_config['qty_field']) && $_category_config['qty_field']):?>has-qty<?php endif;?>"
                                        title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
                                        aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-                                       data-post='<?php echo $block->getAddToWishlistParams($_product); ?>'
+                                       data-post='<?php echo $block->getAddToWishlistParams($_item); ?>'
                                        data-action="add-to-wishlist"
                                        role="button">
                                         <span><?php echo __('Add to Wish List') ?></span>
@@ -360,7 +360,7 @@ switch ($type = $block->getType()) {
                                    class="action tocompare actions-secondary <?php if(isset($_category_config['qty_field']) && $_category_config['qty_field']):?>has-qty<?php endif;?>"
                                    title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
                                    aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
-                                   data-post='<?php echo $compareHelper->getPostDataParams($_product); ?>'
+                                   data-post='<?php echo $compareHelper->getPostDataParams($_item); ?>'
                                    role="button">
                                     <span><?php echo __('Add to Compare') ?></span>
                                 </a>
