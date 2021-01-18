@@ -9,6 +9,9 @@
 ?>
 <?php
    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+   $_portohelper = $this->helper('Smartwave\Porto\Helper\Data');
+ 
+$_category_config = $_portohelper->getConfig('porto_settings/category');
 //    $_item = $block->getProduct();
 ?>
 <?php
@@ -245,23 +248,6 @@ switch ($type = $block->getType()) {
                         <p class="product-brand product-catalog-brand">
                             <?php echo $_item->getAttributeText('brand_name');?>
                         </p>
-                        <?php if($_category_config['rating_star']): ?>
-                        <?php 
-                            $review_html = $block->getReviewsSummaryHtml($_item, $templateType);
-                        ?>
-                        <?php if($review_html): ?>
-                            <?php echo $block->getReviewsSummaryHtml($_item, $templateType); ?>
-                        <?php else: ?>
-                        <div class="product-reviews-summary short">
-                            <div class="rating-summary">
-                                <span class="label"><span>Rating:</span></span>
-                                <div class="rating-result" title="0%">
-                                    <span style="width:0"><span>0%</span></span>
-                                </div>
-                            </div>
-                        </div>
-                        <?php endif; ?>
-                        <?php endif; ?>
                         
                         <?php if ($showDescription):?>
                             <div class="product description product-item-description">
