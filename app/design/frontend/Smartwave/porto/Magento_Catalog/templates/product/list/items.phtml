@@ -557,7 +557,12 @@ switch ($type = $block->getType()) {
 <?php endif; ?>
 
 <style>
-#maincontent {
-    padding: 0;
+@media (min-width: 768px) {
+    #maincontent {
+        padding: 0;
+    }
+    .columns {
+        padding: 0;
+    }
 }
 </style>
