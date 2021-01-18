@@ -171,7 +171,8 @@ switch ($type = $block->getType()) {
 <?php if ($exist): ?>
     <!--Start related products  Code-->
     <?php if ($type == 'related') { ?>
-        <div class="block-title title title-relate ">
+    <div class="title-relate">
+        <div class="block-title title">
             <strong id="block-<?= /* @escapeNotVerified */ $class ?>-heading" role="heading" aria-level="2"><?= /* @escapeNotVerified */ $title ?></strong>
         </div>          
         <div id="relateditem_carousel"  class="products list items product-items owl-carousel owl-theme">           
@@ -314,7 +315,7 @@ switch ($type = $block->getType()) {
             <?php endforeach ?>        
 
         </div>
-                                    
+    </div>                           
         <!--End related products  Code-->
     <?php } elseif ($type == 'upsell') { ?>    
         <!--Start upsell products  Code-->
