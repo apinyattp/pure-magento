@@ -260,13 +260,12 @@ switch ($type = $block->getType()) {
             $(window).load(function () {
                 $('#owlcarousel_<?=$type?>').owlCarousel({
                   autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-                  items : 3,
+                  items : 5,
                   nav: true,
                   navText: ["<i class='fa fa-angle-left' aria-hidden='true'></i>", "<i class='fa fa-angle-right' aria-hidden='true'></i>"],
-                  itemsDesktop : [1199,3],
-                  itemsDesktopSmall : [900,3], // betweem 900px and 601px
-                  itemsTablet: [700,2], // 2 items between 600 and 480
+                  itemsDesktop : [1199,5],
+                  itemsDesktopSmall : [900,5], // betweem 900px and 601px
+                  itemsTablet: [700,3], // 2 items between 600 and 480
                   itemsMobile : [479,1] , // 1 item between 479 and 0
                 });
             });
