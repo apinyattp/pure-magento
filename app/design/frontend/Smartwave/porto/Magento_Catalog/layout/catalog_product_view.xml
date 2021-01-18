@@ -39,7 +39,7 @@
             <block class="Smartwave\Porto\Block\Template" name="side_popup" after="-" template="Magento_Catalog::product/view/side_popup.phtml"/>
         </referenceContainer>
         <referenceBlock name="product.info.details">
-            <block class="Magento\Catalog\Block\Product\ProductList\Related" name="product.info.related" template="Magento_Catalog::product/list/items.phtml" group="detailed_info">
+            <block class="Magento\Catalog\Block\Product\ProductList\Related" name="product.info.related" template="Smartwave_Filterproducts::templates/owl_list.phtml" group="detailed_info">
                 <arguments>
                     <argument name="type" xsi:type="string">related</argument>
                     <argument translate="true" name="title" xsi:type="string">Related Products</argument>
