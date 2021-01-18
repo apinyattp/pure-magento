@@ -188,71 +188,13 @@ switch ($type = $block->getType()) {
                     <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
                         <?= $block->getImage($_item, $image)->toHtml() ?>
                     </a>
-                    <!-- <div class="product details product-item-details">
-                        <strong class="product name product-item-name"><a class="product-item-link" title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>">
-                                <?= $block->escapeHtml($_item->getName()) ?></a>
-                        </strong>
-                        <?= /* @escapeNotVerified */ $block->getProductPrice($_item) ?>
-                        <?php if ($templateType): ?>
-                            <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
-                        <?php endif; ?>
-
-                        <?php if ($canItemsAddToCart && !$_item->isComposite() && $_item->isSaleable() && $type != 'related'): ?>
-                            <?php if (!$_item->getRequiredOptions()): ?>
-                                <div class="field choice related">
-                                    <input type="checkbox" class="checkbox related" id="related-checkbox<?= /* @escapeNotVerified */ $_item->getId() ?>" name="related_products[]" value="<?= /* @escapeNotVerified */ $_item->getId() ?>" />
-                                    <label class="label" for="related-checkbox<?= /* @escapeNotVerified */ $_item->getId() ?>"><span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span></label>
-                                </div>
-                            <?php endif; ?>
-                        <?php endif; ?>
-
-                        <?php if ($showAddTo || $showCart): ?>
-                            <div class="product actions product-item-actions">
-                                <?php if ($showCart): ?>
-                                    <div class="actions-primary">
-                                        <?php if ($_item->isSaleable()): ?>
-                                            <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
-                                                <button class="action tocart primary" data-mage-init='{"redirectUrl": {"url": "<?= /* @escapeNotVerified */ $block->getAddToCartUrl($_item) ?>"}}' type="button" title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>">
-                                                    <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
-                                                </button>
-                                            <?php else: ?>
-                                                <?php
-                                                $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
-                                                $postData = $postDataHelper->getPostData($block->getAddToCartUrl($_item), ['product' => $_item->getEntityId()])
-                                                ?>
-                                                <button class="action tocart primary"
-                                                        data-post='<?= /* @escapeNotVerified */ $postData ?>'
-                                                        type="button" title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>">
-                                                    <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
-                                                </button>
-                                            <?php endif; ?>
-                                        <?php else: ?>
-                                            <?php if ($_item->getIsSalable()): ?>
-                                                <div class="stock available"><span><?= /* @escapeNotVerified */ __('In stock') ?></span></div>
-                                            <?php else: ?>
-                                                <div class="stock unavailable"><span><?= /* @escapeNotVerified */ __('Out of stock') ?></span></div>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php if ($showAddTo): ?>
-                                    <div class="secondary-addto-links actions-secondary" data-role="add-to-links">
-                                        <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
-                                            <?= $addToBlock->setProduct($_item)->getChildHtml() ?>
-                                        <?php endif; ?>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
-                    </div> -->
                     <div class="product details product-item-details">
                         <?php
                             $_itemNameStripped = $block->stripTags($_item->getName(), null, true);
                         ?>
                         <?php echo $block->getProductDetailsHtml($_item); ?>
-                        <strong class="product name product-item-name">
-                            <a class="product-item-link"
+                        <strong class="product name product-item-name product-item-name-related">
+                            <a class="product-item-link product-item-link-relate"
                                href="<?php echo $_item->getProductUrl() ?>">
                                 <?php echo $_helper->productAttribute($_item, $_item->getName(), 'name'); ?>
                             </a>
@@ -268,7 +210,7 @@ switch ($type = $block->getType()) {
                                    class="action more"><?php echo __('Learn More') ?></a>
                             </div>
                         <?php endif; ?>
-                        <div class="priceCatalog">
+                        <div class="priceCatalog priceCatalog-relate">
                             <?php if($_category_config['product_price']): ?>
                                 <?php echo $block->getProductPrice($_item) ?>
                             <?php endif; ?>
@@ -547,16 +489,6 @@ switch ($type = $block->getType()) {
             </div>
         </div>
         <!--End crosssell products  Code-->    
-    <?php } ?>
-    <?php if($type == 'related') { ?>
-        <style>
-            .product-item-name {
-                text-align: left;
-            }
-            .price-label {
-                display:none;
-            }
-        </style>
     <?php } ?>
     <script type="text/javascript">
         requirejs(['jquery', 'owlcarousel'], function (jQuery, owlCarousel) {
