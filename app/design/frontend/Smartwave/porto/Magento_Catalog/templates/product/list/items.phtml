@@ -13,6 +13,16 @@
  
 $_category_config = $_portohelper->getConfig('porto_settings/category');
 $showDescription = false;
+$viewMode = 'grid';
+$image = 'category_page_grid';
+$hover_image = 'category_page_grid-hover';
+$showDescription = false;
+$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+$columns = 'columns'.$_category_grid_config['columns'];
+$product_type = $_category_grid_config['product_type'];
+if($product_type == null) {
+    $product_type = 1;
+}
 //    $_item = $block->getProduct();
 ?>
 <?php
