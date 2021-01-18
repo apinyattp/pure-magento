@@ -172,7 +172,7 @@
             </block>
         </referenceContainer>
         <referenceContainer name="content.aside">
-            <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related" template="Smartwave_Filterproducts::owl_list.phtml">
+            <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related" template="Magento_Catalog::product/list/items.phtml">
                 <arguments>
                     <argument name="type" xsi:type="string">related</argument>
                 </arguments>
