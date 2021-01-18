@@ -12,12 +12,7 @@
         </referenceContainer> -->
         <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
         <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
-        <!-- <move element="catalog.product.related" destination="content" after="product_view_custom_block" /> -->
-        <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related" template="Magento_Catalog::product/list/items.phtml" group="detailed_info">
-            <block class="Magento\Framework\View\Element\RendererList" name="related.product.type.details.renderers" as="details.renderers">
-                <block class="Magento\Framework\View\Element\Template" as="default"/>
-            </block>
-        </block>
+        <move element="catalog.product.related" destination="content" after="product_view_custom_block" />
         <!-- <referenceBlock name="catalog.product.related" destination="content" remove="true"/> -->
         <move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
         <referenceContainer name="after.body.start">
