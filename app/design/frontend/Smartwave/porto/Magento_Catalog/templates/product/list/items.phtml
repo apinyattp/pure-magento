@@ -190,11 +190,7 @@ switch ($type = $block->getType()) {
                     <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
                         <?= $block->getImage($_item, $image)->toHtml() ?>
                     </a>
-                    <?php if($_item->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
-
-                        $swatchBlock = $this->getLayout()->createBlock("Magento\Swatches\Block\Product\Renderer\Listing\Configurable")->setTemplate("Magento_Swatches::product/listing/renderer.phtml");
-                        echo $swatchBlock->setProduct($_item)->toHtml();                           
-                    } ?>
+                    
                     <div class="product details product-item-details">
                         <?php
                             $_itemNameStripped = $block->stripTags($_item->getName(), null, true);
