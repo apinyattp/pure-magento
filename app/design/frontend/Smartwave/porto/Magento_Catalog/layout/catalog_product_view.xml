@@ -48,6 +48,6 @@
             </block>
         </referenceBlock>
         <referenceBlock name="catalog.product.related" remove="true"/> -->
-        <!-- <move element="catalog.product.related" destination="content" before="-" remove="true"/> -->
+        <move element="catalog.product.related" destination="column.main" before="-" remove="true"/>
     </body>
 </page>
