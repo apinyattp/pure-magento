@@ -347,16 +347,29 @@ $image_height = ($_category_config['ratio_height'])?$_category_config['ratio_hei
 <?php if ($type == 'related'): ?>
     <script type="text/javascript">
         require([
-            'jquery',
-            'owl.carousel/owl.carousel.min'
+          'jquery',
+          'owl.carousel/owl.carousel.min'
         ], function ($) {
-            $(".products-related .owl-carousel").owlCarousel({
-                nav: true,
-                dots: false,
-                items: 5,
-                nav: true,
-                navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"]
-            });
+          $(".products-upsell .owl-carousel").owlCarousel({
+            margin: 0,
+            nav: false,
+            navText: ["<em class='porto-icon-left-open-huge'></em>","<em class='porto-icon-right-open-huge'></em>"],
+            dots: true,
+            responsive: {
+              0: {
+                items:2
+              },
+              768: {
+                items:3
+              },
+              992: {
+                items:4
+              },
+              1200: {
+                items:5
+              }
+            }
+          });
         });
     </script>
 <?php endif; ?>
