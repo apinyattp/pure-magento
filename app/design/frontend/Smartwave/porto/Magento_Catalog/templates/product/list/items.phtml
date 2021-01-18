@@ -234,7 +234,7 @@ switch ($type = $block->getType()) {
                                 <?php endif; ?>
                                 <?php endif; ?>
                                 <?php endif; ?>
-                                <div class="actions-primary">
+                                <div class="actions-primary" style="display:none">
                                     <?php if ($_item->isSaleable()): ?>
                                         <?php $postParams = $block->getAddToCartPostParams($_item); ?>
                                         <form data-role="tocart-form" action="<?php echo $postParams['action']; ?>" method="post">
