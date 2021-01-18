@@ -182,7 +182,7 @@ switch ($type = $block->getType()) {
                     <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
                         <?= $block->getImage($_item, $image)->toHtml() ?>
                     </a>
-                    <?php if (!empty($type)): ?>
+                    <?php if ($type != 'related'): ?>
                     <div class="product details product-item-details">
                         <strong class="product name product-item-name"><a class="product-item-link" title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>">
                             <?= $block->escapeHtml($_item->getName()) ?></a>
