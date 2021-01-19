@@ -184,11 +184,6 @@
                 <width>240</width>
                 <height>300</height>
             </image>
-            <image id="hover_product_list" type="hover">
-                <width>400</width>
-                <height>400</height>
-            </image>
-  </images>
         </images>
     </media>
     <vars module="Magento_Catalog">
