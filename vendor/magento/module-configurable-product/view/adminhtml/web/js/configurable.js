@@ -322,7 +322,6 @@ define([
                 oldPrice = 0,
                 inclTaxPrice = 0,
                 exclTaxPrice = 0,
-                description = '',
                 i, selected;
 
             if (this.config.disablePriceReload) {
@@ -337,7 +336,6 @@ define([
                     oldPrice += parseFloat(selected.config.oldPrice);
                     inclTaxPrice += parseFloat(selected.config.inclTaxPrice);
                     exclTaxPrice += parseFloat(selected.config.exclTaxPrice);
-                    description += parseFloat(selected.config.description);
                 }
             }
 
@@ -346,8 +344,7 @@ define([
                     'price': price,
                     'oldPrice': oldPrice,
                     'inclTaxPrice': inclTaxPrice,
-                    'exclTaxPrice': exclTaxPrice,
-                    'description': description
+                    'exclTaxPrice': exclTaxPrice
                 }
             );
             optionsPrice.reload();
