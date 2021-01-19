@@ -718,6 +718,7 @@ define([
          * @private
          */
         _OnClick: function ($this, $widget) {
+            alert(11)
             var $parent = $this.parents('.' + $widget.options.classes.attributeClass),
                 $wrapper = $this.parents('.' + $widget.options.classes.attributeOptionsWrapper),
                 $label = $parent.find('.' + $widget.options.classes.attributeSelectedOptionLabelClass),
