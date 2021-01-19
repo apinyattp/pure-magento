@@ -240,6 +240,12 @@ class Configurable extends \Magento\Catalog\Block\Product\View\AbstractView
             'index' => isset($options['index']) ? $options['index'] : [],
         ];
 
+        $config['skus'] = [];
+        foreach ($subject->getAllowProducts() as $simpleProduct) {
+            $config['skus'][$simpleProduct->getId()] = $simpleProduct->getSku();
+            $config['description'][$simpleProduct->getId()] = $simpleProduct->getDescription();
+        }
+
         if ($currentProduct->hasPreconfiguredValues() && !empty($attributesData['defaultValues'])) {
             $config['defaultValues'] = $attributesData['defaultValues'];
         }
