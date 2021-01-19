@@ -88,6 +88,8 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                             else
                                 $productHoverImage = $_imagehelper->init($_product, $hover_image)->resize($image_width, $image_height);
                             $productHoverImageUrl = $productHoverImage->getUrl();
+                            print_r($productImageUrl);
+                            print_r($productHoverImageUrl);
                         ?>
                             <?php if($productImageUrl != str_replace("/thumbnail/","/small_image/",$productHoverImageUrl)): ?>
                             <img class="product-image-photo hover_image" src="<?php echo $productHoverImageUrl; ?>" alt=""/>
