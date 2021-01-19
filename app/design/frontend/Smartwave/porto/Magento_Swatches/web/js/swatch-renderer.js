@@ -718,23 +718,23 @@ define([
          * @private
          */
         _OnClick: function ($this, $widget) {
-            alert(11)
             var $parent = $this.parents('.' + $widget.options.classes.attributeClass),
                 $wrapper = $this.parents('.' + $widget.options.classes.attributeOptionsWrapper),
                 $label = $parent.find('.' + $widget.options.classes.attributeSelectedOptionLabelClass),
                 attributeId = $parent.attr('attribute-id'),
-                $input = $parent.find('.' + $widget.options.classes.attributeInput);
-        
+                $input = $parent.find('.' + $widget.options.classes.attributeInput),
+                checkAdditionalData = JSON.parse(this.options.jsonSwatchConfig[attributeId]['additional_data']);
+
             if ($widget.inProductList) {
                 $input = $widget.productForm.find(
                     '.' + $widget.options.classes.attributeInput + '[name="super_attribute[' + attributeId + ']"]'
                 );
             }
-        
+
             if ($this.hasClass('disabled')) {
                 return;
             }
-        
+
             if ($this.hasClass('selected')) {
                 $parent.removeAttr('option-selected').find('.selected').removeClass('selected');
                 $input.val('');
@@ -748,23 +748,27 @@ define([
                 $this.addClass('selected');
                 $widget._toggleCheckedAttributes($this, $wrapper);
             }
-        
+
             $widget._Rebuild();
-        
+
             if ($widget.element.parents($widget.options.selectorProduct)
                     .find(this.options.selectorProductPrice).is(':data(mage-priceBox)')
             ) {
                 $widget._UpdatePrice();
             }
-        
-            $widget._loadSelectedOptionLabel($this.attr('option-label'));
-            $widget._loadMedia();
+
+            $(document).trigger('updateMsrpPriceBlock',
+                [
+                    _.findKey($widget.options.jsonConfig.index, $widget.options.jsonConfig.defaultValues),
+                    $widget.options.jsonConfig.optionPrices
+                ]);
+
+            if (parseInt(checkAdditionalData['update_product_preview_image'], 10) === 1) {
+                $widget._loadMedia();
+            }
+
             $input.trigger('change');
         },
-        _loadSelectedOptionLabel: function (label) {
-            $('.selected-option-label').html("You selected " + label);
-        },
-        
 
         /**
          * Get human readable attribute code (eg. size, color) by it ID from configuration
