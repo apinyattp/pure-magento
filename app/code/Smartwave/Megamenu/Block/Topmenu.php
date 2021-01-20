@@ -158,9 +158,9 @@ class Topmenu extends \Magento\Framework\View\Element\Template
                     }
                     if($level == 1) {
                         if($child->getName() == 'Top brands') {
-                            $html .= '<div style="display:block !important;" class="hidden-sm hidden-xs img-header-underline" id="img-header-TopBrands"><div class="title">'.$child->getName().'</div></div>';
+                            $html .= '<div class="hidden-sm hidden-xs img-header-underline" id="img-header-TopBrands"><div class="title">'.$child->getName().'</div></div>';
                         }else{
-                            $html .= '<div style="display:block !important;" class="hidden-sm hidden-xs img-header-underline '.$child->getName().'" id="img-header-'.$child->getName().'"><div class="title">'.$child->getName().'</div></div>';
+                            $html .= '<div class="hidden-sm hidden-xs img-header-underline '.$child->getName().'" id="img-header-'.$child->getName().'"><div class="title">'.$child->getName().'</div></div>';
                         }
 
                     }
