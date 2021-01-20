@@ -157,7 +157,7 @@ class Topmenu extends \Magento\Framework\View\Element\Template
                         $html .= '<div class="open-children-toggle"></div>';
                     }
                     if($level == 1) {
-                        $html .= '<div class="hidden-sm hidden-xs img-header-underline" id="img-header-'.$child->getName().'"><div class="title">'.$child->getName().'</div></div>';
+                        $html .= '<div class="hidden-sm hidden-xs img-header-underline '.$child->getName().'" id="img-header-'.$child->getName().'"><div class="title">'.$child->getName().'</div></div>';
                     }
                     if($level == 1 && $sw_menu_icon_img) {
                         $html .= '<div class="menu-thumb-img"><a class="menu-thumb-link" href="'.$this->_categoryHelper->getCategoryUrl($child).'"><img src="' . $this->_helper->getBaseUrl().'catalog/category/' . $sw_menu_icon_img . '" alt="'.$child->getName().'"/></a></div>';
