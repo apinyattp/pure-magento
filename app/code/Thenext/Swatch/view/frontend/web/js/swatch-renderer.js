@@ -785,9 +785,14 @@ define([
                     $widget._UpdatePrice();
                 }
 
+                $widget._loadSelectedOptionLabel($this.attr('option-label'));
                 $widget._loadMedia(eventName);
                 $input.trigger('change');
             }
+        },
+
+        _loadSelectedOptionLabel: function (label) {
+            $('.selected-option-label').html("You selected " + label);
         },
 
         /**
