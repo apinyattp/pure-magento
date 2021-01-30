@@ -8,8 +8,8 @@
     <media>
         <images module="Magento_Catalog">
             <image id="image_id" type="image_type">
-                <width>140</width>
-                <height>140</height>
+                <width>400</width>
+                <height>400</height>
             </image>
             <image id="bundled_product_customization_page" type="thumbnail">
                 <width>140</width>
