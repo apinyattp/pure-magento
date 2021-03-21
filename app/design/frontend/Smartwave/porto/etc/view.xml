@@ -95,11 +95,11 @@
             </image>
             <image id="product_page_main_image" type="image">
                 <width>1000</width>
-                <height>1320</height>
+                <height>1000</height>
             </image>
             <image id="product_page_main_image_default" type="image">
                 <width>1000</width>
-                <height>1320</height>
+                <height>1000</height>
             </image>
             <image id="product_page_more_views" type="thumbnail">
                 <width>135</width>
