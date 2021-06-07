@@ -57,6 +57,7 @@
                         echo '<div class="col-lg-'.$footer[$area.'_size'].'">';
                     }
                     if( $type == 'custom' && $footer[$area.'_custom'] ){ 
+                        echo $footer[$area.'_custom'];
                         // $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
                         // if($block) {
                         //     $block->setBlockId($footer[$area.'_custom']);
