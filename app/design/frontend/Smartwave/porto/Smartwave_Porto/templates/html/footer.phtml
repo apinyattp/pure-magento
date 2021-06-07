@@ -5,7 +5,6 @@
     $lang = $explode[1];
     $acceptLang = ['th', 'en'];
     $lang = in_array($lang, $acceptLang) ? $lang : 'en';
-
 ?>
 <div class="footer">
 <?php
@@ -56,38 +55,19 @@
                     if( $type ){
                         echo '<div class="col-lg-'.$footer[$area.'_size'].'">';
                     }
-                    if( $type == 'custom' && $footer[$area.'_custom'] ){ 
-                        echo $footer[$area.'_custom'];
-                        // $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
-                        // if($block) {
-                        //     $block->setBlockId($footer[$area.'_custom']);
-                        // }
-                        // if($block){
-                        //     echo $block->toHtml();
-                        // }
-                    ?>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="block-bottom">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <?php if($lang == 'th') { ?>
-                                            <address style="float:left;font-size:13px;font-family: 'Prompt';">บริษัท แว่นตา เอ แอนด์ พี จำกัด  <br>328 ถนน พหลโยธิน แขวงอนุสาวรีย์ เขตบางเขน กรุงเทพมหานคร 10220 <br>โทรศัพท์ : (02)970-3714-16 <br>โทรศัพท์มือถือ : 062-194-4624<br>แฟกซ์ : (02)970-3717-18 <br>อีเมล : info@thenextoptical.com</address>
-                                        <?php }else{ ?>
-                                            <address style="float:left;font-size:13px;font-family: 'Prompt';">A&P OPTICAL CO.,LTD  <br>328 Phahonyothin Rd, Anusawari , Bang Khen ,Bangkok 10220 <br>Tel : (02)970-3714-16 <br>Mobile No : 062-194-4624<br>Fax : (02)970-3717-18 <br>Email : info@thenextoptical.com</address>
-                                        <?php } ?>
-        
-                                    </div>
-                                    <div class="col-md-6">
-                                    <div class="custom-block" style="float:right;"><img src="{{media url="wysiwyg/smartwave/porto/footer/payment-icon_1.png"}}" alt="" /></div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-
-                    <?php } 
+                    if( $type == 'custom' && $footer[$area.'_custom'] ){
+                        $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
+                        if($block) {
+                            $nameFooter = $footer[$area.'_custom'];
+                            if($lang == 'th') {
+                                $nameFooter = $footer[$area.'_custom'].'_th';
+                            }
+                            $block->setBlockId($nameFooter);
+                        }
+                        if($block){
+                            echo $block->toHtml();
+                        }
+                    }
                     if( $type == 'newsletter' ){
                         echo $this->getChildHtml('footer.newsletter');
                     }
