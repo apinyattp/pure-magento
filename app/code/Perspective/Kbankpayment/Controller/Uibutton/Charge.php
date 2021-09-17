@@ -117,7 +117,6 @@ class Charge extends Action
         
         $response = $this->_makeRequest($payload);
 
-        $response['payload'] = $payload;
         $payment->setAdditionalInformation('charge_id', $response['id']);
         $payment->setAdditionalInformation('charge_authen_url', $response['redirect_url']);
         
