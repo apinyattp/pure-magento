@@ -82,15 +82,10 @@ class Callback extends Action implements CsrfAwareActionInterface
      */
     public function execute() {
         $response = $this->_decode_response();
-        // $response = json_decode(file_get_contents('php://input'),TRUE);
-        // print_r($response);
-        // print_r(file_get_contents('php://input'));
-        print_r($response['objectId']);
-        // die();
         $charge_id = $response['objectId'];
-        print_r($charge_id);
+
         $inquiry = $this->_makeRequest($charge_id);
-        print($inquiry);
+        print_r($inquiry);
         die();
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $collection = $objectManager->create('Magento\Sales\Model\Order'); 
@@ -209,7 +204,8 @@ class Callback extends Action implements CsrfAwareActionInterface
 
     private function _makeRequest($charge_id) {
         $a_header = [
-            "x-api-key:".$this->config->getSecret()
+            "x-api-key:".$this->config->getSecret(),
+            "Content-Type:application/json"
         ];
 
 
