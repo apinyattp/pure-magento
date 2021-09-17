@@ -126,6 +126,7 @@ class Charge extends Action
         $payment->save();
 
         $response['sucess_url'] = self::PATH_SUCCESS;
+
         if($response['transaction_state'] == 'Authorized' && $response['status'] == 'success'){
             if($order->canInvoice()) {
                 $invoice = $this->_invoiceService->prepareInvoice($order);
