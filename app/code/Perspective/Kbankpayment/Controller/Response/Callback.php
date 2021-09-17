@@ -81,9 +81,9 @@ class Callback extends Action implements CsrfAwareActionInterface
      * @return void
      */
     public function execute() {
-        // $response = $this->_decode_response();
-        $response = json_decode(file_get_contents('php://input'),TRUE);
-        print_r($response);
+        $response = $this->_decode_response();
+        // $response = json_decode(file_get_contents('php://input'),TRUE);
+        // print_r($response);
         // print_r(file_get_contents('php://input'));
         print_r($response['objectId']);
         // die();
