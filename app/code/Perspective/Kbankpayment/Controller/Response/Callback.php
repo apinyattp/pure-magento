@@ -83,11 +83,9 @@ class Callback extends Action implements CsrfAwareActionInterface
     public function execute() {
         $response = $this->_decode_response();
         $charge_id = $response['objectId'];
-        print_r($response);
-        print_r($charge_id);
+
         $inquiry = $this->_makeRequest($charge_id);
-        print_r($inquiry);
-        die();
+
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $collection = $objectManager->create('Magento\Sales\Model\Order'); 
         $orderInfo = $collection->loadByIncrementId($inquiry['reference_order']);
@@ -204,12 +202,6 @@ class Callback extends Action implements CsrfAwareActionInterface
     }
 
     private function _makeRequest($charge_id) {
-        echo '<br><br><br>===== charge id ===== <br>';
-        echo $charge_id;
-        echo '=====URL=======<br>';
-        echo $this->config->getChargeApiUrl();
-        echo '====== SECRET========<br>';
-        echo $this->config->getSecret();
         $a_header = [
             "x-api-key:".$this->config->getSecret(),
             "Content-Type:application/json"
