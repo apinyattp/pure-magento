@@ -72,7 +72,7 @@ class Charge extends Action
 
         $token = $data['token'];
         $order_id = $data['order_id'];
-        // print_r($data);
+
         // $data_currency = $data['dcc_currency'];
         // exit();
         if (! $order_id) {
@@ -103,7 +103,7 @@ class Charge extends Action
 
         // $payload['amount'] = number_format($order->getGrandTotal(),2);
         $payload['amount'] = number_format($order->getGrandTotal(),2, '.', '');
-        $payload['currency'] = "THB";
+        $payload['currency'] = $data['dcc_currency'];
         $payload['description'] = "The Next Optical";
         $payload['source_type'] = "card";
         $payload['mode'] = "token";
