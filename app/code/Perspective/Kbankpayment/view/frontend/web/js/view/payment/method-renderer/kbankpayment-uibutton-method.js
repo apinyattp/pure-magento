@@ -97,24 +97,23 @@ define(
                 KPayment.show();
 
                 jQuery('body').on('DOMNodeInserted', 'button', function () {
-                    if(document.getElementsByName("token").length && document.getElementsByName("dcc_currency").length){
+                    if(document.getElementsByName("token").length){
                         self.chargeKbank();
-                    }else{
-                        // errorProcessor.process(response, self.messageContainer);
-                        fullScreenLoader.stopLoader();
-                        self.isPlaceOrderActionAllowed(true);
                     }
                 });
             },
             
             chargeKbank: function (event) {
-                if(this.token.length > 1 || this.dcc_currency.length > 1){
+                if(this.token.length > 1){
                     return false;
                 }
       
                 var tokenData = document.getElementsByName("token")[0].value;
-                var dcc_currencyData = document.getElementsByName("dcc_currency")[0].value;
+                var dcc_currencyData = "";
 
+                if(typeof document.getElementsByName("dcc_currency")[0] != 'undefined') {
+                    dcc_currencyData = document.getElementsByName("dcc_currency")[0].value
+                }
                 this.token = tokenData;
                 this.dcc_currency = dcc_currencyData;
 

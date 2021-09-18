@@ -112,7 +112,9 @@ class Charge extends Action
             'mid' =>  $redirect_config->getMID(),
             'tid' =>  $redirect_config->getTID()
         ];
-        $payload['dcc_data']['dcc_currency'] = $dcc_currency; 
+        if(!empty($dcc_currency)) {
+            $payload['dcc_data']['dcc_currency'] = $dcc_currency;
+        } 
 
         $response = $this->_makeRequest($payload);
 
