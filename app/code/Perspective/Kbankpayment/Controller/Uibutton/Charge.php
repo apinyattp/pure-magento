@@ -103,7 +103,7 @@ class Charge extends Action
 
         // $payload['amount'] = number_format($order->getGrandTotal(),2);
         $payload['amount'] = number_format($order->getGrandTotal(),2, '.', '');
-        $payload['currency'] = "JPY";
+        $payload['currency'] = "THB";
         $payload['description'] = "The Next Optical";
         $payload['source_type'] = "card";
         $payload['mode'] = "token";
@@ -113,7 +113,7 @@ class Charge extends Action
             'mid' =>  $redirect_config->getMID(),
             'tid' =>  $redirect_config->getTID()
         ];
-        $payload['dcc_data']['dcc_currency'] = 'THB'; 
+        $payload['dcc_data']['dcc_currency'] = 'JPY'; 
 
         $response = $this->_makeRequest($payload);
 
