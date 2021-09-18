@@ -99,6 +99,10 @@ define(
                 jQuery('body').on('DOMNodeInserted', 'button', function () {
                     if(document.getElementsByName("token").length && document.getElementsByName("dcc_currency").length){
                         self.chargeKbank();
+                    }else{
+                        errorProcessor.process(response, self.messageContainer);
+                        fullScreenLoader.stopLoader();
+                        self.isPlaceOrderActionAllowed(true);
                     }
                 });
             },
