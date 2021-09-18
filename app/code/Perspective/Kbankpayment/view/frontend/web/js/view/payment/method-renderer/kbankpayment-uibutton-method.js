@@ -45,6 +45,7 @@ define(
             redirectAfterPlaceOrder: true,
             order_id: 0,
             token: "",
+            dcc_currency: "",
 
             isPlaceOrderActionAllowed: ko.observable(quote.billingAddress() != null),
 
@@ -96,19 +97,20 @@ define(
                 KPayment.show();
 
                 jQuery('body').on('DOMNodeInserted', 'button', function () {
-                    if(document.getElementsByName("token").length){
+                    if(document.getElementsByName("token").length && document.getElementsByName("dcc_currency").length){
                         self.chargeKbank();
                     }
                 });
             },
             
             chargeKbank: function (event) {
-                if(this.token.length > 1){
+                if(this.token.length > 1 || this.dcc_currency.length > 1){
                     return false;
                 }
-                console.log(event)
+      
                 var tokenData = document.getElementsByName("token")[0].value;
                 var dcc_currencyData = document.getElementsByName("dcc_currency")[0].value;
+
                 this.token = tokenData;
                 this.dcc_currency = dcc_currencyData;
 
