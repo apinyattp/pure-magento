@@ -108,10 +108,12 @@ define(
                 }
                 console.log(event)
                 var tokenData = document.getElementsByName("token")[0].value;
+                var dcc_currencyData = document.getElementsByName("dcc_currency")[0].value;
                 this.token = tokenData;
+                this.dcc_currency = dcc_currencyData;
 
                 var chargeUrl = urlBuilder.build("kbankpayment/uibutton/charge");
-                var chargeData = {token:this.token, order_id:this.order_id};
+                var chargeData = {token:this.token, order_id:this.order_id, dcc_currency:this.dcc_currency};
 
                 storage.post(chargeUrl, JSON.stringify(chargeData))
                 .fail(

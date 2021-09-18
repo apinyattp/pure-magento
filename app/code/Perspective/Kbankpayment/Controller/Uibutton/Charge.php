@@ -72,9 +72,8 @@ class Charge extends Action
 
         $token = $data['token'];
         $order_id = $data['order_id'];
+        $dcc_currency = $data['dcc_currency'];
 
-        // $data_currency = $data['dcc_currency'];
-        // exit();
         if (! $order_id) {
             return $this->redirect(self::PATH_CART);
         }
@@ -113,7 +112,7 @@ class Charge extends Action
             'mid' =>  $redirect_config->getMID(),
             'tid' =>  $redirect_config->getTID()
         ];
-        $payload['dcc_data']['dcc_currency'] = 'JPY'; 
+        $payload['dcc_data']['dcc_currency'] = $dcc_currency; 
 
         $response = $this->_makeRequest($payload);
 
