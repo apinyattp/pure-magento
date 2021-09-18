@@ -101,7 +101,9 @@ class Charge extends Action
             return $this->redirect(self::PATH_CART);
         }
 
+        echo '11 <br>';
         print_r($payment->getMethod());
+        echo '22 <br>';
         print_r($payment->getPayment());
         // $payload['amount'] = number_format($order->getGrandTotal(),2);
         $payload['amount'] = number_format($order->getGrandTotal(),2, '.', '');
