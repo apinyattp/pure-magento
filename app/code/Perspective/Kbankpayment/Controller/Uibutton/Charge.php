@@ -116,7 +116,7 @@ class Charge extends Action
         ];
         $payload['order_id'] = $order_id;
         $payload['dcc_data']['dcc_currency'] = 'THB'; 
-
+        print_r(json_encode($payload));
         $response = $this->_makeRequest($payload);
 
         $response['payload'] = $payload;
@@ -196,7 +196,7 @@ class Charge extends Action
             "x-api-key:".$this->config->getSecret(),
             "Content-Type:application/json"
         ];
-
+        
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $this->config->getChargeApiUrl());
