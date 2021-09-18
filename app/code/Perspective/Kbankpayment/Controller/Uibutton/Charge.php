@@ -72,9 +72,9 @@ class Charge extends Action
 
         $token = $data['token'];
         $order_id = $data['order_id'];
-        print_r($data);
-        $data_currency = $data['dcc_currency'];
-        exit();
+        // print_r($data);
+        // $data_currency = $data['dcc_currency'];
+        // exit();
         if (! $order_id) {
             return $this->redirect(self::PATH_CART);
         }
