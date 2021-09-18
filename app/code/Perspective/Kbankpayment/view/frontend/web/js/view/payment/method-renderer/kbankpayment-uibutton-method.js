@@ -106,7 +106,7 @@ define(
                 if(this.token.length > 1){
                     return false;
                 }
-
+                console.log(event)
                 var tokenData = document.getElementsByName("token")[0].value;
                 this.token = tokenData;
 
