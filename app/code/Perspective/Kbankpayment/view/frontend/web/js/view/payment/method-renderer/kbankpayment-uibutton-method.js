@@ -115,26 +115,26 @@ define(
 
                 storage.post(chargeUrl, JSON.stringify(chargeData))
                 .fail(
-                    function (response) {
-                        errorProcessor.process(response, self.messageContainer);
-                        fullScreenLoader.stopLoader();
-                        self.isPlaceOrderActionAllowed(true);
-                    }
+                    // function (response) {
+                    //     errorProcessor.process(response, self.messageContainer);
+                    //     fullScreenLoader.stopLoader();
+                    //     self.isPlaceOrderActionAllowed(true);
+                    // }
                 )
                 .done(
-                    function (response) {
-                        if (!response) {
-                            errorProcessor.process(response, self.messageContainer);
-                            fullScreenLoader.stopLoader();
-                            self.isPlaceOrderActionAllowed(true);
-                            return;
-                        }
-                        if(response.redirect_url){
-                            window.location.href = response.redirect_url;
-                        }else{
-                            $.mage.redirect(response.sucess_url);
-                        }
-                    }
+                    // function (response) {
+                    //     if (!response) {
+                    //         errorProcessor.process(response, self.messageContainer);
+                    //         fullScreenLoader.stopLoader();
+                    //         self.isPlaceOrderActionAllowed(true);
+                    //         return;
+                    //     }
+                    //     if(response.redirect_url){
+                    //         window.location.href = response.redirect_url;
+                    //     }else{
+                    //         $.mage.redirect(response.sucess_url);
+                    //     }
+                    // }
                 );
 
             },
