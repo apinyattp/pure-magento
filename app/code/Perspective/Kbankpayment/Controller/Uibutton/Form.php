@@ -47,6 +47,7 @@ class Form extends \Magento\Framework\App\Action\Action
         $data['order_increment_id'] = $order->getIncrementId();
         $data['amount'] = number_format($order->getGrandTotal(),2, '.', '');
         $data['mid'] = $redirect_config->getMID();
+        print_r($data);
         // if ($order->getState() === Order::STATE_NEW) {
         //     $order->setState(Order::STATE_PENDING_PAYMENT);
         //     $order->setStatus($order->getConfig()->getStateDefaultStatus(Order::STATE_PENDING_PAYMENT));
