@@ -112,12 +112,11 @@ class Charge extends Action
         $payload['token'] = $token;
         $payload['additional_data'] = [
             'mid' =>  $redirect_config->getMID(),
-            'tid' =>  $redirect_config->getTID()
+            // 'tid' =>  $redirect_config->getTID()
         ];
         $payload['dcc_data']['dcc_currency'] = 'THB'; 
-        print_r(json_encode($payload));
+
         $response = $this->_makeRequest($payload);
-        print_r($response);
 
         $response['payload'] = $payload;
         $payment->setAdditionalInformation('charge_id', $response['id']);
