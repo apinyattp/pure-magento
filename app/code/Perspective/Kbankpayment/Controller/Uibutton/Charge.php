@@ -112,7 +112,7 @@ class Charge extends Action
         $payload['token'] = $token;
         $payload['additional_data'] = [
             'mid' =>  $redirect_config->getMID(),
-            // 'tid' =>  $redirect_config->getTID()
+            'tid' =>  $redirect_config->getTID()
         ];
         $payload['dcc_data']['dcc_currency'] = 'THB'; 
 
