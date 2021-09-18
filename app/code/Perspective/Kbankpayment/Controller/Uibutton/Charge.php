@@ -114,7 +114,6 @@ class Charge extends Action
             'mid' =>  $redirect_config->getMID(),
             'tid' =>  $redirect_config->getTID()
         ];
-        $payload['order_id'] = $order_id;
         $payload['dcc_data']['dcc_currency'] = 'THB'; 
         print_r(json_encode($payload));
         $response = $this->_makeRequest($payload);
