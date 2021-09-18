@@ -53,6 +53,8 @@ class Uibutton extends Config
      * @return string
      */
     public function getSecret() {
+        echo '<br> isSandboxEnabled' . $this->isSandboxEnabled();
+        echo '<br> getTestSecret' . $this->getTestSecret();
         if ($this->isSandboxEnabled()) {
             return $this->getTestSecret();
         }

@@ -204,11 +204,11 @@ class Callback extends Action implements CsrfAwareActionInterface
     }
 
     private function _makeRequest($charge_id) {
-        echo '===== charge id =====';
+        echo '<br><br><br>===== charge id ===== <br>';
         echo $charge_id;
-        echo '=====URL=======';
+        echo '=====URL=======<br>';
         echo $this->config->getChargeApiUrl();
-        echo '====== SECRET========';
+        echo '====== SECRET========<br>';
         echo $this->config->getSecret();
         $a_header = [
             "x-api-key:".$this->config->getSecret(),
