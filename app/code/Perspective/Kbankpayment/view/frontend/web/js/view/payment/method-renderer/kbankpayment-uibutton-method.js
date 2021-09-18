@@ -111,7 +111,9 @@ define(
                 var dcc_currencyData = document.getElementsByName("dcc_currency")[0].value;
                 this.token = tokenData;
                 this.dcc_currency = dcc_currencyData;
-
+                console.log(dcc_currencyData)
+                console.log(this.dcc_currency)
+                return
                 var chargeUrl = urlBuilder.build("kbankpayment/uibutton/charge");
                 var chargeData = {token:this.token, order_id:this.order_id, dcc_currency:this.dcc_currency};
 
