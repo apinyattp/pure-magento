@@ -78,6 +78,7 @@ define(
 
             buttonInitial: function (orderData) {
                 console.log(11, orderData)
+                console.log(22, this.getPublicKey())
                 var self = this;
                 var d = kbankURL,
                     s = document.querySelector('script[src^="' + d + '"]');
