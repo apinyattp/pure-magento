@@ -103,7 +103,7 @@ class Charge extends Action
 
         // $payload['amount'] = number_format($order->getGrandTotal(),2);
         $payload['amount'] = number_format($order->getGrandTotal(),2, '.', '');
-        $payload['currency'] = $data['dcc_currency'];
+        $payload['currency'] = "THB";
         $payload['description'] = "The Next Optical";
         $payload['source_type'] = "card";
         $payload['mode'] = "token";
