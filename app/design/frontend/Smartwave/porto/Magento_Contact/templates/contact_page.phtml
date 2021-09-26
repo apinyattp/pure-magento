@@ -224,6 +224,10 @@ $a_region = [
     </div>
 </div>
 
+<div class="d-none d-md-block row">
+    <div class="col-12 py-3">
+</div>
+
 <div class="row">
 <?php foreach($a_region as $region){ ?>
     <div class="col-md-3 contact-info">
@@ -236,7 +240,7 @@ $a_region = [
             <?php foreach($region['branches'] as $branch){ ?>
                 <div class="col-12 text-left branch-text">
                     <p><?php echo $branch[$lang] ?></p>
-                    <p>TEL: <?php echo $branch['tel'] ?></p>
+                    <p><?php echo $lang == 'th' ? 'โทร.' : 'TEL.' ?> <a href="tel:<?php echo str_replace('-', '', $branch['tel']) ?>"><?php echo $branch['tel'] ?></a></p>
                     <p><a style="color: #fbbd5a;" href="<?php echo $branch['url'] ?>" target="_blank"><?php echo $lang == 'th' ? 'ที่ตั้ง' : 'Location' ?></a></p>
                 </div>
             <?php } ?>
