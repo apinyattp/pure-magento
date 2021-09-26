@@ -231,7 +231,7 @@ $a_region = [
 <div class="row">
 <?php foreach($a_region as $region){ ?>
     <div class="col-md-3 contact-info">
-        <div class="title-contact-header-<?php echo $lang?>">
+        <div class="title-branch-header-<?php echo $lang?>">
             <?php echo $region[$lang];?></b>
         </div><br>
         <div class="border-title"> </div>
@@ -258,5 +258,21 @@ form {
 }
 .submit_th {
     font-family: 'Prompt'!important;
+}
+.title-branch-header-en {
+    color: #141515;
+    font-family: 'Karla';
+    font-weight: 700;
+    font-size: 32px;
+    display: inline;
+    text-transform: uppercase;
+}
+
+.title-branch-header-th {
+    font-family: Prompt;
+    font-weight: 700;
+    font-size: 32px;
+    color: #141515;
+    display: inline;
 }
 </style>
