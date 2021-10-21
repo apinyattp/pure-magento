@@ -1,8 +1,9 @@
 var curURL = window.location.href;
-var kbankURL = 'https://dev-kpaymentgateway.kasikornbank.com';
-if(curURL.search("carelicious.shop") > 0){
-    kbankURL = 'https://kpaymentgateway.kasikornbank.com';
-}
+// var kbankURL = 'https://dev-kpaymentgateway.kasikornbank.com';
+// if(curURL.search("carelicious.shop") > 0){
+//     kbankURL = 'https://kpaymentgateway.kasikornbank.com';
+// }
+var kbankURL = 'https://kpaymentgateway.kasikornbank.com'
 
 define(
     [
