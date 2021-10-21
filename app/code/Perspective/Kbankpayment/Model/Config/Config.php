@@ -45,7 +45,6 @@ class Config
      * @return bool
      */
     public function isSandboxEnabled() {
-        return FALSE;
         if ($this->getValue('sandbox_status', self::CODE)) {
             return TRUE;
         }
