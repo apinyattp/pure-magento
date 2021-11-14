@@ -2189,3 +2189,9 @@ hr.solid {
     padding: 0 !important;
     width: auto !important;
 }
+
+.product.name.product-item-name a {
+    padding-top: 10px;
+    font-size: 18px;
+    font-family: 'Open Sans', 'Prompt';
+}
