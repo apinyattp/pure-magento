@@ -20,11 +20,6 @@ $explode = explode('/', $_SERVER['REQUEST_URI']);
 $lang = $explode[1];
 $acceptLang = ['th', 'en'];
 $lang = in_array($lang, $acceptLang) ? $lang : 'en';
-if($lang == 'en') {
-    $branches = 'Branches';
-}else{
-    $branches = 'สาขา';
-}
 
 $a_region = [
     [
@@ -112,7 +107,7 @@ $a_region = [
         ],
     ],
     [
-        'th' => 'ตะวันตก',
+        'th' => 'ภาคตะวันตก',
         'en' => 'West',
         'branches' => [
             [
@@ -142,7 +137,7 @@ $a_region = [
         ],
     ],
     [
-        'th' => 'ตะวันออก',
+        'th' => 'ภาคตะวันออก',
         'en' => 'East',
         'branches' => [
             [
@@ -202,7 +197,7 @@ $a_region = [
         ],
     ],
     [
-        'th' => 'ใต้',
+        'th' => 'ภาคใต้',
         'en' => 'South',
         'branches' => [
             [
@@ -216,6 +211,11 @@ $a_region = [
 ];
 
 ?>
+<div class="row">
+    <div class="col-12">
+        <img src="/media/images/ABOUT-IMG3.jpg" class="w-100"/>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-5"><?php echo $this->getChildHtml('contactForm')?></div>
     <div class="col-md-2"></div>
@@ -239,8 +239,8 @@ $a_region = [
         <div class="row branch_<?php echo $lang?>">
             <?php foreach($region['branches'] as $branch){ ?>
                 <div class="col-12 text-left branch-text">
-                    <p><?php echo $branch[$lang] ?></p>
-                    <p><?php echo $lang == 'th' ? 'โทร.' : 'TEL.' ?> <a href="tel:<?php echo str_replace('-', '', $branch['tel']) ?>"><?php echo $branch['tel'] ?></a></p>
+                    <h3><?php echo $branch[$lang] ?></h3>
+                    <p><?php echo __('TEL.') ?> <a href="tel:<?php echo str_replace('-', '', $branch['tel']) ?>"><?php echo $branch['tel'] ?></a></p>
                     <p><a style="color: #fbbd5a;" href="<?php echo $branch['url'] ?>" target="_blank"><?php echo $lang == 'th' ? 'ที่ตั้ง' : 'Location' ?></a></p>
                 </div>
             <?php } ?>
