@@ -146,15 +146,17 @@ if($lang == 'en') {
             </div>
         </fieldset>
     </fieldset>
-    <div class="actions-toolbar row">
-        <div class="col-md-5 notice">
-            <span class="error-notice">*</span> Required Fields
+    <div class="actions-toolbar">
+        <div class="notice text-right">
+            <span class="error-notice" style="color: #e02b27;">*</span> Required Fields
         </div>
-        <div class="primary col-md-7 button-contact">
-            <input type="hidden" name="hideit" id="hideit" value="" />
-            <button type="submit" title="<?php echo $submit?>" class="action submit primary submit-contact submit_<?php echo $lang;?>">
-                <span><?php echo $submit ?></span>
-            </button>
+        <div class="row">
+            <div class="primary offset-md-3 col-md-7 button-contact">
+                <input type="hidden" name="hideit" id="hideit" value="" />
+                <button type="submit" title="<?php echo $submit?>" class="action submit primary submit-contact submit_<?php echo $lang;?>">
+                    <span><?php echo $submit ?></span>
+                </button>
+            </div>
         </div>
     </div>
 </form>
