@@ -2185,7 +2185,14 @@ hr.solid {
 
 .cproducts {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  
+}
+
+@media (max-width: 640px){
+  .cproducts {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px){
@@ -2197,11 +2204,5 @@ hr.solid {
 @media (max-width: 1024px){
   .cproducts {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 1280px){
-  .cproducts {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
