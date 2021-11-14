@@ -2193,6 +2193,6 @@ hr.solid {
 
 .product-item-inner {
   display: flex;
-  float: none;
+  float: none !important;
   justify-content: center;
 }
