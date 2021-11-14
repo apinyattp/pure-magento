@@ -238,7 +238,7 @@
    text-align:left;
 }
 .owl-carousel .owl-item img{
-   display:none;
+   /* display:none; */
  }
   #banner-slider-demo-4 .slide1-content .content-area .text1 {
     position: relative;
