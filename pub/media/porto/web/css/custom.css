@@ -2183,16 +2183,25 @@ hr.solid {
     margin: 0;
 }
 
-.priceCatalog .price {
-  float: none !important;
+.cproducts {
+  display: grid;
+  grid-column: 1;
 }
 
-.product-item-info {
-  text-align: left;
+@media (min-width: 1280px){
+  .cproducts {
+    grid-column: 4;
+  }
 }
 
-.product-item-inner {
-  display: flex;
-  float: none !important;
-  justify-content: center;
+@media (min-width: 1024px){
+  .cproducts {
+    grid-column: 3;
+  }
+}
+
+@media (min-width: 768px){
+  .cproducts {
+    grid-column: 2;
+  }
 }
