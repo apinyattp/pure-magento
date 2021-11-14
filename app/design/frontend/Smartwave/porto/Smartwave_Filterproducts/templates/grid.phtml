@@ -70,6 +70,7 @@ if($product_type == null) {
     <div class="products wrapper <?php echo $viewMode; ?> columns<?php echo $column_count; ?> products-<?php echo $viewMode; ?> <?php if($product_type == 2): ?>no-padding divider-line<?php endif; ?> <?php if($product_type == 5 || $product_type == 6 || $product_type == 7 || $product_type == 8): ?>no-padding<?php endif; ?> <?php if($product_type == 6): ?>divider-line<?php endif; ?>">
         <?php $iterator = 1; ?>
         <ol class="filterproducts products list items product-items <?php if(isset($_category_config['qty_field']) && $_category_config['qty_field']):?>has-qty<?php endif;?>">
+            ccc
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
                 <?php echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
