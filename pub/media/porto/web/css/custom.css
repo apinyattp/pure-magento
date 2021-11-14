@@ -2182,3 +2182,7 @@ hr.solid {
 .products-grid.small-list {
     margin: 0;
 }
+
+.priceCatalog .price {
+    float: none !important;
+}
