@@ -2190,6 +2190,11 @@ hr.solid {
     width: auto !important;
 }
 
+.price-box.price-final_price {
+    display: inline-block;
+    width: 100% !important;
+}
+
 .product.name.product-item-name a {
     padding-top: 10px;
     font-size: 18px;
