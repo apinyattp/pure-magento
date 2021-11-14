@@ -68,7 +68,6 @@ $cat_model = $menu_helper->getCategoryModel($category_id);
     <div class="products wrapper <?php echo $viewMode; ?> products-<?php echo $viewMode; ?> <?php if($product_type == 2): ?>no-padding divider-line<?php endif; ?> <?php if($product_type == 5 || $product_type == 6 || $product_type == 7 || $product_type == 8): ?>no-padding<?php endif; ?> <?php if($product_type == 6): ?>divider-line<?php endif; ?>">
         <?php $iterator = 1; ?>
         <div class="filterproducts products list items product-items owl-carousel">
-            aaaa
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
                 <?php echo($iterator++ == 1) ? '<div class="item product product-item">' : '</div><div class="item product product-item">' ?>
