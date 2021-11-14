@@ -244,7 +244,6 @@ if($product_type == null) {
                         }
                         echo $product_label
                         ?>
-                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         <?php //$_category_config['rating_star'] = "";  //disabled at the moment ?>
                         <?php if($_category_config['rating_star']): ?>
                         <?php
@@ -274,6 +273,7 @@ if($product_type == null) {
                         <?php endif; ?>
                         <?php if($_category_config['product_price']): ?>
                         <?php echo $block->getProductPrice($_product) ?>
+                        <?php echo $block->getProductDetailsHtml($_product); ?>
                         <?php endif; ?>
                         
                         <?php if($product_type != 3 && $product_type != 5 && $product_type != 6 && $product_type != 7 && $product_type != 8 && $product_type != 9 && $product_type != 10 && $product_type != 11): ?>
