@@ -386,7 +386,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
         }
         </script>
     <?php endif; ?>
-    <?php if ($block->getMode() == 'grid'): ?>
+    <?php /* if ($block->getMode() == 'grid'): ?>
         <script type="text/javascript">
             require([
                 'jquery'
@@ -407,7 +407,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                 $('.main .products.grid .product-items li.product-item:nth-child(8n+1)').addClass('nth-child-8np1');
             });
         </script>
-    <?php endif; ?>
+    <?php endif; */ ?>
 <?php endif; ?>
 <script type="text/javascript">
     require([
