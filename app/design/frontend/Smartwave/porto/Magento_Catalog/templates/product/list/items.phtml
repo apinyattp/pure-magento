@@ -10,7 +10,7 @@ use Magento\Framework\App\Action\Action;
 <?php
    $_helper = $this->helper('Magento\Catalog\Helper\Output');
    $_portohelper = $this->helper('Smartwave\Porto\Helper\Data');
- 
+
 $_category_config = $_portohelper->getConfig('porto_settings/category');
 $_category_grid_config = $_portohelper->getConfig('porto_settings/category_grid');
 $showDescription = false;
@@ -174,28 +174,27 @@ switch ($type = $block->getType()) {
     <div class="title-relate">
         <div class="block-title title title-relate-text">
             <strong id="block-<?= /* @escapeNotVerified */ $class ?>-heading" role="heading" aria-level="2"><?= /* @escapeNotVerified */ $title ?></strong>
-        </div>    
-        <div class="relate-hr"></div>      
-        <div id="relateditem_carousel"  class="products list items product-items owl-carousel owl-theme">           
+        </div>
+        <div class="relate-hr"></div>
+        <div id="relateditem_carousel"  class="products list items product-items owl-carousel owl-theme">
             <?php $iterator = 1; ?>
-            <?php foreach ($items as $_item): ?>                
+            <?php foreach ($items as $_item): ?>
                 <?php $available = ''; ?>
                 <?php if (!$_item->isComposite() && $_item->isSaleable()): ?>
                     <?php if (!$_item->getRequiredOptions()): ?>
                         <?php $available = 'related-available'; ?>
                     <?php endif; ?>
-                <?php endif; ?>               
+                <?php endif; ?>
                 <div class="product-item-info <?= /* @escapeNotVerified */ $available ?>">
                     <?= /* @escapeNotVerified */ '<!-- ' . $image . '-->' ?>
                     <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
                         <?= $block->getImage($_item, $image)->toHtml() ?>
                     </a>
-                    
+
                     <div class="product details product-item-details">
                         <?php
                             $_itemNameStripped = $block->stripTags($_item->getName(), null, true);
                         ?>
-                        <?php echo $block->getProductDetailsHtml($_item); ?>
                         <strong class="product name product-item-name product-item-name-related">
                             <a class="product-item-link product-item-link-relate"
                                href="<?php echo $_item->getProductUrl() ?>">
@@ -205,7 +204,7 @@ switch ($type = $block->getType()) {
                         <p class="product-brand product-catalog-brand">
                             <?php echo $_item->getAttributeText('brand_name');?>
                         </p>
-                        
+
                         <?php if ($showDescription):?>
                             <div class="product description product-item-description">
                                 <?php echo $_helper->productAttribute($_item, $_item->getShortDescription(), 'short_description') ?>
@@ -218,7 +217,8 @@ switch ($type = $block->getType()) {
                                 <?php echo $block->getProductPrice($_item) ?>
                             <?php endif; ?>
                         </div>
-                        
+                        <?php echo $block->getProductDetailsHtml($_item); ?>
+
                         <?php if($product_type != 3 && $product_type != 5 && $product_type != 6 && $product_type != 7 && $product_type != 8 && $product_type != 9): ?>
                         <div class="product-item-inner">
                             <div class="product actions product-item-actions">
@@ -314,20 +314,20 @@ switch ($type = $block->getType()) {
                     </div>
                 </div>
                 <?= ($iterator == count($items) + 1) ? '</div>' : '' ?>
-            <?php endforeach ?>        
+            <?php endforeach ?>
 
         </div>
-    </div>                           
+    </div>
         <!--End related products  Code-->
-    <?php } elseif ($type == 'upsell') { ?>    
+    <?php } elseif ($type == 'upsell') { ?>
         <!--Start upsell products  Code-->
         <div class="block-title title">
             <strong id="block-<?= /* @escapeNotVerified */ $class ?>-heading" role="heading" aria-level="2"><?= /* @escapeNotVerified */ $title ?> </strong>
         </div>
-        <div id="upsellitem_carousel"  class="products list items product-items owl-carousel owl-theme">            
+        <div id="upsellitem_carousel"  class="products list items product-items owl-carousel owl-theme">
             <?php $iterator = 1; ?>
-            <?php foreach ($items as $_item): ?>                
-                <?php $available = ''; ?>                
+            <?php foreach ($items as $_item): ?>
+                <?php $available = ''; ?>
                 <div class="product-item-info <?= /* @escapeNotVerified */ $available ?>">
                     <?= /* @escapeNotVerified */ '<!-- ' . $image . '-->' ?>
                     <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
@@ -396,7 +396,7 @@ switch ($type = $block->getType()) {
         <?php endforeach ?>
         </div>
         <!--End upsell products  Code-->
-    <?php } else { ?>                 
+    <?php } else { ?>
         <!--Start crosssell products  Code-->
         <div class="block <?= /* @escapeNotVerified */ $class ?>">
             <div class="block-title title">
@@ -422,11 +422,11 @@ switch ($type = $block->getType()) {
                             <div class="product-item-info <?= /* @escapeNotVerified */ $available ?>">
                                     <?= /* @escapeNotVerified */ '<!-- ' . $image . '-->' ?>
                                 <a href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>" class="product photo product-item-photo">
-            
+
                                 </a>
                                 <div class="product details product-item-details">
                                     <strong class="product name product-item-name"><a class="product-item-link" title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= /* @escapeNotVerified */ $block->getProductUrl($_item) ?>">
-       
+
                                     </strong>
 
                                     <?= /* @escapeNotVerified */ $block->getProductPrice($_item) ?>
@@ -491,7 +491,7 @@ switch ($type = $block->getType()) {
                 </div>
             </div>
         </div>
-        <!--End crosssell products  Code-->    
+        <!--End crosssell products  Code-->
     <?php } ?>
     <script type="text/javascript">
         requirejs(['jquery', 'owlcarousel'], function (jQuery, owlCarousel) {
