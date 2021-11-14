@@ -524,6 +524,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
 .cproducts {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
 }
 
 @media (min-width: 640px) {
@@ -544,7 +545,11 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
     }
 }
 
-.cproducts .cproduct-item {}
+.cproducts .cproduct-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .cproducts .price-container {
     display: inline-block;
@@ -567,5 +572,6 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
 .cproducts .product-image-photo.default_image {
     height: auto;
     width: 100%;
+    object-fit: contain;
 }
 </style>
