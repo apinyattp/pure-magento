@@ -65,11 +65,11 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
     ?>
     <div class="products wrapper <?php echo $viewMode; ?> <?php echo $columns; ?> products-<?php echo $viewMode; ?> <?php if($product_type == 2): ?>no-padding divider-line<?php endif; ?> <?php if($product_type == 5 || $product_type == 6 || $product_type == 7 || $product_type == 8): ?>no-padding<?php endif; ?> <?php if($product_type == 6): ?>divider-line<?php endif; ?>">
         <?php $iterator = 1; ?>
-        <ol class="filterproducts products list items product-items <?php if(isset($_category_config['qty_field']) && $_category_config['qty_field']):?>has-qty<?php endif;?>">
+        <div class="cproducts <?php if(isset($_category_config['qty_field']) && $_category_config['qty_field']):?>has-qty<?php endif;?>">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
-                <?php echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
-                <div class="product-item-info type<?php echo $product_type; ?>" data-container="product-grid">
+                <?php // echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
+                <div class="cproduct-item <?php echo $product_type; ?>" data-container="product-grid">
                     <?php // Product Image ?>
                     <div class="product photo product-item-photo">
                         <a href="<?php echo $_product->getProductUrl() ?>" tabindex="-1">
@@ -369,9 +369,9 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         <?php endif; ?>
                     </div>
                 </div>
-                <?php echo($iterator == count($_productCollection)+1) ? '</li>' : '' ?>
+                <?php // echo($iterator == count($_productCollection)+1) ? '</li>' : '' ?>
             <?php endforeach; ?>
-        </ol>
+        </div>
     </div>
     <?php if(isset($_category_grid_config['infinite_scroller']) && $_category_grid_config['infinite_scroller']):?>
     <div class="infinite-loader"><div class="loading"><?php echo __("Loading ..."); ?></div><a href="javascript:void(0)" class="btn-load-more"><?php echo __("Load More ..."); ?></a></div>
@@ -517,16 +517,22 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
 ?>
 
 <style>
-.product-item-inner {
-    float: right;
-    margin: 0;
-    left: 0;
-    padding: 0;
+.cproducts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.tocart {
-    float: right;
+
+@media (min-width: 640px) {
+    .cproducts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
-.description {
-    text-align: left !important;
+
+@media (min-width: 1024px) {
+    .cproducts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
+
+.cproduct-item {}
 </style>
