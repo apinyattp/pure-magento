@@ -294,9 +294,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                                     <?php endif; ?>
                                     <?php endif; ?>
                                     <?php endif; ?>
-                                    
                                     <!-- Move add to cart to bottom of box -->
-
                                     <?php if ($block->getMode() == 'grid'): ?>
                                     <?php if($_category_config['addtowishlist'] && $product_type == 4): ?>
                                     <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
@@ -346,7 +344,7 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
                         </div>
                     </div>
 
-                    <div class="actions-primary">
+                    <div class="actions-primary addtocart">
                         <?php if ($_product->isSaleable()): ?>
                             <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                             <form data-role="tocart-form" action="<?php echo $postParams['action']; ?>" method="post">
@@ -546,5 +544,14 @@ $_lazyload = $_portohelper->getConfig('porto_settings/optimization/lazyload');
     }
 }
 
-.cproduct-item {}
+.cproducts .cproduct-item {}
+
+.cproducts .price-container {
+    display: inline-block;
+}
+
+.cproducts .addtocart {
+    display: flex;
+    justify-content: center;
+}
 </style>
