@@ -2184,5 +2184,15 @@ hr.solid {
 }
 
 .priceCatalog .price {
-    float: none !important;
+  float: none !important;
+}
+
+.product-item-info {
+  text-align: left;
+}
+
+.product-item-inner {
+  display: flex;
+  float: none;
+  justify-content: center;
 }
