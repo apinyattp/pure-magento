@@ -2182,3 +2182,9 @@ hr.solid {
 .products-grid.small-list {
     margin: 0;
 }
+
+#hilight_product .price-box{
+    float: none !important;
+    margin: 0;
+    width: auto;
+}
