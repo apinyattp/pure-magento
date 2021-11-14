@@ -49,30 +49,30 @@ if($lang == 'en') {
         <br />
         <fieldset class="fieldset row">
             <div class="fields col-md-12">
-                <div class="field name required">
+                <div class="field row name required">
                     <label class="label col-md-3" for="name"><span><?php echo $name ?></span></label>
                     <div class="control col-md-9">
                         <input name="name" id="name" title="<?php echo $name ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
                     </div>
                 </div>
-                <div class="field telephone required">
+                <div class="field row telephone required">
                     <label class="label col-md-3" for="telephone"><span><?php echo $phone ?></span></label>
                     <div class="control col-md-9">
                         <input name="telephone" id="telephone" title="<?php echo $phone ?>" value="" class="input-text" type="text" data-validate="{required:true}" />
                     </div>
                 </div>
-                <div class="field email required">
+                <div class="field row email required">
                     <label class="label col-md-3" for="email"><span><?php echo $email ?></span></label>
                     <div class="control col-md-9">
                         <input name="email" id="email" title="<?php echo $email ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
                     </div>
                 </div>
-                <div class="field datebook required">
+                <div class="field row datebook required">
                     <label class="label col-md-3" for="datebook"><span><?php echo __('Date Time') ?></span></label>
                     <div class="control col-md-9">
                         <input name="datebook" id="datebook" title="<?php echo __('Date Time') ?>" value="" class="input-text" type="text" data-validate="{required:true, 'validate-date':true}" />
-                        <script> require(["jquery", "mage/calendar"], 
-                            function($){ 
+                        <script> require(["jquery", "mage/calendar"],
+                            function($){
                                 $('#datebook').datetimepicker({
                                         stepMinute: 15,
                                         minDate: new Date(),
@@ -82,11 +82,11 @@ if($lang == 'en') {
                                         hourMax: 16
                                     }
                                 );
-                            }); 
+                            });
                         </script>
                     </div>
                 </div>
-                <div class="field branch">
+                <div class="field row branch">
                     <label class="label col-md-3" for="branch"><span><?php echo __('branch') ?></span></label>
                     <div class="control col-md-9">
                        <select name='branch' class="form-control">
@@ -108,7 +108,7 @@ if($lang == 'en') {
                             <option value="CENTRAL UDONTHANI">CENTRAL UDONTHANI</option>
                             <option value="CENTRAL WORLD">CENTRAL WORLD</option>
                             <option value="CENTRAL WESTGATE">CENTRAL WESTGATE</option>
-                            
+
                             <option value="EMQUARTIER">EMQUARTIER</option>
                             <option value="FASHION ISLAND">FASHION ISLAND</option>
                             <option value="PARADISE PARK">PARADISE PARK</option>
@@ -122,19 +122,19 @@ if($lang == 'en') {
                             <option value="TERMINAL21 KORAT">TERMINAL21 KORAT</option>
                             <option value="TERMINAL21 PATTAYA">TERMINAL21 PATTAYA</option>
                             <option value="ZPELL">ZPELL</option>
-                           
-                           
+
+
                        </select>
                         <!-- <input name="branch" id="branch" title="<?php echo __('branch') ?>" value="" class="input-text" type="text" data-validate="{required:true}" /> -->
                     </div>
                 </div>
-                <div class="field problem">
+                <div class="field row problem">
                     <label class="label col-md-3" for="problem"><span><?php echo __('Problem') ?></span></label>
                     <div class="control col-md-9">
                         <input name="problem" id="problem" title="<?php echo __('Problem') ?>" value="" class="input-text" type="text"/>
                     </div>
                 </div>
-                <div class="field comment">
+                <div class="field row comment">
                     <label class="label col-md-3" for="note"><span><?php echo __('Note') ?></span></label>
                     <div class="control col-md-9">
                         <input name="comment" id="comment" title="<?php echo __('Note') ?>" value="" class="input-text" type="text"/>
@@ -158,3 +158,11 @@ if($lang == 'en') {
         </div>
     </div>
 </form>
+<style>
+input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type="datetime"], input[type="email"], textarea {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+</style>
