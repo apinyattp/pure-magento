@@ -80,6 +80,10 @@
     color: #777;
 }
 
+.post-holder .items-box {
+    display: grid;
+}
+
 
 .post-list {
 	margin-bottom: 20px;
