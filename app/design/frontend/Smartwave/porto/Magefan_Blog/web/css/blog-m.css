@@ -315,3 +315,7 @@
     position: absolute;
     width: 1px;
 }
+
+.layered-filter-block-container {
+    font-family: 'Prompt' !important;
+}
