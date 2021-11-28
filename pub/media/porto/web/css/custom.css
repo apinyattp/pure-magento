@@ -2231,3 +2231,7 @@ hr.solid {
     line-height: 1.75;
     font-size: 14px;
 }
+
+.swatch-option image {
+    width: 20px !important;
+}
