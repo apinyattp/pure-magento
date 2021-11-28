@@ -319,3 +319,6 @@
 .layered-filter-block-container {
     font-family: 'Prompt' !important;
 }
+.layered-filter-block-container .filter-options-title {
+    font-family: 'Prompt' !important;
+}
