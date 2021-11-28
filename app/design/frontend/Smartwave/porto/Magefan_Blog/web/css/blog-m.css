@@ -84,6 +84,11 @@
     display: grid;
     height: 100%;
 }
+
+.post-holder .items-box .content {
+    height: 340px;
+}
+
 .post-holder .items-box .thumb-img img {
     width: 100%;
     object-fit: cover;
