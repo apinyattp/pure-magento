@@ -2206,8 +2206,26 @@ hr.solid {
 }
 
 .product.accordion.items {
-    padding: 30px 0;
     display: grid;
     gap: 20px;
     font-family: 'Open Sans', 'Prompt';
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.product.accordion.items .item.title {
+    border-bottom: #dae2e6 solid 1px;
+}
+
+.product.accordion.items .item.title h3 {
+    display: inline;
+    font-size: 24px;
+    border-bottom: #161616 solid 2px;
+}
+
+.product.accordion.items .item.content {
+    line-height: 1.75;
+    font-size: 14px;
 }
