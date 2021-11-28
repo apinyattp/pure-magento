@@ -80,7 +80,7 @@
     color: #777;
 }
 
-.post-holder .items-box {
+/* .post-holder .items-box {
     display: grid;
     height: 100%;
 }
@@ -92,7 +92,7 @@
 .post-holder .items-box .thumb-img img {
     width: 100%;
     object-fit: cover;
-}
+} */
 
 
 .post-list {
