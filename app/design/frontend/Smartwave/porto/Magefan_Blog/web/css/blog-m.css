@@ -80,12 +80,16 @@
     color: #777;
 }
 
-/* .post-holder .items-box {
-    display: grid;
+.post-holder .items-box {
     height: 100%;
+    background-color: #e8e9ed;
 }
 
-.post-holder .items-box .content {
+.post-holder .items-box:hover {
+    background-color: #141515;
+}
+
+/* .post-holder .items-box .content {
     height: 340px;
 }
 
