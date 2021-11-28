@@ -2217,6 +2217,8 @@ hr.solid {
 
 .product.accordion.items .item.title {
     border-bottom: #dae2e6 solid 1px;
+    padding-top: 0;
+    margin-bottom: 0;
 }
 
 .product.accordion.items .item.title h3 {
