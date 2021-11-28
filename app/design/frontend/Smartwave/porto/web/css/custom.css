@@ -7677,3 +7677,7 @@ header.page-header.type15 .minicart-wrapper .minicart-items .product-item-detail
 		margin-top: 10px;
 	}
 }
+
+.layered-filter-block-container {
+    font-family: 'Prompt' !important;
+}
