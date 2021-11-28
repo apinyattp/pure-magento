@@ -165,10 +165,18 @@ align-items: center;
     width: 100%;
     padding-right: 0%;
 }
-.post-description{
-    height: 89px;
-    overflow: hidden;
+
+.post-description div * {
+  display: hidden;
 }
+
+.post-description div p:first-child {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .post-header .post-title a {
    font-weight: 500;
 }
