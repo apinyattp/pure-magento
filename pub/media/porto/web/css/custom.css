@@ -2235,3 +2235,8 @@ hr.solid {
 .swatch-option {
     width: 20px !important;
 }
+
+.swatch-attribute-options {
+    display: flex;
+    justify-content: center;
+}
