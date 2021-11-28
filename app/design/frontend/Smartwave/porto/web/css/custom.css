@@ -7677,3 +7677,8 @@ header.page-header.type15 .minicart-wrapper .minicart-items .product-item-detail
 		margin-top: 10px;
 	}
 }
+
+/* News and update */
+.items-box {
+    display: grid;
+}
