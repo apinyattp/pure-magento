@@ -2240,3 +2240,11 @@ hr.solid {
     display: flex;
     justify-content: center;
 }
+
+.product-info-main .swatch-attribute-label {
+    font-family: 'Prompt' !important;
+}
+
+.quantity_title {
+    font-family: 'Prompt' !important;
+}

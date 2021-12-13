@@ -79,7 +79,7 @@ max-height: 450px;
   margin: 0;
 }
 .quantity_title{
-    /* font-family: 'Karla'; */
+    font-family: 'Karla';
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 3%;
@@ -159,7 +159,7 @@ border-bottom-right-radius: 25px;
   width: 100%;
     font-size: 20px;
     color: #141515;
-    /* font-family: 'Karla'; */
+    font-family: 'Karla';
     font-weight: 700;
 }
 .product-info-main .product-info-price {
