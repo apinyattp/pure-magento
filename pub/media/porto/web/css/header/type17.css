@@ -252,11 +252,17 @@
         float: right;
         margin-right: 55px;
     }
-    .page-header.type17 .top-links-area, .page-header.type17 .custom-block {
+    /* .page-header.type17 .top-links-area, .page-header.type17 .custom-block {
         display: none;
-    }
+    } */
     .page-header.type17 .block-search .label:before, .page-header.type17 .nav-toggle:before {
         font-size: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page-header.type17 .top-links-area, .page-header.type17 .custom-block {
+        display: none;
     }
 }
 @media (min-width: 960px) {
