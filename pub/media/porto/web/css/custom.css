@@ -2225,6 +2225,7 @@ hr.solid {
     display: inline;
     font-size: 24px;
     border-bottom: #161616 solid 2px;
+    line-height: 1.5;
 }
 
 .product.accordion.items .item.content {
