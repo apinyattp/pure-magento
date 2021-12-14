@@ -242,7 +242,7 @@
     <?php echo $this->getChildHtml("logo"); ?>
     <?php echo $this->getChildHtml("navigation.sections"); ?>
         <div class="panel header">
-            <span data-action="toggle-nav" class="action nav-toggle"><span><?php echo __('Toggle Nav') ?></span></span>            
+            <span data-action="toggle-nav" class="action nav-toggle"><span><?php echo __('Toggle Nav') ?></span></span>
             <?php echo $this->getChildHtml("currency"); ?>
             <?php echo $this->getChildHtml("store_language"); ?>
             <div class="search-area">
@@ -383,12 +383,17 @@
             </div>
             <?php echo $this->getChildHtml("navigation.sections"); ?>
         </div>
-       
+
     </div>
     <div class="row header content hidden-md hidden-lg" style="background-color: black;">
         <div class="col-5" style="padding:0;"><?php echo $this->getChildHtml("logo"); ?></div>
         <div class="col-7 row">
             <div class="panel header col-12">
+                <div class="bottom-panel">
+                    <?php echo $this->getChildHtml("currency"); ?>
+                    <?php echo $this->getChildHtml("store_language"); ?>
+                    <?php echo $this->getChildHtml("minicart"); ?>
+                </div>
                 <div class="top-panel">
                     <?php echo $this->getChildHtml("skip_to_content"); ?>
                     <?php echo $this->getChildHtml("custom_block"); ?>
@@ -402,15 +407,10 @@
                         <?php echo $this->getChildHtml("top.search"); ?>
                     </div>
                 </div>
-                <div class="bottom-panel">
-                    <?php echo $this->getChildHtml("currency"); ?>
-                    <?php echo $this->getChildHtml("store_language"); ?>
-                    <?php echo $this->getChildHtml("minicart"); ?>
-                </div>
             </div>
             <?php echo $this->getChildHtml("navigation.sections"); ?>
         </div>
-       
+
     </div>
 <?php elseif($header_type == 19 ): ?>
     <div class="header content">
@@ -518,7 +518,7 @@
     <?php echo $this->getChildHtml("logo"); ?>
     <?php echo $this->getChildHtml("navigation.sections"); ?>
         <div class="panel header">
-            <span data-action="toggle-nav" class="action nav-toggle"><span><?php echo __('Toggle Nav') ?></span></span>            
+            <span data-action="toggle-nav" class="action nav-toggle"><span><?php echo __('Toggle Nav') ?></span></span>
             <?php echo $this->getChildHtml("currency"); ?>
             <?php echo $this->getChildHtml("store_language"); ?>
             <div class="top-links-area">
@@ -543,7 +543,7 @@
         </div>
     </div>
     <div class="header content">
-        <div class="header-main-left">            
+        <div class="header-main-left">
             <?php echo $this->getChildHtml("custom_block"); ?>
         </div>
         <div class="header-main-center">
