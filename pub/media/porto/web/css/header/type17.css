@@ -250,7 +250,6 @@
     }
     .page-header.type17 .nav-toggle {
         float: right;
-        margin-right: 55px;
     }
     .page-header.type17 .top-links-area, .page-header.type17 .custom-block {
         display: none;
@@ -279,9 +278,14 @@
     }
 }
 
+.page-header.type17.header-newskin .minicart-wrapper {
+    margin-left: 0;
+}
+
 .page-header.type17 .header.panel .bottom-panel a.action.my-wishlist {
     font-size: 24px;
     color: #ffffff;
     display: inline-block;
     vertical-align: middle;
+    margin-right: 10px;
 }
