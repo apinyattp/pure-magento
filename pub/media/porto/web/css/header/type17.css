@@ -217,7 +217,7 @@
     }
     .page-header.type17 .bottom-panel {
         position: absolute;
-        right: 10px;
+        right: 90px;
         top: 8px;
     }
     .page-header.type17 .minicart-wrapper {
@@ -284,5 +284,4 @@
     color: #ffffff;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 20px;
 }
