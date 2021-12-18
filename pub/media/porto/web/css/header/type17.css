@@ -226,7 +226,7 @@
     }
     .page-header.type17 .bottom-panel {
         position: absolute;
-        right: 75px;
+        right: 65px;
         top: 8px;
     }
     .page-header.type17 .header.panel .bottom-panel a.action.my-wishlist {
@@ -263,6 +263,7 @@
     }
     .page-header.type17 .nav-toggle {
         float: right;
+        margin-right: 10px;
     }
     .page-header.type17 .top-links-area, .page-header.type17 .custom-block {
         display: none;
