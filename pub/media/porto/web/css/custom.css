@@ -2249,3 +2249,7 @@ hr.solid {
 .quantity_title {
     font-family: 'Prompt' !important;
 }
+
+.moved-add-to-links {
+    margin-top: 15px;
+}
