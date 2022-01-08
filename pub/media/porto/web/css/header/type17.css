@@ -22,6 +22,15 @@
 .page-header.type17.sticky-header .header.content > .logo {
     display: none;
 }
+.page-header.type17 .header.panel .bottom-panel a.action.my-wishlist {
+    font-size: 24px;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+}
+.page-header.type17.header-newskin .minicart-wrapper {
+    margin-left: 0;
+}
 @media (min-width: 960px) {
     .page-header.type17 .header.content {
         padding: 25px 15px;
@@ -217,8 +226,12 @@
     }
     .page-header.type17 .bottom-panel {
         position: absolute;
-        right: 10px;
+        right: 75px;
         top: 8px;
+    }
+    .page-header.type17 .header.panel .bottom-panel a.action.my-wishlist {
+        font-size: 28px;
+        line-height: 40px;
     }
     .page-header.type17 .minicart-wrapper {
         position: relative;
@@ -250,7 +263,7 @@
     }
     .page-header.type17 .nav-toggle {
         float: right;
-        margin-right: 55px;
+        margin-right: 10px;
     }
     .page-header.type17 .top-links-area, .page-header.type17 .custom-block {
         display: none;
