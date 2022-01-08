@@ -2253,3 +2253,7 @@ hr.solid {
 .moved-add-to-links {
     margin-top: 15px;
 }
+
+.ui-menu-item.level2 {
+    text-transform: uppercase;
+}
