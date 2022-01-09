@@ -107,11 +107,20 @@
 .post-holder .post-header{
   margin-bottom:0;
 }
+
 .post-holder .content{
      padding: 36px;
    background-color: #e8e9ed;
   max-height: 309px;
 }
+
+@media screen and (max-width: 768px) {
+  .post-holder .content{
+    padding: 18px;
+    max-height: none;
+  }
+}
+
 .post-holder .post-info .item:hover {
    color:#8b8b8b
 }
