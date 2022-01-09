@@ -2265,3 +2265,10 @@ hr.solid {
         padding-top: 12px !important;
     }
 }
+
+@media (max-width: 640px) {
+    .addToCart {
+        display: flex;
+        justify-content: center;
+    }
+}
