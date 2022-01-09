@@ -2257,3 +2257,11 @@ hr.solid {
 .ui-menu-item.level2 {
     text-transform: uppercase;
 }
+
+/* Header */
+@media (min-width: 1200px) {
+    body.layout-fullwidth .page-header .header.panel {
+        height: auto !important;
+        padding-top: 12px !important;
+    }
+}
