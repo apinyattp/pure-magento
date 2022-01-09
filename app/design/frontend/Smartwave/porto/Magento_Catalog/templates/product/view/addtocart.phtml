@@ -84,12 +84,14 @@
         <?php endif; ?>
     </div>
     <div class="actions">
-        <button type="submit"
-                title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
-                class="action primary tocart"
-                id="product-addtocart-button">
-            <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
-        </button>
+        <div>
+            <button type="submit"
+                    title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
+                    class="action primary tocart"
+                    id="product-addtocart-button">
+                <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
+            </button>
+        </div>
         <?php echo $block->getChildHtml('', true) ?>
     </div>
     <div class="product accordion" style="margin-top: 5px;">
